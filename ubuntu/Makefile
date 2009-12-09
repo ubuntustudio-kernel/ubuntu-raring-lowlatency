@@ -20,6 +20,10 @@ obj-m				+= rfkill/
 ##
 ##
 ##
+obj-$(CONFIG_FSAM7400)		+= fsam7400/
+##
+##
+##
 
 # This is a stupid trick to get kbuild to create ubuntu/built-in.o
 obj- += foo.o
