@@ -11,5 +11,9 @@ source "ubuntu/rfkill/Kconfig"
 ##
 ##
 ##
+source "ubuntu/fsam7400/Kconfig"
+##
+##
+##
 
 endmenu
