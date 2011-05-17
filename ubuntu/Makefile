@@ -16,7 +16,7 @@ obj-$(CONFIG_DM_RAID45)		+= dm-raid4-5/
 ##
 ##
 ##
-obj-m				+= rfkill/
+#obj-m				+= rfkill/
 ##
 ##
 ##
