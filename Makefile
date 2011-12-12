@@ -371,7 +371,7 @@ LINUXINCLUDE    := $(UBUNTUINCLUDE) -I$(srctree)/arch/$(hdr-arch)/include \
 # UBUNTU: Include our third party driver stuff too
 LINUXINCLUDE   += -Iubuntu/include $(if $(KBUILD_SRC),-I$(srctree)/ubuntu/include)
 
-KBUILD_CPPFLAGS := -D__KERNEL__
+KBUILD_CPPFLAGS := -D__KERNEL__ -D__linux_kernel__
 
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
