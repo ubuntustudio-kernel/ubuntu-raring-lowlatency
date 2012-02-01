@@ -6,6 +6,7 @@ linux (3.3.0-1.1) UNRELEASED; urgency=low
 
   [ Upstream Kernel Changes ]
 
+  * rebase to v3.3-rc2
   * rebase to v3.3-rc1
     - LP: #795823
     - LP: #909419
