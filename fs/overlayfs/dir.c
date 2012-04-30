@@ -11,6 +11,7 @@
 #include <linux/namei.h>
 #include <linux/xattr.h>
 #include <linux/security.h>
+#include <linux/cred.h>
 #include "overlayfs.h"
 
 static const char *ovl_whiteout_symlink = "(overlay-whiteout)";
