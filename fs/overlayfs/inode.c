@@ -193,7 +193,7 @@ static int ovl_readlink(struct dentry *dentry, char __user *buf, int bufsiz)
 	if (!realinode->i_op->readlink)
 		return -EINVAL;
 
-	touch_atime(realpath.mnt, realpath.dentry);
+	touch_atime(&realpath);
 
 	return realinode->i_op->readlink(realpath.dentry, buf, bufsiz);
 }
