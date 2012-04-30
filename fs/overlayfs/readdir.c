@@ -14,6 +14,7 @@
 #include <linux/xattr.h>
 #include <linux/rbtree.h>
 #include <linux/security.h>
+#include <linux/cred.h>
 #include "overlayfs.h"
 
 struct ovl_cache_entry {

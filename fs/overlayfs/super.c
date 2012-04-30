@@ -16,6 +16,8 @@
 #include <linux/parser.h>
 #include <linux/module.h>
 #include <linux/seq_file.h>
+#include <linux/cred.h>
+#include <linux/sched.h>
 #include "overlayfs.h"
 
 MODULE_AUTHOR("Miklos Szeredi <miklos@szeredi.hu>");
