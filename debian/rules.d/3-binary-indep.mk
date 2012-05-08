@@ -83,7 +83,7 @@ install-tools: toolspkg = $(tools_common_pkg_name)
 install-tools: toolsbin = $(CURDIR)/debian/$(toolspkg)/usr/bin
 install-tools: toolssbin = $(CURDIR)/debian/$(toolspkg)/usr/sbin
 install-tools: toolsman = $(CURDIR)/debian/$(toolspkg)/usr/share/man
-install-tools: install-source
+install-tools: install-source $(stampdir)/stamp-build-perarch
 ifeq ($(do_tools),true)
 	dh_testdir
 	dh_testroot
