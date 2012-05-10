@@ -18,11 +18,9 @@ source "ubuntu/rfkill/Kconfig"
 ##
 ##
 ##
-source "ubuntu/omnibook/Kconfig"
-##
-##
-##
 source "ubuntu/aufs/Kconfig"
+##
+##
 ##
 
 endmenu

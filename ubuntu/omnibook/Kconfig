@@ -1,4 +1,0 @@
-config OMNIBOOK
-	tristate "Kernel module for HP and Toshiba laptops"
-	default m
-	---help---
