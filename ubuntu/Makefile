@@ -16,10 +16,6 @@
 ##
 ##
 ##
-#obj-m				+= rfkill/
-##
-##
-##
 #obj-$(CONFIG_AUFS_FS)		+= aufs/
 ##
 ##
