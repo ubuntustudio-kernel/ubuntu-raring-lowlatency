@@ -11,10 +11,11 @@ build_O  = O=$(builddir)/build-$*
 endif
 
 $(stampdir)/stamp-prepare-%: config-prepare-check-%
+	@echo Debug: $@
 	@touch $@
 $(stampdir)/stamp-prepare-tree-%: target_flavour = $*
 $(stampdir)/stamp-prepare-tree-%: $(commonconfdir)/config.common.$(family) $(archconfdir)/config.common.$(arch) $(archconfdir)/config.flavour.%
-	@echo "Preparing $*..."
+	@echo Debug: $@
 	install -d $(builddir)/build-$*
 	touch $(builddir)/build-$*/ubuntu-build
 	[ "$(do_full_source)" != 'true' ] && true || \
@@ -26,15 +27,15 @@ $(stampdir)/stamp-prepare-tree-%: $(commonconfdir)/config.common.$(family) $(arc
 
 # Used by developers as a shortcut to prepare a tree for compilation.
 prepare-%: $(stampdir)/stamp-prepare-%
-	@echo Prepared $* for $(arch)
+	@echo Debug: $@
 # Used by developers to allow efficient pre-building without fakeroot.
 build-%: $(stampdir)/stamp-build-%
-	@echo Built $* for $(arch)
+	@echo Debug: $@
 
 # Do the actual build, including image and modules
 $(stampdir)/stamp-build-%: target_flavour = $*
 $(stampdir)/stamp-build-%: $(stampdir)/stamp-prepare-%
-	@echo "Building $*..."
+	@echo Debug: $@
 	$(build_cd) $(kmake) $(build_O) $(conc_level) $(build_image) modules
 	@touch $@
 
@@ -47,6 +48,7 @@ install-%: basepkg = $(hdrs_pkg_name)
 install-%: hdrdir = $(CURDIR)/debian/$(basepkg)-$*/usr/src/$(basepkg)-$*
 install-%: target_flavour = $*
 install-%: checks-%
+	@echo Debug: $@
 	dh_testdir
 	dh_testroot
 	dh_clean -k -p$(bin_pkg_name)-$*
@@ -240,6 +242,7 @@ hmake := $(MAKE) -C $(CURDIR) O=$(headers_tmp) \
 	SHELL="$(SHELL)" ARCH=$(header_arch)
 
 install-arch-headers:
+	@echo Debug: $@
 	dh_testdir
 	dh_testroot
 	dh_clean -k -plinux-libc-dev
@@ -265,6 +268,7 @@ install-arch-headers:
 	rm -rf $(headers_tmp)
 
 binary-arch-headers: install-arch-headers
+	@echo Debug: $@
 	dh_testdir
 	dh_testroot
 ifeq ($(do_libc_dev_package),true)
@@ -289,6 +293,7 @@ binary-%: dbgpkg = $(bin_pkg_name)-$*-dbgsym
 binary-%: dbgpkgdir = $(CURDIR)/debian/$(bin_pkg_name)-$*-dbgsym
 binary-%: target_flavour = $*
 binary-%: install-%
+	@echo Debug: $@
 	dh_testdir
 	dh_testroot
 
@@ -381,7 +386,7 @@ endif
 # per-architecture packages
 #
 $(stampdir)/stamp-prepare-perarch:
-	@echo "Preparing perarch ..."
+	@echo Debug: $@
 ifeq ($(do_tools),true)
 	rm -rf $(builddir)/tools
 	install -d $(builddir)/tools
@@ -392,6 +397,7 @@ endif
 	touch $@
 
 $(stampdir)/stamp-build-perarch: $(stampdir)/stamp-prepare-perarch
+	@echo Debug: $@
 ifeq ($(do_tools),true)
 	cd $(builddir)/tools/tools/perf && \
 		make HAVE_CPLUS_DEMANGLE=1 CROSS_COMPILE=$(CROSS_COMPILE) $(conc_level)
@@ -405,6 +411,7 @@ endif
 
 install-perarch: toolspkgdir = $(CURDIR)/debian/$(tools_pkg_name)
 install-perarch: $(stampdir)/stamp-build-perarch
+	@echo Debug: $@
 	# Add the tools.
 ifeq ($(do_tools),true)
 	install -d $(toolspkgdir)/usr/bin
@@ -423,7 +430,7 @@ endif
 
 binary-perarch: toolspkg = $(tools_pkg_name)
 binary-perarch: install-perarch
-	@# Empty for make to be happy
+	@echo Debug: $@
 ifeq ($(do_tools),true)
 	dh_installchangelogs -p$(toolspkg)
 	dh_installdocs -p$(toolspkg)
@@ -437,9 +444,11 @@ ifeq ($(do_tools),true)
 endif
 
 binary-debs: binary-perarch $(addprefix binary-,$(flavours))
+	@echo Debug: $@
 
 build-arch-deps-$(do_flavour_image_package) += $(addprefix $(stampdir)/stamp-build-,$(flavours))
 build-arch: $(build-arch-deps-true)
+	@echo Debug: $@
 
 ifeq ($(AUTOBUILD),)
 binary-arch-deps-$(do_flavour_image_package) += binary-udebs
@@ -451,3 +460,5 @@ ifneq ($(do_common_headers_indep),true)
 binary-arch-deps-$(do_flavour_header_package) += binary-headers
 endif
 binary-arch: $(binary-arch-deps-true)
+	@echo Debug: $@
+
