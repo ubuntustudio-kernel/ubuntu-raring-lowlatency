@@ -1,8 +1,10 @@
 build-indep:
+	@echo Debug: $@
 
 docpkg = $(doc_pkg_name)
 docdir = $(CURDIR)/debian/$(docpkg)/usr/share/doc/$(docpkg)
 install-doc: install-headers
+	@echo Debug: $@
 ifeq ($(do_doc_package),true)
 	dh_testdir
 	dh_testroot
@@ -28,6 +30,7 @@ endif
 indep_hdrpkg = $(hdrs_pkg_name)
 indep_hdrdir = $(CURDIR)/debian/$(indep_hdrpkg)/usr/src/$(indep_hdrpkg)
 install-headers:
+	@echo Debug: $@
 ifeq ($(do_flavour_header_package),true)
 	dh_testdir
 	dh_testroot
@@ -53,6 +56,7 @@ srcpkg = $(src_pkg_name)-source-$(release)
 srcdir = $(CURDIR)/debian/$(srcpkg)/usr/src/$(srcpkg)
 balldir = $(CURDIR)/debian/$(srcpkg)/usr/src/$(srcpkg)/$(srcpkg)
 install-source: install-doc
+	@echo Debug: $@
 ifeq ($(do_source_package),true)
 	dh_testdir
 	dh_testroot
@@ -84,6 +88,7 @@ install-tools: toolsbin = $(CURDIR)/debian/$(toolspkg)/usr/bin
 install-tools: toolssbin = $(CURDIR)/debian/$(toolspkg)/usr/sbin
 install-tools: toolsman = $(CURDIR)/debian/$(toolspkg)/usr/share/man
 install-tools: install-source $(stampdir)/stamp-build-perarch
+	@echo Debug: $@
 ifeq ($(do_tools),true)
 	dh_testdir
 	dh_testroot
@@ -118,10 +123,12 @@ ifeq ($(do_tools),true)
 endif
 
 install-indep: install-tools
+	@echo Debug: $@
 
 # This is just to make it easy to call manually. Normally done in
 # binary-indep target during builds.
 binary-headers: install-headers
+	@echo Debug: $@
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs -p$(indep_hdrpkg)
@@ -134,6 +141,7 @@ binary-headers: install-headers
 	dh_builddeb -p$(indep_hdrpkg)
 
 binary-indep: install-indep
+	@echo Debug: $@
 	dh_testdir
 	dh_testroot
 
