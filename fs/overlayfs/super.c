@@ -538,9 +538,13 @@ static int ovl_fill_super(struct super_block *sb, void *data, int silent)
 	if (oe == NULL)
 		goto out_free_config;
 
+	root_inode = ovl_new_inode(sb, S_IFDIR, oe);
+	if (!root_inode)
+		goto out_free_oe;
+
 	err = kern_path(ufs->config.upperdir, LOOKUP_FOLLOW, &upperpath);
 	if (err)
-		goto out_free_oe;
+		goto out_put_root;
 
 	err = kern_path(ufs->config.lowerdir, LOOKUP_FOLLOW, &lowerpath);
 	if (err)
@@ -592,11 +596,7 @@ static int ovl_fill_super(struct super_block *sb, void *data, int silent)
 	}
 
 	err = -ENOMEM;
-	root_inode = ovl_new_inode(sb, S_IFDIR, oe);
-	if (!root_inode)
-		goto out_drop_write;
-
-	root_dentry = d_make_root(root_inode);
+	root_dentry = d_alloc_root(root_inode);
 	if (!root_dentry)
 		goto out_drop_write;
 
@@ -626,6 +626,8 @@ out_put_lowerpath:
 	path_put(&lowerpath);
 out_put_upperpath:
 	path_put(&upperpath);
+out_put_root:
+	iput(root_inode);
 out_free_oe:
 	kfree(oe);
 out_free_config:
