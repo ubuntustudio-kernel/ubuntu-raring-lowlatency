@@ -14,7 +14,6 @@
 #include <linux/xattr.h>
 #include <linux/security.h>
 #include <linux/uaccess.h>
-#include <linux/sched.h>
 #include "overlayfs.h"
 
 #define OVL_COPY_UP_CHUNK_SIZE (1 << 20)
