@@ -18,6 +18,10 @@ do-binary-udebs: debian/control
 	for i in $$imagelist; do \
 	  dpkg -x $$(ls ../linux-image-$$i\_$(release)-$(revision)_${arch}.deb) \
 		debian/d-i-${arch}; \
+	  if [ -f ../linux-image-extra-$$i\_$(release)-$(revision)_${arch}.deb ] ; then \
+	    dpkg -x ../linux-image-extra-$$i\_$(release)-$(revision)_${arch}.deb \
+		  debian/d-i-${arch}; \
+	  fi; \
 	  /sbin/depmod -b debian/d-i-${arch} $$i; \
 	done
 
