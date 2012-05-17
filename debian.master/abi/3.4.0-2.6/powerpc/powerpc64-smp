@@ -4510,6 +4510,7 @@ EXPORT_SYMBOL vmlinux 0x3a7e68b7	mdiobus_free
 EXPORT_SYMBOL vmlinux 0x3a8b15c4	__inet6_hash
 EXPORT_SYMBOL vmlinux 0x3a9b6fb9	blk_unregister_region
 EXPORT_SYMBOL vmlinux 0x3ab20dd1	ip6_frag_init
+EXPORT_SYMBOL vmlinux 0x3ad34d42	inode_only_permission
 EXPORT_SYMBOL vmlinux 0x3adc4063	pcix_get_mmrbc
 EXPORT_SYMBOL vmlinux 0x3ae765ac	pcie_get_readrq
 EXPORT_SYMBOL vmlinux 0x3ae9b0c6	ip_options_rcv_srr
