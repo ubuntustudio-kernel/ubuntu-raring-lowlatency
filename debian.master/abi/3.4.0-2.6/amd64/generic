@@ -5109,6 +5109,7 @@ EXPORT_SYMBOL vmlinux 0x57575f08	dmaengine_put
 EXPORT_SYMBOL vmlinux 0x57674fd7	__sw_hweight16
 EXPORT_SYMBOL vmlinux 0x578b8b1d	udp_poll
 EXPORT_SYMBOL vmlinux 0x5792f848	strlcpy
+EXPORT_SYMBOL vmlinux 0x579f32d6	inode_only_permission
 EXPORT_SYMBOL vmlinux 0x57a6ccd0	down_read
 EXPORT_SYMBOL vmlinux 0x57e0ccff	scsi_print_command
 EXPORT_SYMBOL vmlinux 0x581e1080	pci_prepare_to_sleep

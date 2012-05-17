@@ -6517,6 +6517,7 @@ EXPORT_SYMBOL vmlinux 0xb3438330	__ht_create_irq
 EXPORT_SYMBOL vmlinux 0xb34d4c2e	acpi_terminate
 EXPORT_SYMBOL vmlinux 0xb352177e	find_first_bit
 EXPORT_SYMBOL vmlinux 0xb36c0ec7	balance_dirty_pages_ratelimited_nr
+EXPORT_SYMBOL vmlinux 0xb371cdd8	inode_only_permission
 EXPORT_SYMBOL vmlinux 0xb3898039	kill_anon_super
 EXPORT_SYMBOL vmlinux 0xb3931eae	jbd2_journal_extend
 EXPORT_SYMBOL vmlinux 0xb3b12e28	dma_async_memcpy_buf_to_buf

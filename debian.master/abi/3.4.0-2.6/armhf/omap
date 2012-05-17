@@ -3705,6 +3705,7 @@ EXPORT_SYMBOL vmlinux 0x5f9e2086	inetpeer_invalidate_tree
 EXPORT_SYMBOL vmlinux 0x5fa17c73	sk_filter_release_rcu
 EXPORT_SYMBOL vmlinux 0x5fb567ef	jbd2_journal_start
 EXPORT_SYMBOL vmlinux 0x5fb7d6f1	udp_lib_getsockopt
+EXPORT_SYMBOL vmlinux 0x5fb942d6	inode_only_permission
 EXPORT_SYMBOL vmlinux 0x600683d3	do_unblank_screen
 EXPORT_SYMBOL vmlinux 0x600ecfc0	scsi_host_lookup
 EXPORT_SYMBOL vmlinux 0x6010836a	find_inode_number

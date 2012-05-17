@@ -5677,6 +5677,7 @@ EXPORT_SYMBOL vmlinux 0x8bfe8c57	param_set_uint
 EXPORT_SYMBOL vmlinux 0x8c0d2806	mmc_fixup_device
 EXPORT_SYMBOL vmlinux 0x8c14d941	vfs_fstatat
 EXPORT_SYMBOL vmlinux 0x8c183cbe	iowrite16
+EXPORT_SYMBOL vmlinux 0x8c20a769	inode_only_permission
 EXPORT_SYMBOL vmlinux 0x8c41f9d7	proto_unregister
 EXPORT_SYMBOL vmlinux 0x8c497c96	ip_mc_rejoin_groups
 EXPORT_SYMBOL vmlinux 0x8c5787ba	dst_discard

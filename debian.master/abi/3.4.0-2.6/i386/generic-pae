@@ -4432,6 +4432,7 @@ EXPORT_SYMBOL vmlinux 0x268cc6a2	sys_close
 EXPORT_SYMBOL vmlinux 0x26930862	pci_dev_get
 EXPORT_SYMBOL vmlinux 0x2695416c	phy_start_interrupts
 EXPORT_SYMBOL vmlinux 0x26991aeb	nla_reserve_nohdr
+EXPORT_SYMBOL vmlinux 0x26a34033	inode_only_permission
 EXPORT_SYMBOL vmlinux 0x26bb950b	__kfifo_from_user_r
 EXPORT_SYMBOL vmlinux 0x26bc1f1e	seq_release
 EXPORT_SYMBOL vmlinux 0x26bf9d20	phy_stop_interrupts
@@ -12416,6 +12417,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xb6a6669d	sis_info133_for_sata
 EXPORT_SYMBOL_GPL vmlinux 0xb6aeb661	ata_id_c_string
 EXPORT_SYMBOL_GPL vmlinux 0xb6bc49a9	__supported_pte_mask
 EXPORT_SYMBOL_GPL vmlinux 0xb6cfa8c2	virtqueue_enable_cb
+EXPORT_SYMBOL_GPL vmlinux 0xb7025069	intel_idle_cpu_init
 EXPORT_SYMBOL_GPL vmlinux 0xb718f2f9	sfi_table_parse
 EXPORT_SYMBOL_GPL vmlinux 0xb71fba3e	xen_swiotlb_unmap_sg
 EXPORT_SYMBOL_GPL vmlinux 0xb7329ff0	rio_release_inb_pwrite
