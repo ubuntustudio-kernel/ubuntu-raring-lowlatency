@@ -1727,9 +1727,15 @@ static void piix_remove_one(struct pci_dev *pdev)
 	ata_pci_remove_one(pdev);
 }
 
+static bool disable_driver = 0;
 static int __init piix_init(void)
 {
 	int rc;
+
+	if (disable_driver) {
+		printk(KERN_WARNING "ata_piix: driver disabled completely\n");
+		return 0;
+	}
 
 	DPRINTK("pci_register_driver\n");
 	rc = pci_register_driver(&piix_pci_driver);
@@ -1747,5 +1753,6 @@ static void __exit piix_exit(void)
 	pci_unregister_driver(&piix_pci_driver);
 }
 
+module_param(disable_driver, bool, 0);
 module_init(piix_init);
 module_exit(piix_exit);
