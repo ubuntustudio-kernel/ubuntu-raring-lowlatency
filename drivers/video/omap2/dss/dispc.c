@@ -2385,9 +2385,11 @@ static void dispc_mgr_enable_digit_out(bool enable)
 
 	for (i = 0; i < num_irqs; ++i) {
 		if (!wait_for_completion_timeout(&frame_done_completion,
-					msecs_to_jiffies(100)))
-			DSSERR("timeout waiting for digit out to %s\n",
-					enable ? "start" : "stop");
+					msecs_to_jiffies(100))) {
+			/*DSSERR("timeout waiting for digit out to %s\n",
+					enable ? "start" : "stop");*/
+					;
+			}
 	}
 
 	r = omap_dispc_unregister_isr(dispc_disable_isr, &frame_done_completion,
