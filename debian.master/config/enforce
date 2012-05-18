@@ -104,3 +104,8 @@ value CONFIG_EFI_VARS y | !exists CONFIG_EFI_VARS
 (!exists CONFIG_DRM_PSB | value CONFIG_DRM_PSB n) | \
 ((value CONFIG_DRM_PSB y | value CONFIG_DRM_PSB m) & (value CONFIG_STUB_POULSBO n | !exists CONFIG_STUB_POULSBO))
 
+# Ensure CONFIG_B43_BCMA_EXTRA is disabled if CONFIG_BRCMSMAC is enabled.
+# Otherwise b43 and brcmsmac will overlap in the hardware they claim to
+# support.
+(!exists CONFIG_BRCMSMAC | value CONFIG_BRCMSMAC n) | \
+((value CONFIG_BRCMSMAC y | value CONFIG_BRCMSMAC m) & (value CONFIG_B43_BCMA_EXTRA n | !exists CONFIG_B43_BCMA_EXTRA))
