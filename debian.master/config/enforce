@@ -13,6 +13,7 @@ value CONFIG_SECURITY_YAMA y
 value CONFIG_SYN_COOKIES y
 value CONFIG_DEFAULT_SECURITY_APPARMOR y
 # For architectures which support this option ensure it is enabled.
+(arch amd64 & value CONFIG_XEN_ACPI_PROCESSOR y) | !arch amd64
 !exists CONFIG_SECCOMP | value CONFIG_SECCOMP y
 !exists CONFIG_HAVE_ARCH_SECCOMP_FILTER | value CONFIG_SECCOMP_FILTER y
 !exists CONFIG_CC_STACKPROTECTOR | value CONFIG_CC_STACKPROTECTOR y
