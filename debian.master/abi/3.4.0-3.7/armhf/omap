@@ -739,12 +739,12 @@ EXPORT_SYMBOL drivers/media/video/gspca/gspca_main 0x9bfa6630	gspca_auto_gain_n_
 EXPORT_SYMBOL drivers/media/video/gspca/gspca_main 0xc2f4dcfb	gspca_dev_probe
 EXPORT_SYMBOL drivers/media/video/gspca/gspca_main 0xc7364feb	gspca_frame_add
 EXPORT_SYMBOL drivers/media/video/gspca/gspca_main 0xe2ceddba	gspca_suspend
+EXPORT_SYMBOL drivers/media/video/soc_camera 0x197ddc25	soc_camera_host_register
+EXPORT_SYMBOL drivers/media/video/soc_camera 0x570142a9	soc_camera_host_unregister
 EXPORT_SYMBOL drivers/media/video/soc_camera 0x6d690745	soc_camera_lock
-EXPORT_SYMBOL drivers/media/video/soc_camera 0xb3ab4271	soc_camera_host_unregister
 EXPORT_SYMBOL drivers/media/video/soc_camera 0xb420c28b	soc_camera_unlock
 EXPORT_SYMBOL drivers/media/video/soc_camera 0xe155e2bf	soc_camera_xlate_by_fourcc
 EXPORT_SYMBOL drivers/media/video/soc_camera 0xedc276c1	soc_camera_apply_board_flags
-EXPORT_SYMBOL drivers/media/video/soc_camera 0xfee19971	soc_camera_host_register
 EXPORT_SYMBOL drivers/media/video/soc_mediabus 0x433952ab	soc_mbus_find_fmtdesc
 EXPORT_SYMBOL drivers/media/video/soc_mediabus 0x6951757b	soc_mbus_samples_per_pixel
 EXPORT_SYMBOL drivers/media/video/soc_mediabus 0x85d52182	soc_mbus_get_fmtdesc
@@ -6360,6 +6360,7 @@ EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-dma-contig 0x3834f7c8	vb2_dma_co
 EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-dma-contig 0xe57f0426	vb2_dma_contig_cleanup_ctx
 EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-memops 0x4463aa85	vb2_put_vma
 EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-memops 0x7418f0e5	vb2_get_contig_userptr
+EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-memops 0x78ee1265	vb2_get_vma
 EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-memops 0xa12b0782	vb2_common_vm_ops
 EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-memops 0xd0418a0a	vb2_mmap_pfn_range
 EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-vmalloc 0xec2f768b	vb2_vmalloc_memops

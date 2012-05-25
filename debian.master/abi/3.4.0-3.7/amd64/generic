@@ -1195,9 +1195,9 @@ EXPORT_SYMBOL drivers/media/video/saa7134/saa7134 0xb34cc9c0	saa7134_pgtable_bui
 EXPORT_SYMBOL drivers/media/video/saa7134/saa7134 0xd20237ef	saa7134_ts_register
 EXPORT_SYMBOL drivers/media/video/soc_camera 0x1f1e25bb	soc_camera_xlate_by_fourcc
 EXPORT_SYMBOL drivers/media/video/soc_camera 0x3ec98431	soc_camera_unlock
-EXPORT_SYMBOL drivers/media/video/soc_camera 0x52c02069	soc_camera_host_register
+EXPORT_SYMBOL drivers/media/video/soc_camera 0x494bc508	soc_camera_host_register
 EXPORT_SYMBOL drivers/media/video/soc_camera 0x5ff844ef	soc_camera_apply_board_flags
-EXPORT_SYMBOL drivers/media/video/soc_camera 0x61c0e89b	soc_camera_host_unregister
+EXPORT_SYMBOL drivers/media/video/soc_camera 0x866b660e	soc_camera_host_unregister
 EXPORT_SYMBOL drivers/media/video/soc_camera 0xc169673e	soc_camera_lock
 EXPORT_SYMBOL drivers/media/video/soc_mediabus 0x433952ab	soc_mbus_find_fmtdesc
 EXPORT_SYMBOL drivers/media/video/soc_mediabus 0x6951757b	soc_mbus_samples_per_pixel
@@ -8391,6 +8391,7 @@ EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-memops 0x072c0140	vb2_mmap_pfn_r
 EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-memops 0x2fe8bc6c	vb2_common_vm_ops
 EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-memops 0x5bdabb68	vb2_get_contig_userptr
 EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-memops 0xbbc6641b	vb2_put_vma
+EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-memops 0xf20fa93f	vb2_get_vma
 EXPORT_SYMBOL_GPL drivers/media/video/videobuf2-vmalloc 0x829385ee	vb2_vmalloc_memops
 EXPORT_SYMBOL_GPL drivers/media/video/videodev 0x00012a29	v4l2_event_queue_fh
 EXPORT_SYMBOL_GPL drivers/media/video/videodev 0x04850588	v4l2_device_register_subdev
