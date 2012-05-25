@@ -493,7 +493,6 @@ winbond-840
 wp512
 x25
 xcbc
-xen-acpi-processor
 xen-evtchn
 xen-fbfront
 xenfs
