@@ -9622,6 +9622,8 @@ EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xa15afa38	dccp_v4_connect
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xc35f5d4f	dccp_v4_send_check
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xe6b86c6e	dccp_v4_request_recv_sock
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xf21e6c1e	dccp_invalid_packet
+EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x13ac8bb0	register_switch_driver
+EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x188a953c	unregister_switch_driver
 EXPORT_SYMBOL_GPL net/ipv4/gre 0x526d906f	gre_add_protocol
 EXPORT_SYMBOL_GPL net/ipv4/gre 0xe350d0da	gre_del_protocol
 EXPORT_SYMBOL_GPL net/ipv4/inet_diag 0x26337c15	inet_diag_dump_icsk
@@ -10593,7 +10595,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x136b9ced	tcp_get_info
 EXPORT_SYMBOL_GPL vmlinux 0x136dfa57	shash_ahash_digest
 EXPORT_SYMBOL_GPL vmlinux 0x13751c22	register_ftrace_function
 EXPORT_SYMBOL_GPL vmlinux 0x138aff76	gnttab_init
-EXPORT_SYMBOL_GPL vmlinux 0x13ac8bb0	register_switch_driver
 EXPORT_SYMBOL_GPL vmlinux 0x13b2a946	register_keyboard_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x13db0c34	xen_swiotlb_map_sg_attrs
 EXPORT_SYMBOL_GPL vmlinux 0x13dfeefe	inet6_hash_connect
@@ -10630,7 +10631,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x18582826	amd_pmu_disable_virt
 EXPORT_SYMBOL_GPL vmlinux 0x18678dec	tcp_reno_ssthresh
 EXPORT_SYMBOL_GPL vmlinux 0x1874f759	perf_event_create_kernel_counter
 EXPORT_SYMBOL_GPL vmlinux 0x1878f62b	edac_err_assert
-EXPORT_SYMBOL_GPL vmlinux 0x188a953c	unregister_switch_driver
 EXPORT_SYMBOL_GPL vmlinux 0x18e2c347	dev_pm_qos_remove_global_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x18f64918	blk_update_request
 EXPORT_SYMBOL_GPL vmlinux 0x18f83fab	gnttab_grant_foreign_access_ref

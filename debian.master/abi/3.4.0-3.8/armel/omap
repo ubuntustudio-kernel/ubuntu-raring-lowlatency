@@ -7197,6 +7197,8 @@ EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0x3f82a4d5	dccp_v4_request_recv_sock
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0x9697fdc4	dccp_v4_conn_request
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xa0c9bdf9	dccp_v4_connect
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xad5368a2	dccp_v4_send_check
+EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x2f37afdd	unregister_switch_driver
+EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x56c8d56f	register_switch_driver
 EXPORT_SYMBOL_GPL net/ipv4/gre 0x4d0070b9	gre_del_protocol
 EXPORT_SYMBOL_GPL net/ipv4/gre 0x673ee5d9	gre_add_protocol
 EXPORT_SYMBOL_GPL net/ipv4/inet_diag 0x0150b181	inet_diag_unregister
@@ -8259,7 +8261,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x2ef6b59e	usb_match_one_id
 EXPORT_SYMBOL_GPL vmlinux 0x2f0001b9	sata_pmp_qc_defer_cmd_switch
 EXPORT_SYMBOL_GPL vmlinux 0x2f10ab04	rdev_set_badblocks
 EXPORT_SYMBOL_GPL vmlinux 0x2f2af61e	uart_insert_char
-EXPORT_SYMBOL_GPL vmlinux 0x2f37afdd	unregister_switch_driver
 EXPORT_SYMBOL_GPL vmlinux 0x2f4113a2	dcookie_register
 EXPORT_SYMBOL_GPL vmlinux 0x2f47d8c7	cpufreq_frequency_get_table
 EXPORT_SYMBOL_GPL vmlinux 0x2f51ec0f	digsig_verify
@@ -8594,7 +8595,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x569a8673	hvc_instantiate
 EXPORT_SYMBOL_GPL vmlinux 0x569ecf1a	regmap_get_val_bytes
 EXPORT_SYMBOL_GPL vmlinux 0x56b63670	lzo1x_1_compress
 EXPORT_SYMBOL_GPL vmlinux 0x56b7ac0d	fib_rules_lookup
-EXPORT_SYMBOL_GPL vmlinux 0x56c8d56f	register_switch_driver
 EXPORT_SYMBOL_GPL vmlinux 0x56d56b10	inet_csk_route_child_sock
 EXPORT_SYMBOL_GPL vmlinux 0x56e75d47	klist_node_attached
 EXPORT_SYMBOL_GPL vmlinux 0x56e9103b	cpu_pm_enter

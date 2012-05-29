@@ -9328,6 +9328,8 @@ EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0x654fc99a	dccp_invalid_packet
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0x7a95ec2c	dccp_v4_connect
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0x958199ae	dccp_v4_request_recv_sock
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xab88ef55	dccp_v4_send_check
+EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x35592e14	register_switch_driver
+EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x7b88274b	unregister_switch_driver
 EXPORT_SYMBOL_GPL net/ipv4/gre 0x3c6554a3	gre_del_protocol
 EXPORT_SYMBOL_GPL net/ipv4/gre 0xcd5197b2	gre_add_protocol
 EXPORT_SYMBOL_GPL net/ipv4/inet_diag 0x23af8c0e	inet_diag_dump_one_icsk
@@ -10622,7 +10624,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x348bfd5d	regmap_raw_write
 EXPORT_SYMBOL_GPL vmlinux 0x348f099c	macio_find
 EXPORT_SYMBOL_GPL vmlinux 0x34d51480	usb_set_device_state
 EXPORT_SYMBOL_GPL vmlinux 0x3534e2a3	system_nrt_wq
-EXPORT_SYMBOL_GPL vmlinux 0x35592e14	register_switch_driver
 EXPORT_SYMBOL_GPL vmlinux 0x3561fd2f	subsys_interface_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x356e8802	devres_open_group
 EXPORT_SYMBOL_GPL vmlinux 0x35ba1f57	ata_sff_prereset
@@ -11329,7 +11330,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x7b15fada	ata_eh_thaw_port
 EXPORT_SYMBOL_GPL vmlinux 0x7b1d544d	edac_handler_set
 EXPORT_SYMBOL_GPL vmlinux 0x7b4e579b	sg_scsi_ioctl
 EXPORT_SYMBOL_GPL vmlinux 0x7b7d9e99	usb_reset_endpoint
-EXPORT_SYMBOL_GPL vmlinux 0x7b88274b	unregister_switch_driver
 EXPORT_SYMBOL_GPL vmlinux 0x7bbe59db	platform_driver_register
 EXPORT_SYMBOL_GPL vmlinux 0x7c6b8d30	usb_poison_anchored_urbs
 EXPORT_SYMBOL_GPL vmlinux 0x7c823a89	blkiocg_update_dispatch_stats

@@ -9136,6 +9136,8 @@ EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0x4ace0f18	dccp_v4_connect
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0x520dbb73	dccp_v4_request_recv_sock
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0x73d429cb	dccp_v4_do_rcv
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xdb1c98c1	dccp_v4_send_check
+EXPORT_SYMBOL_GPL net/dsa/dsa_core 0xa2eab546	register_switch_driver
+EXPORT_SYMBOL_GPL net/dsa/dsa_core 0xf24b1447	unregister_switch_driver
 EXPORT_SYMBOL_GPL net/ipv4/gre 0x0bcdef54	gre_add_protocol
 EXPORT_SYMBOL_GPL net/ipv4/gre 0x936b9d28	gre_del_protocol
 EXPORT_SYMBOL_GPL net/ipv4/inet_diag 0x29e5075b	inet_diag_dump_icsk
@@ -11371,7 +11373,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xa22b90ad	fs_kobj
 EXPORT_SYMBOL_GPL vmlinux 0xa256fbd8	debugfs_create_blob
 EXPORT_SYMBOL_GPL vmlinux 0xa2997e00	__rtnl_register
 EXPORT_SYMBOL_GPL vmlinux 0xa2be8d63	ata_pci_sff_init_one
-EXPORT_SYMBOL_GPL vmlinux 0xa2eab546	register_switch_driver
 EXPORT_SYMBOL_GPL vmlinux 0xa2f6f69a	crypto_shash_setkey
 EXPORT_SYMBOL_GPL vmlinux 0xa2fb7dab	pci_hp_change_slot_info
 EXPORT_SYMBOL_GPL vmlinux 0xa2fe7b4c	watchdog_register_device
@@ -12098,7 +12099,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xf1d8f132	sdio_writew
 EXPORT_SYMBOL_GPL vmlinux 0xf1df3ea0	cred_to_ucred
 EXPORT_SYMBOL_GPL vmlinux 0xf210aa1c	debugfs_create_file
 EXPORT_SYMBOL_GPL vmlinux 0xf2428643	skcipher_geniv_init
-EXPORT_SYMBOL_GPL vmlinux 0xf24b1447	unregister_switch_driver
 EXPORT_SYMBOL_GPL vmlinux 0xf252fc4a	wakeup_source_prepare
 EXPORT_SYMBOL_GPL vmlinux 0xf260c070	crypto_shash_finup
 EXPORT_SYMBOL_GPL vmlinux 0xf27afc44	evm_verifyxattr

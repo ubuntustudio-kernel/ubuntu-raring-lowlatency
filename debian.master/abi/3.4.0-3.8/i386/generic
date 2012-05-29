@@ -9782,6 +9782,8 @@ EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xbca3b80d	dccp_v4_do_rcv
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xc7299ed0	dccp_v4_request_recv_sock
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xd23d0dac	dccp_invalid_packet
 EXPORT_SYMBOL_GPL net/dccp/dccp_ipv4 0xd52e5e72	dccp_v4_send_check
+EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x183e15d8	register_switch_driver
+EXPORT_SYMBOL_GPL net/dsa/dsa_core 0x62a57a97	unregister_switch_driver
 EXPORT_SYMBOL_GPL net/ipv4/gre 0x2df8308b	gre_del_protocol
 EXPORT_SYMBOL_GPL net/ipv4/gre 0x32e06e2d	gre_add_protocol
 EXPORT_SYMBOL_GPL net/ipv4/inet_diag 0x09aac3a5	inet_diag_dump_icsk
@@ -10785,7 +10787,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x17c8034b	tps65090_write
 EXPORT_SYMBOL_GPL vmlinux 0x17f78860	gen_pool_size
 EXPORT_SYMBOL_GPL vmlinux 0x17fa8a3c	crypto_aead_setauthsize
 EXPORT_SYMBOL_GPL vmlinux 0x17fe27e7	find_vpid
-EXPORT_SYMBOL_GPL vmlinux 0x183e15d8	register_switch_driver
 EXPORT_SYMBOL_GPL vmlinux 0x18582826	amd_pmu_disable_virt
 EXPORT_SYMBOL_GPL vmlinux 0x185f3b7e	xen_swiotlb_sync_sg_for_cpu
 EXPORT_SYMBOL_GPL vmlinux 0x1878f62b	edac_err_assert
@@ -11580,7 +11581,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x623803c8	hest_disable
 EXPORT_SYMBOL_GPL vmlinux 0x62404553	bsg_goose_queue
 EXPORT_SYMBOL_GPL vmlinux 0x624a6406	hwrng_register
 EXPORT_SYMBOL_GPL vmlinux 0x62847860	register_kretprobe
-EXPORT_SYMBOL_GPL vmlinux 0x62a57a97	unregister_switch_driver
 EXPORT_SYMBOL_GPL vmlinux 0x62cb1468	tasklet_hrtimer_init
 EXPORT_SYMBOL_GPL vmlinux 0x62d05a1c	tpm_show_timeouts
 EXPORT_SYMBOL_GPL vmlinux 0x62f759ca	crypto_find_alg
