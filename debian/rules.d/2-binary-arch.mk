@@ -127,8 +127,9 @@ endif
 	if [ -f $(DEBIAN)/control.d/$(target_flavour).inclusion-list ] ; then	\
 		install -d $(pkgdir_ex)/DEBIAN;					\
 		for script in postinst postrm ; do				\
-			sed -e 's/@@KVER@@/$(release)-$(abinum)-$(target_flavour)/g' \
-				debian/control-scripts/$$script.extra > $(pkgdir_ex)/DEBIAN/$$script; \
+			sed -e 's/=V/$(abi_release)-$*/g' -e 's/=K/$(install_file)/g'		\
+			    -e 's/=L/$(loader)/g'         -e 's@=B@$(build_arch)@g'		\
+			    debian/control-scripts/$$script > $(pkgdir_ex)/DEBIAN/$$script; \
 			chmod 755 $(pkgdir_ex)/DEBIAN/$$script;			\
 		done;								\
 	fi
