@@ -684,6 +684,12 @@ struct drm_i915_gem_execbuffer2 {
  */
 #define I915_EXEC_SECURE               (1<<9)
 
+#define I915_EXEC_CONTEXT_ID_MASK      (0xffffffff)
+#define i915_execbuffer2_set_context_id(eb2, context) \
+	(eb2).rsvd1 = context & I915_EXEC_CONTEXT_ID_MASK
+#define i915_execbuffer2_get_context_id(eb2) \
+	((eb2).rsvd1 & I915_EXEC_CONTEXT_ID_MASK)
+
 struct drm_i915_gem_pin {
 	/** Handle of the buffer to be pinned. */
 	__u32 handle;
