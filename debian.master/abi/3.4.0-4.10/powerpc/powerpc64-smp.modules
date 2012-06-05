@@ -179,13 +179,13 @@ algif_hash
 algif_skcipher
 ali-ircc
 alim7101_wdt
+alphatrack
 altera-ci
 altera_jtaguart
 altera_ps2
 altera-stapl
 altera_uart
 amc6821
-amd
 amd5536udc
 amd8111e
 amd8111_edac
@@ -1054,6 +1054,7 @@ ibmtr_cs
 ibmveth
 ibmvfc
 ibmvscsic
+ibmvstgt
 ib_qib
 ib_sa
 ib_srp
@@ -1061,6 +1062,7 @@ ib_srpt
 ib_ucm
 ib_umad
 ib_uverbs
+icom
 ics932s401
 idmouse
 idt77252
@@ -1692,6 +1694,7 @@ ntfs
 n_tracerouter
 n_tracesink
 nvidiafb
+nvme
 nxt200x
 nxt6000
 ocfs2
@@ -1947,6 +1950,7 @@ radio-mr800
 radio-si4713
 radio-tea5764
 radio-timb
+radio-usb-si470x
 radio-wl1273
 raid0
 raid1
@@ -2170,6 +2174,7 @@ rtllib_crypt_tkip
 rtllib_crypt_wep
 rtlwifi
 rts5139
+rts_pstor
 rxkad
 s1d13xxxfb
 s2250
@@ -2219,6 +2224,7 @@ sbe-2t3e3
 sbs-battery
 sc92031
 sca3000
+scanlog
 sch_atm
 sch_cbq
 sch_choke
@@ -2312,6 +2318,7 @@ sm7xx
 smb347-charger
 smc91c92_cs
 sm_common
+sm_ftl
 smm665
 smsc47m192
 smsc75xx
@@ -2323,7 +2330,6 @@ smsdvb
 smsmdtv
 smssdio
 smsusb
-sn9c102
 snd
 snd-ac97-codec
 snd-ad1889
@@ -2562,6 +2568,7 @@ soc_mediabus
 softdog
 softing
 softing_cs
+solo6x10
 solos-pci
 soundcore
 sp8870
@@ -2593,6 +2600,7 @@ spi-altera
 spi-bitbang
 spi-butterfly
 spidev
+spi-dw
 spi-dw-midpci
 spi-gpio
 spi_ks8995
@@ -2614,7 +2622,6 @@ stb0899
 stb6000
 stb6100
 st_drv
-ste10Xp
 stex
 stinger
 stir4200
@@ -2752,6 +2759,7 @@ tpm_atmel
 tps6105x
 tps6105x-regulator
 tps62360-regulator
+tps65010
 tps65023-regulator
 tps6507x
 tps6507x-regulator
@@ -2763,6 +2771,7 @@ tps6586x-regulator
 tps65910-regulator
 tps65912-regulator
 trancevibrator
+tranzport
 tridentfb
 ts_bm
 tsc2005
@@ -2863,6 +2872,7 @@ usbkbd
 usblcd
 usbled
 usblp
+usbmon
 usbmouse
 usbnet
 usbserial
@@ -2924,12 +2934,17 @@ vivi
 vivopay-serial
 vlsi_ir
 vmac
+vme
+vme_pio2
+vme_user
+vme_vmivme7805
 vmwgfx
 vmxnet3
 vp27smpx
 vpx3220
 vs6624
 vsxxxaa
+vt6655_stage
 vt8231
 vt8623fb
 vub300
@@ -2946,6 +2961,7 @@ w1_ds2781
 w1-gpio
 w1_smem
 w1_therm
+w35und
 w6692
 w83781d
 w83791d
@@ -2956,6 +2972,7 @@ w83977af_ir
 w83l785ts
 w83l786ng
 w9966
+wacom
 wacom_w8001
 walkera0701
 wanrouter

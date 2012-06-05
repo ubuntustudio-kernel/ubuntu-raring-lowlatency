@@ -161,7 +161,6 @@ ambakmi
 amba-pl010
 amba-pl011
 amc6821
-amd
 ams369fg06
 analog
 ansi_cprng
@@ -936,6 +935,7 @@ isl6423
 isofs
 isp116x-hcd
 isp1301_omap
+isp1362-hcd
 isp1704_charger
 isp1760
 it87
@@ -1311,6 +1311,7 @@ nls_koi8-r
 nls_koi8-ru
 nls_koi8-u
 nls_utf8
+n_r3964
 ns558
 ntc_thermistor
 ntfs
@@ -1707,6 +1708,7 @@ sch_sfq
 sch_tbf
 sch_teql
 scsi_debug
+scsi_dh
 scsi_dh_alua
 scsi_dh_emc
 scsi_dh_hp_sw
@@ -1715,6 +1717,7 @@ scsi_tgt
 scsi_transport_fc
 scsi_transport_iscsi
 scsi_transport_sas
+scsi_transport_spi
 scsi_transport_srp
 scsi_wait_scan
 sctp
@@ -1788,7 +1791,6 @@ snd-mtpav
 snd-mts64
 snd-page-alloc
 snd-pcm
-snd-pcm-oss
 snd-portman2x4
 snd-rawmidi
 snd-seq
@@ -1939,6 +1941,7 @@ speedtch
 spi-altera
 spi-bitbang
 spi-butterfly
+spidev
 spi-dw
 spi-gpio
 spi_ks8995
@@ -2071,6 +2074,7 @@ toim3232-sir
 touchit213
 touchright
 touchwin
+tpm_atmel
 tps6105x
 tps6105x-regulator
 tps62360-regulator
@@ -2273,6 +2277,7 @@ wm8994-regulator
 wm97xx-ts
 wp512
 x25
+x25_asy
 xc4000
 xc5000
 xcbc
