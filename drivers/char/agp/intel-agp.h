@@ -280,7 +280,4 @@
 #define PCI_DEVICE_ID_INTEL_HASWELL_CRW_S_GT2_IG	0x0D2A
 #define PCI_DEVICE_ID_INTEL_HASWELL_CRW_S_GT2_PLUS_IG	0x0D3A
 
-int intel_gmch_probe(struct pci_dev *pdev,
-			       struct agp_bridge_data *bridge);
-void intel_gmch_remove(struct pci_dev *pdev);
 #endif
