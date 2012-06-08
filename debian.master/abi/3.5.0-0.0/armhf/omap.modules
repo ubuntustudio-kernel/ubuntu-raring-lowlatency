@@ -578,6 +578,7 @@ ftdi_sio
 ftl
 fujitsu_ts
 funsoft
+fusb300_udc
 g760a
 g_acm_ms
 gadgetfs
