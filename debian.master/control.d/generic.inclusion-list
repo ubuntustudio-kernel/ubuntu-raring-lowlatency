@@ -117,7 +117,6 @@ net/irda/*
 net/key/*
 net/lapb/*
 net/llc/*
-net/mac80211/*
 net/netfilter/*
 net/netrom/*
 net/phonet/*
@@ -127,7 +126,6 @@ net/sched/*
 net/sctp/*
 net/tipc/*
 net/wanrouter/*
-net/wireless/*
 net/x25/*
 net/xfrm/*
 net/sunrpc/auth_gss/auth_rpcgss.ko
