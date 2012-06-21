@@ -4,7 +4,6 @@
 8139too
 8390
 acpi_ipmi
-acpi_memhotplug
 acpi_pad
 acpiphp
 act_csum
@@ -16,8 +15,8 @@ act_pedit
 act_police
 act_simple
 act_skbedit
+aes-i586
 aesni-intel
-aes-x86_64
 af_802154
 af_alg
 af_key
@@ -28,6 +27,7 @@ algif_hash
 algif_skcipher
 ansi_cprng
 anubis
+apm
 appletalk
 arc4
 arptable_filter
@@ -49,7 +49,6 @@ bgrt
 binfmt_misc
 blowfish_common
 blowfish_generic
-blowfish-x86_64
 bonding
 br2684
 bridge
@@ -58,7 +57,6 @@ btrfs
 BusLogic
 cachefiles
 camellia_generic
-camellia-x86_64
 can
 can-bcm
 can-gw
@@ -66,7 +64,6 @@ can-raw
 cast5
 cast6
 ccm
-cfg80211
 cifs
 cirrusfb
 clip
@@ -144,7 +141,6 @@ ebt_snat
 ebt_stp
 ebt_ulog
 ebt_vlan
-econet
 ec_sys
 einj
 em_cmp
@@ -168,7 +164,6 @@ gameport
 garp
 gcm
 gf128mul
-ghash-clmulni-intel
 ghash-generic
 gre
 hangcheck-timer
@@ -180,7 +175,6 @@ ieee802154
 ifb
 igbvf
 inet_diag
-ip6_queue
 ip6table_filter
 ip6table_mangle
 ip6table_raw
@@ -201,7 +195,6 @@ ipcomp6
 ipddp
 ip_gre
 ipip
-ip_queue
 ip_set
 ip_set_bitmap_ip
 ip_set_bitmap_ipmac
@@ -255,21 +248,17 @@ joydev
 khazad
 lapb
 lec
-lib80211
-lib80211_crypt_ccmp
-lib80211_crypt_tkip
-lib80211_crypt_wep
 libcrc32c
 libiscsi
 libiscsi_tcp
 libsas
 linear
+llc
 llc2
 lockd
 lp
 lru_cache
 lrw
-mac80211
 macvlan
 macvtap
 mce-inject
@@ -343,6 +332,7 @@ nvram
 oprofile
 output
 overlayfs
+p8022
 p8023
 parport
 parport_pc
@@ -363,6 +353,7 @@ pppox
 ppp_synctty
 pptp
 psmouse
+psnap
 qla1280
 raid0
 raid1
@@ -372,6 +363,7 @@ raid6_pq
 raid6test
 raid_class
 raw
+reed_solomon
 rmd128
 rmd160
 rmd256
@@ -379,14 +371,16 @@ rmd320
 rose
 rxkad
 salsa20_generic
-salsa20-x86_64
+salsa20-i586
 sbs
 sbshc
 sch_atm
 sch_cbq
 sch_choke
+sch_codel
 sch_drr
 sch_dsmark
+sch_fq_codel
 sch_gred
 sch_hfsc
 sch_htb
@@ -413,9 +407,8 @@ seed
 seqiv
 serio_raw
 serpent_generic
-serpent-sse2-x86_64
+serpent-sse2-i586
 serport
-sha1-ssse3
 sha512_generic
 sit
 slip
@@ -470,8 +463,7 @@ tunnel4
 tunnel6
 twofish_common
 twofish_generic
-twofish-x86_64
-twofish-x86_64-3way
+twofish-i586
 udp_diag
 ufs
 uli526x
@@ -511,6 +503,7 @@ xfrm6_mode_ro
 xfrm6_mode_transport
 xfrm6_mode_tunnel
 xfrm6_tunnel
+xfrm_algo
 xfrm_ipcomp
 xfrm_user
 xfs
@@ -540,6 +533,7 @@ xt_hashlimit
 xt_helper
 xt_hl
 xt_HL
+xt_HMARK
 xt_IDLETIMER
 xt_iprange
 xt_ipvs
