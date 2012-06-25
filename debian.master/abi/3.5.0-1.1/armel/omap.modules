@@ -310,9 +310,6 @@ cdc-phonet
 cdc_subset
 cdc-wdm
 ceph
-cfbcopyarea
-cfbfillrect
-cfbimgblt
 cfg80211
 cfi_cmdset_0001
 cfi_cmdset_0002
@@ -1385,8 +1382,6 @@ omap
 omap2
 omap4-keypad
 omap-aes
-omapdrm
-omapfb
 omap_hdq
 omap-iommu-debug
 omap-iovmm
@@ -1429,7 +1424,6 @@ panel-acx565akm
 panel-lgphilips-lb035q02
 panel-nec-nl8048hl11-01b
 panel-picodlp
-panel-tfp410
 parkbd
 parport
 parport_ax88796
