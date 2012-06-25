@@ -120,7 +120,7 @@ $(DEBIAN)/control.stub: $(DEBIAN)/d-i/kernel-versions.in	\
 	cp $(DEBIAN)/control.stub $(DEBIAN)/control
 
 .PHONY: hook-before-clean
-hook-before-clean:
+hook-before-clean::
 
 .PHONY: debian/control
 debian/control: hook-before-clean $(DEBIAN)/control.stub
