@@ -1,4 +1,4 @@
-hook-before-clean:
+hook-before-clean::
 	@echo "Debug: hook-before-clean"
 
 	# lowlatency: derive our configuration from that in master ...
