@@ -43,7 +43,6 @@
 #include <linux/regulator/consumer.h>
 #include <linux/pm_runtime.h>
 #include <linux/gpio.h>
-#include <linux/clk.h>
 
 /* EHCI Register Set */
 #define EHCI_INSNREG04					(0xA0)
@@ -70,7 +69,6 @@ static inline u32 ehci_read(void __iomem *base, u32 reg)
 {
 	return __raw_readl(base + reg);
 }
-
 
 static void omap_ehci_soft_phy_reset(struct platform_device *pdev, u8 port)
 {
@@ -264,7 +262,6 @@ static int ehci_hcd_omap_probe(struct platform_device *pdev)
 	/* root ports should always stay powered */
 	ehci_port_power(omap_ehci, 1);
 
-
 	return 0;
 
 err_add_hcd:
@@ -295,7 +292,6 @@ static int ehci_hcd_omap_remove(struct platform_device *pdev)
 	disable_put_regulator(dev->platform_data);
 	iounmap(hcd->regs);
 	usb_put_hcd(hcd);
-
 	pm_runtime_put_sync(dev);
 	pm_runtime_disable(dev);
 
