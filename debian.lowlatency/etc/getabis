@@ -5,4 +5,4 @@ repo_list=(
 )
 
 getall amd64 lowlatency
-getall i386 lowlatency lowlatency-pae
+getall i386 lowlatency
