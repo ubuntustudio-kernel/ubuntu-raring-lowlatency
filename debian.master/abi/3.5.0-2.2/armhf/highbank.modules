@@ -286,6 +286,9 @@ cdc-phonet
 cdc_subset
 cdc-wdm
 ceph
+cfbcopyarea
+cfbfillrect
+cfbimgblt
 cfg80211
 cfi_cmdset_0001
 cfi_cmdset_0002
@@ -303,6 +306,7 @@ ci_hdrc
 clearpad_tm1217
 clip
 cls_basic
+cls_cgroup
 cls_flow
 cls_fw
 cls_route
@@ -1186,6 +1190,7 @@ nci
 ncpfs
 net1080
 netconsole
+netprio_cgroup
 newtonkbd
 nfc
 nf_conntrack
