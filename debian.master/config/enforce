@@ -13,7 +13,7 @@ value CONFIG_SECURITY_YAMA y
 value CONFIG_SYN_COOKIES y
 value CONFIG_DEFAULT_SECURITY_APPARMOR y
 # For architectures which support this option ensure it is enabled.
-(arch i386 amd64 & value CONFIG_XEN_ACPI_PROCESSOR y) | !arch i386 amd64
+!exists CONFIG_XEN_ACPI_PROCESSOR | value CONFIG_XEN_ACPI_PROCESSOR y
 !exists CONFIG_SECCOMP | value CONFIG_SECCOMP y
 !exists CONFIG_HAVE_ARCH_SECCOMP_FILTER | value CONFIG_SECCOMP_FILTER y
 !exists CONFIG_CC_STACKPROTECTOR | value CONFIG_CC_STACKPROTECTOR y
@@ -24,8 +24,8 @@ value CONFIG_DEFAULT_SECURITY_APPARMOR y
 !exists CONFIG_COMPAT_VDSO | value CONFIG_COMPAT_VDSO n
 !exists CONFIG_ACPI_CUSTOM_METHOD | value CONFIG_ACPI_CUSTOM_METHOD n
 # Default to 32768 on ARM, 65536 for everything else.
-(arch armel armhf & value CONFIG_DEFAULT_MMAP_MIN_ADDR 32768) | \
- (!arch armel armhf & value CONFIG_DEFAULT_MMAP_MIN_ADDR 65536)
+(arch armel armhf &/ value CONFIG_DEFAULT_MMAP_MIN_ADDR 32768) | \
+ value CONFIG_DEFAULT_MMAP_MIN_ADDR 65536
 
 # upstart requires DEVTMPFS be enabled and mounted by default.
 value CONFIG_DEVTMPFS y
@@ -80,21 +80,23 @@ value CONFIG_EFI_VARS y | !exists CONFIG_EFI_VARS
 
 # Ensure CONFIG_FAT_FS is y for arm, needed to ensure we able to replace
 # a kernel with the same version.
-(arch armel armhf & value CONFIG_FAT_FS y) | \
- (!arch armel armhf & value CONFIG_FAT_FS m)
+(arch armel armhf &/ value CONFIG_FAT_FS y) | \
+ value CONFIG_FAT_FS m
 
 # Ensure CONFIG_GPIO_TWL4030 is y for arm, LP:921934
-(arch armel armhf & value CONFIG_GPIO_TWL4030 y) | \
- (!arch armel armhf & (value CONFIG_GPIO_TWL4030 m | !exists CONFIG_GPIO_TWL4030))
+(arch armel armhf &/ value CONFIG_GPIO_TWL4030 y) | \
+ value CONFIG_GPIO_TWL4030 m | \
+ !exists CONFIG_GPIO_TWL4030
 
 # Ensure CONFIG_THERM_ADT746X is y for powerpc and powerpc-smp flavours.
 # See LP:923094
-!exists CONFIG_THERM_ADT746X | \
- (flavour powerpc powerpc-smp & value CONFIG_THERM_ADT746X y)
+(flavour powerpc powerpc-smp &/ value CONFIG_THERM_ADT746X y) | \
+ !exists CONFIG_THERM_ADT746X
 
 # Ensure CONFIG_NVRAM is y for powerpc and powerpc-smp, LP:942193
-(flavour powerpc powerpc-smp & value CONFIG_NVRAM y) | \
- (value CONFIG_NVRAM m | !exists CONFIG_NVRAM)
+(flavour powerpc powerpc-smp &/ value CONFIG_NVRAM y) | \
+ value CONFIG_NVRAM m | \
+ !exists CONFIG_NVRAM
 
 # Ensure CONFIG_STUB_POULSBO is disabled if CONFIG_DRM_PSB is enabled
 # See LP:899244
