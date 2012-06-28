@@ -6914,6 +6914,8 @@ void intel_modeset_init_hw(struct drm_device *dev)
 {
 	struct drm_i915_private *dev_priv = dev->dev_private;
 
+	intel_prepare_ddi(dev);
+
 	intel_init_clock_gating(dev);
 
 	if (IS_IRONLAKE_M(dev)) {
@@ -6946,8 +6948,6 @@ void intel_modeset_init(struct drm_device *dev)
 	intel_init_quirks(dev);
 
 	intel_init_pm(dev);
-
-	intel_prepare_ddi(dev);
 
 	intel_init_display(dev);
 
