@@ -448,16 +448,22 @@ static void __gen6_gt_wait_for_thread_c0(struct drm_i915_private *dev_priv)
 void __gen6_gt_force_wake_get(struct drm_i915_private *dev_priv)
 {
 	int count;
+	u32 forcewake_ack;
+
+	if (IS_HASWELL(dev_priv->dev))
+		forcewake_ack = FORCEWAKE_ACK_HSW;
+	else
+		forcewake_ack = FORCEWAKE_ACK;
 
 	count = 0;
-	while (count++ < 50 && (I915_READ_NOTRACE(FORCEWAKE_ACK) & 1))
+	while (count++ < 50 && (I915_READ_NOTRACE(forcewake_ack) & 1))
 		udelay(10);
 
 	I915_WRITE_NOTRACE(FORCEWAKE, 1);
 	POSTING_READ(FORCEWAKE);
 
 	count = 0;
-	while (count++ < 50 && (I915_READ_NOTRACE(FORCEWAKE_ACK) & 1) == 0)
+	while (count++ < 50 && (I915_READ_NOTRACE(forcewake_ack) & 1) == 0)
 		udelay(10);
 
 	__gen6_gt_wait_for_thread_c0(dev_priv);
@@ -466,16 +472,22 @@ void __gen6_gt_force_wake_get(struct drm_i915_private *dev_priv)
 void __gen6_gt_force_wake_mt_get(struct drm_i915_private *dev_priv)
 {
 	int count;
+	u32 forcewake_ack;
+
+	if (IS_HASWELL(dev_priv->dev))
+		forcewake_ack = FORCEWAKE_ACK_HSW;
+	else
+		forcewake_ack = FORCEWAKE_MT_ACK;
 
 	count = 0;
-	while (count++ < 50 && (I915_READ_NOTRACE(FORCEWAKE_MT_ACK) & 1))
+	while (count++ < 50 && (I915_READ_NOTRACE(forcewake_ack) & 1))
 		udelay(10);
 
 	I915_WRITE_NOTRACE(FORCEWAKE_MT, _MASKED_BIT_ENABLE(1));
 	POSTING_READ(FORCEWAKE_MT);
 
 	count = 0;
-	while (count++ < 50 && (I915_READ_NOTRACE(FORCEWAKE_MT_ACK) & 1) == 0)
+	while (count++ < 50 && (I915_READ_NOTRACE(forcewake_ack) & 1) == 0)
 		udelay(10);
 
 	__gen6_gt_wait_for_thread_c0(dev_priv);
