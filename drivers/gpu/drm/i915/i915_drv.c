@@ -429,6 +429,22 @@ bool i915_semaphore_is_enabled(struct drm_device *dev)
 	return 1;
 }
 
+static void __gen6_gt_wait_for_thread_c0(struct drm_i915_private *dev_priv)
+{
+	u32 gt_thread_status_mask;
+
+	if (IS_HASWELL(dev_priv->dev))
+		gt_thread_status_mask = GEN6_GT_THREAD_STATUS_CORE_MASK_HSW;
+	else
+		gt_thread_status_mask = GEN6_GT_THREAD_STATUS_CORE_MASK;
+
+	/* w/a for a sporadic read returning 0 by waiting for the GT
+	 * thread to wake up.
+	 */
+	if (wait_for_atomic_us((I915_READ_NOTRACE(GEN6_GT_THREAD_STATUS_REG) & gt_thread_status_mask) == 0, 500))
+		DRM_ERROR("GT thread status wait timed out\n");
+}
+
 void __gen6_gt_force_wake_get(struct drm_i915_private *dev_priv)
 {
 	int count;
@@ -443,6 +459,8 @@ void __gen6_gt_force_wake_get(struct drm_i915_private *dev_priv)
 	count = 0;
 	while (count++ < 50 && (I915_READ_NOTRACE(FORCEWAKE_ACK) & 1) == 0)
 		udelay(10);
+
+	__gen6_gt_wait_for_thread_c0(dev_priv);
 }
 
 void __gen6_gt_force_wake_mt_get(struct drm_i915_private *dev_priv)
@@ -459,6 +477,8 @@ void __gen6_gt_force_wake_mt_get(struct drm_i915_private *dev_priv)
 	count = 0;
 	while (count++ < 50 && (I915_READ_NOTRACE(FORCEWAKE_MT_ACK) & 1) == 0)
 		udelay(10);
+
+	__gen6_gt_wait_for_thread_c0(dev_priv);
 }
 
 /*
@@ -549,6 +569,8 @@ void vlv_force_wake_get(struct drm_i915_private *dev_priv)
 	count = 0;
 	while (count++ < 50 && (I915_READ_NOTRACE(FORCEWAKE_ACK_VLV) & 1) == 0)
 		udelay(10);
+
+	__gen6_gt_wait_for_thread_c0(dev_priv);
 }
 
 void vlv_force_wake_put(struct drm_i915_private *dev_priv)
