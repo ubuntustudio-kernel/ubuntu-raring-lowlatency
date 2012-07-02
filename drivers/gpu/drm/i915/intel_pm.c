@@ -2400,20 +2400,24 @@ void gen6_enable_rps(struct drm_i915_private *dev_priv)
 	I915_WRITE(GEN6_RC6p_THRESHOLD, 100000);
 	I915_WRITE(GEN6_RC6pp_THRESHOLD, 64000); /* unused */
 
+	/* Check if we are enabling RC6 */
 	rc6_mode = intel_enable_rc6(dev_priv->dev);
 	if (rc6_mode & INTEL_RC6_ENABLE)
 		rc6_mask |= GEN6_RC_CTL_RC6_ENABLE;
 
-	if (rc6_mode & INTEL_RC6p_ENABLE)
-		rc6_mask |= GEN6_RC_CTL_RC6p_ENABLE;
+	/* We don't use those on Haswell */
+	if (!IS_HASWELL(dev_priv->dev)) {
+		if (rc6_mode & INTEL_RC6p_ENABLE)
+			rc6_mask |= GEN6_RC_CTL_RC6p_ENABLE;
 
-	if (rc6_mode & INTEL_RC6pp_ENABLE)
-		rc6_mask |= GEN6_RC_CTL_RC6pp_ENABLE;
+		if (rc6_mode & INTEL_RC6pp_ENABLE)
+			rc6_mask |= GEN6_RC_CTL_RC6pp_ENABLE;
+	}
 
 	DRM_INFO("Enabling RC6 states: RC6 %s, RC6p %s, RC6pp %s\n",
-			(rc6_mode & INTEL_RC6_ENABLE) ? "on" : "off",
-			(rc6_mode & INTEL_RC6p_ENABLE) ? "on" : "off",
-			(rc6_mode & INTEL_RC6pp_ENABLE) ? "on" : "off");
+			(rc6_mask & GEN6_RC_CTL_RC6_ENABLE) ? "on" : "off",
+			(rc6_mask & GEN6_RC_CTL_RC6p_ENABLE) ? "on" : "off",
+			(rc6_mask & GEN6_RC_CTL_RC6pp_ENABLE) ? "on" : "off");
 
 	I915_WRITE(GEN6_RC_CONTROL,
 		   rc6_mask |
@@ -2431,10 +2435,19 @@ void gen6_enable_rps(struct drm_i915_private *dev_priv)
 	I915_WRITE(GEN6_RP_INTERRUPT_LIMITS,
 		   dev_priv->max_delay << 24 |
 		   dev_priv->min_delay << 16);
-	I915_WRITE(GEN6_RP_UP_THRESHOLD, 10000);
-	I915_WRITE(GEN6_RP_DOWN_THRESHOLD, 1000000);
-	I915_WRITE(GEN6_RP_UP_EI, 100000);
-	I915_WRITE(GEN6_RP_DOWN_EI, 5000000);
+
+	if (IS_HASWELL(dev_priv->dev)) {
+		I915_WRITE(GEN6_RP_UP_THRESHOLD, 59400);
+		I915_WRITE(GEN6_RP_DOWN_THRESHOLD, 245000);
+		I915_WRITE(GEN6_RP_UP_EI, 66000);
+		I915_WRITE(GEN6_RP_DOWN_EI, 350000);
+	} else {
+		I915_WRITE(GEN6_RP_UP_THRESHOLD, 10000);
+		I915_WRITE(GEN6_RP_DOWN_THRESHOLD, 1000000);
+		I915_WRITE(GEN6_RP_UP_EI, 100000);
+		I915_WRITE(GEN6_RP_DOWN_EI, 5000000);
+	}
+
 	I915_WRITE(GEN6_RP_IDLE_HYSTERSIS, 10);
 	I915_WRITE(GEN6_RP_CONTROL,
 		   GEN6_RP_MEDIA_TURBO |
@@ -2442,7 +2455,7 @@ void gen6_enable_rps(struct drm_i915_private *dev_priv)
 		   GEN6_RP_MEDIA_IS_GFX |
 		   GEN6_RP_ENABLE |
 		   GEN6_RP_UP_BUSY_AVG |
-		   GEN6_RP_DOWN_IDLE_CONT);
+		   (IS_HASWELL(dev_priv->dev) ? GEN7_RP_DOWN_IDLE_AVG : GEN6_RP_DOWN_IDLE_CONT));
 
 	if (wait_for((I915_READ(GEN6_PCODE_MAILBOX) & GEN6_PCODE_READY) == 0,
 		     500))
