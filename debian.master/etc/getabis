@@ -5,6 +5,8 @@ repo_list=(
 	"http://ports.ubuntu.com/ubuntu-ports/pool/universe/l/linux"
 )
 
+package_prefixes linux-image linux-image-extra
+
 getall armel omap
 getall armhf omap highbank
 getall amd64 generic
