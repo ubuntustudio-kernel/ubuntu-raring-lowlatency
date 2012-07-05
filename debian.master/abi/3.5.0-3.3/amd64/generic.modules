@@ -45,7 +45,6 @@ auth_rpcgss
 autofs4
 ax25
 bch
-bgrt
 binfmt_misc
 blowfish_common
 blowfish_generic
