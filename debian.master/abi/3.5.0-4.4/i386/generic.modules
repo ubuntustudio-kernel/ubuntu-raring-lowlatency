@@ -2687,7 +2687,6 @@ scx200_acb
 scx200_docflash
 scx200_gpio
 scx200_hrt
-scx200_i2c
 scx200_wdt
 sdhci
 sdhci-pci
