@@ -103,7 +103,6 @@ orinoco_pci ?
 orinoco_plx ?
 orinoco_tmd ?
 pcnet32 ?
-prism54 ?
 ps3_gelic ?
 r8169 ?
 rate_control ?
