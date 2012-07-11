@@ -534,7 +534,6 @@ ebt_pkttype
 ebt_redirect
 ebt_snat
 ebt_stp
-ebt_ulog
 ebt_vlan
 ec100
 echo
