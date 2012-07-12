@@ -205,6 +205,7 @@ typedef struct _drm_i915_sarea {
 #define DRM_I915_GEM_CONTEXT_DESTROY   0x2e
 #define DRM_I915_GEM_SET_CACHING	0x2f
 #define DRM_I915_GEM_GET_CACHING	0x30
+#define DRM_I915_REG_READ		0x31
 
 #define DRM_IOCTL_I915_INIT		DRM_IOW( DRM_COMMAND_BASE + DRM_I915_INIT, drm_i915_init_t)
 #define DRM_IOCTL_I915_FLUSH		DRM_IO ( DRM_COMMAND_BASE + DRM_I915_FLUSH)
@@ -253,7 +254,7 @@ typedef struct _drm_i915_sarea {
 #define DRM_IOCTL_I915_GEM_WAIT			DRM_IOWR(DRM_COMMAND_BASE + DRM_I915_GEM_WAIT, struct drm_i915_gem_wait)
 #define DRM_IOCTL_I915_GEM_CONTEXT_CREATE	DRM_IOWR (DRM_COMMAND_BASE + DRM_I915_GEM_CONTEXT_CREATE, struct drm_i915_gem_context_create)
 #define DRM_IOCTL_I915_GEM_CONTEXT_DESTROY	DRM_IOW (DRM_COMMAND_BASE + DRM_I915_GEM_CONTEXT_DESTROY, struct drm_i915_gem_context_destroy)
-
+#define DRM_IOCTL_I915_REG_READ			DRM_IOWR (DRM_COMMAND_BASE + DRM_I915_REG_READ, struct drm_i915_reg_read)
 
 /* Allow drivers to submit batchbuffers directly to hardware, relying
  * on the security mechanisms provided by hardware.
@@ -707,7 +708,7 @@ struct drm_i915_gem_busy {
 #define I915_CACHING_CACHED		1
 
 struct drm_i915_gem_caching {
-	/** Handle of the buffer to check for busy */
+	/** Handle of the buffer to set/get the cacheing level of */
 	__u32 handle;
 
 	/** Cacheing level to apply or return value */
@@ -927,6 +928,11 @@ struct drm_i915_gem_context_create {
 struct drm_i915_gem_context_destroy {
 	__u32 ctx_id;
 	__u32 pad;
+};
+
+struct drm_i915_reg_read {
+	__u64 offset;
+	__u64 val; /* Return value */
 };
 
 #endif				/* _I915_DRM_H_ */
