@@ -349,6 +349,7 @@ CONFIG_RTL8192DE m note<experimental wireless driver -- opt-in>
 
 # PHY device with non-standard naming.
 CONFIG_B43_PHY_HT y note<experimental PHY support -- opt-in>
+CONFIG_B43_PHY_N y note<experimental PHY support -- opt-in>
 CONFIG_STE10XP y note<PHY drivers are not autoloadable>
 
 # Optional scheduling control
