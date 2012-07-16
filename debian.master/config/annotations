@@ -207,7 +207,9 @@ CONFIG_SERIAL_OMAP p policy<(arch armel armhf &/ value y) | value m> note<boot e
 CONFIG_USB_GADGET p policy<(arch armel armhf &/ value y) | value m> note<not autoprobable -- only present commonly on arm>
 CONFIG_GPIO_TWL4030 p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
 CONFIG_OMAP2_DSS p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
-CONFIG_RTC_DRV_TWL4030 p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
+
+# omap3/omap4 boot essential
+CONFIG_RTC_DRV_TWL4030 p policy<(flavour omap omap4 &/ value y) | value m> note<boot essential on OMAP3/OMAP4>
 
 # highbank boot essential
 CONFIG_SATA_AHCI_PLATFORM p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
