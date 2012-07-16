@@ -83,6 +83,9 @@ CONFIG_ACPI_THERMAL y note<core ACPI driver>
 CONFIG_ACPI_HED y note<core ACPI driver>
 CONFIG_ACPI_CONTAINER y note<dependancy ACPI_HOTPLUG_CPU>
 
+# IPv6 configuration.
+CONFIG_INET6_XFRM_MODE_ROUTEOPTIMIZATION m note<enable IPv6 experimental features>
+
 # Boot essential disk devices
 CONFIG_IOSCHED_CFQ y note<core disk support>
 CONFIG_IOSCHED_DEADLINE y note<core disk support>
