@@ -42,7 +42,6 @@ CONFIG_USB y note<core subsystem>
 CONFIG_RFKILL y note<core subsystem>
 CONFIG_INPUT y note<core subsystem>
 CONFIG_SCSI y note<core subsystem>
-CONFIG_LLC p policy<(arch armel armhf & value m) | value y> note<core subsystem other than arm>
 CONFIG_HOTPLUG_PCI y note<core subsystem>
 CONFIG_HOTPLUG_PCI_PCIE y note<core subsystem>
 CONFIG_HWMON y note<core subsystem>
