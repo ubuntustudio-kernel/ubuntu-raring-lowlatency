@@ -276,7 +276,8 @@ CONFIG_DM_RAID45 p policy<(arch i386 amd64 &/ value m) | value n>  note<PC BIOS 
 # EFI_VARS is required for EFI boot
 CONFIG_EFI_VARS y note<EFI boot requirement (d-i)>
 
-# DEPRECATED things
+# OLD/DEPRECATED things
+CONFIG_BLK_DEV_HD n note<very old disk device support>
 CONFIG_IA32_AOUT n note<IDE is deprecated>
 
 # Debugging options are off by default, we want those below.
