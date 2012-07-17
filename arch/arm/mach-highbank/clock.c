@@ -27,24 +27,29 @@ int clk_enable(struct clk *clk)
 {
 	return 0;
 }
+EXPORT_SYMBOL(clk_enable);
 
 void clk_disable(struct clk *clk)
 {}
+EXPORT_SYMBOL(clk_disable);
 
 unsigned long clk_get_rate(struct clk *clk)
 {
 	return clk->rate;
 }
+EXPORT_SYMBOL(clk_get_rate);
 
 long clk_round_rate(struct clk *clk, unsigned long rate)
 {
 	return clk->rate;
 }
+EXPORT_SYMBOL(clk_round_rate);
 
 int clk_set_rate(struct clk *clk, unsigned long rate)
 {
 	return 0;
 }
+EXPORT_SYMBOL(clk_set_rate);
 
 static struct clk eclk = { .rate = 200000000 };
 static struct clk pclk = { .rate = 150000000 };
