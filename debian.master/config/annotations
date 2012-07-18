@@ -351,6 +351,7 @@ CONFIG_DEBUG_LL_UART_NONE y note<not actually debug>
 # Experimental
 CONFIG_DM_THIN_PROVISIONING m note<experimental DM target -- opt-in>
 CONFIG_RTL8192DE m note<experimental wireless driver -- opt-in>
+CONFIG_BLK_DEV_UMEM m note<experimental NVRAM disk driver -- opt-in>
 
 # PHY device with non-standard naming.
 CONFIG_B43_PHY_HT y note<experimental PHY support -- opt-in>
