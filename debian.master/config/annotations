@@ -342,7 +342,6 @@ CONFIG_ARCH_ZYNQ n note<unsupported ARM arch>
 
 # Options which really should not have an option at all.
 CONFIG_SIGMA n note<unused common driver infrastructure>
-CONFIG_SENSORS_SCH56XX_COMMON p policy<(arch powerpc &/ value n) | value m>  note<unused common driver infrastructure>
 CONFIG_DM9000_FORCE_SIMPLE_PHY_POLL n
 
 # Items which are simply miss identified
