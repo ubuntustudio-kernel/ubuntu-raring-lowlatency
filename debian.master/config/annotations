@@ -418,3 +418,6 @@ CONFIG_GPIO_EM n note<h/w not encounted>
 
 # Standard options.
 CONFIG_PANIC_ON_OOPS n note<keep working if at all possible>
+
+# CEPHs dependancies
+CONFIG_BLK_DEV_RBD m note<CEPH client side support>
