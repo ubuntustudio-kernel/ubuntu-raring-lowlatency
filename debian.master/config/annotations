@@ -212,10 +212,13 @@ CONFIG_OMAP2_DSS p policy<(arch armel armhf &/ value y) | value m> note<boot ess
 
 # omap3/omap4 boot essential
 CONFIG_RTC_DRV_TWL4030 p policy<(flavour omap omap4 &/ value y) | value m> note<boot essential on OMAP3/OMAP4>
+CONFIG_KEYBOARD_OMAP4 p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
+CONFIG_KEYBOARD_TWL4030 p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
 
 # highbank boot essential
 CONFIG_SATA_AHCI_PLATFORM p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
 CONFIG_EXT2_FS p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
+CONFIG_KEYBOARD_HIGHBANK p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
 
 # POWERPC boot essential devices
 CONFIG_FB_VOODOO1 p policy<(arch powerpc &/ value y) | value m> note<boot essential on powerpc>
