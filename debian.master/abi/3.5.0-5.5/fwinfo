@@ -202,12 +202,9 @@ firmware:       isi608.bin
 firmware:       isi608em.bin
 firmware:       isi616em.bin
 firmware:       isight.fw
-firmware:       isl3877
-firmware:       isl3886
 firmware:       isl3886pci
 firmware:       isl3886usb
 firmware:       isl3887usb
-firmware:       isl3890
 firmware:       iwlwifi-1000-5.ucode
 firmware:       iwlwifi-100-5.ucode
 firmware:       iwlwifi-105-6.ucode
