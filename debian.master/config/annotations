@@ -371,6 +371,7 @@ CONFIG_EDAC_SBRIDGE m note<h/w specific experimental option -- opt-in>
 CONFIG_SM_FTL m note<h/w specific experimental option -- opt-in>
 CONFIG_SPI_SPIDEV m note<h/w specific experimental option -- opt-in>
 CONFIG_ATH6KL_USB m note<h/w specific experimental option -- opt-in>
+CONFIG_USB_KC2190 y note<h/w specific experimental option -- opt-in>
 
 # Dummy drivers
 CONFIG_IIO_SIMPLE_DUMMY_BUFFER n note<dummy driver>
