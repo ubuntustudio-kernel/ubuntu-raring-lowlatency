@@ -304,6 +304,8 @@ CONFIG_I2C_ALGOBIT p policy<(arch powerpc &/ value y) | value m>  note<boot esse
 CONFIG_USB_FUNCTIONFS m note<filesystems are opt-in>
 CONFIG_USB_GADGETFS m note<filesystems are opt-in>
 CONFIG_LOGFS n note<highly discouraged for use>
+CONFIG_USB_OTG_BLACKLIST_HUB n note<OTG white/blacklists are disabled>
+CONFIG_USB_OTG_WHITELIST n note<OTG white/blacklists are disabled>
 
 # filesystem misc
 CONFIG_AUFS_PROC_MAP n note<causes build failures>
