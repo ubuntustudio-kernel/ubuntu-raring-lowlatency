@@ -358,6 +358,7 @@ CONFIG_DM9000_FORCE_SIMPLE_PHY_POLL n
 
 # Items which are simply miss identified
 CONFIG_DEBUG_LL_UART_NONE y note<not actually debug>
+CONFIG_USB_SERIAL_DEBUG m note<not actually debug>
 
 # Experimental
 CONFIG_DM_THIN_PROVISIONING m note<experimental DM target -- opt-in>
