@@ -318,7 +318,8 @@ CONFIG_SND_OMAP_SOC_OMAP3_BEAGLE p policy<(flavour omap &/ value y) | value m> n
 
 # ARM gadget mode
 CONFIG_USB_GADGET p policy<(flavour omap omap4 &/ value y) | value m> note<not autoprobable -- only present commonly on omap>
-CONFIG_USB_OTG - note<ARM specific feature>
+CONFIG_USB_OTG p policy<(flavour omap omap4 &/ value y) | value m> note<omap3/omap4 specific feature>
+CONFIG_USB_G_MULTI p policy<(flavour omap omap4 &/ value m) | value m> note<omap3/omap4 specific feature>
 
 # powerpc64-smp requires this as CONFIG_MAPLE is enabled
 CONFIG_ATA_NONSTANDARD p policy<(flavour powerpc64-smp &/ value y) | value n> note<required for powerpc64-smp dep of CONFIG_MAPLE>
