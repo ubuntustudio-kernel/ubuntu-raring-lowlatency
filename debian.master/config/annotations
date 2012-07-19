@@ -319,7 +319,6 @@ CONFIG_PANEL_TPO_TD043MTEA1 y note<required for omap3 video>
 CONFIG_SND_OMAP_SOC p policy<(flavour omap &/ value y) | value m> note<required for omap3 sound>
 CONFIG_SND_OMAP_SOC_MCBSP p policy<(flavour omap &/ value y) | value m> note<required for omap3 sound>
 CONFIG_SND_OMAP_SOC_OMAP3_BEAGLE p policy<(flavour omap &/ value y) | value m> note<required for omap3 sound>
-CONFIG_USB_MUSB_HDRC p policy<(flavour omap &/ value y) | value m> note<boot essential for USB to USB boot (LP#759913)>
 CONFIG_USB_MUSB_TUSB6010 p policy<(flavour omap highbank &/ value n) | value m> note<USB_MUSB choice>
 CONFIG_USB_OMAP n note<not used for our OMAP3/4 h/w>
 
