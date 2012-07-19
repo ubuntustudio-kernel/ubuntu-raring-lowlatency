@@ -206,7 +206,6 @@ CONFIG_NOP_USB_XCEIV p policy<(arch armel armhf &/ value y) | value m> note<boot
 CONFIG_PANEL_GENERIC_DPI p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
 CONFIG_REGULATOR_FIXED_VOLTAGE p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
 CONFIG_SERIAL_OMAP p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
-CONFIG_USB_GADGET p policy<(arch armel armhf &/ value y) | value m> note<not autoprobable -- only present commonly on arm>
 CONFIG_GPIO_TWL4030 p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
 CONFIG_OMAP2_DSS p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
 
@@ -318,6 +317,7 @@ CONFIG_SND_OMAP_SOC_MCBSP p policy<(flavour omap &/ value y) | value m> note<req
 CONFIG_SND_OMAP_SOC_OMAP3_BEAGLE p policy<(flavour omap &/ value y) | value m> note<required for omap3 sound>
 
 # ARM gadget mode
+CONFIG_USB_GADGET p policy<(flavour omap omap4 &/ value y) | value m> note<not autoprobable -- only present commonly on omap>
 CONFIG_USB_OTG - note<ARM specific feature>
 
 # powerpc64-smp requires this as CONFIG_MAPLE is enabled
