@@ -327,7 +327,7 @@ CONFIG_USB_OMAP n note<not used for our OMAP3/4 h/w>
 # ARM gadget mode
 CONFIG_USB_GADGET p policy<(flavour omap omap4 &/ value y) | value m> note<not autoprobable -- only present commonly on omap>
 CONFIG_USB_OTG y note<dependancy of a boot essential>
-CONFIG_USB_G_MULTI p policy<(flavour omap omap4 &/ value m) | value m> note<omap3/omap4 specific feature>
+CONFIG_USB_G_MULTI p policy<(flavour omap omap4 &/ value m) | value n> note<omap3/omap4 specific feature>
 CONFIG_USB_M66592 n note<gadget device>
 
 # powerpc64-smp requires this as CONFIG_MAPLE is enabled
