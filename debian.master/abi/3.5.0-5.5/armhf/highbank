@@ -3145,6 +3145,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	devm_clk_put
 EXPORT_SYMBOL vmlinux 0x00000000	devm_free_irq
 EXPORT_SYMBOL vmlinux 0x00000000	devm_gpio_free
 EXPORT_SYMBOL vmlinux 0x00000000	devm_gpio_request
+EXPORT_SYMBOL vmlinux 0x00000000	devm_gpio_request_one
 EXPORT_SYMBOL vmlinux 0x00000000	devm_ioport_map
 EXPORT_SYMBOL vmlinux 0x00000000	devm_ioport_unmap
 EXPORT_SYMBOL vmlinux 0x00000000	devm_ioremap
@@ -6233,8 +6234,6 @@ EXPORT_SYMBOL_GPL drivers/mtd/chips/cfi_cmdset_0020 0x00000000	cfi_cmdset_0020
 EXPORT_SYMBOL_GPL drivers/mtd/chips/cfi_util 0x00000000	cfi_qry_mode_off
 EXPORT_SYMBOL_GPL drivers/mtd/chips/cfi_util 0x00000000	cfi_qry_mode_on
 EXPORT_SYMBOL_GPL drivers/mtd/chips/cfi_util 0x00000000	cfi_qry_present
-EXPORT_SYMBOL_GPL drivers/mtd/devices/doc2000 0x00000000	DoC2k_init
-EXPORT_SYMBOL_GPL drivers/mtd/devices/doc2001 0x00000000	DoCMil_init
 EXPORT_SYMBOL_GPL drivers/mtd/devices/doc2001plus 0x00000000	DoCMilPlus_init
 EXPORT_SYMBOL_GPL drivers/mtd/devices/docecc 0x00000000	doc_decode_ecc
 EXPORT_SYMBOL_GPL drivers/mtd/mtd 0x00000000	__get_mtd_device
