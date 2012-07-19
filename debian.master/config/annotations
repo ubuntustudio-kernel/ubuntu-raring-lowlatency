@@ -440,8 +440,8 @@ CONFIG_PANIC_ON_OOPS n note<keep working if at all possible>
 CONFIG_BLK_DEV_RBD m note<CEPH client side support>
 
 # CGROUP modifications.
-BLK_DEV_THROTTLING m note<CGROUP disk consumption control>
+CONFIG_BLK_DEV_THROTTLING m note<CGROUP disk consumption control>
 
 # Not a thing
-USB_OHCI_HCD_PLATFORM - flag<IGNORE>
-USB_EHCI_HCD_PLATFORM - flag<IGNORE>
+CONFIG_USB_OHCI_HCD_PLATFORM - flag<IGNORE>
+CONFIG_USB_EHCI_HCD_PLATFORM - flag<IGNORE>
