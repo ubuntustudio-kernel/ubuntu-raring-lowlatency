@@ -223,7 +223,9 @@ CONFIG_LEDS_GPIO p policy<(flavour omap4 &/ value y) | value m> note<enables ear
 CONFIG_LEDS_PWM p policy<(flavour omap4 &/ value y) | value m> note<enables early heartbeat LEDs>
 CONFIG_LEDS_TRIGGER_HEARTBEAT p policy<(flavour omap4 &/ value y) | value m> note<enables early heartbeat LEDs>
 CONFIG_LIB80211 p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
-CONFIG_MMC_OMAP_HS p policy<(arch omap4 &/ value y) | value m> note<boot essential on OMAP4>
+CONFIG_MMC_OMAP p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
+CONFIG_MEDIA_SUPPORT p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
+CONFIG_MFD_SM501 p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
 
 # highbank boot essential
 CONFIG_SATA_AHCI_PLATFORM p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
