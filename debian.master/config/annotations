@@ -303,6 +303,7 @@ CONFIG_BLK_DEV_HD n note<very old disk device support>
 CONFIG_IA32_AOUT n note<IDE is deprecated>
 CONFIG_BLK_DEV_SR_VENDOR n note<very old tape device support>
 CONFIG_MOUSE_INPORT n note<very old ISA based mouse support>
+CONFIG_OMAP_IOVMM n note<deprecated OMAP support>
 
 # Debugging options are off by default, we want those below.
 CONFIG_DEBUG_FS y note<required debug option>
