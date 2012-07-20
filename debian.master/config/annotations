@@ -220,6 +220,7 @@ CONFIG_USB_USBNET p policy<(flavour omap4 &/ value y) | value m> note<boot essen
 CONFIG_SATA_AHCI_PLATFORM p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
 CONFIG_EXT2_FS p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
 CONFIG_KEYBOARD_HIGHBANK p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
+CONFIG_I2C_DESIGNWARE_PLATFORM p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
 
 # POWERPC boot essential devices
 CONFIG_FB_VOODOO1 p policy<(arch powerpc &/ value y) | value m> note<boot essential on powerpc>
