@@ -329,8 +329,8 @@ CONFIG_SQUASHFS_4K_DEVBLK_SIZE n note<non-default block size>
 
 # ARM omap3
 CONFIG_PANEL_DVI y note<required for omap3 video>
-CONFIG_PANEL_SHARP_LS037V7DW01 y note<required for omap3 video>
-CONFIG_PANEL_TPO_TD043MTEA1 y note<required for omap3 video>
+CONFIG_PANEL_SHARP_LS037V7DW01 p policy<flavour omap &/ value y) | value m> note<required for omap3 video>
+CONFIG_PANEL_TPO_TD043MTEA1 p policy<flavour omap &/ value y) | value m> note<required for omap3 video>
 CONFIG_SND_OMAP_SOC p policy<(flavour omap &/ value y) | value m> note<required for omap3 sound>
 CONFIG_SND_OMAP_SOC_MCBSP p policy<(flavour omap &/ value y) | value m> note<required for omap3 sound>
 CONFIG_SND_OMAP_SOC_OMAP3_BEAGLE p policy<(flavour omap &/ value y) | value m> note<required for omap3 sound>
