@@ -191,13 +191,6 @@ CONFIG_NLS_CODEPAGE_437 p policy<(arch armel armhf &/ value y) | value m> note<i
 CONFIG_NLS y note<dependancy of boot essential>
 
 # ARM boot essential devices
-CONFIG_MTD p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
-CONFIG_MTD_BLKDEVS p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
-CONFIG_MTD_BLOCK p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
-CONFIG_MTD_CHAR p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
-CONFIG_MTD_NAND p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
-CONFIG_MTD_NAND_OMAP2 p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
-CONFIG_MTD_OF_PARTS p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
 CONFIG_MMC_BLOCK p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
 CONFIG_MMC_OMAP_HS p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
 CONFIG_FB_OMAP2 p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
@@ -210,6 +203,13 @@ CONFIG_GPIO_TWL4030 p policy<(arch armel armhf &/ value y) | value m> note<boot 
 CONFIG_OMAP2_DSS p policy<(arch armel armhf &/ value y) | value m> note<boot essential on arm>
 
 # omap3/omap4 boot essential
+CONFIG_MTD p policy<(flavour omap &/ value y) | value m> note<boot essential on arm>
+CONFIG_MTD_BLKDEVS p policy<(flavour omap &/ value y) | value m> note<boot essential on arm>
+CONFIG_MTD_BLOCK p policy<(flavour omap &/ value y) | value m> note<boot essential on arm>
+CONFIG_MTD_CHAR p policy<(flavour omap &/ value y) | value m> note<boot essential on arm>
+CONFIG_MTD_NAND p policy<(flavour omap &/ value y) | value m> note<boot essential on arm>
+CONFIG_MTD_NAND_OMAP2 p policy<(flavour omap &/ value y) | value m> note<boot essential on arm>
+CONFIG_MTD_OF_PARTS p policy<(flavour omap &/ value y) | value m> note<boot essential on arm>
 CONFIG_RTC_DRV_TWL4030 p policy<(flavour omap omap4 &/ value y) | value m> note<boot essential on OMAP3/OMAP4>
 CONFIG_KEYBOARD_OMAP4 p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
 CONFIG_KEYBOARD_TWL4030 p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
