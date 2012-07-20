@@ -215,6 +215,7 @@ CONFIG_KEYBOARD_OMAP4 p policy<(flavour omap4 &/ value y) | value m> note<boot e
 CONFIG_KEYBOARD_TWL4030 p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
 CONFIG_USB_NET_SMSC95XX p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
 CONFIG_USB_USBNET p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
+CONFIG_DRM p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
 
 # highbank boot essential
 CONFIG_SATA_AHCI_PLATFORM p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
