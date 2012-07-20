@@ -222,7 +222,7 @@ CONFIG_RANDOM_ATMEL n note<depends on CONFIG_ARCH_AT91SAM9G45>
 CONFIG_LEDS_GPIO p policy<(flavour omap4 &/ value y) | value m> note<enables early heartbeat LEDs>
 CONFIG_LEDS_PWM p policy<(flavour omap4 &/ value y) | value m> note<enables early heartbeat LEDs>
 CONFIG_LEDS_TRIGGER_HEARTBEAT p policy<(flavour omap4 &/ value y) | value m> note<enables early heartbeat LEDs>
-CONFIG_LIB80211 p policy<(flavour omap4 &/ value y) | valume m> note<boot essential on OMAP4>
+CONFIG_LIB80211 p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
 CONFIG_MMC_OMAP_HS p policy<(arch omap4 &/ value y) | value m> note<boot essential on OMAP4>
 
 # highbank boot essential
