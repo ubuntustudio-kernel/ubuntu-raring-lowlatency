@@ -61,6 +61,12 @@ EXPORT_SYMBOL drivers/char/nvram 0x00000000	__nvram_write_byte
 EXPORT_SYMBOL drivers/char/nvram 0x00000000	nvram_check_checksum
 EXPORT_SYMBOL drivers/char/nvram 0x00000000	nvram_read_byte
 EXPORT_SYMBOL drivers/char/nvram 0x00000000	nvram_write_byte
+EXPORT_SYMBOL drivers/dma/dw_dmac 0x00000000	dw_dma_cyclic_free
+EXPORT_SYMBOL drivers/dma/dw_dmac 0x00000000	dw_dma_cyclic_prep
+EXPORT_SYMBOL drivers/dma/dw_dmac 0x00000000	dw_dma_cyclic_start
+EXPORT_SYMBOL drivers/dma/dw_dmac 0x00000000	dw_dma_cyclic_stop
+EXPORT_SYMBOL drivers/dma/dw_dmac 0x00000000	dw_dma_get_dst_addr
+EXPORT_SYMBOL drivers/dma/dw_dmac 0x00000000	dw_dma_get_src_addr
 EXPORT_SYMBOL drivers/gpu/drm/drm 0x00000000	drm_add_edid_modes
 EXPORT_SYMBOL drivers/gpu/drm/drm 0x00000000	drm_add_modes_noedid
 EXPORT_SYMBOL drivers/gpu/drm/drm 0x00000000	drm_addbufs_pci
@@ -833,6 +839,12 @@ EXPORT_SYMBOL drivers/mfd/twl6030-pwm 0x00000000	pwm_request
 EXPORT_SYMBOL drivers/misc/ad525x_dpot 0x00000000	ad_dpot_probe
 EXPORT_SYMBOL drivers/misc/ad525x_dpot 0x00000000	ad_dpot_remove
 EXPORT_SYMBOL drivers/misc/altera-stapl/altera-stapl 0x00000000	altera_init
+EXPORT_SYMBOL drivers/misc/atmel_pwm 0x00000000	__pwm_channel_onoff
+EXPORT_SYMBOL drivers/misc/atmel_pwm 0x00000000	pwm_channel_alloc
+EXPORT_SYMBOL drivers/misc/atmel_pwm 0x00000000	pwm_channel_free
+EXPORT_SYMBOL drivers/misc/atmel_pwm 0x00000000	pwm_channel_handler
+EXPORT_SYMBOL drivers/misc/atmel_pwm 0x00000000	pwm_clk_alloc
+EXPORT_SYMBOL drivers/misc/atmel_pwm 0x00000000	pwm_clk_free
 EXPORT_SYMBOL drivers/misc/c2port/core 0x00000000	c2port_device_register
 EXPORT_SYMBOL drivers/misc/c2port/core 0x00000000	c2port_device_unregister
 EXPORT_SYMBOL drivers/mmc/host/dw_mmc 0x00000000	dw_mci_probe
@@ -2955,10 +2967,15 @@ EXPORT_SYMBOL vmlinux 0x00000000	clear_inode
 EXPORT_SYMBOL vmlinux 0x00000000	clear_nlink
 EXPORT_SYMBOL vmlinux 0x00000000	clear_page_dirty_for_io
 EXPORT_SYMBOL vmlinux 0x00000000	clk_add_alias
+EXPORT_SYMBOL vmlinux 0x00000000	clk_disable
+EXPORT_SYMBOL vmlinux 0x00000000	clk_enable
 EXPORT_SYMBOL vmlinux 0x00000000	clk_get
+EXPORT_SYMBOL vmlinux 0x00000000	clk_get_rate
 EXPORT_SYMBOL vmlinux 0x00000000	clk_get_sys
 EXPORT_SYMBOL vmlinux 0x00000000	clk_put
 EXPORT_SYMBOL vmlinux 0x00000000	clk_register_clkdevs
+EXPORT_SYMBOL vmlinux 0x00000000	clk_round_rate
+EXPORT_SYMBOL vmlinux 0x00000000	clk_set_rate
 EXPORT_SYMBOL vmlinux 0x00000000	clkdev_add
 EXPORT_SYMBOL vmlinux 0x00000000	clkdev_alloc
 EXPORT_SYMBOL vmlinux 0x00000000	clkdev_drop
@@ -3567,6 +3584,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	groups_alloc
 EXPORT_SYMBOL vmlinux 0x00000000	groups_free
 EXPORT_SYMBOL vmlinux 0x00000000	half_md4_transform
 EXPORT_SYMBOL vmlinux 0x00000000	handle_edge_irq
+EXPORT_SYMBOL vmlinux 0x00000000	handle_sysrq
 EXPORT_SYMBOL vmlinux 0x00000000	have_submounts
 EXPORT_SYMBOL vmlinux 0x00000000	hex2bin
 EXPORT_SYMBOL vmlinux 0x00000000	hex_asc
@@ -3927,6 +3945,9 @@ EXPORT_SYMBOL vmlinux 0x00000000	kasprintf
 EXPORT_SYMBOL vmlinux 0x00000000	kblockd_schedule_delayed_work
 EXPORT_SYMBOL vmlinux 0x00000000	kblockd_schedule_work
 EXPORT_SYMBOL vmlinux 0x00000000	kd_mksound
+EXPORT_SYMBOL vmlinux 0x00000000	kdb_current_task
+EXPORT_SYMBOL vmlinux 0x00000000	kdb_grepping_flag
+EXPORT_SYMBOL vmlinux 0x00000000	kdbgetsymval
 EXPORT_SYMBOL vmlinux 0x00000000	kern_path
 EXPORT_SYMBOL vmlinux 0x00000000	kern_path_create
 EXPORT_SYMBOL vmlinux 0x00000000	kern_unmount
@@ -4739,6 +4760,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	register_shrinker
 EXPORT_SYMBOL vmlinux 0x00000000	register_sysctl
 EXPORT_SYMBOL vmlinux 0x00000000	register_sysctl_paths
 EXPORT_SYMBOL vmlinux 0x00000000	register_sysctl_table
+EXPORT_SYMBOL vmlinux 0x00000000	register_sysrq_key
 EXPORT_SYMBOL vmlinux 0x00000000	register_tcf_proto_ops
 EXPORT_SYMBOL vmlinux 0x00000000	registered_fb
 EXPORT_SYMBOL vmlinux 0x00000000	release_firmware
@@ -5379,6 +5401,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	timeval_to_jiffies
 EXPORT_SYMBOL vmlinux 0x00000000	totalhigh_pages
 EXPORT_SYMBOL vmlinux 0x00000000	totalram_pages
 EXPORT_SYMBOL vmlinux 0x00000000	touch_atime
+EXPORT_SYMBOL vmlinux 0x00000000	touch_softlockup_watchdog
 EXPORT_SYMBOL vmlinux 0x00000000	truncate_inode_pages
 EXPORT_SYMBOL vmlinux 0x00000000	truncate_inode_pages_range
 EXPORT_SYMBOL vmlinux 0x00000000	truncate_pagecache
@@ -5518,6 +5541,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	unregister_quota_format
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_reboot_notifier
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_shrinker
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_sysctl_table
+EXPORT_SYMBOL vmlinux 0x00000000	unregister_sysrq_key
 EXPORT_SYMBOL vmlinux 0x00000000	unregister_tcf_proto_ops
 EXPORT_SYMBOL vmlinux 0x00000000	up
 EXPORT_SYMBOL vmlinux 0x00000000	up_read
@@ -5747,6 +5771,8 @@ EXPORT_SYMBOL_GPL crypto/serpent_generic 0x00000000	serpent_setkey
 EXPORT_SYMBOL_GPL crypto/twofish_common 0x00000000	__twofish_setkey
 EXPORT_SYMBOL_GPL crypto/twofish_common 0x00000000	twofish_setkey
 EXPORT_SYMBOL_GPL crypto/xts 0x00000000	xts_crypt
+EXPORT_SYMBOL_GPL drivers/ata/pata_platform 0x00000000	__pata_platform_probe
+EXPORT_SYMBOL_GPL drivers/ata/pata_platform 0x00000000	__pata_platform_remove
 EXPORT_SYMBOL_GPL drivers/bcma/bcma 0x00000000	__bcma_driver_register
 EXPORT_SYMBOL_GPL drivers/bcma/bcma 0x00000000	bcma_chipco_chipctl_maskset
 EXPORT_SYMBOL_GPL drivers/bcma/bcma 0x00000000	bcma_chipco_gpio_control
@@ -6822,6 +6848,8 @@ EXPORT_SYMBOL_GPL drivers/uio/uio 0x00000000	uio_event_notify
 EXPORT_SYMBOL_GPL drivers/uio/uio 0x00000000	uio_unregister_device
 EXPORT_SYMBOL_GPL drivers/usb/atm/usbatm 0x00000000	usbatm_usb_disconnect
 EXPORT_SYMBOL_GPL drivers/usb/atm/usbatm 0x00000000	usbatm_usb_probe
+EXPORT_SYMBOL_GPL drivers/usb/dwc3/dwc3 0x00000000	dwc3_get_device_id
+EXPORT_SYMBOL_GPL drivers/usb/dwc3/dwc3 0x00000000	dwc3_put_device_id
 EXPORT_SYMBOL_GPL drivers/usb/gadget/udc-core 0x00000000	usb_add_gadget_udc
 EXPORT_SYMBOL_GPL drivers/usb/gadget/udc-core 0x00000000	usb_del_gadget_udc
 EXPORT_SYMBOL_GPL drivers/usb/gadget/udc-core 0x00000000	usb_gadget_map_request
@@ -8665,6 +8693,13 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	irq_work_sync
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kallsyms_lookup_name
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kallsyms_on_each_symbol
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kcrypto_wq
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kdb_get_kbd_char
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kdb_poll_funcs
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kdb_poll_idx
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kdb_printf
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kdb_register
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kdb_register_repeat
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kdb_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kern_mount_data
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kernel_halt
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kernel_kobj
@@ -8675,6 +8710,12 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	key_type_encrypted
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	key_type_logon
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	key_type_user
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kfree_call_rcu
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kgdb_active
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kgdb_breakpoint
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kgdb_connected
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kgdb_register_io_module
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kgdb_schedule_breakpoint
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	kgdb_unregister_io_module
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kick_all_cpus_sync
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kick_process
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	kill_pid_info_as_cred
@@ -9404,6 +9445,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	transport_remove_device
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	transport_setup_device
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_buffer_request_room
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_encode_baud_rate
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_find_polling_driver
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_get_pgrp
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_init_termios
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	tty_ldisc_deref
