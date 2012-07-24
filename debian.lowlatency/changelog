@@ -4,6 +4,87 @@ linux-lowlatency (3.5.0-4.5) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-6.6 ]
+
+  * [Config] CONFIG_INET6_XFRM_MODE_ROUTEOPTIMIZATION enable IPv6
+    experimental features
+  * SAUCE: highbank -- export clock functions for modules
+  * [Config] highbank -- reenable CONFIG_TOUCHSCREEN_W90X900
+  * [Config] highbank -- renenable CONFIG_SERIO_AMBAKMI
+  * [Config] highbank -- reenable CONFIG_RFKILL_GPIO
+  * [Config] highbank -- reenable CONFIG_MMC_SDHCI_PXAV3
+  * [Config] highbank -- reenable CONFIG_MMC_SDHCI_PXAV3
+  * [Config] highbank -- reenable CONFIG_KEYBOARD_SAMSUNG
+  * [Config] highbank -- reenable CONFIG_FB_ARMCLCD
+  * [Config] highbank -- reenable CONFIG_DW_DMAC
+  * [Config] highbank -- reenable CONFIG_USB_R8A66597_HCD
+  * [Config] highbank -- reenable CONFIG_USB_MV_UDC
+  * [Config] highbank -- reenable CONFIG_USB_DWC3
+  * [Config] highbank -- reenable CONFIG_SATA_MV
+  * [Config] highbank -- reenable CONFIG_PATA_ARASAN_CF
+  * [Config] highbank -- CONFIG_CAN_C_CAN_PLATFORM
+  * [Config] highbank -- reenable CONFIG_MMC_ARMMMCI
+  * [Config] highbank -- reenable CONFIG_SERIAL_AMBA_PL010
+  * [Config] highbank -- reenable CONFIG_ATMEL_PWM
+  * [Config] highbank -- enable CONFIG_CHECKPOINT_RESTORE
+  * [Config] highbank -- enable CONFIG_EXPERT
+  * [Config] highbank -- enable CONFIG_CHECKPOINT_RESTORE
+  * [Config] enable CONFIG_USB_DYNAMIC_MINORS
+  * [Config] enable CONFIG_USB_EHCI_TT_NEWSCHED
+  * [Config] enable CONFIG_USB_ETH_EEM
+  * [Config] enable CONFIG_USB_HCD_BCMA/CONFIG_USB_HCD_SSB
+  * [Config] disable CONFIG_USB_M66592
+  * [Config] enable CONFIG_USB_NET2272
+  * [Config] enable CONFIG_USB_R8A66597
+  * [Config] annotate: CONFIG_USB_OMAP not required for our h/w
+  * [Config] set CONFIG_USB_MUSB_HDRC=m for omap
+  * [Config] annotate: CONFIG_USB_G_MULTI fix rule
+  * [Config] CONFIG_USB_GPIO_VBUS=m for OMAP
+  * [Config] Enable CONFIG_DRM_AST/_CIRRUS_QEMU/_MGAG200
+  * [Config] sync configuration armhf omap -> armel omap
+  * [Config] annotate: CONFIG_IIO triggers build failures on OMAP4
+  * [Config] disable CONFIG_OMAP_IOVMM is deprecated
+  * [Config] change default IO scheduler from CFQ to Deadline
+  * Revert "[Config] Temporarily disable CONFIG_MV643XX_ETH on powerpc"
+  * [Config] Disable CONFIG_MOUSE_INPORT
+  * SAUCE: firmware: Update bnx2x to current firmware version 7.2.51
+  * [Config] Add bnx2x firmware to nic-modules udeb
+  * SAUCE: Add script to convert firmware to ihex format
+  * SAUCE: firmware: Upgrade bnx2 to current versions
+  * [Config] Add tigon firmware to nic-modules udeb
+  * [Config] CONFIG_EARLY_PRINTK_DBGP=y
+    - LP: #1026761
+  * SAUCE: Remove redundant cis firmware
+  * SAUCE: Remove redundant emi26 firmware
+  * SAUCE: Remove redundant ttusb-budget firmware
+  * SAUCE: Remove redundant sun/cassini firmware
+  * SAUCE: Remove redundant ositech/Xilinx7OD firmware
+  * SAUCE: Remove redundant 3com/typhoon.bin firmware
+  * SAUCE: Remove redundant yamaha/ds1 firmware
+  * SAUCE: Remove redundant keyspan_pda firmware
+  * rebase to v3.5
+  * rebase to v3.5
+    - LP: #1027828
+
+  [ Ubuntu: 3.5.0-5.5 ]
+
+  * [Config] annotations: initial import of configuration annotations
+  * [Config] enforcer -- add CONFIG_I2C_DESIGNWARE_PLATFORM enforce checker
+  * Rebase to v3.5-rc7
+  * SAUCE: Bluetooth: btusb: Add vendor specific ID (0a5c:21f4) BCM20702A0
+    - LP: #1010281
+  * [Config] enable CONFIG_I2C_HELPER_AUTO for all flavours as policy
+    expects
+  * [Config] CONFIG_I2O_CONFIG_OLD_IOCTL=n
+  * [Config] CONFIG_BRIDGE_EBT_ULOG=n
+  * [Config] CONFIG_IP_NF_QUEUE=n
+  * [Config] CONFIG_MTD_DOC2000=n
+  * [Config] CONFIG_PRINT_QUOTA_WARNING=n
+  * [Config] CONFIG_PRISM54=n
+  * [Config] CONFIG_SCx200_I2C=n
+  * [Config] CONFIG_USB_ANNOUNCE_NEW_DEVICES=y
+  * rebase to v3.5-rc7
+
  -- Andy Whitcroft <apw@canonical.com>  Tue, 24 Jul 2012 16:05:39 +0100
 
 linux-lowlatency (3.5.0-4.4) quantal-proposed; urgency=low
