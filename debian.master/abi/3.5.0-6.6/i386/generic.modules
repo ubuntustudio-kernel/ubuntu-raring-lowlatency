@@ -284,6 +284,7 @@ as5011
 asb100
 asc7621
 asix
+ast
 asus_atk0110
 asus-laptop
 asus-nb-wmi
@@ -368,6 +369,7 @@ bcm203x
 bcm3510
 bcm5974
 bcma
+bcma-hcd
 bcm_wimax
 be2iscsi
 be2net
@@ -498,6 +500,7 @@ chnl_net
 ci13xxx_pci
 cifs
 ci_hdrc
+cirrus
 cirrusfb
 ck804xrom
 classmate-laptop
@@ -1329,7 +1332,6 @@ inet_diag
 inexio
 inftl
 initio
-inport
 input-polldev
 int51x1
 intelfb
@@ -1806,6 +1808,7 @@ metro-usb
 meye
 mfd
 mga
+mgag200
 michael_mic
 microcode
 microtek
@@ -3096,6 +3099,7 @@ spi-tle62x0
 spi-topcliff-pch
 squashfs
 ssb
+ssb-hcd
 ssfdc
 sst25l
 sstfb

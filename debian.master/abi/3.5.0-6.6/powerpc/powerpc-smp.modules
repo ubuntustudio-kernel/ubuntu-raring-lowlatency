@@ -219,6 +219,7 @@ arpt_mangle
 as5011
 asc7621
 asix
+ast
 asus_oled
 async_memcpy
 async_pq
@@ -295,6 +296,7 @@ bcm203x
 bcm3510
 bcm5974
 bcma
+bcma-hcd
 bcm_wimax
 be2iscsi
 be2net
@@ -413,6 +415,7 @@ chnl_net
 ci13xxx_pci
 cifs
 ci_hdrc
+cirrus
 cirrusfb
 clearpad_tm1217
 clip
@@ -1541,6 +1544,7 @@ metronomefb
 metro-usb
 mfd
 mga
+mgag200
 michael_mic
 microtek
 minix
@@ -1602,6 +1606,7 @@ mtip32xx
 mtouch
 multipath
 musb_hdrc
+mv643xx_eth
 mv88e6060
 mv88e6xxx_drv
 mvsas
@@ -2663,6 +2668,7 @@ spi-topcliff-pch
 squashfs
 sr030pc30
 ssb
+ssb-hcd
 ssfdc
 sst25l
 ssu100
