@@ -2,7 +2,6 @@
 6pack
 8021q
 8250_dw
-8250_em
 88pm860x_bl
 88pm860x_onkey
 88pm860x-ts
@@ -206,7 +205,6 @@ atm
 atmel_mxt_ts
 atmel_pwm
 atmel-pwm-bl
-atmel-rng
 atmtcp
 atxp1
 au0828
@@ -238,6 +236,7 @@ bcm203x
 bcm3510
 bcm5974
 bcma
+bcma-hcd
 bcm_wimax
 befs
 belkin_sa
@@ -310,9 +309,6 @@ cdc-phonet
 cdc_subset
 cdc-wdm
 ceph
-cfbcopyarea
-cfbfillrect
-cfbimgblt
 cfg80211
 cfi_cmdset_0001
 cfi_cmdset_0002
@@ -652,6 +648,7 @@ gpio-pcf857x
 gpio-regulator
 gpio_tilt_polled
 gpio-tps65912
+gpio_vbus
 gpio-wm831x
 gpio-wm8350
 gpio-wm8994
@@ -1251,6 +1248,7 @@ mtdram
 mtdswap
 mtouch
 multipath
+musb_hdrc
 mv88e6060
 mv88e6xxx_drv
 mv_udc
@@ -1267,6 +1265,7 @@ nbd
 nci
 ncpfs
 net1080
+net2272
 netconsole
 netprio_cgroup
 netrom
@@ -1378,13 +1377,10 @@ of_serial
 old_belkin-sir
 omap
 omap2
+omap2430
 omap4-keypad
 omap-aes
-omapdrm
-omapfb
 omap_hdq
-omap-iommu-debug
-omap-iovmm
 omap-sham
 omap-vout
 omap_wdt
@@ -1424,7 +1420,6 @@ panel-acx565akm
 panel-lgphilips-lb035q02
 panel-nec-nl8048hl11-01b
 panel-picodlp
-panel-tfp410
 parkbd
 parport
 parport_ax88796
@@ -1504,6 +1499,7 @@ quota_v1
 quota_v2
 r8712u
 r8a66597-hcd
+r8a66597-udc
 radio-i2c-si470x
 radio-keene
 radio-mr800
@@ -2000,6 +1996,7 @@ spi-tle62x0
 squashfs
 sr030pc30
 ssb
+ssb-hcd
 ssfdc
 sst25l
 ssu100
@@ -2012,7 +2009,6 @@ st_drv
 stinger
 stir4200
 stkwebcam
-stmmac
 stmpe-keypad
 stmpe-ts
 stowaway
