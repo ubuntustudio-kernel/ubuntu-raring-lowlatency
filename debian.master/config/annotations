@@ -19,18 +19,11 @@ CONFIG_CPU_FREQ_GOV_ONDEMAND y note<not autoloadable>
 CONFIG_CPU_FREQ_GOV_PERFORMANCE y note<not autoloadable>
 CONFIG_CPU_FREQ_GOV_POWERSAVE y note<not autoloadable>
 CONFIG_CPU_FREQ_GOV_USERSPACE y note<not autoloadable>
-#  frequency drivers
-CONFIG_X86_CPUFREQ_NFORCE2 y note<not autoloadable>
 #  cpufreq drivers
 CONFIG_X86_ACPI_CPUFREQ y note<not autoloadable>
-CONFIG_X86_LONGHAUL y note<not autoloadable>
-CONFIG_X86_LONGRUN y note<not autoloadable>
-CONFIG_X86_POWERNOW_K6 y note<not autoloadable>
-CONFIG_X86_POWERNOW_K7 y note<not autoloadable>
 CONFIG_X86_POWERNOW_K8 y note<not autoloadable>
 CONFIG_X86_SPEEDSTEP_CENTRINO y note<not autoloadable>
 CONFIG_X86_SPEEDSTEP_ICH y note<not autoloadable>
-CONFIG_X86_GX_SUSPMOD y note<not autoloadable>
 CONFIG_X86_SPEEDSTEP_SMI y note<not autoloadable>
 #  devices:
 CONFIG_CHR_DEV_SG y note<not autoloadable>
