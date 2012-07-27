@@ -463,3 +463,9 @@ CONFIG_SENSORS_SCH56XX_COMMON - flag<IGNORE>
 
 # Block Dev
 CONFIG_BLK_DEV_XIP n note<prevents use of HIGHMEM for ram disks>
+
+# This option allows bridging between non-IP and IP networks, but is
+# effectivly deprecated.  We _may_ just _may_ have users on older arches
+# so keep it there, but do not spread the pain to systems without these
+# other networks.
+CONFIG_WAN_ROUTER p policy<(arch i386 amd64 powerpc &/ value m) | value n>
