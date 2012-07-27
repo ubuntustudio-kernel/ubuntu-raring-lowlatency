@@ -842,7 +842,6 @@ f81232
 fakephp
 fam15h_power
 farsync
-fat
 faulty
 fb_ddc
 fb_sys_fops
@@ -1900,7 +1899,6 @@ nls_ascii
 nls_cp1250
 nls_cp1251
 nls_cp1255
-nls_cp437
 nls_cp737
 nls_cp775
 nls_cp850
@@ -3190,7 +3188,6 @@ ves1820
 ves1x93
 vesafb
 veth
-vfat
 vga16fb
 vgastate
 vgg2432a4
