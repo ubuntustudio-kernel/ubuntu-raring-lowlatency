@@ -221,7 +221,7 @@ CONFIG_MEDIA_SUPPORT p policy<(flavour omap4 &/ value y) | value m> note<boot es
 CONFIG_MFD_SM501 p policy<(flavour omap4 &/ value y) | value m> note<boot essential on OMAP4>
 
 # highbank boot essential
-CONFIG_SATA_AHCI_PLATFORM p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
+CONFIG_SATA_AHCI_PLATFORM p policy<(flavour highbank &/ value y) | (flavour omap4 &/ value n) | value m> note<boot essential on highbank/build failure on ti-omap4> flag<BUILD FAILURE>
 CONFIG_EXT2_FS p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
 CONFIG_KEYBOARD_HIGHBANK p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
 CONFIG_I2C_DESIGNWARE_PLATFORM p policy<(flavour highbank &/ value y) | value m> note<boot essential on highbank>
