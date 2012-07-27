@@ -322,8 +322,8 @@ CONFIG_SQUASHFS_4K_DEVBLK_SIZE n note<non-default block size>
 
 # ARM omap3
 CONFIG_PANEL_DVI y note<required for omap3 video>
-CONFIG_PANEL_SHARP_LS037V7DW01 p policy<flavour omap &/ value y) | value m> note<required for omap3 video>
-CONFIG_PANEL_TPO_TD043MTEA1 p policy<flavour omap &/ value y) | value m> note<required for omap3 video>
+CONFIG_PANEL_SHARP_LS037V7DW01 p policy<(flavour omap &/ value y) | value m> note<required for omap3 video>
+CONFIG_PANEL_TPO_TD043MTEA1 p policy<(flavour omap &/ value y) | value m> note<required for omap3 video>
 CONFIG_SND_OMAP_SOC p policy<(flavour omap &/ value y) | value m> note<required for omap3 sound>
 CONFIG_SND_OMAP_SOC_MCBSP p policy<(flavour omap &/ value y) | value m> note<required for omap3 sound>
 CONFIG_SND_OMAP_SOC_OMAP3_BEAGLE p policy<(flavour omap &/ value y) | value m> note<required for omap3 sound>
@@ -418,7 +418,7 @@ CONFIG_SENSORS_AK8975 - flag<BUILD FAILURE> note<FTBS on ti-omap4>
 CONFIG_IIO p policy<(flavour omap4 &/ value n) | value m> flag<BUILD FAILURE>
 
 # Valid y/n options which are in a sensible position.
-CONFIG_CONFIG_PPC_ICSWX_USE_SIGILL n note<reviewed 05/2012>
+CONFIG_PPC_ICSWX_USE_SIGILL n note<reviewed 05/2012>
 
 # Old/Deprecated
 CONFIG_SCSI_AIC7XXX_OLD n note<deprecated in favour of aic7xxx>
