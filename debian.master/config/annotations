@@ -421,6 +421,8 @@ CONFIG_IIO p policy<(flavour omap4 &/ value n) | value m> flag<BUILD FAILURE>
 CONFIG_PPC_ICSWX_USE_SIGILL n note<reviewed 05/2012>
 #  forces padding mode, without this we can select at runtime
 CONFIG_USB_SERIAL_SAFE_PADDED n note<reviewed 07/2012>
+#  allows the console to move to an external USB device
+CONFIG_USB_SISUSBVGA_CON n note<reviewed 07/2012>
 
 # Old/Deprecated
 CONFIG_SCSI_AIC7XXX_OLD n note<deprecated in favour of aic7xxx>
