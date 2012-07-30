@@ -34,9 +34,10 @@ build-%: $(stampdir)/stamp-build-%
 
 # Do the actual build, including image and modules
 $(stampdir)/stamp-build-%: target_flavour = $*
+$(stampdir)/stamp-build-%: dtb_target = $(notdir $(dtb_file_$*))
 $(stampdir)/stamp-build-%: $(stampdir)/stamp-prepare-%
 	@echo Debug: $@
-	$(build_cd) $(kmake) $(build_O) $(conc_level) $(build_image) modules
+	$(build_cd) $(kmake) $(build_O) $(conc_level) $(build_image) modules $(dtb_target)
 	@touch $@
 
 # Install the finished build
@@ -47,6 +48,8 @@ install-%: dbgpkgdir = $(CURDIR)/debian/$(bin_pkg_name)-$*-dbgsym
 install-%: basepkg = $(hdrs_pkg_name)
 install-%: hdrdir = $(CURDIR)/debian/$(basepkg)-$*/usr/src/$(basepkg)-$*
 install-%: target_flavour = $*
+install-%: dtb_file=$(dtb_file_$*)
+install-%: dtb_target=$(notdir $(dtb_file_$*))
 install-%: checks-%
 	@echo Debug: $@
 	dh_testdir
@@ -74,6 +77,11 @@ endif
 		$(pkgdir)/boot/abi-$(abi_release)-$*
 	install -m600 $(builddir)/build-$*/System.map \
 		$(pkgdir)/boot/System.map-$(abi_release)-$*
+	if [ "$(dtb_target)" ]; then \
+		install -d $(pkgdir)/lib/firmware/$(abi_release)-$*/device-tree; \
+		install -m644 $(builddir)/build-$*/$(dtb_file) \
+			$(pkgdir)/lib/firmware/$(abi_release)-$*/device-tree/$(dtb_target); \
+	fi
 ifeq ($(no_dumpfile),)
 	makedumpfile -g $(pkgdir)/boot/vmcoreinfo-$(abi_release)-$* \
 		-x $(builddir)/build-$*/vmlinux
