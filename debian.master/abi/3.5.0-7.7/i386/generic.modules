@@ -551,6 +551,7 @@ cpia2
 cpqarray
 cpqphp
 cpu5wdt
+cpufreq-nforce2
 cpuid
 cpu-notifier-error-inject
 c-qcam
@@ -1082,6 +1083,7 @@ gunze
 g_webcam
 gx1fb
 gxfb
+gx-suspmod
 g_zero
 hamachi
 hampshire
@@ -1674,6 +1676,8 @@ lne390
 lockd
 logger
 logibm
+longhaul
+longrun
 lp
 lp3971
 lp3972
@@ -2266,6 +2270,8 @@ pn_pep
 poc
 poseidon
 powermate
+powernow-k6
+powernow-k7
 ppa
 ppdev
 ppp_async
