@@ -2043,8 +2043,6 @@ EXPORT_SYMBOL net/rxrpc/af-rxrpc 0x00000000	rxrpc_kernel_reject_call
 EXPORT_SYMBOL net/rxrpc/af-rxrpc 0x00000000	rxrpc_kernel_send_data
 EXPORT_SYMBOL net/sctp/sctp 0x00000000	sctp_do_peeloff
 EXPORT_SYMBOL net/sunrpc/sunrpc 0x00000000	svc_pool_stats_open
-EXPORT_SYMBOL net/wanrouter/wanrouter 0x00000000	register_wan_device
-EXPORT_SYMBOL net/wanrouter/wanrouter 0x00000000	unregister_wan_device
 EXPORT_SYMBOL net/wimax/wimax 0x00000000	wimax_reset
 EXPORT_SYMBOL net/wimax/wimax 0x00000000	wimax_rfkill
 EXPORT_SYMBOL net/wireless/cfg80211 0x00000000	__cfg80211_send_deauth
