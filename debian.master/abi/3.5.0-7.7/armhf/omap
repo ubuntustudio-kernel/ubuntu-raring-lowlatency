@@ -2147,8 +2147,6 @@ EXPORT_SYMBOL net/rxrpc/af-rxrpc 0xe595862f	key_type_rxrpc
 EXPORT_SYMBOL net/rxrpc/af-rxrpc 0xe80949be	rxrpc_kernel_begin_call
 EXPORT_SYMBOL net/sctp/sctp 0x1ca7b682	sctp_do_peeloff
 EXPORT_SYMBOL net/sunrpc/sunrpc 0x82dc04e8	svc_pool_stats_open
-EXPORT_SYMBOL net/wanrouter/wanrouter 0x0ebe03d1	unregister_wan_device
-EXPORT_SYMBOL net/wanrouter/wanrouter 0xef202deb	register_wan_device
 EXPORT_SYMBOL net/wimax/wimax 0x0cc336f3	wimax_rfkill
 EXPORT_SYMBOL net/wimax/wimax 0x7efd7f92	wimax_reset
 EXPORT_SYMBOL net/wireless/cfg80211 0x0355c942	regulatory_hint
