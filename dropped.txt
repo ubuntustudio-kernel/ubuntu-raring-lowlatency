@@ -3,4 +3,5 @@ reverted or disabled for Q:
 
 UBUNTU: SAUCE: AppArmor: basic networking rules
 UBUNTU: SAUCE: khubd -- switch USB product/manufacturer/serial handling to RCU
+disabled ubuntu/dm-raid-45
 
