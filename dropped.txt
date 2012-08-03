@@ -1,14 +1,6 @@
 This is the list of patches/features which have been temporarily
-reverted or disabled for R:
+reverted or disabled for Q:
 
-UBUNTU: ubuntu: AUFS -- aufs3-base.patch
-UBUNTU: ubuntu: overlayfs -- vfs: pass struct path to __dentry_open()
-UBUNTU: ubuntu: overlayfs -- vfs: add i_op->open()
-UBUNTU: ubuntu: overlayfs -- inode_only_permission: export inode level permissions checks
-UBUNTU: SAUCE: Revert "Fix OMAP EHCI suspend/resume failure (i693)"
-UBUNTU: SAUCE: highbank -- export clock functions for modules
-UBUNTU: SAUCE: usbduxfast: Declare MODULE_FIRMWARE usage
-UBUNTU: SAUCE: usbdux: Declare MODULE_FIRMWARE usage
-UBUNTU: SAUCE: usbduxsigma: Declare MODULE_FIRMWARE usage
+UBUNTU: SAUCE: AppArmor: basic networking rules
+UBUNTU: SAUCE: khubd -- switch USB product/manufacturer/serial handling to RCU
 
-Disabled overlayfs build to avoid FTBS.
