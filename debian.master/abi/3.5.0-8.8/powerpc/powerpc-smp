@@ -4965,6 +4965,7 @@ EXPORT_SYMBOL vmlinux 0x5412c7c7	up
 EXPORT_SYMBOL vmlinux 0x5418fe41	qdisc_tree_decrease_qlen
 EXPORT_SYMBOL vmlinux 0x543ef284	seq_hlist_start
 EXPORT_SYMBOL vmlinux 0x5474150c	pm8606_osc_enable
+EXPORT_SYMBOL vmlinux 0x547f1c47	vfsmount_lock
 EXPORT_SYMBOL vmlinux 0x5481ecbb	agp_bridge
 EXPORT_SYMBOL vmlinux 0x5490a505	mmc_can_trim
 EXPORT_SYMBOL vmlinux 0x54a08ed9	ipv6_chk_prefix
@@ -6128,6 +6129,7 @@ EXPORT_SYMBOL vmlinux 0xa1f8fe75	wait_for_completion_killable_timeout
 EXPORT_SYMBOL vmlinux 0xa1fd28b1	irq_set_chip
 EXPORT_SYMBOL vmlinux 0xa2068d21	rawv6_mh_filter_register
 EXPORT_SYMBOL vmlinux 0xa20ce1b8	net_msg_warn
+EXPORT_SYMBOL vmlinux 0xa20d7f89	files_lglock
 EXPORT_SYMBOL vmlinux 0xa2128014	sock_no_shutdown
 EXPORT_SYMBOL vmlinux 0xa224c4d2	remove_proc_entry
 EXPORT_SYMBOL vmlinux 0xa24a8ff5	blk_queue_segment_boundary
@@ -6183,6 +6185,7 @@ EXPORT_SYMBOL vmlinux 0xa577a850	param_get_short
 EXPORT_SYMBOL vmlinux 0xa58da602	of_gpio_named_count
 EXPORT_SYMBOL vmlinux 0xa598e29c	vesa_modes
 EXPORT_SYMBOL vmlinux 0xa5a633b9	sg_last
+EXPORT_SYMBOL vmlinux 0xa5aa2f92	update_time
 EXPORT_SYMBOL vmlinux 0xa5cef8ad	release_resource
 EXPORT_SYMBOL vmlinux 0xa5d52b50	gen_pool_add_virt
 EXPORT_SYMBOL vmlinux 0xa5f41ee5	blk_rq_map_user_iov
@@ -7421,6 +7424,7 @@ EXPORT_SYMBOL vmlinux 0xfaa97e91	tty_insert_flip_string_flags
 EXPORT_SYMBOL vmlinux 0xfab59cfe	xfrm_find_acq
 EXPORT_SYMBOL vmlinux 0xfac8865f	sysctl_wmem_max
 EXPORT_SYMBOL vmlinux 0xfadb5750	pmu_unlock
+EXPORT_SYMBOL vmlinux 0xfae67b1f	cap_mmap_addr
 EXPORT_SYMBOL vmlinux 0xfae78a45	validate_sp
 EXPORT_SYMBOL vmlinux 0xfaefb650	tcp_create_openreq_child
 EXPORT_SYMBOL vmlinux 0xfaf98462	bitrev32
@@ -10850,6 +10854,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x4a1bc8c4	ata_pci_device_do_resume
 EXPORT_SYMBOL_GPL vmlinux 0x4a2547c2	threads_core_mask
 EXPORT_SYMBOL_GPL vmlinux 0x4a406a9f	relay_open
 EXPORT_SYMBOL_GPL vmlinux 0x4a4e398d	sdio_release_host
+EXPORT_SYMBOL_GPL vmlinux 0x4a5bb31d	usb_disable_ltm
 EXPORT_SYMBOL_GPL vmlinux 0x4a5be914	ablkcipher_walk_phys
 EXPORT_SYMBOL_GPL vmlinux 0x4a61ff45	skb_to_sgvec
 EXPORT_SYMBOL_GPL vmlinux 0x4a641693	ata_sas_scsi_ioctl
@@ -11447,6 +11452,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x89e38166	sata_link_hardreset
 EXPORT_SYMBOL_GPL vmlinux 0x89ff43f6	init_uts_ns
 EXPORT_SYMBOL_GPL vmlinux 0x8a04b9fe	tracepoint_iter_reset
 EXPORT_SYMBOL_GPL vmlinux 0x8a12877e	sdio_f0_readb
+EXPORT_SYMBOL_GPL vmlinux 0x8a12fc28	usb_enable_ltm
 EXPORT_SYMBOL_GPL vmlinux 0x8a16b797	register_jprobes
 EXPORT_SYMBOL_GPL vmlinux 0x8a5361ce	__inet_hash_nolisten
 EXPORT_SYMBOL_GPL vmlinux 0x8a5c7a80	regulator_enable
