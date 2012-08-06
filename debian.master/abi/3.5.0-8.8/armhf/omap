@@ -2372,6 +2372,7 @@ EXPORT_SYMBOL vmlinux 0x046c1f16	param_ops_invbool
 EXPORT_SYMBOL vmlinux 0x0487f831	fb_find_best_display
 EXPORT_SYMBOL vmlinux 0x0498fd5d	do_splice_direct
 EXPORT_SYMBOL vmlinux 0x04c30d12	inet_put_port
+EXPORT_SYMBOL vmlinux 0x04cb6240	files_lglock
 EXPORT_SYMBOL vmlinux 0x04cda566	snd_interval_refine
 EXPORT_SYMBOL vmlinux 0x04d2a2ed	buffer_migrate_page
 EXPORT_SYMBOL vmlinux 0x04debbba	jbd2__journal_start
@@ -4878,6 +4879,7 @@ EXPORT_SYMBOL vmlinux 0xb5ca1c46	slhc_free
 EXPORT_SYMBOL vmlinux 0xb5cba1f9	register_sound_mixer
 EXPORT_SYMBOL vmlinux 0xb5d9454c	printk_emit
 EXPORT_SYMBOL vmlinux 0xb5dafc6d	blkdev_issue_flush
+EXPORT_SYMBOL vmlinux 0xb661a04e	vfsmount_lock
 EXPORT_SYMBOL vmlinux 0xb66bf4bc	empty_aops
 EXPORT_SYMBOL vmlinux 0xb672775b	vfs_readlink
 EXPORT_SYMBOL vmlinux 0xb677284d	neigh_sysctl_unregister
@@ -5360,6 +5362,7 @@ EXPORT_SYMBOL vmlinux 0xd5d7e375	sg_miter_start
 EXPORT_SYMBOL vmlinux 0xd5e20e41	of_device_alloc
 EXPORT_SYMBOL vmlinux 0xd5f83580	alloc_buffer_head
 EXPORT_SYMBOL vmlinux 0xd6025667	elevator_init
+EXPORT_SYMBOL vmlinux 0xd606b438	update_time
 EXPORT_SYMBOL vmlinux 0xd616683a	ecryptfs_fill_auth_tok
 EXPORT_SYMBOL vmlinux 0xd61cb28f	inode_init_always
 EXPORT_SYMBOL vmlinux 0xd627480b	strncat
@@ -5891,6 +5894,7 @@ EXPORT_SYMBOL vmlinux 0xfa736917	scsi_get_device_flags_keyed
 EXPORT_SYMBOL vmlinux 0xfac68eba	arm_elf_read_implies_exec
 EXPORT_SYMBOL vmlinux 0xfac8865f	sysctl_wmem_max
 EXPORT_SYMBOL vmlinux 0xfacd2e14	pgprot_user
+EXPORT_SYMBOL vmlinux 0xfae67b1f	cap_mmap_addr
 EXPORT_SYMBOL vmlinux 0xfaf5109f	tty_port_tty_get
 EXPORT_SYMBOL vmlinux 0xfaf98462	bitrev32
 EXPORT_SYMBOL vmlinux 0xfafd2fde	__find_get_block
@@ -9003,6 +9007,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x7519b51b	usb_find_interface
 EXPORT_SYMBOL_GPL vmlinux 0x7520dc3d	tcp_set_state
 EXPORT_SYMBOL_GPL vmlinux 0x7522f3ba	irq_modify_status
 EXPORT_SYMBOL_GPL vmlinux 0x752353f5	xfrm_audit_state_notfound_simple
+EXPORT_SYMBOL_GPL vmlinux 0x754e06b8	usb_disable_ltm
 EXPORT_SYMBOL_GPL vmlinux 0x7550c360	raw_seq_stop
 EXPORT_SYMBOL_GPL vmlinux 0x755fcd72	fat_alloc_new_dir
 EXPORT_SYMBOL_GPL vmlinux 0x757a466d	snd_soc_dapm_force_enable_pin
@@ -9046,6 +9051,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x7ab3ca18	eventfd_ctx_read
 EXPORT_SYMBOL_GPL vmlinux 0x7abda77b	tpm_show_caps
 EXPORT_SYMBOL_GPL vmlinux 0x7ae1ae8e	cpufreq_frequency_table_put_attr
 EXPORT_SYMBOL_GPL vmlinux 0x7b0f1ab3	ring_buffer_free_read_page
+EXPORT_SYMBOL_GPL vmlinux 0x7b60d87e	usb_enable_ltm
 EXPORT_SYMBOL_GPL vmlinux 0x7b69f0b0	tpm_calc_ordinal_duration
 EXPORT_SYMBOL_GPL vmlinux 0x7b907ac5	crypto_aes_set_key
 EXPORT_SYMBOL_GPL vmlinux 0x7b9b5d25	hrtimer_init_sleeper

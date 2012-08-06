@@ -2942,6 +2942,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	call_usermodehelper_fns
 EXPORT_SYMBOL vmlinux 0x00000000	can_do_mlock
 EXPORT_SYMBOL vmlinux 0x00000000	cancel_delayed_work_sync
 EXPORT_SYMBOL vmlinux 0x00000000	cancel_dirty_page
+EXPORT_SYMBOL vmlinux 0x00000000	cap_mmap_addr
 EXPORT_SYMBOL vmlinux 0x00000000	cap_mmap_file
 EXPORT_SYMBOL vmlinux 0x00000000	capable
 EXPORT_SYMBOL vmlinux 0x00000000	cdev_add
@@ -3409,6 +3410,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	filemap_fdatawrite_range
 EXPORT_SYMBOL vmlinux 0x00000000	filemap_flush
 EXPORT_SYMBOL vmlinux 0x00000000	filemap_write_and_wait
 EXPORT_SYMBOL vmlinux 0x00000000	filemap_write_and_wait_range
+EXPORT_SYMBOL vmlinux 0x00000000	files_lglock
 EXPORT_SYMBOL vmlinux 0x00000000	filp_close
 EXPORT_SYMBOL vmlinux 0x00000000	filp_open
 EXPORT_SYMBOL vmlinux 0x00000000	find_font
@@ -5545,6 +5547,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	up
 EXPORT_SYMBOL vmlinux 0x00000000	up_read
 EXPORT_SYMBOL vmlinux 0x00000000	up_write
 EXPORT_SYMBOL vmlinux 0x00000000	update_region
+EXPORT_SYMBOL vmlinux 0x00000000	update_time
 EXPORT_SYMBOL vmlinux 0x00000000	usb_get_transceiver
 EXPORT_SYMBOL vmlinux 0x00000000	usb_nop_xceiv_register
 EXPORT_SYMBOL vmlinux 0x00000000	usb_nop_xceiv_unregister
@@ -5590,6 +5593,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	vfs_symlink
 EXPORT_SYMBOL vmlinux 0x00000000	vfs_unlink
 EXPORT_SYMBOL vmlinux 0x00000000	vfs_write
 EXPORT_SYMBOL vmlinux 0x00000000	vfs_writev
+EXPORT_SYMBOL vmlinux 0x00000000	vfsmount_lock
 EXPORT_SYMBOL vmlinux 0x00000000	vga_base
 EXPORT_SYMBOL vmlinux 0x00000000	vlan_dev_real_dev
 EXPORT_SYMBOL vmlinux 0x00000000	vlan_dev_vlan_id
@@ -9516,11 +9520,13 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_deregister
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_deregister_dev
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_deregister_device_driver
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_disable_lpm
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_disable_ltm
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_disabled
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_driver_claim_interface
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_driver_release_interface
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_driver_set_configuration
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_enable_lpm
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_enable_ltm
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_ep0_reinit
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_find_alt_setting
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	usb_find_interface

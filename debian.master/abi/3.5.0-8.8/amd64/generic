@@ -5170,6 +5170,7 @@ EXPORT_SYMBOL vmlinux 0x5934392b	fb_register_client
 EXPORT_SYMBOL vmlinux 0x593483b3	devm_gpio_request_one
 EXPORT_SYMBOL vmlinux 0x594bf15b	ioport_map
 EXPORT_SYMBOL vmlinux 0x5967c929	__tracepoint_kmem_cache_alloc_node
+EXPORT_SYMBOL vmlinux 0x59759b2b	vfsmount_lock
 EXPORT_SYMBOL vmlinux 0x5995f449	__invalidate_device
 EXPORT_SYMBOL vmlinux 0x59af5e84	tty_register_ldisc
 EXPORT_SYMBOL vmlinux 0x59bc9609	acpi_write_bit_register
@@ -5676,6 +5677,7 @@ EXPORT_SYMBOL vmlinux 0x7880c781	dm_kcopyd_prepare_callback
 EXPORT_SYMBOL vmlinux 0x789bdca3	seq_printf
 EXPORT_SYMBOL vmlinux 0x78b7c4b2	lock_super
 EXPORT_SYMBOL vmlinux 0x78bb3e24	abort_exclusive_wait
+EXPORT_SYMBOL vmlinux 0x78bdd4fc	update_time
 EXPORT_SYMBOL vmlinux 0x78bfddac	drop_nlink
 EXPORT_SYMBOL vmlinux 0x78cf5b3f	tcp_gro_receive
 EXPORT_SYMBOL vmlinux 0x78df6bd7	no_pci_devices
@@ -6840,6 +6842,7 @@ EXPORT_SYMBOL vmlinux 0xc558530d	profile_pc
 EXPORT_SYMBOL vmlinux 0xc55a5c1b	simple_write_end
 EXPORT_SYMBOL vmlinux 0xc575bcc3	unbind_con_driver
 EXPORT_SYMBOL vmlinux 0xc5d9c46c	agp_try_unsupported_boot
+EXPORT_SYMBOL vmlinux 0xc5e02d03	files_lglock
 EXPORT_SYMBOL vmlinux 0xc5f46566	rb_augment_insert
 EXPORT_SYMBOL vmlinux 0xc6111b72	journal_update_format
 EXPORT_SYMBOL vmlinux 0xc62ae995	pci_scan_bus_parented
@@ -7650,6 +7653,7 @@ EXPORT_SYMBOL vmlinux 0xfa9bd566	journal_get_write_access
 EXPORT_SYMBOL vmlinux 0xfaae2faf	is_container_init
 EXPORT_SYMBOL vmlinux 0xfabefe4b	inet_sk_rebuild_header
 EXPORT_SYMBOL vmlinux 0xfac8865f	sysctl_wmem_max
+EXPORT_SYMBOL vmlinux 0xfae67b1f	cap_mmap_addr
 EXPORT_SYMBOL vmlinux 0xfaf76d6c	udp_prot
 EXPORT_SYMBOL vmlinux 0xfaf98462	bitrev32
 EXPORT_SYMBOL vmlinux 0xfb012113	file_sb_list_del
@@ -7780,7 +7784,6 @@ EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x26830357	kvm_write_guest_cached
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x27046576	kvm_exit
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x281abb42	kvm_mmu_invlpg
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x2afba7e9	gfn_to_pfn_prot
-EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x2be9d337	kvm_x86_ops
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x2d5b0455	kvm_after_handle_nmi
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x2efc78f3	kvm_vcpu_uninit
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x317f9e6b	kvm_enable_efer_bits
@@ -7825,6 +7828,7 @@ EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x7bb256ba	kvm_mmu_unprotect_page
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x7c502ab9	__tracepoint_kvm_nested_intr_vmexit
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x7c9b19a5	is_noslot_pfn
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x7f2c1163	__tracepoint_kvm_nested_vmexit
+EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x7fdae816	kvm_x86_ops
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x81a9d1ee	kvm_set_dr
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x831327da	kvm_max_guest_tsc_khz
 EXPORT_SYMBOL_GPL arch/x86/kvm/kvm 0x86b1a9fd	kvm_inject_realmode_interrupt
@@ -12403,6 +12407,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xabd54749	perf_event_enable
 EXPORT_SYMBOL_GPL vmlinux 0xabe3befd	wm8350_gpio_config
 EXPORT_SYMBOL_GPL vmlinux 0xabfc8fff	usb_queue_reset_device
 EXPORT_SYMBOL_GPL vmlinux 0xac2c26d4	unregister_net_sysctl_table
+EXPORT_SYMBOL_GPL vmlinux 0xac30efe1	usb_enable_ltm
 EXPORT_SYMBOL_GPL vmlinux 0xac8c0d9c	usb_usual_ignore_device
 EXPORT_SYMBOL_GPL vmlinux 0xac90bcc4	da903x_writes
 EXPORT_SYMBOL_GPL vmlinux 0xac9c3149	pm_generic_resume
@@ -13276,6 +13281,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xff246f62	debugfs_create_u32
 EXPORT_SYMBOL_GPL vmlinux 0xff3c58a9	unregister_kretprobe
 EXPORT_SYMBOL_GPL vmlinux 0xff59df67	debugfs_create_x16
 EXPORT_SYMBOL_GPL vmlinux 0xff5a8cfe	cn_del_callback
+EXPORT_SYMBOL_GPL vmlinux 0xff64f9c6	usb_disable_ltm
 EXPORT_SYMBOL_GPL vmlinux 0xff757955	blk_update_request
 EXPORT_SYMBOL_GPL vmlinux 0xff7e88c1	ata_pci_bmdma_prepare_host
 EXPORT_SYMBOL_GPL vmlinux 0xffa4c4ec	cgroup_lock
