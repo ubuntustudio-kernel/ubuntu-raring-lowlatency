@@ -112,6 +112,7 @@ firmware:       cis/SW_8xx_SER.cis
 firmware:       cis/tamarack.cis
 firmware:       comedi/jr3pci.idm
 firmware:       cp204unx.cod
+firmware:       cpia2/stv0672_vp4.bin
 firmware:       ct2fw.bin
 firmware:       ctfw.bin
 firmware:       cxgb3/ael2005_opt_edc.bin
