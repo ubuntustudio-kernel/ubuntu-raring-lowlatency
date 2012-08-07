@@ -119,7 +119,7 @@ static u8 *edid_load(struct drm_connector *connector, char *name,
 {
 	const struct firmware *fw;
 	struct platform_device *pdev;
-	u8 *fwdata = NULL, *edid;
+	u8 *fwdata = NULL, *edid, *new_edid;
 	int fwsize, expected;
 	int builtin = 0, err = 0;
 	int i, valid_extensions = 0;
@@ -195,12 +195,14 @@ static u8 *edid_load(struct drm_connector *connector, char *name,
 		    "\"%s\" for connector \"%s\"\n", valid_extensions,
 		    edid[0x7e], name, connector_name);
 		edid[0x7e] = valid_extensions;
-		edid = krealloc(edid, (valid_extensions + 1) * EDID_LENGTH,
+		new_edid = krealloc(edid, (valid_extensions + 1) * EDID_LENGTH,
 		    GFP_KERNEL);
-		if (edid == NULL) {
+		if (new_edid == NULL) {
 			err = -ENOMEM;
+			kfree(edid);
 			goto relfw_out;
 		}
+		edid = new_edid;
 	}
 
 	DRM_INFO("Got %s EDID base block and %d extension%s from "
