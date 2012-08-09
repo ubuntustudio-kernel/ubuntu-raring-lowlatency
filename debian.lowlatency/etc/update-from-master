@@ -113,7 +113,7 @@ git commit -s -m "UBUNTU: rebase to ${MASTER_TAG}" ${DEBIAN_TARGET}/changelog
 # number as we share the header files.
 #
 VERSION=`sed -n '1s/^linux.*(\(.*\-[0-9]*\).*).*$/\1/p' ${DEBIAN_SOURCE}/changelog`
-sed -in '1s/^\(linux.*(\)\(.*\-[0-9]*\)\(.*).*\)$/\13.5.0-8\3/' ${DEBIAN_TARGET}/changelog
+sed -in '1s/^\(linux.*(\)\(.*\-[0-9]*\)\(.*).*\)$/\1'"${VERSION}"'\3/' ${DEBIAN_TARGET}/changelog
 git commit -s -F debian/commit-templates/bumpabi ${DEBIAN_TARGET}/changelog
 
 #
