@@ -10947,6 +10947,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x21a2052e	dev_pm_qos_hide_latency_limit
 EXPORT_SYMBOL_GPL vmlinux 0x21b2b952	handle_simple_irq
 EXPORT_SYMBOL_GPL vmlinux 0x21d4fb6f	ata_host_alloc
 EXPORT_SYMBOL_GPL vmlinux 0x21e7b11a	wm8994_reg_read
+EXPORT_SYMBOL_GPL vmlinux 0x21f1ba83	ahci_dev_classify
 EXPORT_SYMBOL_GPL vmlinux 0x2205c7b3	devres_add
 EXPORT_SYMBOL_GPL vmlinux 0x2207f990	sysfs_remove_file
 EXPORT_SYMBOL_GPL vmlinux 0x221e2002	sata_async_notification
