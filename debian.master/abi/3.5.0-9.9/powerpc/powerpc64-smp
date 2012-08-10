@@ -11510,6 +11510,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x6fb1384c	__rio_local_write_config_8
 EXPORT_SYMBOL_GPL vmlinux 0x6fbc719c	pmf_unregister_driver
 EXPORT_SYMBOL_GPL vmlinux 0x6fd66d19	pci_store_saved_state
 EXPORT_SYMBOL_GPL vmlinux 0x6fe3d8cf	ktime_add_safe
+EXPORT_SYMBOL_GPL vmlinux 0x6fe6edec	ahci_dev_classify
 EXPORT_SYMBOL_GPL vmlinux 0x6ff607b6	crypto_get_default_rng
 EXPORT_SYMBOL_GPL vmlinux 0x700a71fe	pci_enable_rom
 EXPORT_SYMBOL_GPL vmlinux 0x703189d7	regulator_get_mode
