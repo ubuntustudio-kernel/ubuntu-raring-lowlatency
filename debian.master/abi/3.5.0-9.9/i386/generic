@@ -12779,6 +12779,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xc5897e4c	md_trim_bio
 EXPORT_SYMBOL_GPL vmlinux 0xc5a16d65	rtnl_register
 EXPORT_SYMBOL_GPL vmlinux 0xc5bab3fe	btree_init
 EXPORT_SYMBOL_GPL vmlinux 0xc5c264a5	amd_erratum_400
+EXPORT_SYMBOL_GPL vmlinux 0xc5c3c221	ahci_dev_classify
 EXPORT_SYMBOL_GPL vmlinux 0xc5c481fd	transport_configure_device
 EXPORT_SYMBOL_GPL vmlinux 0xc60f75ec	__ftrace_vprintk
 EXPORT_SYMBOL_GPL vmlinux 0xc61c700b	cpci_hp_register_controller

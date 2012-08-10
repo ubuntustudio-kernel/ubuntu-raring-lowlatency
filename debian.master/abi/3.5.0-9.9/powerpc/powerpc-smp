@@ -11758,6 +11758,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xabe78033	crypto_rng_type
 EXPORT_SYMBOL_GPL vmlinux 0xabf3fd7c	pm_runtime_irq_safe
 EXPORT_SYMBOL_GPL vmlinux 0xabf6f997	init_dummy_netdev
 EXPORT_SYMBOL_GPL vmlinux 0xac15420b	crypto_dequeue_request
+EXPORT_SYMBOL_GPL vmlinux 0xac15c340	ahci_dev_classify
 EXPORT_SYMBOL_GPL vmlinux 0xac309daf	ata_sff_exec_command
 EXPORT_SYMBOL_GPL vmlinux 0xac948c98	skb_gro_receive
 EXPORT_SYMBOL_GPL vmlinux 0xacc5478a	pmf_do_irq
