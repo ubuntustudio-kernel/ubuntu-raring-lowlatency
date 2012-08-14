@@ -47,6 +47,13 @@ getall() {
 		for prefix in $__package_prefixes
 		do
 			filename=${prefix}-${verabi}-${sub}_${verfull}_${arch}.deb
+
+			# Take local copy if it is there...
+			if [ -f $HOME/$filename ]; then
+				echo -n "Locally!..."
+				cp $HOME/$filename .
+			fi
+
 			for r in "${repo_list[@]}"
 			do
 				if ! [ -f $filename ]; then
