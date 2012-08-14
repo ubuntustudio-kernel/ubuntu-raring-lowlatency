@@ -4,6 +4,23 @@ linux-lowlatency (3.5.0-9.9) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-10.10 ]
+
+  * rebase to v3.5.1
+  * [Config] Enable CONFIG_AFS_FSCACHE=y
+    - LP: #728977
+  * SAUCE: firmware: Remove emi62 files duplicated in linux-firmware
+  * SAUCE: firmware: Remove tehuti files duplicated in linux-firmware
+  * overlayfs: copy up i_uid/i_gid from the underlying inode
+    - LP: #944386
+  * hwmon: (applesmc) Shorten minimum wait time
+    - LP: #1034449
+  * hwmon: (applesmc) Decode and act on read/write status codes
+    - LP: #1034449
+  * rebase to v3.5.1
+    - LP: #1026953
+    - LP: #1025377
+
  -- Andy Whitcroft <apw@ubuntu.com>  Tue, 14 Aug 2012 10:11:22 +0100
 
 linux-lowlatency (3.5.0-9.8) quantal-proposed; urgency=low
