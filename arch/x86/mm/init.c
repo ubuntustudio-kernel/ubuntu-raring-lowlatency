@@ -60,10 +60,10 @@ static void __init find_early_table_space(struct map_range *mr, unsigned long en
 		extra = end - ((end>>PMD_SHIFT) << PMD_SHIFT);
 #ifdef CONFIG_X86_32
 		extra += PMD_SIZE;
-#endif
 		/* The first 2/4M doesn't use large pages. */
 		if (mr->start < PMD_SIZE)
 			extra += mr->end - mr->start;
+#endif
 
 		ptes = (extra + PAGE_SIZE - 1) >> PAGE_SHIFT;
 	} else
