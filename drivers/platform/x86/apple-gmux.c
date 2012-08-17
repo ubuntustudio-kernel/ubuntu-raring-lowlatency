@@ -347,7 +347,9 @@ static int __devinit gmux_probe(struct pnp_dev *pnp,
 	 * backlight control and supports more levels than other options.
 	 * Disable the other backlight choices.
 	 */
+#if defined (CONFIG_ACPI_VIDEO) || defined (CONFIG_ACPI_VIDEO_MODULE)
 	acpi_video_unregister();
+#endif
 	apple_bl_unregister();
 
 	return 0;
@@ -367,7 +369,9 @@ static void __devexit gmux_remove(struct pnp_dev *pnp)
 	release_region(gmux_data->iostart, gmux_data->iolen);
 	kfree(gmux_data);
 
+#if defined (CONFIG_ACPI_VIDEO) || defined (CONFIG_ACPI_VIDEO_MODULE)
 	acpi_video_register();
+#endif
 	apple_bl_register();
 }
 
