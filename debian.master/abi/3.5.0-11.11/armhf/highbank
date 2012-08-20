@@ -2674,6 +2674,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	abort_exclusive_wait
 EXPORT_SYMBOL vmlinux 0x00000000	account_page_dirtied
 EXPORT_SYMBOL vmlinux 0x00000000	account_page_redirty
 EXPORT_SYMBOL vmlinux 0x00000000	account_page_writeback
+EXPORT_SYMBOL vmlinux 0x00000000	add_device_randomness
 EXPORT_SYMBOL vmlinux 0x00000000	add_disk
 EXPORT_SYMBOL vmlinux 0x00000000	add_taint
 EXPORT_SYMBOL vmlinux 0x00000000	add_timer
@@ -3553,6 +3554,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	get_option
 EXPORT_SYMBOL vmlinux 0x00000000	get_options
 EXPORT_SYMBOL vmlinux 0x00000000	get_phy_device
 EXPORT_SYMBOL vmlinux 0x00000000	get_random_bytes
+EXPORT_SYMBOL vmlinux 0x00000000	get_random_bytes_arch
 EXPORT_SYMBOL vmlinux 0x00000000	get_seconds
 EXPORT_SYMBOL vmlinux 0x00000000	get_super
 EXPORT_SYMBOL vmlinux 0x00000000	get_super_thawed
