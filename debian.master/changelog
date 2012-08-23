@@ -4,6 +4,12 @@ linux (3.6.0-0.1) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Upstream Kernel Changes ]
+
+  * rebase to v3.6-rc3
+    - LP: #1038651
+    - LP: #1034779
+
  -- Leann Ogasawara <leann.ogasawara@canonical.com>  Tue, 24 Jul 2012 06:37:09 -0700
 
 linux (3.5.0-6.6) quantal-proposed; urgency=low
