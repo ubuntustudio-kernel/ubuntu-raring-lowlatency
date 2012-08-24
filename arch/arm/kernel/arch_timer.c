@@ -232,6 +232,7 @@ int read_current_timer(unsigned long *timer_val)
 	*timer_val = arch_counter_get_cntpct();
 	return 0;
 }
+EXPORT_SYMBOL(read_current_timer);
 
 static struct clocksource clocksource_counter = {
 	.name	= "arch_sys_counter",
