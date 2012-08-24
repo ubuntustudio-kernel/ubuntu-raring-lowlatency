@@ -338,6 +338,7 @@ static cycle_t arch_counter_read_cc(const struct cyclecounter *cc)
 	 */
 	return arch_counter_get_cntpct();
 }
+EXPORT_SYMBOL(read_current_timer);
 
 static struct clocksource clocksource_counter = {
 	.name	= "arch_sys_counter",
