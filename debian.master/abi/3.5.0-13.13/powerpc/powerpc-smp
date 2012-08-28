@@ -6995,6 +6995,7 @@ EXPORT_SYMBOL vmlinux 0xddff7e8c	redraw_screen
 EXPORT_SYMBOL vmlinux 0xde0b7354	kill_anon_super
 EXPORT_SYMBOL vmlinux 0xde135e09	dquot_commit_info
 EXPORT_SYMBOL vmlinux 0xde152fb6	netif_stacked_transfer_operstate
+EXPORT_SYMBOL vmlinux 0xde2775fe	jbd2_journal_update_sb_errno
 EXPORT_SYMBOL vmlinux 0xde48e9ca	_raw_spin_lock
 EXPORT_SYMBOL vmlinux 0xde51c3c0	mark_buffer_dirty_inode
 EXPORT_SYMBOL vmlinux 0xde66f8a8	of_match_device
@@ -12196,6 +12197,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xdaa6b217	rtc_irq_register
 EXPORT_SYMBOL_GPL vmlinux 0xdac700cb	cgroup_attach_task_all
 EXPORT_SYMBOL_GPL vmlinux 0xdacd30cf	ata_sff_dma_pause
 EXPORT_SYMBOL_GPL vmlinux 0xdae34f6f	bsg_unregister_queue
+EXPORT_SYMBOL_GPL vmlinux 0xdaf06bde	usb_disable_xhci_ports
 EXPORT_SYMBOL_GPL vmlinux 0xdaf4dfb3	fb_mode_option
 EXPORT_SYMBOL_GPL vmlinux 0xdb04cacc	tracepoint_probe_unregister_noupdate
 EXPORT_SYMBOL_GPL vmlinux 0xdb43b7e0	usb_hcd_link_urb_to_ep
