@@ -2175,8 +2175,7 @@ static void be_msix_disable(struct be_adapter *adapter)
 static uint be_num_rss_want(struct be_adapter *adapter)
 {
 	if ((adapter->function_caps & BE_FUNCTION_CAPS_RSS) &&
-	     !sriov_want(adapter) && be_physfn(adapter) &&
-	     !be_is_mc(adapter))
+	     !sriov_want(adapter) && be_physfn(adapter))
 		return (adapter->be3_native) ? BE3_MAX_RSS_QS : BE2_MAX_RSS_QS;
 	else
 		return 0;
