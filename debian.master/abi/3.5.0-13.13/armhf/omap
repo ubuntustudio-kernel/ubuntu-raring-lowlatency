@@ -5179,6 +5179,7 @@ EXPORT_SYMBOL vmlinux 0xc9efc351	__block_page_mkwrite
 EXPORT_SYMBOL vmlinux 0xca1d04ef	__blk_end_request
 EXPORT_SYMBOL vmlinux 0xca249074	__dev_get_by_index
 EXPORT_SYMBOL vmlinux 0xca2c07d8	snd_card_free
+EXPORT_SYMBOL vmlinux 0xca32002e	jbd2_journal_update_sb_errno
 EXPORT_SYMBOL vmlinux 0xca486655	nand_scan_tail
 EXPORT_SYMBOL vmlinux 0xca5dbc50	scsi_print_sense_hdr
 EXPORT_SYMBOL vmlinux 0xca835e58	abx500_mask_and_set_register_interruptible
