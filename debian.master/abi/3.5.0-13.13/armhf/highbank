@@ -3891,6 +3891,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	jbd2_journal_start_commit
 EXPORT_SYMBOL vmlinux 0x00000000	jbd2_journal_stop
 EXPORT_SYMBOL vmlinux 0x00000000	jbd2_journal_try_to_free_buffers
 EXPORT_SYMBOL vmlinux 0x00000000	jbd2_journal_unlock_updates
+EXPORT_SYMBOL vmlinux 0x00000000	jbd2_journal_update_sb_errno
 EXPORT_SYMBOL vmlinux 0x00000000	jbd2_journal_wipe
 EXPORT_SYMBOL vmlinux 0x00000000	jbd2_log_start_commit
 EXPORT_SYMBOL vmlinux 0x00000000	jbd2_log_wait_commit

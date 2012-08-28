@@ -6307,6 +6307,7 @@ EXPORT_SYMBOL vmlinux 0xa393c9a9	neigh_seq_next
 EXPORT_SYMBOL vmlinux 0xa3a77c69	down_read_trylock
 EXPORT_SYMBOL vmlinux 0xa3af1b53	unregister_exec_domain
 EXPORT_SYMBOL vmlinux 0xa3ba44cc	blk_put_request
+EXPORT_SYMBOL vmlinux 0xa3cd742a	jbd2_journal_update_sb_errno
 EXPORT_SYMBOL vmlinux 0xa3ee0b5a	bio_copy_kern
 EXPORT_SYMBOL vmlinux 0xa3fc3d50	__tracepoint_module_get
 EXPORT_SYMBOL vmlinux 0xa400159f	crc32_be
@@ -13017,6 +13018,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xe5918633	crypto_init_spawn
 EXPORT_SYMBOL_GPL vmlinux 0xe5a6c48f	add_page_wait_queue
 EXPORT_SYMBOL_GPL vmlinux 0xe5d927fd	save_stack_trace_tsk
 EXPORT_SYMBOL_GPL vmlinux 0xe5e5e45d	usb_submit_urb
+EXPORT_SYMBOL_GPL vmlinux 0xe5f11f9f	usb_disable_xhci_ports
 EXPORT_SYMBOL_GPL vmlinux 0xe61a6d2f	gpio_unexport
 EXPORT_SYMBOL_GPL vmlinux 0xe6488b47	cpufreq_notify_transition
 EXPORT_SYMBOL_GPL vmlinux 0xe64ad8ea	unregister_nmi_handler

@@ -4091,6 +4091,7 @@ EXPORT_SYMBOL vmlinux 0x087355b4	tcp_v4_connect
 EXPORT_SYMBOL vmlinux 0x0897287b	acpi_disable_all_gpes
 EXPORT_SYMBOL vmlinux 0x08bf826c	_raw_spin_unlock_bh
 EXPORT_SYMBOL vmlinux 0x08cf2512	pnp_unregister_driver
+EXPORT_SYMBOL vmlinux 0x08eb3afa	jbd2_journal_update_sb_errno
 EXPORT_SYMBOL vmlinux 0x08f248b3	pipe_to_file
 EXPORT_SYMBOL vmlinux 0x08f9157f	jbd2_journal_start_commit
 EXPORT_SYMBOL vmlinux 0x091cc7bd	tcp_v4_md5_hash_skb
@@ -11072,6 +11073,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x20e1131f	platform_add_devices
 EXPORT_SYMBOL_GPL vmlinux 0x21186605	crypto_mod_put
 EXPORT_SYMBOL_GPL vmlinux 0x2120ef7f	devm_kfree
 EXPORT_SYMBOL_GPL vmlinux 0x214d97a8	pciserial_init_ports
+EXPORT_SYMBOL_GPL vmlinux 0x21a82f7d	usb_disable_xhci_ports
 EXPORT_SYMBOL_GPL vmlinux 0x21b3f73d	srcu_batches_completed
 EXPORT_SYMBOL_GPL vmlinux 0x21bf1396	crypto_ahash_type
 EXPORT_SYMBOL_GPL vmlinux 0x21cb255e	srcu_notifier_chain_register

@@ -6137,6 +6137,7 @@ EXPORT_SYMBOL vmlinux 0x9aecc75a	inet_select_addr
 EXPORT_SYMBOL vmlinux 0x9af11a3b	inet_twsk_deschedule
 EXPORT_SYMBOL vmlinux 0x9af50729	locks_init_lock
 EXPORT_SYMBOL vmlinux 0x9af89f98	memcpy_fromiovec
+EXPORT_SYMBOL vmlinux 0x9af8a8b0	jbd2_journal_update_sb_errno
 EXPORT_SYMBOL vmlinux 0x9b388444	get_zeroed_page
 EXPORT_SYMBOL vmlinux 0x9b58b00c	dev_get_by_flags_rcu
 EXPORT_SYMBOL vmlinux 0x9b75d7c3	scsi_test_unit_ready
@@ -10929,6 +10930,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x34b52be4	xfrm_audit_state_replay_overflow
 EXPORT_SYMBOL_GPL vmlinux 0x34c024df	ata_sff_qc_issue
 EXPORT_SYMBOL_GPL vmlinux 0x34e0933f	tpm_write
 EXPORT_SYMBOL_GPL vmlinux 0x3534e2a3	system_nrt_wq
+EXPORT_SYMBOL_GPL vmlinux 0x354c6e65	usb_disable_xhci_ports
 EXPORT_SYMBOL_GPL vmlinux 0x35a1bc3c	class_dev_iter_init
 EXPORT_SYMBOL_GPL vmlinux 0x35da0e5f	fs_kobj
 EXPORT_SYMBOL_GPL vmlinux 0x35dc89c1	vfs_lock_file
