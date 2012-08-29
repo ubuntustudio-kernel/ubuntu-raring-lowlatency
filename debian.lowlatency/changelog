@@ -4,6 +4,83 @@ linux-lowlatency (3.5.0-10.10) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-13.13 ]
+
+  * rebase to v3.5.3
+  * [Config] Add smsc{79}5xx to nic-usb-modules
+    - LP: #1041397
+  * rebase to v3.5.3
+
+  [ Ubuntu: 3.5.0-12.12 ]
+
+  * [Config] Fix typo on control.stub.in
+  * [Config] installing omapdrm specific headers for external drivers
+    - LP: #1038846
+  * SAUCE: apple-gmux: Fix port address calculation in gmux_pio_write32()
+  * SAUCE: (no-up) x86/mm: Fix 64bit size of mapping tables
+    - LP: #1022561
+  * SAUCE: firmware: Remove sb16 files duplicated in linux-firmware
+  * net: Allow driver to limit number of GSO segments per skb
+    - LP: #1037456
+    - CVE-2012-3412
+  * sfc: Fix maximum number of TSO segments and minimum TX queue size
+    - LP: #1037456
+    - CVE-2012-3412
+  * tcp: Apply device TSO segment limit earlier
+    - LP: #1037456
+    - CVE-2012-3412
+  * cfg80211: add channel flag to prohibit OFDM operation
+  * brcmsmac: use channel flags to restrict OFDM
+  * gmux: Add generic write32 function
+  * apple_gmux: Add support for newer hardware
+  * apple_gmux: Fix ACPI video unregister
+  * apple-gmux: Fix kconfig dependencies
+  * vga_switcheroo: Don't require handler init callback
+  * vga_switcheroo: Remove assumptions about registration/unregistration
+    ordering
+  * apple-gmux: Add display mux support
+  * mei: add mei_quirk_probe function
+    - LP: #1041164
+  * mutex: Place lock in contended state after fastpath_lock failure
+    - LP: #1041114
+
+  [ Ubuntu: 3.5.0-11.11 ]
+
+  * [Config] enable CONFIG_X86_X32=y
+  * SAUCE: input: Cypress PS/2 Trackpad mouse driver
+    - LP: #978807
+  * SAUCE: input: Cypress PS/2 Trackpad link driver into psmouse-base
+    - LP: #978807
+  * [Config] compile the rtc-pl031 driver as static on the highbank kernel
+    flavour
+    - LP: #1035110
+  * [Config] Enable CONFIG_DEBUG_HIGHBANK_UART for highbank
+    - LP: #1034781
+  * SAUCE: input: Cypress PS/2 Trackpad code style cleanup
+    - LP: #978807
+  * SAUCE: input: Cypress PS/2 Trackpad eliminate dead code
+    - LP: #978807
+  * SAUCE: input: Cypress PS/2 Trackpad fix no-config stubs
+    - LP: #978807
+  * SAUCE: input: Cypress PS/2 Trackpad set default debug_level=0
+    - LP: #978807
+  * SAUCE: [Config] add MOUSE_PS2_CYPRESS=y
+    - LP: #978807
+  * SAUCE: Yama: access task_struct->comm directly
+  * SAUCE: Yama: add link restrictions
+  * SAUCE: security: unconditionally chain to Yama LSM
+  * SAUCE: (drop after 3.6) irq_remap: disable IRQ remapping if any IOAPIC
+    lacks an IOMMU
+    - LP: #1034459
+  * (config) Enable getabis to use local package copies
+  * rebase to v3.5.2
+  * rds: set correct msg_namelen
+    - LP: #1031112
+    - CVE-2012-2340
+  * rebase to v3.5.2
+    - LP: #1027789
+    - LP: #1001251
+
  -- Andy Whitcroft <apw@canonical.com>  Wed, 29 Aug 2012 14:45:08 +0100
 
 linux-lowlatency (3.5.0-10.9) quantal-proposed; urgency=low
