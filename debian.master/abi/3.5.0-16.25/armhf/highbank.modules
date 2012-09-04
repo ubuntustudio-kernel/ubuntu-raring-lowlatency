@@ -1180,7 +1180,6 @@ mtdram
 mtdswap
 mtouch
 multipath
-musb_hdrc
 mv88e6060
 mv88e6xxx_drv
 mv_udc
@@ -1716,7 +1715,6 @@ sierra
 sierra_net
 sil164
 sir-dev
-sisusbvga
 sit
 sja1000
 sja1000_isa

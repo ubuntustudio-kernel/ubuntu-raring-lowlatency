@@ -1786,7 +1786,6 @@ mtdswap
 mtip32xx
 mtouch
 multipath
-musb_hdrc
 mv88e6060
 mv88e6xxx_drv
 mvsas
@@ -2577,7 +2576,6 @@ sis5595
 sis900
 sis-agp
 sisfb
-sisusbvga
 sit
 sja1000
 sja1000_isa
@@ -3371,7 +3369,6 @@ xfrm_ipcomp
 xfrm_user
 xfs
 xgifb
-xgmac
 xilinx_uartps
 xirc2ps_cs
 xircom_cb
