@@ -78,6 +78,9 @@ struct psmouse {
 };
 
 enum psmouse_type {
+	/* IMPORTANT! src/eventcomm.c in x-x-i-s uses the hard-coded values
+	 * of some of these (awful!), so never insert new entries to the
+	 * middle of the list!  */
 	PSMOUSE_NONE,
 	PSMOUSE_PS2,
 	PSMOUSE_PS2PP,
@@ -95,6 +98,7 @@ enum psmouse_type {
 	PSMOUSE_ELANTECH,
 	PSMOUSE_FSP,
 	PSMOUSE_SYNAPTICS_RELATIVE,
+	PSMOUSE_CYPRESS,
 	PSMOUSE_AUTO		/* This one should always be last */
 };
 
