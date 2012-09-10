@@ -9890,7 +9890,6 @@ EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x254ad106	snd_hda_mixer_bind_ctls
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x269265e6	snd_hda_jack_set_dirty_all
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x2823d17c	snd_hda_gen_add_verbs
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x28955917	snd_hda_bind_vol
-EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x295f7985	snd_hda_jack_tbl_get
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x2cbec1e2	hda_get_autocfg_input_label
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x2fb3bcbc	snd_hda_apply_fixup
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x309dfd31	snd_hda_jack_add_kctl
@@ -9926,6 +9925,7 @@ EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x72aabeef	snd_hda_multi_out_dig_o
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x7a130ad2	snd_hda_load_patch
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x7b0079ac	snd_hda_mixer_amp_volume_info
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x7b8338be	snd_hda_override_pin_caps
+EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x7e76a730	snd_hda_jack_tbl_new
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x7f3e053c	snd_hda_codec_get_pincfg
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x80a160e4	snd_hda_parse_pin_defcfg
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0x81483056	snd_hda_suspend
@@ -9957,7 +9957,6 @@ EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xb60d2430	snd_hda_multi_out_dig_c
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xb6b4eb53	snd_hda_mixer_amp_tlv
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xb73c0b97	snd_hda_multi_out_analog_prepare
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xb7e66094	snd_hda_check_board_codec_sid_config
-EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xbb0efcc6	snd_hda_jack_tbl_new
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xbd1984ba	snd_hda_codec_read
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xbe7dd7dc	snd_array_new
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xbf30a15d	snd_hda_ch_mode_get
@@ -9974,6 +9973,7 @@ EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xcdc32e8c	snd_hda_check_board_con
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xceafb12d	snd_hda_check_amp_list_power
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xd07ae251	snd_hda_codec_setup_stream
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xd0cc0b5f	snd_hda_is_supported_format
+EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xd2e31b1c	snd_hda_jack_tbl_get_from_tag
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xd49d8186	snd_hda_jack_report_sync
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xd4add667	snd_hda_codec_resume_cache
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xd65c064f	snd_hda_mixer_bind_switch_get
@@ -9982,6 +9982,7 @@ EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xdb83b2d2	snd_hda_multi_out_analo
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xde3afec8	snd_hda_unlock_devices
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xe52e6bd6	snd_hda_codec_resume_amp
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xe5614794	snd_hda_codec_amp_read
+EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xec272273	snd_hda_jack_tbl_get
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xeda3a721	snd_print_pcm_bits
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xeddab189	snd_hda_build_controls
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xee20dc59	snd_hda_mixer_bind_ctls_put
@@ -9999,7 +10000,6 @@ EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xfd84cf50	snd_hda_find_mixer_ctl
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xfe5e2f3c	snd_hda_pick_fixup
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xfea23f6b	snd_hda_mixer_amp_switch_put
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xfee9c307	snd_hda_mixer_bind_ctls_get
-EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xff061503	snd_hda_jack_tbl_get_from_tag
 EXPORT_SYMBOL_GPL sound/pci/hda/snd-hda-codec 0xff8d3f2f	snd_hda_add_codec_preset
 EXPORT_SYMBOL_GPL sound/soc/codecs/snd-soc-88pm860x 0x10aa9c13	pm860x_hs_jack_detect
 EXPORT_SYMBOL_GPL sound/soc/codecs/snd-soc-88pm860x 0xca80b478	pm860x_mic_jack_detect
