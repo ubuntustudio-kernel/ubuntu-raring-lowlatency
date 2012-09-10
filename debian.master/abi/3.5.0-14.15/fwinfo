@@ -492,6 +492,7 @@ firmware:       symbol_sp24t_sec_fw
 firmware:       tehuti/bdx.bin
 firmware:       ti_3410.fw
 firmware:       ti_5052.fw
+firmware:       ti-connectivity/wl1271-nvs.bin
 firmware:       ti-connectivity/wl127x-fw-4-mr.bin
 firmware:       ti-connectivity/wl127x-fw-4-plt.bin
 firmware:       ti-connectivity/wl127x-fw-4-sr.bin
