@@ -4,6 +4,65 @@ linux-lowlatency (3.5.0-13.12) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-14.16 ]
+
+  * SAUCE: apple-gmux: Fix index read functions
+  * SAUCE: input: Cypress PS/2 Trackpad move PSMOUSE_CYPRESS enum
+    - LP: #1041594
+  * SAUCE: Input: synaptics - Adjust threshold for treating position values
+    as negative
+    - LP: #1046512
+  * mei: check for error codes that mei_flow_ctrl_creds retuns
+  * mei: make mei_write_message more readable
+  * mei: mei_irq_thread_write_handler check for overflow
+  * mei: group wd_interface_reg with watchdog variables within struct
+    mei_device
+  * mei: don't query HCSR for host buffer depth
+  * mei: revamp host buffer interface function
+  * mei: mei_device can be const for mei register access functions
+  * mei: remove write only wariable wd_due_counter
+  * mei: mei_wd_host_init: update the comment
+  * mei: introduce mei_data2slots wrapper
+  * mei: streamline the _mei_irq_thread_close/ioctol functions
+  * mei: mei_irq_thread_write_handler - line break fix
+  * mei: use module_pci_driver
+  * mei: fix device stall after wd is stopped
+
+  [ Ubuntu: 3.5.0-14.15 ]
+
+  * SAUCE: fs: d_revalidate methods may be passed a NULL nameidata
+    - LP: #1038075
+  * SAUCE: drm/vmwgfx: add MODULE_DEVICE_TABLE so vmwgfx loads at boot
+    - LP: #1039157
+  * [Config] Enable CONFIG_DEVPTS_MULTIPLE_INSTANCES for highbank
+    - LP: #1038259
+  * SAUCE: wlcore: Declare MODULE_FIRMWARE usage
+    - LP: #1042918
+  * asus-nb-wmi: add some video toggle keys
+    - LP: #1022427
+  * [media] uvcvideo: Fix frame drop in bulk video stream
+  * [media] uvcvideo: Fix alternate setting selection
+  * Input: wacom - add support to Cintiq 22HD
+    - LP: #1043733
+  * ALSA: HDA: Create phantom jacks for fixed inputs and outputs
+  * ALSA: HDA: Support single 3-pin jack without VREF on the actual pin
+    - LP: #1018262
+  * ALSA: hda - give 3-pin jack the name "Headphone Mic Jack"
+  * ALSA: hda - Do not set GPIOs for speakers on IDT if there are no
+    speakers
+    - LP: #1040077
+  * ALSA: hda - Fix pop noise in headphones on S3 for Asus X55A, X55V
+    - LP: #1034779
+  * ALSA: hda - Always call standard unsolicited event for Realtek codecs
+    - LP: #1021192
+  * ALSA: hda - Add the inverted digital mic workaround to Realtek codecs
+  * ALSA: hda - Add inverted mic quirks for Asus U41SV, Acer 1810TZ and
+    AOD260
+    - LP: #1006089, #996611, #997227
+  * ALSA: hda - don't create dysfunctional mixer controls for ca0132
+    - LP: #1038651
+  * ALSA: hda - Don't send invalid volume knob command on IDT 92hd75bxx
+
  -- Tim Gardner <tim.gardner@canonical.com>  Wed, 12 Sep 2012 08:45:47 -0600
 
 linux-lowlatency (3.5.0-13.11) quantal-proposed; urgency=low
