@@ -38,6 +38,7 @@ $(stampdir)/stamp-build-%: dtb_target = $(notdir $(dtb_file_$*))
 $(stampdir)/stamp-build-%: $(stampdir)/stamp-prepare-%
 	@echo Debug: $@
 	$(build_cd) $(kmake) $(build_O) $(conc_level) $(build_image) modules $(dtb_target)
+	$(build_cd) readelf -s `find . -name setup.elf` | grep video_card
 	@touch $@
 
 # Install the finished build
