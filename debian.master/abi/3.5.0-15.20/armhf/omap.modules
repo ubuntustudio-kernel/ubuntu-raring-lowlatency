@@ -802,6 +802,7 @@ htc-pasic3
 hwmon-vid
 i2c-algo-bit
 i2c-algo-pca
+i2c-designware-core
 i2c-designware-platform
 i2c-dev
 i2c-diolan-u2c

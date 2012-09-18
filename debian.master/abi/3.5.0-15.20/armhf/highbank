@@ -8623,6 +8623,16 @@ EXPORT_SYMBOL_GPL vmlinux 0x00000000	hwrng_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_adapter_type
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_add_numbered_adapter
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_bus_type
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_dw_clear_int
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_dw_disable
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_dw_disable_int
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_dw_enable
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_dw_func
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_dw_init
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_dw_is_enabled
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_dw_isr
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_dw_read_comp_param
+EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_dw_xfer
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_for_each_dev
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_lock_adapter
 EXPORT_SYMBOL_GPL vmlinux 0x00000000	i2c_new_device
