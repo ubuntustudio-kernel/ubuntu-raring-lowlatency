@@ -4,6 +4,84 @@ linux-lowlatency (3.5.0-14.13) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-15.22 ]
+
+  * fix regressions introduced by the last batch of i915 patches.
+  * drm/i915: fix up PCH backlight #define mixup
+    - LP: #954661
+  * drm/i915: don't forget the PCH backlight registers
+    - LP: #954661
+
+  [ Ubuntu: 3.5.0-15.21 ]
+
+  * ubuntu: AUFS -- update to 18e455787597579fe144cdb2f18aa6a0a32c46a4
+  * [Config] Enable aufs
+    - LP: #908784
+  * eCryptfs: check for eCryptfs cipher support at mount
+    - LP: #338914
+  * drm/i915: pnv has a backlight polarity control bit, too
+    - LP: #954661
+  * drm/i915: clear up backlight #define confusion on gen4+
+    - LP: #954661
+  * drm/i915: properly enable the blc controller on the right pipe
+    - LP: #954661
+  * drm/i915: allow pipe A for lvds on gen4
+    - LP: #954661
+
+  [ Ubuntu: 3.5.0-15.20 ]
+
+  * rebase to v3.5.4
+  * SAUCE: CONFIG_HID_BATTERY_STRENGTH=y
+    - LP: #1003090
+  * eCryptfs: Copy up attributes of the lower target inode after rename
+    - LP: #561129
+  * eCryptfs: Write out all dirty pages just before releasing the lower
+    file
+    - LP: #1047261
+  * eCryptfs: Call lower ->flush() from ecryptfs_flush()
+    - LP: #1047261
+  * af_netlink: force credentials passing [CVE-2012-3520]
+    - LP: #1052097
+    - CVE-2012-3520
+  * drm/i915: clarify IBX dp workaround
+    - LP: #1011440
+  * drm/i915: Implement w/a for sporadic read failures on waking from rc6
+    - LP: #1011440
+  * drm/i915: support Haswell force waking
+    - LP: #1011440
+  * drm/i915: add RPS configuration for Haswell
+    - LP: #1011440
+  * drm/i915: enable RC6 by default on Haswell
+    - LP: #1011440
+  * drm/i915: introduce haswell_init_clock_gating
+    - LP: #1011440
+  * drm/i915: enable RC6 workaround on Haswell
+    - LP: #1011440
+  * drm/i915: re-initialize DDI buffer translations after resume
+    - LP: #1011440
+  * drm/i915: fix PIPE_DDI_PORT_MASK
+    - LP: #1011440
+  * drm/i915: try to train DP even harder
+    - LP: #1011440
+  * drm/i915: add more Haswell PCI IDs
+    - LP: #1011440
+  * rebase to v3.5.4
+    - LP: #1038651
+
+  [ Ubuntu: 3.5.0-14.19 ]
+
+  * [Config] Fix debug FTBS on non-x86
+
+  [ Ubuntu: 3.5.0-14.18 ]
+
+  * SAUCE: Add 'used' to the video_cards structure attributes
+    - LP: #1049650
+
+  [ Ubuntu: 3.5.0-14.17 ]
+
+  * SAUCE: Intel xhci: Only switch the switchable ports
+    - LP: #1034814
+
  -- Andy Whitcroft <apw@canonical.com>  Sat, 22 Sep 2012 14:42:41 +0100
 
 linux-lowlatency (3.5.0-14.12) quantal-proposed; urgency=low
