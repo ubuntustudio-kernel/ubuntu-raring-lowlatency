@@ -1081,16 +1081,16 @@ out:
 
 		/* make sure PWM is enabled and locked to the LVDS pipe */
 		pwm = I915_READ(BLC_PWM_CPU_CTL2);
-		if (pipe == 0 && (pwm & BLM_PIPE_B))
-			I915_WRITE(BLC_PWM_CPU_CTL2, pwm & ~BLM_PWM_ENABLE);
+		if (pipe == 0 && (pwm & PWM_PIPE_B))
+			I915_WRITE(BLC_PWM_CPU_CTL2, pwm & ~PWM_ENABLE);
 		if (pipe)
-			pwm |= BLM_PIPE_B;
+			pwm |= PWM_PIPE_B;
 		else
-			pwm &= ~BLM_PIPE_B;
-		I915_WRITE(BLC_PWM_CPU_CTL2, pwm | BLM_PWM_ENABLE);
+			pwm &= ~PWM_PIPE_B;
+		I915_WRITE(BLC_PWM_CPU_CTL2, pwm | PWM_ENABLE);
 
 		pwm = I915_READ(BLC_PWM_PCH_CTL1);
-		pwm |= BLM_PCH_PWM_ENABLE;
+		pwm |= PWM_PCH_ENABLE;
 		I915_WRITE(BLC_PWM_PCH_CTL1, pwm);
 		/*
 		 * Unlock registers and just
