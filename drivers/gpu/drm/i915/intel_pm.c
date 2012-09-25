@@ -2321,11 +2321,16 @@ static void gen6_disable_rps(struct drm_device *dev)
 
 int intel_enable_rc6(const struct drm_device *dev)
 {
+	struct drm_i915_private *dev_priv = dev->dev_private;
+
 	/*
 	 * Respect the kernel parameter if it is set
 	 */
 	if (i915_enable_rc6 >= 0)
 		return i915_enable_rc6;
+
+	if (dev_priv->quirks & QUIRK_RC6_DISABLE)
+		return 0;
 
 	/*
 	 * Disable RC6 on Ironlake

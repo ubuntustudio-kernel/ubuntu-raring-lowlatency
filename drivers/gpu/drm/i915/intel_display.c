@@ -7090,6 +7090,13 @@ static void quirk_invert_brightness(struct drm_device *dev)
 	DRM_INFO("applying inverted panel brightness quirk\n");
 }
 
+static void quirk_rc6_force_disable(struct drm_device *dev)
+{
+	struct drm_i915_private *dev_priv = dev->dev_private;
+	dev_priv->quirks |= QUIRK_RC6_DISABLE;
+	DRM_INFO("applying RC6 disable quirk\n");
+}
+
 struct intel_quirk {
 	int device;
 	int subsystem_vendor;
@@ -7125,6 +7132,12 @@ static struct intel_quirk intel_quirks[] = {
 
 	/* Acer Aspire 5734Z must invert backlight brightness */
 	{ 0x2a42, 0x1025, 0x0459, quirk_invert_brightness },
+
+	/* Asus ET2012E may fail to resume from S3 if RC6 is enabled */
+	{ 0x0102, 0x1043, 0x844d, quirk_rc6_force_disable },
+
+	/* Lenovo ThinkCentre S510 may hang after idle for a long time */
+	{ 0x0102, 0x17aa, 0x307b, quirk_rc6_force_disable },
 };
 
 static void intel_init_quirks(struct drm_device *dev)
