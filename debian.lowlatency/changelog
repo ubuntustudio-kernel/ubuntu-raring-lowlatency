@@ -4,6 +4,21 @@ linux-lowlatency (3.5.0-15.14) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-15.23 ]
+
+  * Revert "drm/i915: don't forget the PCH backlight registers"
+    - LP: #1053269, #1055231, #1055665
+  * Revert "drm/i915: fix up PCH backlight #define mixup"
+    - LP: #1053269, #1055665
+  * Revert "drm/i915: allow pipe A for lvds on gen4"
+    - LP: #1053269, #1055665
+  * Revert "drm/i915: properly enable the blc controller on the right pipe"
+    - LP: #1053269, #1055665
+  * Revert "drm/i915: clear up backlight #define confusion on gen4+"
+    - LP: #1053269, #1055665
+  * Revert "drm/i915: pnv has a backlight polarity control bit, too"
+    - LP: #1053269, #1055665
+
  -- Andy Whitcroft <apw@canonical.com>  Wed, 26 Sep 2012 09:41:38 +0100
 
 linux-lowlatency (3.5.0-15.13) quantal-proposed; urgency=low
