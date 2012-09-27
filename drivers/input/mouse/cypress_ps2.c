@@ -423,6 +423,7 @@ static int cypress_set_input_params(struct input_dev *input,
 
 		}
 
+		__set_bit(INPUT_PROP_BUTTONPAD, input->propbit);
 		__set_bit(EV_KEY, input->evbit);
 		__set_bit(BTN_TOUCH, input->keybit);
 		__set_bit(BTN_TOOL_FINGER, input->keybit);
@@ -439,6 +440,7 @@ static int cypress_set_input_params(struct input_dev *input,
 		__clear_bit(REL_X, input->relbit);
 		__clear_bit(REL_Y, input->relbit);
 	} else {
+		__set_bit(INPUT_PROP_BUTTONPAD, input->propbit);
 		__set_bit(EV_REL, input->evbit);
 		__set_bit(REL_X, input->relbit);
 		__set_bit(REL_Y, input->relbit);
