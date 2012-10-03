@@ -4,6 +4,145 @@ linux-lowlatency (3.5.0-16.16) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-17.26 ]
+
+  * SAUCE: ALSA: hda - fix indices on boost volume on Conexant
+    - LP: #1059523
+  * [Config] Build in CONFIG_X86_PCC_CPUFREQ=y
+    - LP: #1061126
+  * Revert "SAUCE: ahci_platform: add custom hard reset for Calxeda ahci
+    ctrlr"
+    - LP: #1059432
+  * Revert "SAUCE: net: calxedaxgmac: add write barriers around setting
+    owner bit"
+    - LP: #1059432
+  * Revert "SAUCE: ARM: highbank: use writel_relaxed variant for pwr
+    requests"
+    - LP: #1059432
+  * Revert "SAUCE: force DMA buffers to non-bufferable on highbank"
+    - LP: #1059432
+  * Revert "SAUCE: input: add a key driver for highbank"
+    - LP: #1059432
+  * [Config] Align highbank config with amd64-generic and add new configs
+    - LP: #1059432
+  * SAUCE: net: calxedaxgmac: enable operate on 2nd frame mode
+    - LP: #1059432
+  * SAUCE: net: calxedaxgmac: remove explicit rx dma buffer polling
+    - LP: #1059432
+  * SAUCE: net: calxedaxgmac: use relaxed i/o accessors in rx and tx paths
+    - LP: #1059432
+  * SAUCE: net: calxedaxgmac: drop some unnecessary register writes
+    - LP: #1059432
+  * SAUCE: net: calxedaxgmac: rework transmit ring handling
+    - LP: #1059432
+  * SAUCE: ARM: highbank: retry wfi on reset request
+    - LP: #1059432
+  * [Config] TIDSPBRIDGE=m
+    - LP: #1058022
+  * rebase to v3.5.5
+  * common: DMA-mapping: add DMA_ATTR_NO_KERNEL_MAPPING attribute
+    - LP: #1059432
+  * common: DMA-mapping: add DMA_ATTR_SKIP_CPU_SYNC attribute
+    - LP: #1059432
+  * ARM: dma-mapping: add support for DMA_ATTR_SKIP_CPU_SYNC attribute
+    - LP: #1059432
+  * ARM: add coherent dma ops
+    - LP: #1059432
+  * ARM: add coherent iommu dma ops
+    - LP: #1059432
+  * ARM: highbank: add coherent DMA setup
+    - LP: #1059432
+  * sata: add platform driver for Calxeda AHCI controller
+    - LP: #1059432
+  * xhci: Rate-limit XHCI_TRUST_TX_LENGTH quirk warning.
+    - LP: #1039478
+  * agp/intel-gtt: remove dead code
+    - LP: #1011440
+  * drm/i915: stop using dev->agp->base
+    - LP: #1011440
+  * agp/intel-gtt: don't require the agp bridge on setup
+    - LP: #1011440
+  * drm/i915 + agp/intel-gtt: prep work for direct setup
+    - LP: #1011440
+  * agp/intel-gtt: move gart base addres setup
+    - LP: #1011440
+  * drm/i915: don't use dev->agp
+    - LP: #1011440
+  * drm/i915: disable drm agp support for !gen3 with kms enabled
+    - LP: #1011440
+  * agp/intel-agp: remove snb+ host bridge pciids
+    - LP: #1011440
+  * rebase to v3.5.5
+    - LP: #1000424
+
+  [ Ubuntu: 3.5.0-16.25 ]
+
+  * SAUCE: input: Cypress PS/2 Trackpad fix multi-source, double-click
+    - LP: #1055788
+  * [Config] revert '[Config] enable CONFIG_X86_X32=y'
+    - LP: #1041883
+  * vmwgfx: corruption in vmw_event_fence_action_create()
+  * drm/nvd0/disp: hopefully fix selection of 6/8bpc mode on DP outputs
+    - LP: #1058088
+  * drm/nv50-/gpio: initialise to vbios defaults during init
+    - LP: #1058088
+  * igb: A fix to VF TX rate limit
+    - LP: #1058188
+  * igb: Add switch case for supported hardware to igb_ptp_remove.
+    - LP: #1058188
+  * igb: Support the get_ts_info ethtool method.
+    - LP: #1058188
+  * igb: Streamline RSS queue and queue pairing assignment logic.
+    - LP: #1058188
+  * igb: Update firmware info output
+    - LP: #1058188
+  * igb: Version bump
+    - LP: #1058188
+  * igb: reset PHY in the link_up process to recover PHY setting after
+    power down.
+    - LP: #1058188
+  * igb: Fix for failure to init on some 82576 devices.
+    - LP: #1058188
+  * igb: correct hardware type (i210/i211) check in igb_loopback_test()
+    - LP: #1058188
+  * igb: don't break user visible strings over multiple lines in
+    igb_ethtool.c
+    - LP: #1058188
+  * igb: add delay to allow igb loopback test to succeed on 8086:10c9
+    - LP: #1058188
+  * igb: fix panic while dumping packets on Tx hang with IOMMU
+    - LP: #1058188
+  * igb: Fix register defines for all non-82575 hardware
+    - LP: #1058188
+  * e1000e: use more informative logging macros when netdev not yet
+    registered
+    - LP: #1058219
+  * e1000e: Cleanup code logic in e1000_check_for_serdes_link_82571()
+    - LP: #1058219
+  * e1000e: Program the correct register for ITR when using MSI-X.
+    - LP: #1058219
+  * e1000e: advertise transmit time stamping
+    - LP: #1058219
+  * e1000e: 82571 Tx Data Corruption during Tx hang recovery
+    - LP: #1058219
+  * e1000e: fix panic while dumping packets on Tx hang with IOMMU
+    - LP: #1058219
+  * e1000: Combining Bitwise OR in one expression.
+    - LP: #1058221
+  * e1000: advertise transmit time stamping
+    - LP: #1058221
+  * e1000: Small packets may get corrupted during padding by HW
+    - LP: #1058221
+  * sched: Fix migration thread runtime bogosity
+    - LP: #1057593
+  * ACER: Add support for accelerometer sensor
+    - LP: #1055433
+  * ACER: Fix Smatch double-free issue
+    - LP: #1055433
+  * SAUCE: HID: ntrig: change default value of logical/physical
+    width/height to 1
+    - LP: #1044248
+
  -- Andy Whitcroft <apw@canonical.com>  Wed, 03 Oct 2012 23:31:47 +0100
 
 linux-lowlatency (3.5.0-16.15) quantal-proposed; urgency=low
