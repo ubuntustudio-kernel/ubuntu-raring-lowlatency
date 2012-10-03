@@ -2067,7 +2067,6 @@ pc87427
 pcap_keys
 pcap_ts
 pcbc
-pcc-cpufreq
 pcd
 pcf50633
 pcf50633-adc
