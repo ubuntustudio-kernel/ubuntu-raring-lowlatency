@@ -1604,6 +1604,7 @@ mtdswap
 mtip32xx
 mtouch
 multipath
+musb_hdrc
 mv643xx_eth
 mv88e6060
 mv88e6xxx_drv
@@ -2349,6 +2350,7 @@ sis190
 sis5595
 sis900
 sisfb
+sisusbvga
 sit
 sja1000
 sja1000_isa
