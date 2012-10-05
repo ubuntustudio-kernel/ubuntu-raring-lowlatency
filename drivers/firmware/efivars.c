@@ -1527,6 +1527,7 @@ void unregister_efivars(struct efivars *efivars)
 		sysfs_remove_bin_file(&efivars->kset->kobj, efivars->del_var);
 	kfree(efivars->new_var);
 	kfree(efivars->del_var);
+	kobject_put(efivars->kobject);
 	kset_unregister(efivars->kset);
 }
 EXPORT_SYMBOL_GPL(unregister_efivars);
@@ -1556,6 +1557,13 @@ int register_efivars(struct efivars *efivars,
 		printk(KERN_ERR "efivars: Subsystem registration failed.\n");
 		error = -ENOMEM;
 		goto out;
+	}
+
+	efivars->kobject = kobject_create_and_add("efivars", parent_kobj);
+	if (!efivars->kobject) {
+		pr_err("efivars: Subsystem registration failed.\n");
+		error = -ENOMEM;
+		goto err_unreg_vars;
 	}
 
 	/*
@@ -1601,6 +1609,9 @@ int register_efivars(struct efivars *efivars,
 	}
 
 	register_filesystem(&efivarfs_type);
+
+err_unreg_vars:
+	kset_unregister(efivars->kset);
 
 out:
 	kfree(variable_name);
