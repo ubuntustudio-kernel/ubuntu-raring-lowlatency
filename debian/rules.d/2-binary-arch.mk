@@ -76,6 +76,7 @@ else
 endif
 
 ifeq ($(arch),amd64)
+ifeq ($(uefi_signed),true)
 	install -d $(signed)/$(release)-$(revision)
 	# Check to see if this supports handoff, if not do not sign it.
 	# Check the identification area magic and version >= 0x020b
@@ -83,6 +84,7 @@ ifeq ($(arch),amd64)
 	[ "$$handoff" = "GOOD" ] && \
 		cp -p $(pkgdir)/boot/$(install_file)-$(abi_release)-$* \
 			$(signed)/$(release)-$(revision)/$(install_file)-$(abi_release)-$*.efi
+endif
 endif
 
 	install -m644 $(builddir)/build-$*/.config \
@@ -486,10 +488,12 @@ binary-debs: signed_tar = $(src_pkg_name)_$(release)-$(revision)_$(arch).tar.gz
 binary-debs: binary-perarch $(addprefix binary-,$(flavours))
 	@echo Debug: $@
 ifeq ($(arch),amd64)
+ifeq ($(uefi_signed),true)
 	echo $(release)-$(revision) > $(signedv)/version
 	cd $(signedv) && ls *.efi >flavours
 	cd $(signed) && tar czvf ../../../$(signed_tar) .
 	dpkg-distaddfile $(signed_tar) raw-uefi -
+endif
 endif
 
 build-arch-deps-$(do_flavour_image_package) += $(addprefix $(stampdir)/stamp-build-,$(flavours))
