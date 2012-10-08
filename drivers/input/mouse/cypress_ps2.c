@@ -622,12 +622,11 @@ static int cypress_parse_packet(const unsigned char packet[],
 			cytp_dbg("cypress_parse_packet: received invalid packet.\n");
 		}
 
+		report_data->tap = (header_byte & ABS_MULTIFINGER_TAP) ? 1 : 0;
+
 		/* Remove HSCROLL bit */
 		if (report_data->contact_cnt == 4)
 			header_byte &= ~(ABS_HSCROLL_BIT);
-
-		if (report_data->contact_cnt > 0)
-			report_data->tap = (header_byte & ABS_MULTIFINGER_TAP) ? 1 : 0;
 
 		if (report_data->contact_cnt == 1) {
 			report_data->contacts[0].x =
