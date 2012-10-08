@@ -478,8 +478,8 @@ static int cypress_get_finger_count(unsigned char header_byte)
 				if (finger_count == 2) {
 					finger_count = 5;
 				} else {
-					/* invalid header byte data, set invliad finger count. */
-					finger_count = 6;
+					/* Invalid contact (e.g. palm). Ignore it. */
+					finger_count = 0;
 				}
 			}
 		}
