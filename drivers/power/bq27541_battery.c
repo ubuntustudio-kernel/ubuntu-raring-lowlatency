@@ -77,7 +77,6 @@ static int ac_on ;
 static int usb_on ;
 static unsigned int 	battery_current;
 static unsigned int  battery_remaining_capacity;
-static atomic_t device_count;
 struct workqueue_struct *battery_work_queue = NULL;
 
 /* Functions declaration */
@@ -463,7 +462,6 @@ static int bq27541_get_psp(int reg_offset, enum power_supply_property psp,
 	union power_supply_propval *val)
 {
 	s32 ret;
-	int smb_retry=0;
 	int rt_value=0;
 
 	bq27541_device->smbus_status = bq27541_smbus_read_data(reg_offset, 0, &rt_value);
