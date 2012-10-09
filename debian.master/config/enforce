@@ -122,3 +122,7 @@ value CONFIG_I2C_DESIGNWARE_PLATFORM m | \
 (flavour highbank &/ value CONFIG_RTC_DRV_PL031 y) | \
 value CONFIG_RTC_DRV_PL031 m | \
 !exists CONFIG_RTC_DRV_PL031
+
+# Don't use the generic ehci/ohci code on omap, it doesn't work 
+((flavour omap &/ value CONFIG_USB_EHCI_HCD_PLATFORM n & value CONFIG_USB_OHCI_HCD_PLATFORM n) | \
+    !exists MISSING)
