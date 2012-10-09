@@ -4,6 +4,31 @@ linux-lowlatency (3.5.0-17.17) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-17.28 ]
+
+  * [packaging] we already have a valid src_pkg_name
+  * [packaging] allow us to select which builds have uefi signed versions
+  * SAUCE: input: fix weird issue of synaptics psmouse sync lost after
+    resume
+    - LP: #717970
+  * SAUCE: omap3 clocks .dev_id = NULL
+    - LP: #1061599
+  * [Config] omap: disable USB_[EHCI|OHCI]_HCD_PLATFORM
+    - LP: #1061599
+  * [Config] omap: enforce USB_[EHCI|OHCI]_HCD_PLATFORM=n
+    - LP: #1061599
+  * SAUCE: net/ipv4: Always flush route cache on unregister batch call
+    - LP: #1021471
+  * Bluetooth: Add USB_VENDOR_AND_INTERFACE_INFO() for Broadcom/Foxconn
+    - LP: #1030233
+  * SAUCE: Bluetooth: Remove rules for matching Broadcom vendor specific
+    IDs
+    - LP: #1030233
+
+  [ Ubuntu: 3.5.0-17.27 ]
+
+  * [packaging] add custom upload for the kernel binary package
+
  -- Andy Whitcroft <apw@canonical.com>  Tue, 09 Oct 2012 20:31:30 +0100
 
 linux-lowlatency (3.5.0-17.16) quantal-proposed; urgency=low
