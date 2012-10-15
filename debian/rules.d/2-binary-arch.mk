@@ -430,7 +430,9 @@ ifeq ($(do_tools),true)
 	if [ "$(arch)" = "amd64" ] || [ "$(arch)" = "i386" ]; then \
 		cd $(builddirpa)/tools/power/x86/x86_energy_perf_policy && make CROSS_COMPILE=$(CROSS_COMPILE); \
 		cd $(builddirpa)/tools/power/x86/turbostat && make CROSS_COMPILE=$(CROSS_COMPILE); \
-		cd $(builddirpa)/tools/hv && make CROSS_COMPILE=$(CROSS_COMPILE) CFLAGS=-I../../include; \
+		if [ "$(do_hyperv)" = "true" ]; then \
+			cd $(builddirpa)/tools/hv && make CROSS_COMPILE=$(CROSS_COMPILE); \
+		fi; \
 	fi
 endif
 	@touch $@
@@ -448,9 +450,11 @@ ifeq ($(do_tools),true)
 			$(toolspkgdir)/usr/bin/x86_energy_perf_policy_$(abi_release); \
 		install -s -m755 $(builddirpa)/tools/power/x86/turbostat/turbostat \
 			$(toolspkgdir)/usr/bin/turbostat_$(abi_release); \
-		install -d $(toolspkgdir)/usr/sbin; \
-		install -s -m755 $(builddirpa)/tools/hv/hv_kvp_daemon \
-			$(toolspkgdir)/usr/sbin/hv_kvp_daemon_$(abi_release); \
+		if [ "$(do_hyperv)" = "true" ]; then \
+			install -d $(toolspkgdir)/usr/sbin; \
+			install -s -m755 $(builddirpa)/tools/hv/hv_kvp_daemon \
+				$(toolspkgdir)/usr/sbin/hv_kvp_daemon_$(abi_release); \
+		fi; \
 	fi
 endif
 
