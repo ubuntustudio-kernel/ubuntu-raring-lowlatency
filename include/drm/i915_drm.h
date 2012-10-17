@@ -313,6 +313,7 @@ typedef struct drm_i915_irq_wait {
 #define I915_PARAM_HAS_WAIT_TIMEOUT	 19
 #define I915_PARAM_HAS_SEMAPHORES	 20
 #define I915_PARAM_HAS_PRIME_VMAP_FLUSH	 21
+#define I915_PARAM_HAS_SECURE_BATCHES   23
 
 typedef struct drm_i915_getparam {
 	int param;
@@ -677,6 +678,11 @@ struct drm_i915_gem_execbuffer2 {
 
 /** Resets the SO write offset registers for transform feedback on gen7. */
 #define I915_EXEC_GEN7_SOL_RESET	(1<<8)
+
+/** Request a privileged ("secure") batch buffer. Note only available for
+ * DRM_ROOT_ONLY | DRM_MASTER processes.
+ */
+#define I915_EXEC_SECURE               (1<<9)
 
 struct drm_i915_gem_pin {
 	/** Handle of the buffer to be pinned. */
