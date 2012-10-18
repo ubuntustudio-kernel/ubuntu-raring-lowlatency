@@ -116,3 +116,7 @@ value CONFIG_AUDIT_LOGINUID_IMMUTABLE n
 (flavour highbank &/ value CONFIG_I2C_DESIGNWARE_PLATFORM y) | \
 value CONFIG_I2C_DESIGNWARE_PLATFORM m | \
 !exists CONFIG_I2C_DESIGNWARE_PLATFORM
+
+# Don't use the generic ehci/ohci code on omap, it doesn't work
+((flavour omap &/ value CONFIG_USB_EHCI_HCD_PLATFORM n & value CONFIG_USB_OHCI_HCD_PLATFORM n) | \
+	!exists MISSING)
