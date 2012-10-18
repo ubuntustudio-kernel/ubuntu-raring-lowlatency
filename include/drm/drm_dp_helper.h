@@ -261,6 +261,10 @@ i2c_dp_aux_add_bus(struct i2c_adapter *adapter);
 #define DP_LINK_STATUS_SIZE       6
 bool drm_dp_channel_eq_ok(u8 link_status[DP_LINK_STATUS_SIZE],
 			  int lane_count);
+u8 drm_dp_get_adjust_request_voltage(u8 link_status[DP_LINK_STATUS_SIZE],
+				     int lane);
+u8 drm_dp_get_adjust_request_pre_emphasis(u8 link_status[DP_LINK_STATUS_SIZE],
+					  int lane);
 
 #define DP_RECEIVER_CAP_SIZE    0xf
 void drm_dp_link_train_clock_recovery_delay(u8 dpcd[DP_RECEIVER_CAP_SIZE]);
