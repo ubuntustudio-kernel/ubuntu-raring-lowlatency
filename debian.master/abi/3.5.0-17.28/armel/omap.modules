@@ -237,7 +237,6 @@ bcm203x
 bcm3510
 bcm5974
 bcma
-bcma-hcd
 bcm_wimax
 befs
 belkin_sa
@@ -1998,7 +1997,6 @@ spi-tle62x0
 squashfs
 sr030pc30
 ssb
-ssb-hcd
 ssfdc
 sst25l
 ssu100
