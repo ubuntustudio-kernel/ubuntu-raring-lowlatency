@@ -5,11 +5,11 @@
 # Lucid mvl-dove. When complete you should have a copy of
 # the mvl-dove changelog with the correct release names.
 #
-SOURCE_RELEASE=quantal
+SOURCE_RELEASE=raring
 SOURCE_RELEASE_BRANCH=master
 DEBIAN_SOURCE=debian.${SOURCE_RELEASE_BRANCH}
 
-TARGET_RELEASE=quantal
+TARGET_RELEASE=raring
 TARGET_RELEASE_BRANCH=lowlatency
 DEBIAN_TARGET=debian.${TARGET_RELEASE_BRANCH}
 
