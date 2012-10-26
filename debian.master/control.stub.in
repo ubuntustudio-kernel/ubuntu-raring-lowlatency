@@ -61,7 +61,6 @@ Architecture: all
 Section: devel
 Priority: optional
 Depends: ${misc:Depends}, coreutils | fileutils (>= 4.0)
-Provides: SRCPKGNAME-headers, SRCPKGNAME-headers-3
 Description: Header files related to Linux kernel version PKGVER
  This package provides kernel header files for version PKGVER, for sites
  that want the latest kernel headers. Please read
