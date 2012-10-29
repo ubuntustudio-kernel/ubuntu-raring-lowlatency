@@ -107,6 +107,12 @@ enum {
 	REG_STATUS,
 	REG_CAPACITY,
 	REG_SERIAL_NUMBER,
+	REG_CHARGE_NOW,
+	REG_CHARGE_FULL,
+	REG_CHARGE_FULL_DESIGN,
+	REG_POWER,
+	REG_CYCLE,
+
 	REG_MAX
 };
 
@@ -133,6 +139,13 @@ static struct bq27541_device_data {
 	[REG_TIME_TO_FULL]			= BQ27541_DATA(TIME_TO_FULL_AVG, 0x18, 0, 65535),
 	[REG_STATUS]				= BQ27541_DATA(STATUS, 0x0a, 0, 65535),
 	[REG_CAPACITY]				= BQ27541_DATA(CAPACITY, 0x2c, 0, 100),
+
+	[REG_CHARGE_NOW]			= BQ27541_DATA(CHARGE_NOW, 0x10, 0, 65535),
+	[REG_CHARGE_FULL]			= BQ27541_DATA(CHARGE_FULL, 0x12, 0, 65535),
+	[REG_CHARGE_FULL_DESIGN]		= BQ27541_DATA(CHARGE_FULL_DESIGN, 0x3c, 0, 65535),
+	[REG_POWER]				= BQ27541_DATA(POWER_AVG, 0x24, 0, 65535),
+	[REG_CYCLE]				= BQ27541_DATA(CYCLE_COUNT, 0x2a, 0, 65535),
+
 };
 
 static enum power_supply_property bq27541_properties[] = {
@@ -143,6 +156,10 @@ static enum power_supply_property bq27541_properties[] = {
 	POWER_SUPPLY_PROP_VOLTAGE_NOW,
 	POWER_SUPPLY_PROP_CAPACITY,
 	POWER_SUPPLY_PROP_TEMP,
+	POWER_SUPPLY_PROP_CHARGE_NOW,
+	POWER_SUPPLY_PROP_CHARGE_FULL,
+	POWER_SUPPLY_PROP_CHARGE_FULL_DESIGN,
+	POWER_SUPPLY_PROP_CYCLE_COUNT
 };
 
 void check_cabe_type(void)
@@ -479,10 +496,21 @@ static int bq27541_get_psp(int reg_offset, enum power_supply_property psp,
 			return -EINVAL;
 	}
 	if (psp == POWER_SUPPLY_PROP_VOLTAGE_NOW) {
-		val->intval = bq27541_device->bat_vol = rt_value;
-		BAT_NOTICE("voltage_now= %u mV\n", val->intval);
-	}
-	if (psp == POWER_SUPPLY_PROP_STATUS) {
+		val->intval = bq27541_device->bat_vol = rt_value * 1000;
+		BAT_NOTICE("voltage_now= %u uV\n", val->intval);
+	} else if (psp == POWER_SUPPLY_PROP_CHARGE_NOW) {
+		val->intval = rt_value * 1000;
+		BAT_NOTICE("charge_now = %u uA\n", val->intval);
+	} else if (psp == POWER_SUPPLY_PROP_CHARGE_FULL) {
+		val->intval = rt_value * 1000;
+		BAT_NOTICE("charge_full = %u uA\n", val->intval);
+	} else if (psp == POWER_SUPPLY_PROP_CHARGE_FULL_DESIGN) {
+		val->intval = rt_value * 1000;
+		BAT_NOTICE("design capacity = %u uAh\n", val->intval);
+	} else if (psp == POWER_SUPPLY_PROP_CYCLE_COUNT) {
+		val->intval = rt_value;
+		BAT_NOTICE("cycle count = %u\n", val->intval);
+	} else if (psp == POWER_SUPPLY_PROP_STATUS) {
 #if defined(DEBUG) || defined(CONFIG_DYNAMIC_DEBUG)
 		static char *status_text[] = {"Unknown", "Charging", "Discharging", "Not charging", "Full"};
 #endif
@@ -606,11 +634,12 @@ static int bq27541_get_property(struct power_supply *psy,
 
 		case POWER_SUPPLY_PROP_STATUS:
 		case POWER_SUPPLY_PROP_VOLTAGE_NOW:
-		case POWER_SUPPLY_PROP_CURRENT_NOW:
 		case POWER_SUPPLY_PROP_TEMP:
-		case POWER_SUPPLY_PROP_TIME_TO_EMPTY_AVG:
-		case POWER_SUPPLY_PROP_TIME_TO_FULL_AVG:
 		case POWER_SUPPLY_PROP_SERIAL_NUMBER:
+		case POWER_SUPPLY_PROP_CHARGE_NOW:
+		case POWER_SUPPLY_PROP_CHARGE_FULL:
+		case POWER_SUPPLY_PROP_CHARGE_FULL_DESIGN:
+		case POWER_SUPPLY_PROP_CYCLE_COUNT:
 			for (count = 0; count < REG_MAX; count++) {
 				if (psp == bq27541_data[count].psp)
 					break;
