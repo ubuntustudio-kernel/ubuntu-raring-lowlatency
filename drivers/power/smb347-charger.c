@@ -101,6 +101,7 @@
 #define APSD_DCP		0x02
 #define APSD_OTHER		0x03
 #define APSD_SDP		0x04
+#define APSD_SDP2		0x06
 #define USB_30		0x20
 
 /* Functions declaration */
@@ -709,6 +710,13 @@ static int cable_type_detect(void)
 #ifdef TOUCH_CALLBACK_ENABLED
                                              touch_callback(usb_cable);
 #endif 
+
+					} else if(retval == APSD_SDP2) {
+							printk("Cable: SDP2\n");
+							success = battery_callback(usb_cable);
+#ifdef TOUCH_CALLBACK_ENABLED
+                                             touch_callback(usb_cable);
+#endif
 
 					} else
 							printk("Unkown Plug In Cable type !\n");
