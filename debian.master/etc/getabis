@@ -14,4 +14,3 @@ getall amd64 generic
 getall i386 generic
 
 # Ports arches and flavours.
-getall powerpc powerpc-smp powerpc64-smp
