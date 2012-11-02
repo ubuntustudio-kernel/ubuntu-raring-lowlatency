@@ -10,5 +10,3 @@ armhf	PKGVER-ABINUM	highbank	PKGVER-ABINUM-highbank		-
 
 # Ports
 # arch	version		flavour		installedname			suffix	bdep
-powerpc	PKGVER-ABINUM	powerpc-smp	PKGVER-ABINUM-powerpc-smp	-	
-powerpc	PKGVER-ABINUM	powerpc64-smp	PKGVER-ABINUM-powerpc64-smp	-	
