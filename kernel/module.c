@@ -2466,6 +2466,9 @@ static int module_sig_check(struct load_info *info)
 	if (err == -ENOKEY && !sig_enforce)
 		err = 0;
 
+	if (err < 0)
+		pr_err("module: error loading incorrectly signed module.\n");
+
 	return err;
 }
 #else /* !CONFIG_MODULE_SIG */
