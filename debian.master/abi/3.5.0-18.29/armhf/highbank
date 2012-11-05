@@ -5671,6 +5671,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	write_cache_pages
 EXPORT_SYMBOL vmlinux 0x00000000	write_dirty_buffer
 EXPORT_SYMBOL vmlinux 0x00000000	write_inode_now
 EXPORT_SYMBOL vmlinux 0x00000000	write_one_page
+EXPORT_SYMBOL vmlinux 0x00000000	writeback_in_progress
 EXPORT_SYMBOL vmlinux 0x00000000	writeback_inodes_sb
 EXPORT_SYMBOL vmlinux 0x00000000	writeback_inodes_sb_if_idle
 EXPORT_SYMBOL vmlinux 0x00000000	writeback_inodes_sb_nr
