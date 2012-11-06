@@ -231,7 +231,7 @@ static void irq_work(struct work_struct *work)
 					      tegra_state_name(to));
 
 		if (tegra->charger_cb)
-			tegra->detect_vbus = true;
+			tegra->charger_cb(to, from, tegra->charger_cb_data);
 
 		if (to == OTG_STATE_A_SUSPEND) {
 			if (from == OTG_STATE_A_HOST)
