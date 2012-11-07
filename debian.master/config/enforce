@@ -88,15 +88,15 @@ value CONFIG_EFI_VARS y | !exists CONFIG_EFI_VARS
  value CONFIG_GPIO_TWL4030 m | \
  !exists CONFIG_GPIO_TWL4030
 
-# Ensure CONFIG_THERM_ADT746X is y for powerpc and powerpc-smp flavours.
+# Ensure CONFIG_THERM_ADT746X is y for powerpc-smp flavours.
 # See LP:923094
-(flavour powerpc powerpc-smp &/ value CONFIG_THERM_ADT746X y) | \
+(flavour powerpc-smp &/ value CONFIG_THERM_ADT746X y) | \
  !exists CONFIG_THERM_ADT746X
 
-# Ensure CONFIG_NVRAM is y for powerpc and powerpc-smp, LP:942193
-(flavour powerpc powerpc-smp &/ value CONFIG_NVRAM y) | \
- value CONFIG_NVRAM m | \
- !exists CONFIG_NVRAM
+# Ensure CONFIG_NVRAM is y for powerpc-smp, LP:942193
+!exists CONFIG_NVRAM | \
+ (arch powerpc &/ value CONFIG_NVRAM y) | \
+ value CONFIG_NVRAM m
 
 # Ensure CONFIG_STUB_POULSBO is disabled if CONFIG_DRM_PSB is enabled
 # See LP:899244
