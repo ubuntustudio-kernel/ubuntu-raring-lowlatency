@@ -1,3 +1,13 @@
+linux (3.7.0-0.3) raring; urgency=low
+
+  [ Tim Gardner ]
+
+  * [Config] CONFIG_DRM_EXYNOS_HDMI=n for armhf
+  * [Config] CONFIG_MTD_NAND_DOCG4=n for armel/armhf
+  * [Config] Drop highbank harder
+
+ --  Tim Gardner <tim.gardner@canonical.com>  Wed, 07 Nov 2012 18:11:45 +0000
+
 linux (3.7.0-0.2) raring; urgency=low
 
   [ Andy Whitcroft ]
