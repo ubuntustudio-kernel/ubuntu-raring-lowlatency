@@ -1,3 +1,15 @@
+linux (3.7.0-0.4) raring; urgency=low
+
+  [ Ben Collins ]
+
+  * [Config] Update enforce rule for CONFIG_NVRAM to better suit flavours
+
+  [ Tim Gardner ]
+
+  * [Config] do_tools=false for arm
+
+ --  Tim Gardner <tim.gardner@canonical.com>  Thu, 08 Nov 2012 05:39:51 -0700
+
 linux (3.7.0-0.3) raring; urgency=low
 
   [ Tim Gardner ]
