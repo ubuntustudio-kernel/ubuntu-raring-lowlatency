@@ -9,3 +9,4 @@ install_file	= vmlinuz
 no_dumpfile = true
 
 loader		= grub
+do_tools	= false

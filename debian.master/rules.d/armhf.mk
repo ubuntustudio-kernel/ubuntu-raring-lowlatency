@@ -10,6 +10,7 @@ install_file	= vmlinuz
 no_dumpfile	= true
 
 loader		= grub
+do_tools	= false
 
 # Flavour specific configuration.
 dtb_file_highbank	= arch/$(build_arch)/boot/highbank.dtb
