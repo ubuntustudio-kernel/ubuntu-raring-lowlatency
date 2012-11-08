@@ -1,3 +1,14 @@
+linux (3.7.0-0.5) raring; urgency=low
+
+  [ Tim Gardner ]
+
+  * [Config] CONFIG_AMD_IOMMU_V2=m
+    - LP: #1071520
+  * [Config] CONFIG_MTD_ONENAND_SIM=n for armel
+    Fixes FTBS
+
+ -- Tim Gardner <tim.gardner@canonical.com>  Thu, 08 Nov 2012 15:45:39 -0500
+
 linux (3.7.0-0.4) raring; urgency=low
 
   [ Ben Collins ]
