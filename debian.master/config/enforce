@@ -95,6 +95,7 @@ value CONFIG_EFI_VARS y | !exists CONFIG_EFI_VARS
 
 # Ensure CONFIG_NVRAM is y for powerpc-smp, LP:942193
 (flavour powerpc-smp powerpc-e500 powerpc-e500mc &/ value CONFIG_NVRAM y) | \
+ (flavour powerpc-e500 powerpc-e500mc) | \
  value CONFIG_NVRAM m | \
  !exists CONFIG_NVRAM
 
