@@ -4,6 +4,12 @@ linux-lowlatency (3.7.0-0.20) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.7.0-1.7 ]
+
+  * [Config] Drop dependency on libaudit-dev
+    Its a universe package which causes an FTBS on the builders.
+    libaudit-dev is not strictly required for the perf tools build.
+
  -- Andy Whitcroft <apw@canonical.com>  Wed, 14 Nov 2012 17:51:51 +0000
 
 linux-lowlatency (3.7.0-0.19) raring; urgency=low
