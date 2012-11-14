@@ -1,3 +1,13 @@
+linux (3.7.0-1.7) raring; urgency=low
+
+  [ Tim Gardner ]
+
+  * [Config] Drop dependency on libaudit-dev
+    Its a universe package which causes an FTBS on the builders.
+    libaudit-dev is not strictly required for the perf tools build.
+
+ --  Tim Gardner <tim.gardner@canonical.com>  Wed, 14 Nov 2012 10:08:13 -0700
+
 linux (3.7.0-1.6) raring; urgency=low
 
   [ Andy Whitcroft ]
