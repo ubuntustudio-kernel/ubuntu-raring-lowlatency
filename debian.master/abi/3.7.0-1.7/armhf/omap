@@ -909,10 +909,10 @@ EXPORT_SYMBOL drivers/misc/atmel_pwm 0x73330c97	pwm_clk_alloc
 EXPORT_SYMBOL drivers/misc/atmel_pwm 0xeb7f2c6f	__pwm_channel_onoff
 EXPORT_SYMBOL drivers/misc/c2port/core 0x509e1d32	c2port_device_unregister
 EXPORT_SYMBOL drivers/misc/c2port/core 0xd854f0df	c2port_device_register
-EXPORT_SYMBOL drivers/mmc/host/dw_mmc 0x847ec3e3	dw_mci_suspend
-EXPORT_SYMBOL drivers/mmc/host/dw_mmc 0xed4c77db	dw_mci_probe
-EXPORT_SYMBOL drivers/mmc/host/dw_mmc 0xf7f08161	dw_mci_remove
-EXPORT_SYMBOL drivers/mmc/host/dw_mmc 0xffd6c4d4	dw_mci_resume
+EXPORT_SYMBOL drivers/mmc/host/dw_mmc 0x11084bd4	dw_mci_suspend
+EXPORT_SYMBOL drivers/mmc/host/dw_mmc 0x3bf607e9	dw_mci_remove
+EXPORT_SYMBOL drivers/mmc/host/dw_mmc 0x730ec5a9	dw_mci_probe
+EXPORT_SYMBOL drivers/mmc/host/dw_mmc 0xa76005a7	dw_mci_resume
 EXPORT_SYMBOL drivers/mmc/host/tmio_mmc_core 0x3010c908	tmio_mmc_host_runtime_resume
 EXPORT_SYMBOL drivers/mmc/host/tmio_mmc_core 0x378f2335	tmio_mmc_irq
 EXPORT_SYMBOL drivers/mmc/host/tmio_mmc_core 0x4f548e50	tmio_mmc_host_resume
@@ -6770,14 +6770,14 @@ EXPORT_SYMBOL_GPL drivers/misc/lis3lv02d/lis3lv02d 0xee396902	lis3lv02d_poweron
 EXPORT_SYMBOL_GPL drivers/misc/lis3lv02d/lis3lv02d 0xfa3d2fe9	lis3_dev
 EXPORT_SYMBOL_GPL drivers/misc/ti-st/st_drv 0x5d443906	st_register
 EXPORT_SYMBOL_GPL drivers/misc/ti-st/st_drv 0xb71661fc	st_unregister
+EXPORT_SYMBOL_GPL drivers/mmc/host/dw_mmc-pltfm 0x26222eb2	dw_mci_pltfm_register
 EXPORT_SYMBOL_GPL drivers/mmc/host/dw_mmc-pltfm 0x2c59ab17	dw_mci_pltfm_remove
 EXPORT_SYMBOL_GPL drivers/mmc/host/dw_mmc-pltfm 0xc80cd944	dw_mci_pltfm_pmops
-EXPORT_SYMBOL_GPL drivers/mmc/host/dw_mmc-pltfm 0xf62e9f13	dw_mci_pltfm_register
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci-pltfm 0x152c0160	sdhci_pltfm_unregister
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci-pltfm 0x3752fc6f	sdhci_get_of_property
+EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci-pltfm 0x455f742a	sdhci_pltfm_init
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci-pltfm 0x6232268c	sdhci_pltfm_free
-EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci-pltfm 0xa59e0a61	sdhci_pltfm_register
-EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci-pltfm 0xab88a613	sdhci_pltfm_init
+EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci-pltfm 0x7735be56	sdhci_pltfm_register
 EXPORT_SYMBOL_GPL drivers/mmc/host/sdhci-pltfm 0xdc598e58	sdhci_pltfm_pmops
 EXPORT_SYMBOL_GPL drivers/mtd/chips/cfi_cmdset_0001 0x60a1ccd6	cfi_cmdset_0200
 EXPORT_SYMBOL_GPL drivers/mtd/chips/cfi_cmdset_0001 0x99dfa47a	cfi_cmdset_0003
@@ -8362,6 +8362,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x005f9492	ata_cable_sata
 EXPORT_SYMBOL_GPL vmlinux 0x00632780	work_busy
 EXPORT_SYMBOL_GPL vmlinux 0x0067df75	ata_tf_from_fis
 EXPORT_SYMBOL_GPL vmlinux 0x0081a38e	fat_dir_empty
+EXPORT_SYMBOL_GPL vmlinux 0x00aa1ec3	sdhci_alloc_host
 EXPORT_SYMBOL_GPL vmlinux 0x00bfc7e0	max8997_update_reg
 EXPORT_SYMBOL_GPL vmlinux 0x00c4dc87	timecounter_init
 EXPORT_SYMBOL_GPL vmlinux 0x00ebcb5d	ata_id_string
@@ -8429,9 +8430,11 @@ EXPORT_SYMBOL_GPL vmlinux 0x07c6b74c	usb_alloc_urb
 EXPORT_SYMBOL_GPL vmlinux 0x07cb3f48	fuse_conn_init
 EXPORT_SYMBOL_GPL vmlinux 0x07fef314	gpiochip_is_requested
 EXPORT_SYMBOL_GPL vmlinux 0x080dc75f	tpm_show_timeouts
+EXPORT_SYMBOL_GPL vmlinux 0x082c93a1	sdhci_enable_irq_wakeups
 EXPORT_SYMBOL_GPL vmlinux 0x0870ae0e	crypto_mod_get
 EXPORT_SYMBOL_GPL vmlinux 0x0890e13c	register_net_sysctl
 EXPORT_SYMBOL_GPL vmlinux 0x08aa9dd6	usb_disable_autosuspend
+EXPORT_SYMBOL_GPL vmlinux 0x08cfc895	sdhci_resume_host
 EXPORT_SYMBOL_GPL vmlinux 0x08df8438	driver_find
 EXPORT_SYMBOL_GPL vmlinux 0x08f3129c	tty_put_char
 EXPORT_SYMBOL_GPL vmlinux 0x090659f5	crypto_find_alg
@@ -8568,6 +8571,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x176744ac	sk_setup_caps
 EXPORT_SYMBOL_GPL vmlinux 0x177c338d	twl_get_version
 EXPORT_SYMBOL_GPL vmlinux 0x182031e9	device_initialize
 EXPORT_SYMBOL_GPL vmlinux 0x182931f5	generic_fh_to_parent
+EXPORT_SYMBOL_GPL vmlinux 0x182f21cc	sdhci_free_host
 EXPORT_SYMBOL_GPL vmlinux 0x185aa94c	max8997_bulk_read
 EXPORT_SYMBOL_GPL vmlinux 0x1866cec2	ring_buffer_size
 EXPORT_SYMBOL_GPL vmlinux 0x18728282	platform_device_add
@@ -8741,7 +8745,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x26d21ad1	skb_copy_ubufs
 EXPORT_SYMBOL_GPL vmlinux 0x2740416f	spi_setup
 EXPORT_SYMBOL_GPL vmlinux 0x276bf338	__pm_runtime_disable
 EXPORT_SYMBOL_GPL vmlinux 0x2787db00	vbin_printf
-EXPORT_SYMBOL_GPL vmlinux 0x27ca3b30	sdhci_remove_host
 EXPORT_SYMBOL_GPL vmlinux 0x27dfde63	queue_delayed_work
 EXPORT_SYMBOL_GPL vmlinux 0x27f9ee2b	inet_hash
 EXPORT_SYMBOL_GPL vmlinux 0x282bfa16	fuse_request_send
@@ -9136,7 +9139,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x4d718a3e	regmap_bulk_read
 EXPORT_SYMBOL_GPL vmlinux 0x4db111fd	devres_release
 EXPORT_SYMBOL_GPL vmlinux 0x4e109192	ring_buffer_entries
 EXPORT_SYMBOL_GPL vmlinux 0x4e36a175	fuse_dev_operations
-EXPORT_SYMBOL_GPL vmlinux 0x4e3a5694	sdhci_alloc_host
 EXPORT_SYMBOL_GPL vmlinux 0x4e4acc87	dev_pm_qos_add_ancestor_request
 EXPORT_SYMBOL_GPL vmlinux 0x4e7df11b	irq_create_of_mapping
 EXPORT_SYMBOL_GPL vmlinux 0x4e906272	sk_set_memalloc
@@ -9184,7 +9186,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x512cf16c	wakeup_source_destroy
 EXPORT_SYMBOL_GPL vmlinux 0x513ca9a7	ata_dev_disable
 EXPORT_SYMBOL_GPL vmlinux 0x51445a37	usb_autopm_get_interface_no_resume
 EXPORT_SYMBOL_GPL vmlinux 0x51541186	fuse_direct_io
-EXPORT_SYMBOL_GPL vmlinux 0x515bb8e7	sdhci_runtime_suspend_host
 EXPORT_SYMBOL_GPL vmlinux 0x5170bea8	snd_soc_default_volatile_register
 EXPORT_SYMBOL_GPL vmlinux 0x5171c8d7	adp5520_clr_bits
 EXPORT_SYMBOL_GPL vmlinux 0x51a0cd10	tc3589x_reg_write
@@ -9279,7 +9280,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x57d7b415	user_describe
 EXPORT_SYMBOL_GPL vmlinux 0x5819c8aa	usb_anchor_empty
 EXPORT_SYMBOL_GPL vmlinux 0x581de46c	platform_device_register
 EXPORT_SYMBOL_GPL vmlinux 0x58274268	ata_sff_check_status
-EXPORT_SYMBOL_GPL vmlinux 0x583b49a4	sdhci_add_host
 EXPORT_SYMBOL_GPL vmlinux 0x58413099	ipv6_fixup_options
 EXPORT_SYMBOL_GPL vmlinux 0x588a2cd4	inet_csk_update_pmtu
 EXPORT_SYMBOL_GPL vmlinux 0x58da419a	__hvc_resize
@@ -9328,6 +9328,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x5d730e7b	raw_notifier_chain_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x5d787f47	watchdog_register_device
 EXPORT_SYMBOL_GPL vmlinux 0x5d8b068a	ata_sas_slave_configure
 EXPORT_SYMBOL_GPL vmlinux 0x5d8d802b	clockevent_delta2ns
+EXPORT_SYMBOL_GPL vmlinux 0x5d954840	sdhci_add_host
 EXPORT_SYMBOL_GPL vmlinux 0x5d96968b	inet6_csk_reqsk_queue_hash_add
 EXPORT_SYMBOL_GPL vmlinux 0x5dbb3223	atomic_notifier_chain_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x5dd18380	regulator_get_init_drvdata
@@ -9353,6 +9354,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x60589fe6	tpm_show_durations
 EXPORT_SYMBOL_GPL vmlinux 0x60a13e90	rcu_barrier
 EXPORT_SYMBOL_GPL vmlinux 0x60c71461	syscon_regmap_lookup_by_phandle
 EXPORT_SYMBOL_GPL vmlinux 0x60da9e9f	omap_dm_timer_set_match
+EXPORT_SYMBOL_GPL vmlinux 0x60e295e5	sdhci_remove_host
 EXPORT_SYMBOL_GPL vmlinux 0x6114d8a4	regulator_force_disable
 EXPORT_SYMBOL_GPL vmlinux 0x613b041f	invalidate_inode_pages2
 EXPORT_SYMBOL_GPL vmlinux 0x61634f05	lock_flocks
@@ -9523,7 +9525,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x6fe49702	snd_soc_dapm_new_controls
 EXPORT_SYMBOL_GPL vmlinux 0x6ff276f8	unregister_kretprobes
 EXPORT_SYMBOL_GPL vmlinux 0x6ff607b6	crypto_get_default_rng
 EXPORT_SYMBOL_GPL vmlinux 0x7009ac32	__rtnl_link_register
-EXPORT_SYMBOL_GPL vmlinux 0x70141ce2	sdhci_enable_irq_wakeups
 EXPORT_SYMBOL_GPL vmlinux 0x701c4a2c	ipv6_find_tlv
 EXPORT_SYMBOL_GPL vmlinux 0x703189d7	regulator_get_mode
 EXPORT_SYMBOL_GPL vmlinux 0x706b3a33	cpufreq_frequency_table_get_attr
@@ -9741,6 +9742,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x8554c055	pinctrl_add_gpio_range
 EXPORT_SYMBOL_GPL vmlinux 0x856629e7	__tracepoint_rpm_return_int
 EXPORT_SYMBOL_GPL vmlinux 0x8574ca6c	gpio_request_array
 EXPORT_SYMBOL_GPL vmlinux 0x85aac1b3	blk_rq_unprep_clone
+EXPORT_SYMBOL_GPL vmlinux 0x85b88662	sdhci_runtime_suspend_host
 EXPORT_SYMBOL_GPL vmlinux 0x85c10896	rcu_batches_completed_bh
 EXPORT_SYMBOL_GPL vmlinux 0x85c7f674	ring_buffer_normalize_time_stamp
 EXPORT_SYMBOL_GPL vmlinux 0x85d48ced	__irq_set_handler
@@ -9921,7 +9923,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x96cbcf31	pm_qos_add_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x96dca70e	dma_buf_fd
 EXPORT_SYMBOL_GPL vmlinux 0x9760a24b	snd_soc_register_codec
 EXPORT_SYMBOL_GPL vmlinux 0x976c86d8	skcipher_geniv_exit
-EXPORT_SYMBOL_GPL vmlinux 0x97714e7d	sdhci_runtime_resume_host
 EXPORT_SYMBOL_GPL vmlinux 0x97828266	perf_event_disable
 EXPORT_SYMBOL_GPL vmlinux 0x978cea4a	unregister_kretprobe
 EXPORT_SYMBOL_GPL vmlinux 0x978e379d	inet_twsk_alloc
@@ -10391,6 +10392,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xc8ee52de	exportfs_encode_fh
 EXPORT_SYMBOL_GPL vmlinux 0xc8fe2642	sata_scr_write
 EXPORT_SYMBOL_GPL vmlinux 0xc91277a1	kgdb_schedule_breakpoint
 EXPORT_SYMBOL_GPL vmlinux 0xc91dd054	mount_mtd
+EXPORT_SYMBOL_GPL vmlinux 0xc9366629	sdhci_suspend_host
 EXPORT_SYMBOL_GPL vmlinux 0xc9561772	fb_destroy_modelist
 EXPORT_SYMBOL_GPL vmlinux 0xc9891eee	snd_soc_info_xr_sx
 EXPORT_SYMBOL_GPL vmlinux 0xc9b577c6	bio_clone_mddev
@@ -10409,7 +10411,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xca85d8cf	tracepoint_probe_update_all
 EXPORT_SYMBOL_GPL vmlinux 0xca9c8dbb	regcache_cache_bypass
 EXPORT_SYMBOL_GPL vmlinux 0xcabe04de	cpuidle_resume_and_unlock
 EXPORT_SYMBOL_GPL vmlinux 0xcac68328	fib_rules_lookup
-EXPORT_SYMBOL_GPL vmlinux 0xcaca986a	sdhci_resume_host
 EXPORT_SYMBOL_GPL vmlinux 0xcae68881	fuse_get_req
 EXPORT_SYMBOL_GPL vmlinux 0xcb51c2c2	__page_file_mapping
 EXPORT_SYMBOL_GPL vmlinux 0xcb62490d	netdev_rx_handler_register
@@ -10492,7 +10493,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xd290a6d2	md_is_badblock
 EXPORT_SYMBOL_GPL vmlinux 0xd2a3d1fe	pinctrl_dev_get_name
 EXPORT_SYMBOL_GPL vmlinux 0xd2a8caf0	work_on_cpu
 EXPORT_SYMBOL_GPL vmlinux 0xd2aaeb4e	kmsg_dump_get_buffer
-EXPORT_SYMBOL_GPL vmlinux 0xd2d586f6	sdhci_suspend_host
 EXPORT_SYMBOL_GPL vmlinux 0xd2f217e4	md_run
 EXPORT_SYMBOL_GPL vmlinux 0xd2fa366c	ata_sff_data_xfer32
 EXPORT_SYMBOL_GPL vmlinux 0xd32fe193	ata_scsi_change_queue_depth
@@ -10612,7 +10612,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xdd0ba8fd	platform_driver_probe
 EXPORT_SYMBOL_GPL vmlinux 0xdd2efc0f	ring_buffer_reset_cpu
 EXPORT_SYMBOL_GPL vmlinux 0xdd32310b	blk_add_request_payload
 EXPORT_SYMBOL_GPL vmlinux 0xdd6cf729	ata_sff_port_ops
-EXPORT_SYMBOL_GPL vmlinux 0xdd6fb95a	sdhci_free_host
 EXPORT_SYMBOL_GPL vmlinux 0xddb7cb05	rdev_get_id
 EXPORT_SYMBOL_GPL vmlinux 0xddc3c025	dapm_reg_event
 EXPORT_SYMBOL_GPL vmlinux 0xddd58dc0	ring_buffer_reset
@@ -10778,6 +10777,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xeef5e42d	usb_unpoison_urb
 EXPORT_SYMBOL_GPL vmlinux 0xeefa4d06	pm_qos_update_request
 EXPORT_SYMBOL_GPL vmlinux 0xeefc0e0e	ata_host_alloc_pinfo
 EXPORT_SYMBOL_GPL vmlinux 0xef314131	sock_update_netprioidx
+EXPORT_SYMBOL_GPL vmlinux 0xef3fddb4	sdhci_runtime_resume_host
 EXPORT_SYMBOL_GPL vmlinux 0xef409b74	kmsg_dump_get_line
 EXPORT_SYMBOL_GPL vmlinux 0xef6c3f70	round_jiffies_up_relative
 EXPORT_SYMBOL_GPL vmlinux 0xef7d8c3e	blkcipher_walk_virt_block
