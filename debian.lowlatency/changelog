@@ -4,6 +4,34 @@ linux-lowlatency (3.7.0-1.21) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.7.0-2.8 ]
+
+  * Revert "overlayfs: disable until FTBS is fixed"
+  * Revert "ubuntu: overlayfs"
+  * Revert "ubuntu: AUFS"
+  * ubuntu: overlayfs -- overlayfs: add statfs support
+  * ubuntu: overlayfs -- ovl: switch to __inode_permission()
+  * ubuntu: overlayfs -- overlayfs: copy up i_uid/i_gid from the underlying
+    inode
+    - LP: #944386
+  * ubuntu: AUFS (no-squash): basic framework and update machinary
+  * ubuntu: AUFS (no-squash) -- aufs3-base.patch
+  * ubuntu: AUFS (no-squash) -- aufs3-standalone.patch
+  * ubuntu: AUFS: aufs-update -- follow the uapi header changes
+  * ubuntu: AUFS -- update to f2873474324d0a31af4340554b9715f51331bc7f
+  * ubuntu: AUFS (no-squash) -- reenable
+    - LP: #1079193
+  * ubuntu: overlayfs -- overlayfs: implement show_options
+  * ubuntu: overlayfs -- vfs: add i_op->dentry_open()
+  * ubuntu: overlayfs -- vfs: export do_splice_direct() to modules
+  * ubuntu: overlayfs -- vfs: introduce clone_private_mount()
+  * ubuntu: overlayfs -- overlay filesystem
+  * ubuntu: overlayfs -- fs: limit filesystem stacking depth
+  * ubuntu: overlayfs -- vfs: export __inode_permission() to modules
+  * ubuntu: overlayfs -- overlay: overlay filesystem documentation
+  * ubuntu: overlayfs -- overlayfs: fix possible leak in ovl_new_inode
+  * ubuntu: overlayfs -- overlayfs: create new inode in ovl_link
+
  -- Andy Whitcroft <apw@canonical.com>  Thu, 15 Nov 2012 16:25:40 +0000
 
 linux-lowlatency (3.7.0-1.20) raring; urgency=low
