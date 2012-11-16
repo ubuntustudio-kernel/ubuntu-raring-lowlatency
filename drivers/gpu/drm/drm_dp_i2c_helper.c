@@ -206,3 +206,20 @@ i2c_dp_aux_add_bus(struct i2c_adapter *adapter)
 	return error;
 }
 EXPORT_SYMBOL(i2c_dp_aux_add_bus);
+
+void drm_dp_link_train_clock_recovery_delay(u8 dpcd[DP_RECEIVER_CAP_SIZE]) {
+	if (dpcd[DP_TRAINING_AUX_RD_INTERVAL] == 0)
+		udelay(100);
+	else
+		mdelay(dpcd[DP_TRAINING_AUX_RD_INTERVAL] * 4);
+}
+EXPORT_SYMBOL(drm_dp_link_train_clock_recovery_delay);
+
+void drm_dp_link_train_channel_eq_delay(u8 dpcd[DP_RECEIVER_CAP_SIZE]) {
+	if (dpcd[DP_TRAINING_AUX_RD_INTERVAL] == 0)
+		udelay(400);
+	else
+		mdelay(dpcd[DP_TRAINING_AUX_RD_INTERVAL] * 4);
+}
+EXPORT_SYMBOL(drm_dp_link_train_channel_eq_delay);
+

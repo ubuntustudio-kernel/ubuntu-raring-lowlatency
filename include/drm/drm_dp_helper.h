@@ -25,6 +25,7 @@
 
 #include <linux/types.h>
 #include <linux/i2c.h>
+#include <linux/delay.h>
 
 /* From the VESA DisplayPort spec */
 
@@ -256,5 +257,9 @@ struct i2c_algo_dp_aux_data {
 
 int
 i2c_dp_aux_add_bus(struct i2c_adapter *adapter);
+
+#define DP_RECEIVER_CAP_SIZE    0xf
+void drm_dp_link_train_clock_recovery_delay(u8 dpcd[DP_RECEIVER_CAP_SIZE]);
+void drm_dp_link_train_channel_eq_delay(u8 dpcd[DP_RECEIVER_CAP_SIZE]);
 
 #endif /* _DRM_DP_HELPER_H_ */
