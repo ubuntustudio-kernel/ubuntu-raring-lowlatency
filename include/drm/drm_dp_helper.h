@@ -93,6 +93,13 @@
 # define DP_PSR_SETUP_TIME_0                (6 << 1)
 # define DP_PSR_SETUP_TIME_MASK             (7 << 1)
 # define DP_PSR_SETUP_TIME_SHIFT            1
+# define DP_DOWNSTREAM_PORT_0		0x80
+# define DP_DS_PORT_TYPE_MASK		(7 << 0)
+# define DP_DS_PORT_TYPE_VGA		1
+# define DP_DS_PORT_TYPE_NON_EDID	4
+# define DP_DS_PORT_HPD			(1 << 3)
+# define DP_SINK_COUNT			0x200
+# define DP_GET_SINK_COUNT(x)		((((x) & 0x80) >> 1) | ((x) & 0x3f))
 
 /* link configuration */
 #define	DP_LINK_BW_SET		            0x100
