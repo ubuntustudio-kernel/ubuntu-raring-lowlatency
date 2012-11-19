@@ -222,6 +222,7 @@ amd5536udc
 amd64_edac_mod
 amd76xrom
 amd8111e
+amd_iommu_v2
 amd-rng
 amilo-rfkill
 amplc_dio200
