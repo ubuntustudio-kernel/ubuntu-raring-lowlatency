@@ -452,24 +452,54 @@ static void xennet_make_frags(struct sk_buff *skb, struct net_device *dev,
 	/* Grant backend access to each skb fragment page. */
 	for (i = 0; i < frags; i++) {
 		skb_frag_t *frag = skb_shinfo(skb)->frags + i;
+		struct page *page = skb_frag_page(frag);
+		unsigned long size = skb_frag_size(frag);
+		unsigned long offset = frag->page_offset;
 
-		tx->flags |= XEN_NETTXF_more_data;
+		/* Data must not cross a page boundary. */
+		BUG_ON(size + offset > PAGE_SIZE<<compound_order(page));
 
-		id = get_id_from_freelist(&np->tx_skb_freelist, np->tx_skbs);
-		np->tx_skbs[id].skb = skb_get(skb);
-		tx = RING_GET_REQUEST(&np->tx, prod++);
-		tx->id = id;
-		ref = gnttab_claim_grant_reference(&np->gref_tx_head);
-		BUG_ON((signed short)ref < 0);
+		/* Skip unused frames from start of page */
+		page += offset >> PAGE_SHIFT;
+		offset &= ~PAGE_MASK;
 
-		mfn = pfn_to_mfn(page_to_pfn(skb_frag_page(frag)));
-		gnttab_grant_foreign_access_ref(ref, np->xbdev->otherend_id,
-						mfn, GNTMAP_readonly);
+		while (size > 0) {
+			unsigned long bytes;
 
-		tx->gref = np->grant_tx_ref[id] = ref;
-		tx->offset = frag->page_offset;
-		tx->size = skb_frag_size(frag);
-		tx->flags = 0;
+			BUG_ON(offset >= PAGE_SIZE);
+
+			bytes = PAGE_SIZE - offset;
+			if (bytes > size)
+				bytes = size;
+
+			tx->flags |= XEN_NETTXF_more_data;
+
+			id = get_id_from_freelist(&np->tx_skb_freelist, np->tx_skbs);
+			np->tx_skbs[id].skb = skb_get(skb);
+			tx = RING_GET_REQUEST(&np->tx, prod++);
+			tx->id = id;
+			ref = gnttab_claim_grant_reference(&np->gref_tx_head);
+			BUG_ON((signed short)ref < 0);
+
+			mfn = pfn_to_mfn(page_to_pfn(page));
+			gnttab_grant_foreign_access_ref(ref, np->xbdev->otherend_id,
+							mfn, GNTMAP_readonly);
+
+			tx->gref = np->grant_tx_ref[id] = ref;
+			tx->offset = offset;
+			tx->size = bytes;
+			tx->flags = 0;
+
+			offset += bytes;
+			size -= bytes;
+
+			/* Next frame */
+			if (offset == PAGE_SIZE && size) {
+				BUG_ON(!PageCompound(page));
+				page++;
+				offset = 0;
+			}
+		}
 	}
 
 	np->tx.req_prod_pvt = prod;
