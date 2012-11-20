@@ -109,7 +109,6 @@ net/can/*
 net/core/*
 net/dccp/*
 net/decnet/*
-net/econet/*
 net/ieee802154/*
 net/ipv4/*
 net/ipv6/*
