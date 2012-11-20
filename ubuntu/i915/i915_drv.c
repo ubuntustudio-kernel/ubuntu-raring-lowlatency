@@ -122,6 +122,9 @@ MODULE_PARM_DESC(i915_enable_ppgtt,
 static struct drm_driver driver;
 extern int intel_agp_enabled;
 
+int i915_hsw_enabled = 0;
+EXPORT_SYMBOL(i915_hsw_enabled);
+
 #define INTEL_VGA_DEVICE(id, info) {		\
 	.class = PCI_BASE_CLASS_DISPLAY << 16,	\
 	.class_mask = 0xff0000,			\
@@ -828,6 +831,7 @@ int i915_reset(struct drm_device *dev)
 static int __devinit
 i915_pci_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 {
+	int ret;
 	struct intel_device_info *intel_info =
 		(struct intel_device_info *) ent->driver_data;
 
@@ -851,7 +855,11 @@ i915_pci_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 		return -ENODEV;
 	}
 
-	return drm_get_pci_dev(pdev, ent, &driver);
+	ret = drm_get_pci_dev(pdev, ent, &driver);
+
+	if (!ret)
+		i915_hsw_enabled = 1;
+	return ret;
 }
 
 static void

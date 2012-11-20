@@ -74,6 +74,7 @@
 #include <linux/timer.h>
 #include <linux/dmi.h>
 #include <drm/i915_drm.h>
+#include <drm/i915_drm_hsw.h>
 #include <asm/msr.h>
 #include <asm/processor.h>
 #include "intel_ips.h"
@@ -250,6 +251,7 @@
 
 static const int IPS_ADJUST_PERIOD = 5000; /* ms */
 static bool late_i915_load = false;
+extern int i915_hsw_enabled;
 
 /* For initial average collection */
 static const int IPS_SAMPLE_PERIOD = 200; /* ms */
@@ -1423,32 +1425,62 @@ out:
  */
 static bool ips_get_i915_syms(struct ips_driver *ips)
 {
-	ips->read_mch_val = symbol_get(i915_read_mch_val);
-	if (!ips->read_mch_val)
-		goto out_err;
-	ips->gpu_raise = symbol_get(i915_gpu_raise);
-	if (!ips->gpu_raise)
-		goto out_put_mch;
-	ips->gpu_lower = symbol_get(i915_gpu_lower);
-	if (!ips->gpu_lower)
-		goto out_put_raise;
-	ips->gpu_busy = symbol_get(i915_gpu_busy);
-	if (!ips->gpu_busy)
-		goto out_put_lower;
-	ips->gpu_turbo_disable = symbol_get(i915_gpu_turbo_disable);
-	if (!ips->gpu_turbo_disable)
-		goto out_put_busy;
+	if (i915_hsw_enabled) {
+		ips->read_mch_val = symbol_get(i915_hsw_read_mch_val);
+		if (!ips->read_mch_val)
+			goto out_err;
+		ips->gpu_raise = symbol_get(i915_hsw_gpu_raise);
+		if (!ips->gpu_raise)
+			goto out_put_mch;
+		ips->gpu_lower = symbol_get(i915_hsw_gpu_lower);
+		if (!ips->gpu_lower)
+			goto out_put_raise;
+		ips->gpu_busy = symbol_get(i915_hsw_gpu_busy);
+		if (!ips->gpu_busy)
+			goto out_put_lower;
+		ips->gpu_turbo_disable = symbol_get(i915_hsw_gpu_turbo_disable);
+		if (!ips->gpu_turbo_disable)
+			goto out_put_busy;
+	} else {
+		ips->read_mch_val = symbol_get(i915_read_mch_val);
+		if (!ips->read_mch_val)
+			goto out_err;
+		ips->gpu_raise = symbol_get(i915_gpu_raise);
+		if (!ips->gpu_raise)
+			goto out_put_mch;
+		ips->gpu_lower = symbol_get(i915_gpu_lower);
+		if (!ips->gpu_lower)
+			goto out_put_raise;
+		ips->gpu_busy = symbol_get(i915_gpu_busy);
+		if (!ips->gpu_busy)
+			goto out_put_lower;
+		ips->gpu_turbo_disable = symbol_get(i915_gpu_turbo_disable);
+		if (!ips->gpu_turbo_disable)
+			goto out_put_busy;
+	}
 
 	return true;
 
 out_put_busy:
-	symbol_put(i915_gpu_busy);
+	if (i915_hsw_enabled)
+		symbol_put(i915_hsw_gpu_busy);
+	else
+		symbol_put(i915_gpu_busy);
 out_put_lower:
-	symbol_put(i915_gpu_lower);
+	if (i915_hsw_enabled)
+		symbol_put(i915_hsw_gpu_lower);
+	else
+		symbol_put(i915_gpu_lower);
 out_put_raise:
-	symbol_put(i915_gpu_raise);
+	if (i915_hsw_enabled)
+		symbol_put(i915_hsw_gpu_raise);
+	else
+		symbol_put(i915_gpu_raise);
 out_put_mch:
-	symbol_put(i915_read_mch_val);
+	if (i915_hsw_enabled)
+		symbol_put(i915_hsw_read_mch_val);
+	else
+		symbol_put(i915_read_mch_val);
 out_err:
 	return false;
 }
