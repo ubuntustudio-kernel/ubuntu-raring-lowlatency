@@ -38,6 +38,9 @@ void intel_gtt_insert_sg_entries(struct scatterlist *sg_list,
 				 unsigned int sg_len,
 				 unsigned int pg_start,
 				 unsigned int flags);
+void intel_gtt_insert_sg_entries_hsw(struct sg_table *st,
+                                 unsigned int pg_start,
+                                 unsigned int flags);
 void intel_gtt_insert_pages(unsigned int first_entry, unsigned int num_entries,
 			    struct page **pages, unsigned int flags);
 

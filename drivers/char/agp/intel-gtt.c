@@ -905,6 +905,30 @@ void intel_gtt_insert_sg_entries(struct scatterlist *sg_list,
 }
 EXPORT_SYMBOL(intel_gtt_insert_sg_entries);
 
+void intel_gtt_insert_sg_entries_hsw(struct sg_table *st,
+				 unsigned int pg_start,
+				 unsigned int flags)
+{
+	struct scatterlist *sg;
+	unsigned int len, m;
+	int i, j;
+
+	j = pg_start;
+
+	/* sg may merge pages, but we have to separate
+	 * per-page addr for GTT */
+	for_each_sg(st->sgl, sg, st->nents, i) {
+		len = sg_dma_len(sg) >> PAGE_SHIFT;
+		for (m = 0; m < len; m++) {
+			dma_addr_t addr = sg_dma_address(sg) + (m << PAGE_SHIFT);
+			intel_private.driver->write_entry(addr, j, flags);
+			j++;
+		}
+	}
+	readl(intel_private.gtt+j-1);
+}
+EXPORT_SYMBOL(intel_gtt_insert_sg_entries_hsw);
+
 void intel_gtt_insert_pages(unsigned int first_entry, unsigned int num_entries,
 			    struct page **pages, unsigned int flags)
 {

@@ -474,7 +474,7 @@ void i915_gem_gtt_bind_object(struct drm_i915_gem_object *obj,
 	if (INTEL_INFO(dev)->gen < 6) {
 		unsigned int flags = (cache_level == I915_CACHE_NONE) ?
 			AGP_USER_MEMORY : AGP_USER_CACHED_MEMORY;
-		intel_gtt_insert_sg_entries(obj->pages,
+		intel_gtt_insert_sg_entries_hsw(obj->pages,
 					    obj->gtt_space->start >> PAGE_SHIFT,
 					    flags);
 	} else {
