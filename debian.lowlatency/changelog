@@ -4,6 +4,35 @@ linux-lowlatency (3.7.0-2.2) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.7.0-3.9 ]
+
+  * [Config] Enable CONFIG_X86_CPUFREQ_NFORCE2=y
+    - LP: #1079900
+  * Add nfsv3 to nfs-modules udeb
+  * [Config] SND_OMAP_SOC*=y
+    - LP: #1019321
+  * SAUCE: (no-up) xen/netfront: handle compound page fragments on transmit
+    - LP: #1078926
+  * Revert "SAUCE: SECCOMP: audit: always report seccomp violations"
+    - LP: #1079469
+  * Revert "SAUCE: omap3 clocks .dev_id = NULL"
+  * rebase to v3.7-rc6
+  * SAUCE: script to detect obsolete firmware
+  * SAUCE: Remove yam files duplicated in linux-firmware
+  * SAUCE: Remove tehuti files duplicated in linux-firmware
+  * SAUCE: Remove matrox files duplicated in linux-firmware
+  * SAUCE: Remove cxgb3 files duplicated in linux-firmware
+  * SAUCE: Remove r128 files duplicated in linux-firmware
+  * SAUCE: Remove acenic files duplicated in linux-firmware
+  * SAUCE: Remove keyspan files duplicated in linux-firmware
+  * SAUCE: Remove sun files duplicated in linux-firmware
+  * SAUCE: Remove radeon files duplicated in linux-firmware
+  * SAUCE: Update bnx2x firmware to 7.8.2.0
+  * [Config] generic.inclusion-list: econet has disappeared
+  * seccomp: forcing auditing of kill condition
+    - LP: #1079469
+  * rebase to v3.7-rc6
+
  -- Andy Whitcroft <apw@canonical.com>  Wed, 21 Nov 2012 16:46:18 +0000
 
 linux-lowlatency (3.7.0-2.1) raring; urgency=low
