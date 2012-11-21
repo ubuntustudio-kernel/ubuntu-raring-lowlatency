@@ -7,6 +7,8 @@ Build-Depends: debhelper (>= 5), cpio, module-init-tools, kernel-wedge (>= 2.24u
 Build-Depends-Indep: xmlto, docbook-utils, ghostscript, transfig, bzip2, sharutils, asciidoc
 Build-Conflicts: findutils (= 4.4.1-1ubuntu1)
 Vcs-Git: http://kernel.ubuntu.com/git-repos/ubuntu/ubuntu-raring.git
+XS-Testsuite: autopkgtest
+#XS-Testsuite-Depends: gcc-4.7 binutils
 
 Package: SRCPKGNAME-source-PKGVER
 Architecture: all
