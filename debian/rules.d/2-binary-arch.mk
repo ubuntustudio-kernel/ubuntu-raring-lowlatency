@@ -10,17 +10,21 @@ build_cd =
 build_O  = O=$(builddir)/build-$*
 endif
 
+$(builddir)/build-%/.config: $(commonconfdir)/config.common.$(family) $(archconfdir)/config.common.$(arch) $(archconfdir)/config.flavour.%
+	@echo Debug: $@
+	install -d $(builddir)/build-$*
+	cat $^ | sed -e 's/.*CONFIG_VERSION_SIGNATURE.*/CONFIG_VERSION_SIGNATURE="Ubuntu $(release)-$(revision)-$* $(raw_kernelversion)"/' > $(builddir)/build-$*/.config
+
 $(stampdir)/stamp-prepare-%: config-prepare-check-%
 	@echo Debug: $@
 	@touch $@
+
 $(stampdir)/stamp-prepare-tree-%: target_flavour = $*
-$(stampdir)/stamp-prepare-tree-%: $(commonconfdir)/config.common.$(family) $(archconfdir)/config.common.$(arch) $(archconfdir)/config.flavour.%
+$(stampdir)/stamp-prepare-tree-%: $(builddir)/build-%/.config
 	@echo Debug: $@
-	install -d $(builddir)/build-$*
 	touch $(builddir)/build-$*/ubuntu-build
 	[ "$(do_full_source)" != 'true' ] && true || \
 		rsync -a --exclude debian --exclude debian.master --exclude $(DEBIAN) * $(builddir)/build-$*
-	cat $^ | sed -e 's/.*CONFIG_VERSION_SIGNATURE.*/CONFIG_VERSION_SIGNATURE="Ubuntu $(release)-$(revision)-$* $(raw_kernelversion)"/' > $(builddir)/build-$*/.config
 	find $(builddir)/build-$* -name "*.ko" | xargs rm -f
 	$(build_cd) $(kmake) $(build_O) -j1 silentoldconfig prepare scripts
 	touch $@
@@ -281,29 +285,20 @@ hmake := $(MAKE) -C $(CURDIR) O=$(headers_tmp) \
 	KERNELVERSION=$(abi_release) INSTALL_HDR_PATH=$(headers_tmp)/install \
 	SHELL="$(SHELL)" ARCH=$(header_arch)
 
-install-arch-headers:
+install-arch-headers: $(builddir)/build-$(firstword $(flavours))/.config
 	@echo Debug: $@
 	dh_testdir
 	dh_testroot
 	dh_clean -k -plinux-libc-dev
 
-	rm -rf $(headers_tmp)
+	rm -rf $(headers_tmp) $(headers_dir)/usr/include
 	install -d $(headers_tmp) $(headers_dir)/usr/include/
 
-	# Pick the first flavour from which to make a valid config
-	echo $(flavours) | while read f; do \
-		cat $(commonconfdir)/config.common.$(family) \
-                    $(archconfdir)/config.common.$(arch) \
-                    $(archconfdir)/config.flavour.$$f > $(headers_tmp)/.config ; \
-		$(hmake) $(defconfig) ; \
-		break ; \
-	done
-	mv $(headers_tmp)/.config $(headers_tmp)/.config.old
-	sed -e 's/^# \(CONFIG_MODVERSIONS\) is not set$$/\1=y/' \
+	$(hmake) $(defconfig)
+	sed -i -e 's/^# \(CONFIG_MODVERSIONS\) is not set$$/\1=y/' \
 	  -e 's/.*CONFIG_LOCALVERSION_AUTO.*/# CONFIG_LOCALVERSION_AUTO is not set/' \
-	  $(headers_tmp)/.config.old > $(headers_tmp)/.config
-	$(hmake) silentoldconfig
-	$(hmake) $(conc_level) headers_install
+	  $(headers_tmp)/.config
+	$(hmake) silentoldconfig headers_install
 
 	( cd $(headers_tmp)/install/include/ && \
 		find . -name '.' -o -name '.*' -prune -o -print | \
