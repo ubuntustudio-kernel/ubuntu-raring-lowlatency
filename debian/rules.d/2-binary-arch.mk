@@ -290,14 +290,7 @@ install-arch-headers:
 	rm -rf $(headers_tmp)
 	install -d $(headers_tmp) $(headers_dir)/usr/include/
 
-	# Pick the first flavour from which to make a valid config
-	echo $(flavours) | while read f; do \
-		cat $(commonconfdir)/config.common.$(family) \
-                    $(archconfdir)/config.common.$(arch) \
-                    $(archconfdir)/config.flavour.$$f > $(headers_tmp)/.config ; \
-		$(hmake) $(defconfig) ; \
-		break ; \
-	done
+	$(hmake) $(defconfig)
 	mv $(headers_tmp)/.config $(headers_tmp)/.config.old
 	sed -e 's/^# \(CONFIG_MODVERSIONS\) is not set$$/\1=y/' \
 	  -e 's/.*CONFIG_LOCALVERSION_AUTO.*/# CONFIG_LOCALVERSION_AUTO is not set/' \
