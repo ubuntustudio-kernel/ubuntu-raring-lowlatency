@@ -748,9 +748,9 @@ typedef struct drm_i915_private {
 		/** Bridge to intel-gtt-ko */
 		struct intel_gtt *gtt;
 		/** Memory allocator for GTT stolen memory */
-		struct drm_mm stolen;
+		struct drm_mm_hsw stolen;
 		/** Memory allocator for GTT */
-		struct drm_mm gtt_space;
+		struct drm_mm_hsw gtt_space;
 		/** List of all objects in gtt_space. Used to restore gtt
 		 * mappings on resume */
 		struct list_head bound_list;
@@ -887,8 +887,8 @@ typedef struct drm_i915_private {
 
 	enum no_fbc_reason no_fbc_reason;
 
-	struct drm_mm_node *compressed_fb;
-	struct drm_mm_node *compressed_llb;
+	struct drm_mm_node_hsw *compressed_fb;
+	struct drm_mm_node_hsw *compressed_llb;
 
 	unsigned long last_gpu_reset;
 
@@ -958,7 +958,7 @@ struct drm_i915_gem_object {
 	const struct drm_i915_gem_object_ops *ops;
 
 	/** Current space allocated to this object in the GTT, if any. */
-	struct drm_mm_node *gtt_space;
+	struct drm_mm_node_hsw *gtt_space;
 	struct list_head gtt_list;
 
 	/** This object's place on the active/inactive lists */

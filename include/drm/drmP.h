@@ -87,6 +87,7 @@ struct drm_device;
 #include "drm_os_linux.h"
 #include "drm_hashtab.h"
 #include "drm_mm.h"
+#include "drm_mm_hsw.h"
 
 #define DRM_UT_CORE 		0x01
 #define DRM_UT_DRIVER		0x02

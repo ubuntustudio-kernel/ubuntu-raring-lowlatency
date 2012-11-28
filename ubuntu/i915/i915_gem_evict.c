@@ -39,7 +39,7 @@ mark_free(struct drm_i915_gem_object *obj, struct list_head *unwind)
 		return false;
 
 	list_add(&obj->exec_list, unwind);
-	return drm_mm_scan_add_block(obj->gtt_space);
+	return drm_mm_scan_add_block_hsw(obj->gtt_space);
 }
 
 int
@@ -79,11 +79,11 @@ i915_gem_evict_something(struct drm_device *dev, int min_size,
 
 	INIT_LIST_HEAD(&unwind_list);
 	if (mappable)
-		drm_mm_init_scan_with_range(&dev_priv->mm.gtt_space,
+		drm_mm_init_scan_with_range_hsw(&dev_priv->mm.gtt_space,
 					    min_size, alignment, cache_level,
 					    0, dev_priv->mm.gtt_mappable_end);
 	else
-		drm_mm_init_scan(&dev_priv->mm.gtt_space,
+		drm_mm_init_scan_hsw(&dev_priv->mm.gtt_space,
 				 min_size, alignment, cache_level);
 
 	/* First see if there is a large enough contiguous idle region... */
@@ -108,7 +108,7 @@ none:
 				       struct drm_i915_gem_object,
 				       exec_list);
 
-		ret = drm_mm_scan_remove_block(obj->gtt_space);
+		ret = drm_mm_scan_remove_block_hsw(obj->gtt_space);
 		BUG_ON(ret);
 
 		list_del_init(&obj->exec_list);
@@ -128,7 +128,7 @@ found:
 		obj = list_first_entry(&unwind_list,
 				       struct drm_i915_gem_object,
 				       exec_list);
-		if (drm_mm_scan_remove_block(obj->gtt_space)) {
+		if (drm_mm_scan_remove_block_hsw(obj->gtt_space)) {
 			list_move(&obj->exec_list, &eviction_list);
 			drm_gem_object_reference(&obj->base);
 			continue;

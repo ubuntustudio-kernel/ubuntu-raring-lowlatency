@@ -509,7 +509,7 @@ void i915_gem_gtt_finish_object(struct drm_i915_gem_object *obj)
 	undo_idling(dev_priv, interruptible);
 }
 
-static void i915_gtt_color_adjust(struct drm_mm_node *node,
+static void i915_gtt_color_adjust(struct drm_mm_node_hsw *node,
 				  unsigned long color,
 				  unsigned long *start,
 				  unsigned long *end)
@@ -519,7 +519,7 @@ static void i915_gtt_color_adjust(struct drm_mm_node *node,
 
 	if (!list_empty(&node->node_list)) {
 		node = list_entry(node->node_list.next,
-				  struct drm_mm_node,
+				  struct drm_mm_node_hsw,
 				  node_list);
 		if (node->allocated && node->color != color)
 			*end -= 4096;
@@ -534,7 +534,7 @@ void i915_gem_init_global_gtt(struct drm_device *dev,
 	drm_i915_private_t *dev_priv = dev->dev_private;
 
 	/* Substract the guard page ... */
-	drm_mm_init(&dev_priv->mm.gtt_space, start, end - start - PAGE_SIZE);
+	drm_mm_init_hsw(&dev_priv->mm.gtt_space, start, end - start - PAGE_SIZE);
 	if (!HAS_LLC(dev))
 		dev_priv->mm.gtt_space.color_adjust = i915_gtt_color_adjust;
 

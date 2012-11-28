@@ -104,16 +104,16 @@ static void i915_warn_stolen(struct drm_device *dev)
 static void i915_setup_compression(struct drm_device *dev, int size)
 {
 	struct drm_i915_private *dev_priv = dev->dev_private;
-	struct drm_mm_node *compressed_fb, *uninitialized_var(compressed_llb);
+	struct drm_mm_node_hsw *compressed_fb, *uninitialized_var(compressed_llb);
 	unsigned long cfb_base;
 	unsigned long ll_base = 0;
 
 	/* Just in case the BIOS is doing something questionable. */
 	intel_disable_fbc(dev);
 
-	compressed_fb = drm_mm_search_free(&dev_priv->mm.stolen, size, 4096, 0);
+	compressed_fb = drm_mm_search_free_hsw(&dev_priv->mm.stolen, size, 4096, 0);
 	if (compressed_fb)
-		compressed_fb = drm_mm_get_block(compressed_fb, size, 4096);
+		compressed_fb = drm_mm_get_block_hsw(compressed_fb, size, 4096);
 	if (!compressed_fb)
 		goto err;
 
@@ -122,10 +122,10 @@ static void i915_setup_compression(struct drm_device *dev, int size)
 		goto err_fb;
 
 	if (!(IS_GM45(dev) || HAS_PCH_SPLIT(dev))) {
-		compressed_llb = drm_mm_search_free(&dev_priv->mm.stolen,
+		compressed_llb = drm_mm_search_free_hsw(&dev_priv->mm.stolen,
 						    4096, 4096, 0);
 		if (compressed_llb)
-			compressed_llb = drm_mm_get_block(compressed_llb,
+			compressed_llb = drm_mm_get_block_hsw(compressed_llb,
 							  4096, 4096);
 		if (!compressed_llb)
 			goto err_fb;
@@ -153,9 +153,9 @@ static void i915_setup_compression(struct drm_device *dev, int size)
 	return;
 
 err_llb:
-	drm_mm_put_block(compressed_llb);
+	drm_mm_put_block_hsw(compressed_llb);
 err_fb:
-	drm_mm_put_block(compressed_fb);
+	drm_mm_put_block_hsw(compressed_fb);
 err:
 	dev_priv->no_fbc_reason = FBC_STOLEN_TOO_SMALL;
 	i915_warn_stolen(dev);
@@ -165,9 +165,9 @@ static void i915_cleanup_compression(struct drm_device *dev)
 {
 	struct drm_i915_private *dev_priv = dev->dev_private;
 
-	drm_mm_put_block(dev_priv->compressed_fb);
+	drm_mm_put_block_hsw(dev_priv->compressed_fb);
 	if (dev_priv->compressed_llb)
-		drm_mm_put_block(dev_priv->compressed_llb);
+		drm_mm_put_block_hsw(dev_priv->compressed_llb);
 }
 
 void i915_gem_cleanup_stolen(struct drm_device *dev)
@@ -182,7 +182,7 @@ int i915_gem_init_stolen(struct drm_device *dev)
 	unsigned long prealloc_size = dev_priv->mm.gtt->stolen_size;
 
 	/* Basic memrange allocator for stolen space */
-	drm_mm_init(&dev_priv->mm.stolen, 0, prealloc_size);
+	drm_mm_init_hsw(&dev_priv->mm.stolen, 0, prealloc_size);
 
 	/* Try to set up FBC with a reasonable compressed buffer size */
 	if (I915_HAS_FBC(dev) && i915_powersave) {
