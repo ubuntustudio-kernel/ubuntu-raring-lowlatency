@@ -207,6 +207,7 @@ at25
 at76c50x-usb
 at803x
 atbm8830
+aten
 ath
 ath3k
 ath6kl_core
@@ -273,6 +274,8 @@ bmp085-spi
 bnep
 bonding
 bpa10x
+bpck
+bpck6
 bpqether
 bq27x00_battery
 br2684
@@ -355,6 +358,7 @@ cma3000_d0x_i2c
 cmtp
 cobra
 coda
+comm
 configfs
 cordic
 core
@@ -479,6 +483,7 @@ ds620
 dsa_core
 dsbr100
 dss1_divert
+dstr
 dummy
 dvb-as102
 dvb-core
@@ -583,6 +588,8 @@ em_text
 em_u32
 enc28j60
 enclosure
+epat
+epia
 eql
 esd_usb2
 esi-sir
@@ -611,8 +618,12 @@ fc0013
 fc2580
 fcrypt
 ff-memless
+fit2
+fit3
 fm_drv
 freevxfs
+friq
+frpw
 fsa9480
 fscache
 ft1000
@@ -883,6 +894,7 @@ iio-trig-periodic-rtc
 iio-trig-sysfs
 ili210x
 ili9320
+imm
 imon
 impa7
 imx074
@@ -1026,6 +1038,7 @@ joydump
 kafs
 kalmia
 kaweth
+kbic
 kbtab
 kernelcapi
 keucr
@@ -1037,11 +1050,13 @@ khazad
 kingsun-sir
 kl5kusb105
 kobil_sct
+ks0108
 ks8842
 ks8851
 ks8851_mll
 ks959-sir
 ksdazzle-sir
+ktti
 kxsd9
 kxtj9
 l1oip
@@ -1453,6 +1468,8 @@ omap-vout
 omap_wdt
 omfs
 omninet
+on20
+on26
 onenand
 opencores-kbd
 openvswitch
@@ -1483,15 +1500,18 @@ panel-acx565akm
 panel-lgphilips-lb035q02
 panel-nec-nl8048hl11-01b
 panel-picodlp
+paride
 parkbd
 parport
 parport_ax88796
+parport_pc
 pata_arasan_cf
 pata_of_platform
 pata_platform
 pc87360
 pc87427
 pcbc
+pcd
 pcf50633
 pcf50633-adc
 pcf50633-backlight
@@ -1503,10 +1523,13 @@ pcf8574_keypad
 pcf8591
 pcrypt
 pcwd_usb
+pd
 pda_power
 peak_usb
 pegasus
 penmount
+pf
+pg
 phonedev
 phonet
 phram
@@ -1529,6 +1552,7 @@ pn544_hci
 pn_pep
 poseidon
 powermate
+ppa
 ppdev
 ppp_async
 ppp_deflate
@@ -1546,6 +1570,7 @@ prism2_usb
 ps2mult
 psmouse
 psnap
+pt
 pvrusb2
 pwc
 pwm_bl
