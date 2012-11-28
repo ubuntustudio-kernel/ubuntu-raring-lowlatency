@@ -85,7 +85,7 @@ struct intel_dvo_dev_ops {
 	 * buses with clock limitations.
 	 */
 	bool (*mode_fixup)(struct intel_dvo_device *dvo,
-			   const struct drm_display_mode *mode,
+			   struct drm_display_mode *mode,
 			   struct drm_display_mode *adjusted_mode);
 
 	/*

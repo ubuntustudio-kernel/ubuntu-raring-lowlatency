@@ -428,7 +428,7 @@ extern void intel_hdmi_init_connector(struct intel_digital_port *intel_dig_port,
 				      struct intel_connector *intel_connector);
 extern struct intel_hdmi *enc_to_intel_hdmi(struct drm_encoder *encoder);
 extern bool intel_hdmi_mode_fixup(struct drm_encoder *encoder,
-				  const struct drm_display_mode *mode,
+				  struct drm_display_mode *mode,
 				  struct drm_display_mode *adjusted_mode);
 extern void intel_dip_infoframe_csum(struct dip_infoframe *avi_if);
 extern bool intel_sdvo_init(struct drm_device *dev, uint32_t sdvo_reg,
@@ -454,7 +454,7 @@ extern void intel_dp_sink_dpms(struct intel_dp *intel_dp, int mode);
 extern void intel_dp_encoder_destroy(struct drm_encoder *encoder);
 extern void intel_dp_check_link_status(struct intel_dp *intel_dp);
 extern bool intel_dp_mode_fixup(struct drm_encoder *encoder,
-				const struct drm_display_mode *mode,
+				struct drm_display_mode *mode,
 				struct drm_display_mode *adjusted_mode);
 extern bool intel_dpd_is_edp(struct drm_device *dev);
 extern void ironlake_edp_backlight_on(struct intel_dp *intel_dp);

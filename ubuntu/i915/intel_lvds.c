@@ -247,7 +247,7 @@ static inline u32 panel_fitter_scaling(u32 source, u32 target)
 }
 
 static bool intel_lvds_mode_fixup(struct drm_encoder *encoder,
-				  const struct drm_display_mode *mode,
+				  struct drm_display_mode *mode,
 				  struct drm_display_mode *adjusted_mode)
 {
 	struct drm_device *dev = encoder->dev;

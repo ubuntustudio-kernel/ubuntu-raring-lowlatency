@@ -906,8 +906,7 @@ intel_tv_mode_valid(struct drm_connector *connector,
 
 
 static bool
-intel_tv_mode_fixup(struct drm_encoder *encoder,
-		    const struct drm_display_mode *mode,
+intel_tv_mode_fixup(struct drm_encoder *encoder, struct drm_display_mode *mode,
 		    struct drm_display_mode *adjusted_mode)
 {
 	struct intel_tv *intel_tv = enc_to_intel_tv(encoder);

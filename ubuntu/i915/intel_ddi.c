@@ -1418,7 +1418,7 @@ static void intel_ddi_destroy(struct drm_encoder *encoder)
 }
 
 static bool intel_ddi_mode_fixup(struct drm_encoder *encoder,
-				 const struct drm_display_mode *mode,
+				 struct drm_display_mode *mode,
 				 struct drm_display_mode *adjusted_mode)
 {
 	struct intel_encoder *intel_encoder = to_intel_encoder(encoder);
