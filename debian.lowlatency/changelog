@@ -4,6 +4,45 @@ linux-lowlatency (3.7.0-3.3) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.7.0-4.12 ]
+
+  * Revert "[Config] Use -j1 for headers_install"
+  * Revert "[Config] install-arch-headers needs a valid config"
+    Strayed into the weeds in search of the root cause of the periodic
+    build failure.
+    Fixes powerpc FTBS introduced in -4.11.
+  * [Config] hmake -j1
+    The kernel makefile appears to have parallel dependency
+    problems for the install_headers target. This appears to be root
+    cause for a periodic build failure on N-way machines.
+
+  [ Ubuntu: 3.7.0-4.11 ]
+
+  * [Config] Use -j1 for headers_install
+    Also fixes a powerpc FTBS introduced by
+    "[Config] install-arch-headers needs a valid config".
+
+  [ Ubuntu: 3.7.0-4.10 ]
+
+  * [Config] add rebuild-test support for autopkgtest
+    - LP: #1081500
+  * [tests] move build tests out of the way
+    - LP: #1081500
+  * [tests] add an autopkgtest rebuild test
+    - LP: #1081500
+  * rebase to v3.7-rc7
+  * SAUCE: Remove emi62 files duplicated in linux-firmware
+  * SAUCE: Remove sb16 files duplicated in linux-firmware
+  * SAUCE: Remove whiteheat files duplicated in linux-firmware
+  * SAUCE: Remove yamaha files duplicated in linux-firmware
+  * SAUCE: Remove dsp56k files used only by m68k
+  * SAUCE: firmware: Remove last vestiges of dabusb
+  * SAUCE: Remove vicam files duplicated in linux-firmware
+  * [Config] install-arch-headers needs a valid config
+  * rebase to v3.7-rc7
+    - LP: #1076840
+    - LP: #1081466
+
  -- Andy Whitcroft <apw@canonical.com>  Wed, 28 Nov 2012 17:52:14 +0000
 
 linux-lowlatency (3.7.0-3.2) raring; urgency=low
