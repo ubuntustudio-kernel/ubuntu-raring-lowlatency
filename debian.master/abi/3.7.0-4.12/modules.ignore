@@ -1,0 +1,11 @@
+at803x
+bcm87xx
+erst-dbg
+mdio-bitbang
+mdio-gpio
+mdio-mux
+mdio-mux-gpio
+mdio-mux-mmioreg
+sha512_generic
+virtio_blk
+virtio_net
