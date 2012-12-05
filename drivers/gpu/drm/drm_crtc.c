@@ -3180,6 +3180,10 @@ int drm_mode_connector_update_edid_property(struct drm_connector *connector,
 	size = EDID_LENGTH * (1 + edid->extensions);
 	connector->edid_blob_ptr = drm_property_create_blob(connector->dev,
 							    size, edid);
+	if (!connector->edid_blob_ptr) {
+		pr_err("drm: Could not allocate %d edid blob bytes.\n", size);
+		return -ENOMEM;
+	}
 
 	ret = drm_connector_property_set_value(connector,
 					       dev->mode_config.edid_property,
