@@ -464,6 +464,7 @@ dn_rtmsg
 doc2001plus
 docecc
 docg3
+docg4
 docprobe
 drbd
 drm
@@ -533,6 +534,7 @@ dwc3-exynos
 dwc3-omap
 dw_dmac
 dw_mmc
+dw_mmc-exynos
 dw_mmc-pltfm
 dw_wdt
 dynapro
@@ -671,6 +673,7 @@ gp2ap002a00f
 gpio
 gpio-74x164
 gpio-addr-flash
+gpio-adnp
 gpio-adp5520
 gpio-adp5588
 gpio-arizona
@@ -2046,6 +2049,7 @@ snd-soc-wm8996
 snd-soc-wm9081
 snd-soc-wm9090
 snd-soc-wm-hubs
+snd-soc-zoom2
 snd-ua101
 snd-usb-6fire
 snd-usb-audio
@@ -2418,6 +2422,16 @@ x25_asy
 xc4000
 xc5000
 xcbc
+xen-blkback
+xen-evtchn
+xen-fbfront
+xenfs
+xen-gntalloc
+xen-gntdev
+xen-kbdfront
+xen-netback
+xen-privcmd
+xen_wdt
 xfrm4_mode_beet
 xfrm4_mode_transport
 xfrm4_mode_tunnel
