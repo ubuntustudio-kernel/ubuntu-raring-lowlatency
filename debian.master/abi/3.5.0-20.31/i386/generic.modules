@@ -1282,6 +1282,7 @@ i82875p_edac
 i82975x_edac
 i8k
 i915
+i915_hsw
 ib700wdt
 ib_addr
 ib_cm
