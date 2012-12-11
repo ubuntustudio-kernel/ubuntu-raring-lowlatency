@@ -122,8 +122,7 @@ MODULE_PARM_DESC(i915_enable_ppgtt,
 static struct drm_driver driver;
 extern int intel_agp_enabled;
 
-int i915_hsw_enabled = 0;
-EXPORT_SYMBOL(i915_hsw_enabled);
+extern int i915_hsw_enabled;
 
 #define INTEL_VGA_DEVICE(id, info) {		\
 	.class = PCI_BASE_CLASS_DISPLAY << 16,	\

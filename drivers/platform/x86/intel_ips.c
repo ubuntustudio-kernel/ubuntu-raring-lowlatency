@@ -251,7 +251,8 @@
 
 static const int IPS_ADJUST_PERIOD = 5000; /* ms */
 static bool late_i915_load = false;
-extern int i915_hsw_enabled;
+int i915_hsw_enabled = 0;
+EXPORT_SYMBOL(i915_hsw_enabled);
 
 /* For initial average collection */
 static const int IPS_SAMPLE_PERIOD = 200; /* ms */
