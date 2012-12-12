@@ -279,6 +279,7 @@ as5011
 asb100
 asc7621
 asix
+ast
 asus_atk0110
 asus-laptop
 asus-nb-wmi
@@ -292,7 +293,7 @@ async_xor
 at24
 at25
 at76c50x-usb
-at803x
+at86rf230
 atbm8830
 aten
 ath
@@ -360,7 +361,6 @@ bch
 bcm203x
 bcm3510
 bcm5974
-bcm87xx
 bcma
 bcma-hcd
 bcm_wimax
@@ -375,6 +375,7 @@ bh1770glc
 bh1780gli
 binfmt_misc
 block2mtd
+blocklayoutdriver
 blowfish_common
 blowfish_generic
 blowfish-x86_64
@@ -497,6 +498,7 @@ ci13xxx_msm
 ci13xxx_pci
 cifs
 ci_hdrc
+cirrus
 cirrusfb
 ck804xrom
 classmate-laptop
@@ -676,20 +678,25 @@ dm9601
 dm-bio-prison
 dm-bufio
 dm-crypt
+dm-delay
 dme1737
 dmfe
+dm-flakey
 dmi-sysfs
 dm-log
+dm-log-userspace
 dm-mirror
 dm-multipath
 dm-persistent-data
 dm-queue-length
 dm-raid
+dm-raid45
 dm-region-hash
 dm-round-robin
 dm-service-time
 dm-snapshot
 dm-thin-pool
+dm-verity
 dmx3191d
 dm-zero
 dnet
@@ -854,7 +861,6 @@ epat
 epia
 epic100
 eql
-erst-dbg
 esb2rom
 esd_usb2
 esi-sir
@@ -877,6 +883,7 @@ f71808e_wdt
 f71882fg
 f75375s
 f81232
+fakelb
 fam15h_power
 fan53555
 farsync
@@ -1687,6 +1694,7 @@ m88rs2000
 ma600-sir
 mac80211
 mac80211_hwsim
+mac802154
 mac-celtic
 mac-centeuro
 mac-croatian
@@ -1781,8 +1789,6 @@ mct_u232
 md4
 mdc800
 mdio
-mdio-bitbang
-mdio-gpio
 me4000
 me_daq
 megaraid
@@ -1834,6 +1840,7 @@ mptsas
 mptscsih
 mptspi
 mpu3050
+mrf24j40
 mrst_max3110
 msdos
 msi-laptop
@@ -1957,6 +1964,7 @@ nfnetlink_queue
 nfs
 nfs_acl
 nfsd
+nfs_layout_nfsv41_files
 nfsv2
 nfsv3
 nfsv4
@@ -2040,6 +2048,7 @@ nvram
 nv_tco
 nxt200x
 nxt6000
+objlayoutdriver
 ocfs2
 ocfs2_dlm
 ocfs2_dlmfs
@@ -2270,6 +2279,7 @@ qnx4
 qnx6
 qt1010
 qt1070
+qt2160
 quatech2
 quatech_daqp_cs
 quickstart
