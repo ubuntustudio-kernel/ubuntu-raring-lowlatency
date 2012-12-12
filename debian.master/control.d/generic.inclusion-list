@@ -80,6 +80,7 @@ drivers/xen/*
 fs/binfmt_misc.ko
 fs/btrfs/*
 fs/cachefiles/cachefiles.ko
+fs/ceph/*
 fs/configfs/*
 fs/ext*/*
 fs/fat/*
