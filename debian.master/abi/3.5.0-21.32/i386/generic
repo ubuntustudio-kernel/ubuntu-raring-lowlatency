@@ -2180,6 +2180,7 @@ EXPORT_SYMBOL drivers/pcmcia/pcmcia_core 0xf720a887	pcmcia_parse_events
 EXPORT_SYMBOL drivers/pcmcia/pcmcia_core 0xfa546345	pcmcia_get_socket_by_nr
 EXPORT_SYMBOL drivers/pcmcia/pcmcia_rsrc 0x1f07b039	pccard_static_ops
 EXPORT_SYMBOL drivers/pcmcia/pcmcia_rsrc 0x6794e233	pccard_nonstatic_ops
+EXPORT_SYMBOL drivers/platform/x86/intel_ips 0xbed13272	i915_hsw_enabled
 EXPORT_SYMBOL drivers/platform/x86/sony-laptop 0x5bb1e117	sony_pic_camera_command
 EXPORT_SYMBOL drivers/pps/pps_core 0x48e3bbac	pps_event
 EXPORT_SYMBOL drivers/pps/pps_core 0xcc0a022b	pps_register_source
@@ -3994,7 +3995,6 @@ EXPORT_SYMBOL ubuntu/dm-raid4-5/dm-raid45 0x8e6396de	dm_mem_cache_alloc
 EXPORT_SYMBOL ubuntu/dm-raid4-5/dm-raid45 0x920a7a41	dm_message_parse
 EXPORT_SYMBOL ubuntu/dm-raid4-5/dm-raid45 0xa43471b6	dm_mem_cache_shrink
 EXPORT_SYMBOL ubuntu/dm-raid4-5/dm-raid45 0xd55b290c	dm_mem_cache_client_destroy
-EXPORT_SYMBOL ubuntu/i915/i915_hsw 0xbed13272	i915_hsw_enabled
 EXPORT_SYMBOL vmlinux 0x00000000	softirq_work_list
 EXPORT_SYMBOL vmlinux 0x000785ca	ethtool_op_get_link
 EXPORT_SYMBOL vmlinux 0x00137497	open_exec
