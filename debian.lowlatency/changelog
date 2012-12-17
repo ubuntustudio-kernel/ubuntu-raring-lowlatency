@@ -4,6 +4,40 @@ linux-lowlatency (3.7.0-5.5) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.7.0-7.15 ]
+
+  * SAUCE: add eeprom_bad_csum_allow module parameter
+    - LP: #1070182
+  * Add ceph to linux-image for virtual instances
+    - LP: #1063784
+  * SAUCE: net: dev_change_net_namespace: send a KOBJ_REMOVED/KOBJ_ADD
+  * [Config] CONFIG_SLUB_DEBUG=y
+    - LP: #1090308
+  * Revert "[SCSI] sd: Implement support for WRITE SAME"
+    - LP: #1089818
+
+  [ Ubuntu: 3.7.0-6.14 ]
+
+  * [Config] annotations: all new annotations scheme including defaults
+  * [Configs] apply annotation updates to main configs (top section)
+  * Revert "SAUCE: include <linux/printk.h> and <stdarg.h> for mmc_core arm
+    build"
+  * Revert "SAUCE: [arm] fixup __aeabi_uldivmod undefined build error"
+  * Temporarily disable module check for build
+  * ubuntu: dm-raid45: Adapt to upstream interface changes
+  * Re-enable build of dm-raid45
+  * SAUCE: Moved scripts/fw-to-ihex.sh to debian/scripts/misc
+  * SAUCE: ACPICA: Fix ACPI mutex object allocation memory leak on error
+  * SAUCE: drm: Fix possible EDID memory allocation oops
+  * SAUCE: ttm: Fix possible _manager memory allocation oops
+  * SAUCE: iwlwifi: iwlagn_request_scan: Fix check for priv->scan_request
+  * SAUCE: i915: intel_set_mode: Reduce stack allocation from 500 bytes to
+    2 pointers
+  * SAUCE: tools: hv: Netlink source address validation allows DoS
+    - LP: #1084777
+    - CVE-2012-5532
+  * rebase to v3.7
+
  -- Andy Whitcroft <apw@ubuntu.com>  Mon, 17 Dec 2012 16:45:20 +0000
 
 linux-lowlatency (3.7.0-5.4) raring-proposed; urgency=low
