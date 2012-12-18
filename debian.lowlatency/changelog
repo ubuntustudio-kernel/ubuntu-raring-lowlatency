@@ -4,6 +4,692 @@ linux-lowlatency (3.5.0-18.19) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-21.32 ]
+
+  * Release Tracking Bug
+    - LP: #1088979
+  * SAUCE: i915_hsw: move i915_hsw_enabled symbol to intel_ips
+    - LP: #1087622
+
+  [ Ubuntu: 3.5.0-20.31 ]
+
+  * Release Tracking Bug
+    - LP: #1086759
+  * SAUCE: i915_hsw: Include #define I915_PARAM_HAS_WAIT_TIMEOUT
+    - LP: #1085245
+  * SAUCE: i915_hsw: Include #define DRM_I915_GEM_CONTEXT_[CREATE,DESTROY]
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm/i915: add register read IOCTL
+    - LP: #1085245
+  * SAUCE: i915_hsw: Include #define i915_execbuffer2_[set,get]_context_id
+    - LP: #1085245
+  * SAUCE: i915_hsw: Include #define I915_GEM_PARAM_HAS_SEMAPHORES
+    - LP: #1085245
+  * SAUCE: i915_hsw: Include #define I915_PARAM_HAS_SECURE_BATCHES
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm/i915: call intel_enable_gtt
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm: add helper to sort panels to the head of the
+    connector list
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm: extract dp link bw helpers
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm: extract drm_dp_max_lane_count helper
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm: dp helper: extract drm_dp_channel_eq_ok
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm: extract helpers to compute new training values
+    from sink request
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm: dp helper: extract drm_dp_clock_recovery_ok
+    - LP: #1085245
+  * SAUCE: i915_hsw: Include #define I915_PARAM_HAS_PRIME_VMAP_FLUSH
+    - LP: #1085245
+  * SAUCE: i915_hsw: Provide an ubuntu/i915 driver for Haswell graphics
+    - LP: #1085245
+  * SAUCE: i915_hsw: Revert "drm: Make the .mode_fixup() operations mode
+    argument a const pointer" for ubuntu/i915 driver
+    - LP: #1085245
+  * SAUCE: i915_hsw: Rename ubuntu/i915 driver i915_hsw
+    - LP: #1085245
+  * SAUCE: i915_hsw: Only support Haswell with ubuntu/i915 driver
+    - LP: #1085245
+  * SAUCE: i915_hsw: Include #define DRM_I915_GEM_WAIT
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm: extract dp link train delay functions from radeon
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm/dp: Update DPCD defines
+    - LP: #1085245
+  * SAUCE: i915_hsw: Update intel_ips.h file location
+    - LP: #1085245
+  * SAUCE: i915_hsw: Provide updated drm_mm.h and drm_mm.c for ubuntu/i915
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm/i915: Replace the array of pages with a
+    scatterlist
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm/i915: Replace the array of pages with a
+    scatterlist
+    - LP: #1085245
+  * SAUCE: i915_hsw: drm/i915: Stop using AGP layer for GEN6+
+    - LP: #1085245
+  * SAUCE: i915_hsw: Add i915_hsw_gpu_*() calls for ubuntu/i915
+    - LP: #1085245
+  * i915_hsw: [Config] Enable CONFIG_DRM_I915_HSW=m
+    - LP: #1085245
+  * SAUCE: drm/i915: fix hsw_fdi_link_train "retry" code
+    - LP: #1085245
+  * SAUCE: drm/i915: reject modes the LPT FDI receiver can't handle
+    - LP: #1085245
+  * SAUCE: drm/i915: add support for mPHY destination on intel_sbi_{read,
+    write}
+    - LP: #1085245
+  * SAUCE: drm/i915: add lpt_init_pch_refclk
+    - LP: #1085245
+  * SAUCE: drm/i915: set the LPT FDI RX polarity reversal bit when needed
+    - LP: #1085245
+  * Revert "SAUCE: SECCOMP: audit: always report seccomp violations"
+    - LP: #1079469
+  * Revert "cgroup: Drop task_lock(parent) on cgroup_fork()"
+    - LP: #1084539
+  * Revert "cgroup: Remove task_lock() from cgroup_post_fork()"
+    - LP: #1084539
+  * Revert "x86/mm: Fix the size calculation of mapping tables"
+    - LP: #1084539
+  * Revert "SUNRPC: Ensure we close the socket on EPIPE errors too..."
+    - LP: #1084539
+  * Revert "ath9k_hw: Updated AR9003 tx gain table for 5GHz"
+    - LP: #1084539
+  * Revert "sched: Add missing call to calc_load_exit_idle()"
+    - LP: #1084539
+  * net: fix secpath kmemleak
+    - LP: #1065434
+  * seccomp: forcing auditing of kill condition
+    - LP: #1079469
+  * e1000e: add device IDs for i218
+    - LP: #1081796
+  * bonding: Bonding driver does not consider the gso_max_size/gso_max_segs
+    setting of slave devices.
+    - LP: #1078184
+  * mm/hotplug: correctly add new zone to all other nodes' zone lists
+    - LP: #1079860
+    - CVE-2012-5517
+  * xen: enable platform-pci only in a Xen guest
+    - LP: #1081054
+  * udf: fix retun value on error path in udf_load_logicalvol
+    - LP: #1084539
+  * usb: gadget: at91_udc: fix dt support
+    - LP: #1084539
+  * netfilter: nf_nat_sip: fix incorrect handling of EBUSY for RTCP
+    expectation
+    - LP: #1084539
+  * netfilter: nf_nat_sip: fix via header translation with multiple
+    parameters
+    - LP: #1084539
+  * netfilter: nf_ct_expect: fix possible access to uninitialized timer
+    - LP: #1084539
+  * netfilter: xt_limit: have r->cost != 0 case work
+    - LP: #1084539
+  * netfilter: nf_conntrack: fix racy timer handling with reliable events
+    - LP: #1084539
+  * netfilter: nfnetlink_log: fix NLA_PUT macro removal bug
+    - LP: #1084539
+  * MIPS: ath79: Fix CPU/DDR frequency calculation for SRIF PLLs
+    - LP: #1084539
+  * jbd: Fix assertion failure in commit code due to lacking transaction
+    credits
+    - LP: #1084539
+  * nfsd4: fix nfs4 stateid leak
+    - LP: #1084539
+  * NFSD: pass null terminated buf to kstrtouint()
+    - LP: #1084539
+  * mfd: 88pm860x: Move _IO resources out of ioport_ioresource
+    - LP: #1084539
+  * target: support zero allocation length in INQUIRY
+    - LP: #1084539
+  * target: fix truncation of mode data, support zero allocation length
+    - LP: #1084539
+  * target: fix return code in target_core_init_configfs error path
+    - LP: #1084539
+  * powerpc/eeh: Lock module while handling EEH event
+    - LP: #1084539
+  * SUNRPC: Ensure that the TCP socket is closed when in CLOSE_WAIT
+    - LP: #1084539
+  * ext4: remove erroneous ext4_superblock_csum_set() in update_backups()
+    - LP: #1084539
+  * block: remove the duplicated setting for congestion_threshold
+    - LP: #1084539
+  * block: lift the initial queue bypass mode on blk_register_queue()
+    instead of blk_init_allocated_queue()
+    - LP: #1084539
+  * block: fix request_queue->flags initialization
+    - LP: #1084539
+  * viafb: don't touch clock state on OLPC XO-1.5
+    - LP: #1084539
+  * qla2xxx: Fix endianness of task management response code
+    - LP: #1084539
+  * iscsi-target: Correctly set 0xffffffff field within ISCSI_OP_REJECT PDU
+    - LP: #1084539
+  * drm/i915: use adjusted_mode instead of mode for checking the 6bpc force
+    flag
+    - LP: #1084539
+  * kbuild: Do not package /boot and /lib in make tar-pkg
+    - LP: #1084539
+  * module: taint kernel when lve module is loaded
+    - LP: #1084539
+  * mtd: nand: allow NAND_NO_SUBPAGE_WRITE to be set from driver
+    - LP: #1084539
+  * nfsd4: don't pin clientids to pseudoflavors
+    - LP: #1084539
+  * lockd: use rpc client's cl_nodename for id encoding
+    - LP: #1084539
+  * pnfsblock: fix partial page buffer wirte
+    - LP: #1084539
+  * pnfsblock: fix non-aligned DIO read
+    - LP: #1084539
+  * pnfsblock: fix non-aligned DIO write
+    - LP: #1084539
+  * target/file: Re-enable optional fd_buffered_io=1 operation
+    - LP: #1084539
+  * iscsi-target: Add explicit set of cache_dynamic_acls=1 for TPG
+    demo-mode
+    - LP: #1084539
+  * iscsit: remove incorrect unlock in iscsit_build_sendtargets_resp
+    - LP: #1084539
+  * iscsi-target: Bump defaults for nopin_timeout + nopin_response_timeout
+    values
+    - LP: #1084539
+  * drivers/dma/dmaengine.c: lower the priority of 'failed to get' dma
+    channel message
+    - LP: #1084539
+  * ath9k: use ieee80211_free_txskb
+    - LP: #1084539
+  * ALSA: hda - Fix hang caused by race during suspend.
+    - LP: #1084539
+  * ACPI: EC: Make the GPE storm threshold a module parameter
+    - LP: #1084539
+  * ACPI: EC: Add a quirk for CLEVO M720T/M730T laptop
+    - LP: #1084539
+  * mmc: sdhci-s3c: fix the wrong number of max bus clocks
+    - LP: #1084539
+  * mac80211: use ieee80211_free_txskb to fix possible skb leaks
+    - LP: #1084539
+  * ARM: OMAP: counter: add locking to read_persistent_clock
+    - LP: #1084539
+  * ARM: vfp: fix saving d16-d31 vfp registers on v6+ kernels
+    - LP: #1084539
+  * scsi_debug: Fix off-by-one bug when unmapping region
+    - LP: #1084539
+  * storvsc: Account for in-transit packets in the RESET path
+    - LP: #1084539
+  * firewire: cdev: fix user memory corruption (i386 userland on amd64
+    kernel)
+    - LP: #1084539
+  * timers: Fix endless looping between cascade() and internal_add_timer()
+    - LP: #1084539
+  * timekeeping: Cast raw_interval to u64 to avoid shift overflow
+    - LP: #1084539
+  * video/udlfb: fix line counting in fb_write
+    - LP: #1084539
+  * tmpfs,ceph,gfs2,isofs,reiserfs,xfs: fix fh_len checking
+    - LP: #1084539
+  * ALSA: hda - Add missing hda_gen_spec to struct via_spec
+    - LP: #1084539
+  * ALSA: hda - Fix memory leaks at error path in patch_cirrus.c
+    - LP: #1084539
+  * autofs4 - fix reset pending flag on mount fail
+    - LP: #1084539
+  * pktgen: fix crash when generating IPv6 packets
+    - LP: #1084539
+  * md/raid10: use correct limit variable
+    - LP: #1084539
+  * mips,kgdb: fix recursive page fault with CONFIG_KPROBES
+    - LP: #1084539
+  * kdb,vt_console: Fix missed data due to pager overruns
+    - LP: #1084539
+  * xen/bootup: allow read_tscp call for Xen PV guests.
+    - LP: #1084539
+  * xen/bootup: allow {read|write}_cr8 pvops call.
+    - LP: #1084539
+  * libceph: eliminate connection state "DEAD"
+    - LP: #1084539
+  * libceph: kill bad_proto ceph connection op
+    - LP: #1084539
+  * libceph: rename socket callbacks
+    - LP: #1084539
+  * libceph: rename kvec_reset and kvec_add functions
+    - LP: #1084539
+  * libceph: embed ceph messenger structure in ceph_client
+    - LP: #1084539
+  * libceph: start separating connection flags from state
+    - LP: #1084539
+  * libceph: start tracking connection socket state
+    - LP: #1084539
+  * libceph: provide osd number when creating osd
+    - LP: #1084539
+  * libceph: set CLOSED state bit in con_init
+    - LP: #1084539
+  * libceph: embed ceph connection structure in mon_client
+    - LP: #1084539
+  * libceph: drop connection refcounting for mon_client
+    - LP: #1084539
+  * libceph: init monitor connection when opening
+    - LP: #1084539
+  * libceph: fully initialize connection in con_init()
+    - LP: #1084539
+  * libceph: tweak ceph_alloc_msg()
+    - LP: #1084539
+  * libceph: have messages point to their connection
+    - LP: #1084539
+  * libceph: have messages take a connection reference
+    - LP: #1084539
+  * libceph: make ceph_con_revoke() a msg operation
+    - LP: #1084539
+  * libceph: make ceph_con_revoke_message() a msg op
+    - LP: #1084539
+  * libceph: fix overflow in __decode_pool_names()
+    - LP: #1084539
+  * libceph: fix overflow in osdmap_decode()
+    - LP: #1084539
+  * libceph: fix overflow in osdmap_apply_incremental()
+    - LP: #1084539
+  * libceph: transition socket state prior to actual connect
+    - LP: #1084539
+  * libceph: fix NULL dereference in reset_connection()
+    - LP: #1084539
+  * libceph: use con get/put methods
+    - LP: #1084539
+  * libceph: drop ceph_con_get/put helpers and nref member
+    - LP: #1084539
+  * libceph: encapsulate out message data setup
+    - LP: #1084539
+  * libceph: encapsulate advancing msg page
+    - LP: #1084539
+  * libceph: don't mark footer complete before it is
+    - LP: #1084539
+  * libceph: move init_bio_*() functions up
+    - LP: #1084539
+  * libceph: move init of bio_iter
+    - LP: #1084539
+  * libceph: don't use bio_iter as a flag
+    - LP: #1084539
+  * libceph: SOCK_CLOSED is a flag, not a state
+    - LP: #1084539
+  * libceph: don't change socket state on sock event
+    - LP: #1084539
+  * libceph: just set SOCK_CLOSED when state changes
+    - LP: #1084539
+  * libceph: don't touch con state in con_close_socket()
+    - LP: #1084539
+  * libceph: clear CONNECTING in ceph_con_close()
+    - LP: #1084539
+  * libceph: clear NEGOTIATING when done
+    - LP: #1084539
+  * libceph: define and use an explicit CONNECTED state
+    - LP: #1084539
+  * libceph: separate banner and connect writes
+    - LP: #1084539
+  * libceph: distinguish two phases of connect sequence
+    - LP: #1084539
+  * libceph: small changes to messenger.c
+    - LP: #1084539
+  * libceph: add some fine ASCII art
+    - LP: #1084539
+  * libceph: set peer name on con_open, not init
+    - LP: #1084539
+  * libceph: initialize mon_client con only once
+    - LP: #1084539
+  * libceph: allow sock transition from CONNECTING to CLOSED
+    - LP: #1084539
+  * libceph: initialize msgpool message types
+    - LP: #1084539
+  * libceph: prevent the race of incoming work during teardown
+    - LP: #1084539
+  * libceph: report socket read/write error message
+    - LP: #1084539
+  * libceph: fix mutex coverage for ceph_con_close
+    - LP: #1084539
+  * libceph: resubmit linger ops when pg mapping changes
+    - LP: #1084539
+  * libceph: (re)initialize bio_iter on start of message receive
+    - LP: #1084539
+  * libceph: protect ceph_con_open() with mutex
+    - LP: #1084539
+  * libceph: reset connection retry on successfully negotiation
+    - LP: #1084539
+  * libceph: fix fault locking; close socket on lossy fault
+    - LP: #1084539
+  * libceph: move msgr clear_standby under con mutex protection
+    - LP: #1084539
+  * libceph: move ceph_con_send() closed check under the con mutex
+    - LP: #1084539
+  * libceph: drop gratuitous socket close calls in con_work
+    - LP: #1084539
+  * libceph: close socket directly from ceph_con_close()
+    - LP: #1084539
+  * libceph: drop unnecessary CLOSED check in socket state change callback
+    - LP: #1084539
+  * libceph: replace connection state bits with states
+    - LP: #1084539
+  * libceph: clean up con flags
+    - LP: #1084539
+  * libceph: clear all flags on con_close
+    - LP: #1084539
+  * libceph: fix handling of immediate socket connect failure
+    - LP: #1084539
+  * libceph: revoke mon_client messages on session restart
+    - LP: #1084539
+  * libceph: verify state after retaking con lock after dispatch
+    - LP: #1084539
+  * libceph: avoid dropping con mutex before fault
+    - LP: #1084539
+  * libceph: change ceph_con_in_msg_alloc convention to be less weird
+    - LP: #1084539
+  * libceph: recheck con state after allocating incoming message
+    - LP: #1084539
+  * libceph: fix crypto key null deref, memory leak
+    - LP: #1084539
+  * libceph: delay debugfs initialization until we learn global_id
+    - LP: #1084539
+  * libceph: avoid truncation due to racing banners
+    - LP: #1084539
+  * libceph: only kunmap kmapped pages
+    - LP: #1084539
+  * rbd: reset BACKOFF if unable to re-queue
+    - LP: #1084539
+  * libceph: avoid NULL kref_put when osd reset races with alloc_msg
+    - LP: #1084539
+  * ceph: fix dentry reference leak in encode_fh()
+    - LP: #1084539
+  * ceph: Fix oops when handling mdsmap that decreases max_mds
+    - LP: #1084539
+  * libceph: check for invalid mapping
+    - LP: #1084539
+  * ceph: avoid 32-bit page index overflow
+    - LP: #1084539
+  * ASoC: wm2200: Use rev A register patches on rev B
+    - LP: #1084539
+  * ASoC: wm2200: Fix non-inverted OUT2 mute control
+    - LP: #1084539
+  * drm/i915: remove useless BUG_ON which caused a regression in 3.5.
+    - LP: #1084539
+  * USB: Enable LPM after a failed probe.
+    - LP: #1084539
+  * usb: Don't enable LPM if the exit latency is zero.
+    - LP: #1084539
+  * usb: Send Set SEL before enabling parent U1/U2 timeout.
+    - LP: #1084539
+  * ASoC: fsi: don't reschedule DMA from an atomic context
+    - LP: #1084539
+  * drm/i915: Set guardband clipping workaround bit in the right register.
+    - LP: #1084539
+  * pcmcia: sharpsl: don't discard sharpsl_pcmcia_ops
+    - LP: #1084539
+  * hwmon: (coretemp) Add support for Atom CE4110/4150/4170
+    - LP: #1084539
+  * ALSA: hda - Fix registration race of VGA switcheroo
+    - LP: #1084539
+  * usb: dwc3: gadget: fix 'endpoint always busy' bug
+    - LP: #1084539
+  * usb: musb: am35xx: drop spurious unplugging a device
+    - LP: #1084539
+  * drm/radeon: Don't destroy I2C Bus Rec in radeon_ext_tmds_enc_destroy().
+    - LP: #1084539
+  * ALSA: hda - Always check array bounds in alc_get_line_out_pfx
+    - LP: #1084539
+  * NLM: nlm_lookup_file() may return NLMv4-specific error codes
+    - LP: #1084539
+  * x86: Exclude E820_RESERVED regions and memory holes above 4 GB from
+    direct mapping.
+    - LP: #1084539
+  * SUNRPC: Prevent kernel stack corruption on long values of flush
+    - LP: #1084539
+  * USB: cdc-acm: fix pipe type of write endpoint
+    - LP: #1084539
+  * usb: acm: fix the computation of the number of data bits
+    - LP: #1084539
+  * usb: host: xhci: New system added for Compliance Mode Patch on
+    SN65LVPE502CP
+    - LP: #1084539
+  * USB: option: blacklist net interface on ZTE devices
+    - LP: #1084539
+  * USB: option: add more ZTE devices
+    - LP: #1084539
+  * ext4: race-condition protection for
+    ext4_convert_unwritten_extents_endio
+    - LP: #1084539
+  * ext4: fix metadata checksum calculation for the superblock
+    - LP: #1084539
+  * nohz: Fix idle ticks in cpu summary line of /proc/stat
+    - LP: #1084539
+  * ring-buffer: Check for uninitialized cpu buffer before resizing
+    - LP: #1084539
+  * Bluetooth: SMP: Fix setting unknown auth_req bits
+    - LP: #1084539
+  * oprofile, x86: Fix wrapping bug in op_x86_get_ctrl()
+    - LP: #1084539
+  * cfg80211/mac80211: avoid state mishmash on deauth
+    - LP: #1084539
+  * mac80211: check if key has TKIP type before updating IV
+    - LP: #1084539
+  * mac80211: use ieee80211_free_txskb in a few more places
+    - LP: #1084539
+  * bcma: fix unregistration of cores
+    - LP: #1084539
+  * net/wireless: ipw2200: Fix panic occurring in
+    ipw_handle_promiscuous_tx()
+    - LP: #1084539
+  * iwlwifi: fix 6000 series channel switch command
+    - LP: #1084539
+  * cgroup: notify_on_release may not be triggered in some cases
+    - LP: #1084539
+  * dt: Document: correct tegra20/30 pinctrl slew-rate name
+    - LP: #1084539
+  * pinctrl: tegra: set low power mode bank width to 2
+    - LP: #1084539
+  * pinctrl: tegra: correct bank for pingroup and drv pingroup
+    - LP: #1084539
+  * s390: fix linker script for 31 bit builds
+    - LP: #1084539
+  * pinctrl: remove mutex lock in groups show
+    - LP: #1084539
+  * xen/x86: don't corrupt %eip when returning from a signal handler
+    - LP: #1084539
+  * ALSA: hda - Fix silent headphone output from Toshiba P200
+    - LP: #1084539
+  * ext4: Checksum the block bitmap properly with bigalloc enabled
+    - LP: #1084539
+  * ARM: 7559/1: smp: switch away from the idmap before updating
+    init_mm.mm_count
+    - LP: #1084539
+  * usb hub: send clear_tt_buffer_complete events when canceling TT clear
+    work
+    - LP: #1084539
+  * staging: comedi: amplc_pc236: fix invalid register access during detach
+    - LP: #1084539
+  * Staging: android: binder: Fix memory leak on thread/process exit
+    - LP: #1084539
+  * Staging: android: binder: Allow using highmem for binder buffers
+    - LP: #1084539
+  * ext4: Avoid underflow in ext4_trim_fs()
+    - LP: #1084539
+  * cpufreq / powernow-k8: Remove usage of smp_processor_id() in
+    preemptible code
+    - LP: #1084539
+  * extcon: Unregister compat class at module unload to fix oops
+    - LP: #1084539
+  * extcon: unregister compat link on cleanup
+    - LP: #1084539
+  * pinctrl: fix missing unlock on error in pinctrl_groups_show()
+    - LP: #1084539
+  * arch/tile: avoid generating .eh_frame information in modules
+    - LP: #1084539
+  * drm/radeon: add some new SI PCI ids
+    - LP: #1084539
+  * drm/radeon: add error output if VM CS fails on cayman
+    - LP: #1084539
+  * xhci: endianness xhci_calculate_intel_u2_timeout
+    - LP: #1084539
+  * xhci: fix integer overflow
+    - LP: #1084539
+  * dmaengine: imx-dma: fix missing unlock on error in imxdma_xfer_desc()
+    - LP: #1084539
+  * x86-64: Fix page table accounting
+    - LP: #1084539
+  * dmaengine: sirf: fix a typo in dma_prep_interleaved
+    - LP: #1084539
+  * dmaengine: sirf: fix a typo in moving running dma_desc to active queue
+    - LP: #1084539
+  * amd64_edac:__amd64_set_scrub_rate(): avoid overindexing scrubrates[]
+    - LP: #1084539
+  * SUNRPC: Clear the connect flag when socket state is TCP_CLOSE_WAIT
+    - LP: #1084539
+  * SUNRPC: Prevent races in xs_abort_connection()
+    - LP: #1084539
+  * SUNRPC: Get rid of the xs_error_report socket callback
+    - LP: #1084539
+  * iommu/tegra: smmu: Fix deadly typo
+    - LP: #1084539
+  * ARM: at91/tc: fix typo in the DT document
+    - LP: #1084539
+  * ARM: at91: at91sam9g10: fix SOC type detection
+    - LP: #1084539
+  * ARM: at91/i2c: change id to let i2c-gpio work
+    - LP: #1084539
+  * b43: Fix oops on unload when firmware not found
+    - LP: #1084539
+  * USB: serial: Fix memory leak in sierra_release()
+    - LP: #1084539
+  * x86, mm: Trim memory in memblock to be page aligned
+    - LP: #1084539
+  * x86, mm: Use memblock memory loop instead of e820_RAM
+    - LP: #1084539
+  * usb-storage: add unusual_devs entry for Casio EX-N1 digital camera
+    - LP: #1084539
+  * Drivers: hv: Cleanup error handling in vmbus_open()
+    - LP: #1084539
+  * sysfs: sysfs_pathname/sysfs_add_one: Use strlcat() instead of strcat()
+    - LP: #1084539
+  * vhost: fix mergeable bufs on BE hosts
+    - LP: #1084539
+  * USB: metro-usb: fix io after disconnect
+    - LP: #1084539
+  * USB: whiteheat: fix memory leak in error path
+    - LP: #1084539
+  * USB: quatech2: fix memory leak in error path
+    - LP: #1084539
+  * USB: quatech2: fix io after disconnect
+    - LP: #1084539
+  * USB: opticon: fix DMA from stack
+    - LP: #1084539
+  * USB: opticon: fix memory leak in error path
+    - LP: #1084539
+  * USB: mct_u232: fix broken close
+    - LP: #1084539
+  * USB: sierra: fix memory leak in attach error path
+    - LP: #1084539
+  * USB: sierra: fix memory leak in probe error path
+    - LP: #1084539
+  * USB: mos7840: fix urb leak at release
+    - LP: #1084539
+  * USB: mos7840: fix port-device leak in error path
+    - LP: #1084539
+  * USB: mos7840: remove NULL-urb submission
+    - LP: #1084539
+  * USB: mos7840: remove invalid disconnect handling
+    - LP: #1084539
+  * ehci: fix Lucid nohandoff pci quirk to be more generic with BIOS
+    versions
+    - LP: #1084539
+  * ehci: Add yet-another Lucid nohandoff pci quirk
+    - LP: #1084539
+  * xhci: Fix potential NULL ptr deref in command cancellation.
+    - LP: #1084539
+  * freezer: exec should clear PF_NOFREEZE along with PF_KTHREAD
+    - LP: #1084539
+  * mm: fix XFS oops due to dirty pages without buffers on s390
+    - LP: #1084539
+  * genalloc: stop crashing the system when destroying a pool
+    - LP: #1084539
+  * drivers/rtc/rtc-imxdi.c: add missing spin lock initialization
+    - LP: #1084539
+  * gen_init_cpio: avoid stack overflow when expanding
+    - LP: #1084539
+  * fs/compat_ioctl.c: VIDEO_SET_SPU_PALETTE missing error check
+    - LP: #1084539
+  * qmi_wwan/cdc_ether: move Novatel 551 and E362 to qmi_wwan
+    - LP: #1084539
+  * efi: Defer freeing boot services memory until after ACPI init
+    - LP: #1084539
+  * x86: efi: Turn off efi_enabled after setup on mixed fw/kernel
+    - LP: #1082059, #1084539
+  * target: Re-add explict zeroing of INQUIRY bounce buffer memory
+    - LP: #1084539
+  * ARM: 7566/1: vfp: fix save and restore when running on pre-VFPv3 and
+    CONFIG_VFPv3 set
+    - LP: #1084539
+  * libceph: drop declaration of ceph_con_get()
+    - LP: #1084539
+  * x86, mm: Find_early_table_space based on ranges that are actually being
+    mapped
+    - LP: #1084539
+  * x86, mm: Undo incorrect revert in arch/x86/mm/init.c
+    - LP: #1084539
+  * Linux 3.5.7.1
+    - LP: #1084539
+  * ALSA: hda - Cirrus: Correctly clear line_out_pins when moving to
+    speaker
+    - LP: #1076840
+  * Bluetooth: ath3k: Add support for VAIO VPCEH [0489:e027]
+    - LP: #898826
+  * i915_hsw: drm/i915: Reserve ioctl numbers for set/get_caching
+    - LP: #1085245
+  * i915_hsw: drm: Export drm_probe_ddc()
+    - LP: #1085245
+  * i915_hsw: drm: remove the raw_edid field from struct drm_display_info
+    - LP: #1085245
+  * i915_hsw: drm/i915: fix hsw uncached pte
+    - LP: #1085245
+  * i915_hsw: drm/fb-helper: delay hotplug handling when partially bound
+    - LP: #1085245
+  * i915_hsw: drm/fb helper: don't call drm_crtc_helper_set_config
+    - LP: #1085245
+  * i915_hsw: drm/fb-helper: don't clobber output routing in setup_crtcs
+    - LP: #1085245
+  * i915_hsw: drm/fb helper: don't call drm_helper_connector_dpms directly
+    - LP: #1085245
+  * i915_hsw: drm/edid: Fix potential memory leak in edid_load()
+    - LP: #1085245
+
+  [ Ubuntu: 3.5.0-19.30 ]
+
+  * Release Tracking Bug
+    - LP: #1078041
+  * [Config] update Vcs-git: to point to quantal
+    - LP: #1069204
+  * SAUCE: ALSA: hda - add quirk for Thinkpad T430
+    - LP: #1060372
+  * [Config] CONFIG_USB_OTG=n for all but armel/armhf
+    - LP: #1047527
+  * [Config] remove ndiswrapper from Provides:
+    - LP: #1076395
+  * [Config] ONFIG_AMD_IOMMU_V2=m
+    - LP: #1071520
+  * kernel/sys.c: fix stack memory content leak via UNAME26
+    - LP: #1065622, #1060521
+    - CVE-2012-0957
+  * use clamp_t in UNAME26 fix
+    - LP: #1065622, #1060521
+    - CVE-2012-0957
+  * net: fix divide by zero in tcp algorithm illinois
+    - LP: #1077091
+    - CVE-2012-4565
+  * SAUCE: Bluetooth: Add a load_firmware callback to struct hci_dev
+    - LP: #1065400
+  * SAUCE: Bluetooth: Implement broadcom patchram firmware loader
+    - LP: #1065400
+  * SAUCE: Bluetooth: Add support for 13d3:3388 and 13d3:3389
+    - LP: #1065400
+
  -- Andy Whitcroft <apw@canonical.com>  Tue, 18 Dec 2012 18:16:37 +0000
 
 linux-lowlatency (3.5.0-18.18) quantal-proposed; urgency=low
