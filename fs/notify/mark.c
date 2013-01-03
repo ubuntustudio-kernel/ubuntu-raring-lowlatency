@@ -122,18 +122,18 @@ EXPORT_SYMBOL(fsnotify_put_mark);
  * The caller had better be holding a reference to this mark so we don't actually
  * do the final put under the mark->lock
  */
-void fsnotify_destroy_mark_locked(struct fsnotify_mark *mark,
-				  struct fsnotify_group *group)
+void fsnotify_destroy_mark(struct fsnotify_mark *mark,
+			   struct fsnotify_group *group)
 {
 	struct inode *inode = NULL;
 
-	BUG_ON(!mutex_is_locked(&group->mark_mutex));
-
+	mutex_lock(&group->mark_mutex);
 	spin_lock(&mark->lock);
 
 	/* something else already called this function on this mark */
 	if (!(mark->flags & FSNOTIFY_MARK_FLAG_ALIVE)) {
 		spin_unlock(&mark->lock);
+		mutex_unlock(&group->mark_mutex);
 		return;
 	}
 
@@ -150,8 +150,6 @@ void fsnotify_destroy_mark_locked(struct fsnotify_mark *mark,
 	list_del_init(&mark->g_list);
 
 	spin_unlock(&mark->lock);
-
-	/* release lock temporarily */
 	mutex_unlock(&group->mark_mutex);
 
 	spin_lock(&destroy_lock);
@@ -187,16 +185,6 @@ void fsnotify_destroy_mark_locked(struct fsnotify_mark *mark,
 	 */
 
 	atomic_dec(&group->num_marks);
-
-	mutex_lock(&group->mark_mutex);
-}
-
-void fsnotify_destroy_mark(struct fsnotify_mark *mark,
-			   struct fsnotify_group *group)
-{
-	mutex_lock(&group->mark_mutex);
-	fsnotify_destroy_mark_locked(mark, group);
-	mutex_unlock(&group->mark_mutex);
 }
 EXPORT_SYMBOL(fsnotify_destroy_mark);
 
@@ -222,15 +210,14 @@ void fsnotify_set_mark_ignored_mask_locked(struct fsnotify_mark *mark, __u32 mas
  * These marks may be used for the fsnotify backend to determine which
  * event types should be delivered to which group.
  */
-int fsnotify_add_mark_locked(struct fsnotify_mark *mark,
-			     struct fsnotify_group *group, struct inode *inode,
-			     struct vfsmount *mnt, int allow_dups)
+int fsnotify_add_mark(struct fsnotify_mark *mark,
+		      struct fsnotify_group *group, struct inode *inode,
+		      struct vfsmount *mnt, int allow_dups)
 {
 	int ret = 0;
 
 	BUG_ON(inode && mnt);
 	BUG_ON(!inode && !mnt);
-	BUG_ON(!mutex_is_locked(&group->mark_mutex));
 
 	/*
 	 * LOCKING ORDER!!!!
@@ -238,6 +225,8 @@ int fsnotify_add_mark_locked(struct fsnotify_mark *mark,
 	 * mark->lock
 	 * inode->i_lock
 	 */
+	mutex_lock(&group->mark_mutex);
+
 	spin_lock(&mark->lock);
 	mark->flags |= FSNOTIFY_MARK_FLAG_ALIVE;
 
@@ -263,6 +252,8 @@ int fsnotify_add_mark_locked(struct fsnotify_mark *mark,
 	fsnotify_set_mark_mask_locked(mark, mark->mask);
 	spin_unlock(&mark->lock);
 
+	mutex_unlock(&group->mark_mutex);
+
 	if (inode)
 		__fsnotify_update_child_dentry_flags(inode);
 
@@ -275,6 +266,7 @@ err:
 	atomic_dec(&group->num_marks);
 
 	spin_unlock(&mark->lock);
+	mutex_unlock(&group->mark_mutex);
 
 	spin_lock(&destroy_lock);
 	list_add(&mark->destroy_list, &destroy_list);
@@ -284,16 +276,6 @@ err:
 	return ret;
 }
 EXPORT_SYMBOL(fsnotify_add_mark);
-
-int fsnotify_add_mark(struct fsnotify_mark *mark, struct fsnotify_group *group,
-		      struct inode *inode, struct vfsmount *mnt, int allow_dups)
-{
-	int ret;
-	mutex_lock(&group->mark_mutex);
-	ret = fsnotify_add_mark_locked(mark, group, inode, mnt, allow_dups);
-	mutex_unlock(&group->mark_mutex);
-	return ret;
-}
 
 /*
  * clear any marks in a group in which mark->flags & flags is true
