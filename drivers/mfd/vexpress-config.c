@@ -142,6 +142,7 @@ struct vexpress_config_func *__vexpress_config_func_get(struct device *dev,
 
 	return func;
 }
+EXPORT_SYMBOL(__vexpress_config_func_get);
 
 void vexpress_config_func_put(struct vexpress_config_func *func)
 {
@@ -149,7 +150,7 @@ void vexpress_config_func_put(struct vexpress_config_func *func)
 	of_node_put(func->bridge->node);
 	kfree(func);
 }
-
+EXPORT_SYMBOL(vexpress_config_func_put);
 
 struct vexpress_config_trans {
 	struct vexpress_config_func *func;
