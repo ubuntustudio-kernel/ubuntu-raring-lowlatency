@@ -2131,6 +2131,7 @@ EXPORT_SYMBOL net/wireless/cfg80211 0x00000000	ieee80211_data_from_8023
 EXPORT_SYMBOL net/wireless/cfg80211 0x00000000	ieee80211_data_to_8023
 EXPORT_SYMBOL net/wireless/cfg80211 0x00000000	ieee80211_frequency_to_channel
 EXPORT_SYMBOL net/wireless/cfg80211 0x00000000	ieee80211_get_hdrlen_from_skb
+EXPORT_SYMBOL net/wireless/cfg80211 0x00000000	ieee80211_get_mesh_hdrlen
 EXPORT_SYMBOL net/wireless/cfg80211 0x00000000	ieee80211_get_response_rate
 EXPORT_SYMBOL net/wireless/cfg80211 0x00000000	ieee80211_hdrlen
 EXPORT_SYMBOL net/wireless/cfg80211 0x00000000	ieee80211_radiotap_iterator_init
@@ -2196,6 +2197,7 @@ EXPORT_SYMBOL sound/core/snd 0x00000000	snd_card_free_when_closed
 EXPORT_SYMBOL sound/core/snd 0x00000000	snd_card_proc_new
 EXPORT_SYMBOL sound/core/snd 0x00000000	snd_card_register
 EXPORT_SYMBOL sound/core/snd 0x00000000	snd_card_set_id
+EXPORT_SYMBOL sound/core/snd 0x00000000	snd_card_unref
 EXPORT_SYMBOL sound/core/snd 0x00000000	snd_cards
 EXPORT_SYMBOL sound/core/snd 0x00000000	snd_component_add
 EXPORT_SYMBOL sound/core/snd 0x00000000	snd_ctl_add
@@ -2544,6 +2546,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	__neigh_for_each_release
 EXPORT_SYMBOL vmlinux 0x00000000	__netdev_alloc_skb
 EXPORT_SYMBOL vmlinux 0x00000000	__netdev_printk
 EXPORT_SYMBOL vmlinux 0x00000000	__netif_schedule
+EXPORT_SYMBOL vmlinux 0x00000000	__netlink_dump_start
 EXPORT_SYMBOL vmlinux 0x00000000	__next_cpu
 EXPORT_SYMBOL vmlinux 0x00000000	__nla_put
 EXPORT_SYMBOL vmlinux 0x00000000	__nla_put_nohdr
@@ -2963,6 +2966,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	block_write_full_page
 EXPORT_SYMBOL vmlinux 0x00000000	block_write_full_page_endio
 EXPORT_SYMBOL vmlinux 0x00000000	bmap
 EXPORT_SYMBOL vmlinux 0x00000000	boot_tvec_bases
+EXPORT_SYMBOL vmlinux 0x00000000	bprm_change_interp
 EXPORT_SYMBOL vmlinux 0x00000000	brioctl_set
 EXPORT_SYMBOL vmlinux 0x00000000	bsearch
 EXPORT_SYMBOL vmlinux 0x00000000	buffer_migrate_page
@@ -4394,7 +4398,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	netif_stacked_transfer_operstate
 EXPORT_SYMBOL vmlinux 0x00000000	netlink_ack
 EXPORT_SYMBOL vmlinux 0x00000000	netlink_broadcast
 EXPORT_SYMBOL vmlinux 0x00000000	netlink_broadcast_filtered
-EXPORT_SYMBOL vmlinux 0x00000000	netlink_dump_start
 EXPORT_SYMBOL vmlinux 0x00000000	netlink_kernel_create
 EXPORT_SYMBOL vmlinux 0x00000000	netlink_kernel_release
 EXPORT_SYMBOL vmlinux 0x00000000	netlink_rcv_skb
@@ -5189,8 +5192,6 @@ EXPORT_SYMBOL vmlinux 0x00000000	skb_queue_purge
 EXPORT_SYMBOL vmlinux 0x00000000	skb_queue_tail
 EXPORT_SYMBOL vmlinux 0x00000000	skb_realloc_headroom
 EXPORT_SYMBOL vmlinux 0x00000000	skb_recv_datagram
-EXPORT_SYMBOL vmlinux 0x00000000	skb_recycle
-EXPORT_SYMBOL vmlinux 0x00000000	skb_recycle_check
 EXPORT_SYMBOL vmlinux 0x00000000	skb_seq_read
 EXPORT_SYMBOL vmlinux 0x00000000	skb_split
 EXPORT_SYMBOL vmlinux 0x00000000	skb_store_bits
@@ -7584,10 +7585,12 @@ EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xdr_terminate_string
 EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xdr_write_pages
 EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_adjust_cwnd
 EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_alloc
+EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_alloc_slot
 EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_complete_rqst
 EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_disconnect_done
 EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_free
 EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_load_transport
+EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_lock_and_alloc_slot
 EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_lookup_rqst
 EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_register_transport
 EXPORT_SYMBOL_GPL net/sunrpc/sunrpc 0x00000000	xprt_release_rqst_cong
