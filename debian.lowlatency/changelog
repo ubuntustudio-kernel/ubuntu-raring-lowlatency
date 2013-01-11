@@ -4,6 +4,27 @@ linux-lowlatency (3.8.0-0.1) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-0.3 ]
+
+  * Revert "SAUCE: (no-up) trace: add trace events for open(), exec() and
+    uselib()"
+  * SAUCE: (no-up) trace: add trace events for open(), exec() and uselib()
+    (for v3.7+)
+    - LP: #1085766, #462111
+
+  [ Ubuntu: 3.8.0-0.2 ]
+
+  * [packaging] Add macro to selectively disable building perf
+  * [packaging] Cannot depend on universe package libaudit-dev
+
+  [ Ubuntu: 3.8.0-0.1 ]
+
+  * rebase to v3.8-rc3
+    - LP: #1096789
+  * rebase to v3.8-rc2
+    - LP: #1082357
+    - LP: #1075882
+
  -- Andy Whitcroft <apw@canonical.com>  Fri, 11 Jan 2013 18:31:32 +0000
 
 linux-lowlatency (3.7.0-7.5) raring; urgency=low
