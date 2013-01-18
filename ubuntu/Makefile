@@ -24,6 +24,10 @@ obj-$(CONFIG_DRM_I915_HSW)		+= i915/
 ##
 ##
 ##
+obj-$(CONFIG_ALX)		+= alx/
+##
+##
+##
 ##
 ##
 ##
