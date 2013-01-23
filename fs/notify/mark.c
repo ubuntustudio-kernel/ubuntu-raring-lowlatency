@@ -151,8 +151,6 @@ void fsnotify_destroy_mark_locked(struct fsnotify_mark *mark,
 
 	spin_unlock(&mark->lock);
 
-	if (inode && (mark->flags & FSNOTIFY_MARK_FLAG_OBJECT_PINNED))
-		iput(inode);
 	/* release lock temporarily */
 	mutex_unlock(&group->mark_mutex);
 
@@ -160,11 +158,6 @@ void fsnotify_destroy_mark_locked(struct fsnotify_mark *mark,
 	list_add(&mark->destroy_list, &destroy_list);
 	spin_unlock(&destroy_lock);
 	wake_up(&destroy_waitq);
-	/*
-	 * We don't necessarily have a ref on mark from caller so the above destroy
-	 * may have actually freed it, unless this group provides a 'freeing_mark'
-	 * function which must be holding a reference.
-	 */
 
 	/*
 	 * Some groups like to know that marks are being freed.  This is a
@@ -186,15 +179,22 @@ void fsnotify_destroy_mark_locked(struct fsnotify_mark *mark,
 	 * is just a lazy update (and could be a perf win...)
 	 */
 
+	if (inode && (mark->flags & FSNOTIFY_MARK_FLAG_OBJECT_PINNED))
+		iput(inode);
+	/*
+	 * We don't necessarily have a ref on mark from caller so the above iput
+	 * may have already destroyed it.  Don't touch from now on.
+	 */
+
 	atomic_dec(&group->num_marks);
 
-	mutex_lock_nested(&group->mark_mutex, SINGLE_DEPTH_NESTING);
+	mutex_lock(&group->mark_mutex);
 }
 
 void fsnotify_destroy_mark(struct fsnotify_mark *mark,
 			   struct fsnotify_group *group)
 {
-	mutex_lock_nested(&group->mark_mutex, SINGLE_DEPTH_NESTING);
+	mutex_lock(&group->mark_mutex);
 	fsnotify_destroy_mark_locked(mark, group);
 	mutex_unlock(&group->mark_mutex);
 }
@@ -303,7 +303,7 @@ void fsnotify_clear_marks_by_group_flags(struct fsnotify_group *group,
 {
 	struct fsnotify_mark *lmark, *mark;
 
-	mutex_lock_nested(&group->mark_mutex, SINGLE_DEPTH_NESTING);
+	mutex_lock(&group->mark_mutex);
 	list_for_each_entry_safe(mark, lmark, &group->marks_list, g_list) {
 		if (mark->flags & flags) {
 			fsnotify_get_mark(mark);
