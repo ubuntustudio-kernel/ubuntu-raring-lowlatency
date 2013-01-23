@@ -122,10 +122,20 @@ EXPORT_SYMBOL(fsnotify_put_mark);
  * The caller had better be holding a reference to this mark so we don't actually
  * do the final put under the mark->lock
  */
-void fsnotify_destroy_mark(struct fsnotify_mark *mark,
-			   struct fsnotify_group *group)
+void fsnotify_destroy_mark(struct fsnotify_mark *mark)
 {
+	struct fsnotify_group *group;
 	struct inode *inode = NULL;
+
+	spin_lock(&mark->lock);
+	/* dont get the group from a mark that is not alive yet */
+	if (!(mark->flags & FSNOTIFY_MARK_FLAG_ALIVE)) {
+		spin_unlock(&mark->lock);
+		return;
+	}
+	fsnotify_get_group(mark->group);
+	group = mark->group;
+	spin_unlock(&mark->lock);
 
 	mutex_lock(&group->mark_mutex);
 	spin_lock(&mark->lock);
@@ -134,7 +144,7 @@ void fsnotify_destroy_mark(struct fsnotify_mark *mark,
 	if (!(mark->flags & FSNOTIFY_MARK_FLAG_ALIVE)) {
 		spin_unlock(&mark->lock);
 		mutex_unlock(&group->mark_mutex);
-		return;
+		goto put_group;
 	}
 
 	mark->flags &= ~FSNOTIFY_MARK_FLAG_ALIVE;
@@ -185,6 +195,9 @@ void fsnotify_destroy_mark(struct fsnotify_mark *mark,
 	 */
 
 	atomic_dec(&group->num_marks);
+
+put_group:
+	fsnotify_put_group(group);
 }
 EXPORT_SYMBOL(fsnotify_destroy_mark);
 
@@ -297,7 +310,7 @@ void fsnotify_clear_marks_by_group_flags(struct fsnotify_group *group,
 	mutex_unlock(&group->mark_mutex);
 
 	list_for_each_entry_safe(mark, lmark, &free_list, free_g_list) {
-		fsnotify_destroy_mark(mark, group);
+		fsnotify_destroy_mark(mark);
 		fsnotify_put_mark(mark);
 	}
 }
