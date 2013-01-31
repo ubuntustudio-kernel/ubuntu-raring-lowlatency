@@ -29,7 +29,6 @@
 #if (defined CONFIG_ACPI_VIDEO || defined CONFIG_ACPI_VIDEO_MODULE)
 #include <acpi/video.h>
 #endif
-#include <linux/efi.h>
 
 /*
  * This driver is needed because a number of Samsung laptops do not hook
@@ -1537,9 +1536,6 @@ static int __init samsung_init(void)
 {
 	struct samsung_laptop *samsung;
 	int ret;
-
-	if (efi_enabled)
-		return -ENODEV;
 
 	quirks = &samsung_unknown;
 	if (!force && !dmi_check_system(samsung_dmi_table))
