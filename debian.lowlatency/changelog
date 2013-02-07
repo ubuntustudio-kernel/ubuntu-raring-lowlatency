@@ -4,6 +4,23 @@ linux-lowlatency (3.8.0-4.3) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-4.9 ]
+
+  * d-i: Add mellanox ethernet drivers to nic-modules
+    - LP: #1015339
+  * SAUCE: ACPI: Add DMI entry for Sony VGN-FW41E_H
+    - LP: #1113547
+  * SAUCE: alx driver import script
+  * SAUCE: alx: Update to heads/master
+  * Release Tracking Bug
+    - LP: #1117673
+  * [debian] Remove dangling symlink from headers package
+    - LP: #1112442
+  * [config] CONFIG_ALX=m
+  * [Config] Add alx to d-i nic-modules
+  * [Config] CONFIG_SATA_AHCI=m
+    - LP: #1056563
+
  -- Andy Whitcroft <apw@canonical.com>  Thu, 07 Feb 2013 16:03:16 +0000
 
 linux-lowlatency (3.8.0-4.2) raring; urgency=low
