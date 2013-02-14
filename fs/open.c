@@ -831,8 +831,12 @@ struct file *nameidata_to_filp(struct nameidata *nd)
 		nd->intent.open.file = NULL;
 	} else {
 		struct file *res;
+		struct inode *inode = nd->path.dentry->d_inode;
 
-		res = vfs_open(&nd->path, filp, cred);
+		if (inode->i_op->open)
+			return inode->i_op->open(nd->path.dentry, filp, cred);
+
+		res = do_dentry_open(&nd->path, filp, NULL, cred);
 		if (!IS_ERR(res)) {
 			int error;
 
