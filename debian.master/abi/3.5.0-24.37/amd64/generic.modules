@@ -216,6 +216,7 @@ altera_jtaguart
 altera_ps2
 altera-stapl
 altera_uart
+alx
 ambassador
 amc6821
 amd5536udc
@@ -2430,6 +2431,9 @@ rtllib_crypt_wep
 rtlwifi
 rts5139
 rts_pstor
+rtsx_pci
+rtsx_pci_ms
+rtsx_pci_sdmmc
 rxkad
 s1d13xxxfb
 s2250
@@ -3106,7 +3110,6 @@ twofish-x86_64-3way
 typhoon
 u132-hcd
 uartlite
-uas
 ub
 ubi
 ubifs

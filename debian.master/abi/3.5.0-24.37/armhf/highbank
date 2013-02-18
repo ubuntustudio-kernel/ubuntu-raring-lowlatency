@@ -3717,6 +3717,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	inet_csk_clear_xmit_timers
 EXPORT_SYMBOL vmlinux 0x00000000	inet_csk_delete_keepalive_timer
 EXPORT_SYMBOL vmlinux 0x00000000	inet_csk_destroy_sock
 EXPORT_SYMBOL vmlinux 0x00000000	inet_csk_init_xmit_timers
+EXPORT_SYMBOL vmlinux 0x00000000	inet_csk_prepare_forced_close
 EXPORT_SYMBOL vmlinux 0x00000000	inet_csk_reset_keepalive_timer
 EXPORT_SYMBOL vmlinux 0x00000000	inet_csk_timer_bug_msg
 EXPORT_SYMBOL vmlinux 0x00000000	inet_del_protocol
