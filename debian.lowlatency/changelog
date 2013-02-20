@@ -4,6 +4,21 @@ linux-lowlatency (3.5.0-24.24) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-25.38 ]
+
+  * Release Tracking Bug
+    - LP: #1129472
+  * ptrace: introduce signal_wake_up_state() and ptrace_signal_wake_up()
+    - LP: #1119885, #1129192
+    - CVE-2013-0871
+  * ptrace: ensure arch_ptrace/ptrace_request can never race with SIGKILL
+    - LP: #1119885, #1129192
+    - CVE-2013-0871
+  * wake_up_process() should be never used to wakeup a TASK_STOPPED/TRACED
+    task
+    - LP: #1119885, #1129192
+    - CVE-2013-0871
+
  -- Kaj Ailomaa <zequence@mousike.me>  Wed, 20 Feb 2013 13:18:52 +0100
 
 linux-lowlatency (3.5.0-24.23) quantal-proposed; urgency=low
