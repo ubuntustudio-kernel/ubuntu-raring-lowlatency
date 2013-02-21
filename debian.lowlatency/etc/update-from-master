@@ -20,7 +20,7 @@ RELEASE_REPO="${DEF_REPO}"
 # PPAs do not have a proposed pocket. The default assumes the
 # real archive is the upload target.
 #
-POCKET="-proposed"
+POCKET=""
 IGNORE_ABI=""
 IGNORE_MODULES=""
 
@@ -31,10 +31,10 @@ usage="$0 [-r RELEASE_REPO] [-p]"
 # [-r RELEASE_REPO] - override default ${SOURCE_RELEASE} git repository.
 # [-p] - Assume the upload target is a PPA
 
-while getopts ":r:pim" opt; do
+while getopts ":r:Pim" opt; do
 	case $opt in
 	r ) RELEASE_REPO="$OPTARG" ;;
-	p ) POCKET="" ;;
+	P ) POCKET="-proposed" ;;
 	\? ) echo usage: ${usage}; exit ;;
 	esac
 done
