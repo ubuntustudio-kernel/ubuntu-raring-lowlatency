@@ -4,6 +4,12 @@ linux-lowlatency (3.5.0-25.25) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-25.39 ]
+
+  * Release Tracking Bug
+    - LP: #1132885
+  * sock_diag: Fix out-of-bounds access to sock_diag_handlers[]
+
  -- Kaj Ailomaa <zequence@mousike.me>  Mon, 25 Feb 2013 22:43:43 +0100
 
 linux-lowlatency (3.5.0-25.24) quantal-proposed; urgency=low
