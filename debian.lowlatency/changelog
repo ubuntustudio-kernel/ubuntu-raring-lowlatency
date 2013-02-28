@@ -4,6 +4,55 @@ linux-lowlatency (3.8.0-7.7) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-9.18 ]
+
+  * Release Tracking Bug
+    - LP: #1135937
+  * [Config] CONFIG_PATA_ACPI=m
+    - LP: #1084783
+  * intel_idle: stop using driver_data for static flags
+    - LP: #1083993
+  * intel_idle: support Haswell
+    - LP: #1083993
+  * i2c: i801: SMBus patch for Intel Avoton DeviceIDs
+    - LP: #1083965
+  * ahci: AHCI-mode SATA patch for Intel Avoton DeviceIDs
+    - LP: #1083965
+  * ata_piix: IDE-mode SATA patch for Intel Avoton DeviceIDs
+    - LP: #1083965
+  * rebase to v3.8.1
+    - LP: #1011792
+
+  [ Ubuntu: 3.8.0-8.17 ]
+
+  * Release Tracking Bug
+    - LP: #1133552
+  * Bump ABI to fix armhf FTBS
+  * d-i: Add hid-logitech-dj to input-modules
+    - LP: #975198
+
+  [ Ubuntu: 3.8.0-7.16 ]
+
+  * [Config] all new menu aligned annotations
+  * [Config] v3.8 configuration review -- pass 1
+  * [Config] v3.8 configuration review -- pass 2
+  * [Config] apply v3.8 final configuration review changes
+  * [Config] annotation: ALX does not build on powerpc
+  * [Config] CONFIG_DEBUG_INFO=y
+  * SAUCE: sock_diag: Fix out-of-bounds access to sock_diag_handlers[]
+    - LP: #1132896
+    - CVE-2013-1763
+
+  [ Ubuntu: 3.8.0-7.15 ]
+
+  * [Config] Add CONFIG_PS2_CYPRESS
+  * SAUCE: Input: Cypress PS/2 Trackpad simulated multitouch
+  * SAUCE: Input: fix Cypress PS/2 Trackpad in Dell XPS12
+    - LP: #1103594
+  * Input: increase struct ps2dev cmdbuf[] to 8 bytes
+  * Input: add support for Cypress PS/2 Trackpads
+    - LP: #978807
+
  -- Andy Whitcroft <apw@canonical.com>  Thu, 28 Feb 2013 23:04:23 +0000
 
 linux-lowlatency (3.8.0-7.6) raring; urgency=low
