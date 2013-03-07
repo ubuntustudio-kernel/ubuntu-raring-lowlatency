@@ -4,6 +4,152 @@ linux-lowlatency (3.8.0-9.8) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-12.21 ]
+
+  * [Config] CONFIG_PSTORE=n for x86
+  * Release Tracking Bug
+    - LP: #1152228
+  * Revert "efivarfs: guid part of filenames are case-insensitive"
+    - LP: #1146988
+  * Revert "efivarfs: Validate filenames much more aggressively"
+    - LP: #1146988
+  * mfd: rtsx: Optimize card detect flow
+    - LP: #1148892
+  * mfd: rtsx: Fix issue that booting OS with SD card inserted
+    - LP: #1148892
+
+  [ Ubuntu: 3.8.0-11.20 ]
+
+  * Release Tracking Bug
+    - LP: #1147659
+  * [Config] CONFIG_SPI_PXA2XX_PCI=m
+    - LP: #1031169
+  * CONFIG_SATA_ZPODD=y
+    - LP: #1031180
+  * CONFIG_GPIO_LYNXPOINT=y
+    - LP: #1031174
+  * spi/pxa2xx-pci: switch to use pcim_* interfaces
+    - LP: #1031169
+  * spi/pxa2xx: embed the ssp_device to platform data
+    - LP: #1031169
+  * spi/pxa2xx: allow building on a 64-bit kernel
+    - LP: #1031169
+  * spi/pxa2xx: fix warnings when compiling a 64-bit kernel
+    - LP: #1031169
+  * spi/pxa2xx: convert to the pump message infrastructure
+    - LP: #1031169
+  * spi/pxa2xx: convert to the common clk framework
+    - LP: #1031169
+  * spi/pxa2xx: break out the private DMA API usage into a separate file
+    - LP: #1031169
+  * spi/pxa2xx: add support for DMA engine
+    - LP: #1031169
+  * spi/pxa2xx: add support for runtime PM
+    - LP: #1031169
+  * spi/pxa2xx: add support for SPI_LOOP
+    - LP: #1031169
+  * spi/pxa2xx: add support for Intel Low Power Subsystem SPI
+    - LP: #1031169
+  * spi/pxa2xx: add support for Lynxpoint SPI controllers
+    - LP: #1031169
+  * i2c-designware: always set the STOP bit after last byte
+    - LP: #1031166
+  * i2c-designware: add minimal support for runtime PM
+    - LP: #1031166
+  * i2c-designware: add support for Intel Lynxpoint
+    - LP: #1031166
+  * remove can_power_off flag from scsi_device
+    - LP: #1031180
+  * sr: support runtime pm
+    - LP: #1031180
+  * libata: identify and init ZPODD devices
+    - LP: #1031180
+  * libata: move acpi notification code to zpodd
+    - LP: #1031180
+  * libata: check zero power ready status for ZPODD
+    - LP: #1031180
+  * libata: handle power transition of ODD
+    - LP: #1031180
+  * libata: expose pm qos flags for ata device
+    - LP: #1031180
+  * libata: do not suspend port if normal ODD is attached
+    - LP: #1031180
+  * pm: differentiate system and runtime pm for ata port
+    - LP: #1031180
+  * PM code cleanup for ata port
+    - LP: #1031180
+  * scsi: no poll when ODD is powered off
+    - LP: #1031180
+  * Set proper SK when CK_COND is set.
+    - LP: #1031180
+  * fix smatch warning for zpodd_wake_dev
+    - LP: #1031180
+  * gpio/lynxpoint: add chipset gpio driver.
+    - LP: #1031174
+
+  [ Ubuntu: 3.8.0-10.19 ]
+
+  * [Config] annotate CONFIG_PATA_ACPI
+  * rebase to v3.8.2
+  * NFC: Fixed nfc core and hci unregistration and cleanup
+    - LP: #1083994
+  * NFC: Added error handling in event_received hci ops
+    - LP: #1083994
+  * NFC: Changed event_received hci ops result semantic
+    - LP: #1083994
+  * NFC: Fixed skb leak in tm_send() nfc and hci ops implementations
+    - LP: #1083994
+  * NFC: Add HCI quirks to support driver (non)standard implementations
+    - LP: #1083994
+  * USB: Don't use EHCI port sempahore for USB 3.0 hubs.
+    - LP: #1011415
+  * USB: Prepare for refactoring by adding extra udev checks.
+    - LP: #1011415
+  * USB: Rip out recursive call on warm port reset.
+    - LP: #1011415
+  * USB: Fix connected device switch to Inactive state.
+    - LP: #1011415
+  * USB: Use helper function hub_set_port_link_state
+    - LP: #1011415
+  * USB: Refactor hub_port_wait_reset.
+    - LP: #1011415
+  * usb/core: consider link speed while looking at bMaxPower
+    - LP: #1011415
+  * usb/core: update power budget for SuperSpeed
+    - LP: #1011415
+  * usb: Add driver/usb/core/(port.c,hub.h) files
+    - LP: #1011415
+  * usb: fix compilation error and warning of driver/usb/core/port.c on arm
+    and blackfin
+    - LP: #1011415
+  * usb: Add "portX/connect_type" attribute to expose usb port's connect
+    type
+    - LP: #1011415
+  * usb: Create link files between child device and usb port device.
+    - LP: #1011415
+  * USB: Set usb port's DeviceRemovable according acpi information
+    - LP: #1011415
+  * USB: fix sign-extension bug in the hub driver
+    - LP: #1011415
+  * usb: add runtime pm support for usb port device
+    - LP: #1011415
+  * usb: add usb port auto power off mechanism
+    - LP: #1011415
+  * usb: expose usb port's pm qos flags to user space
+    - LP: #1011415
+  * usb: enable usb port device's async suspend.
+    - LP: #1011415
+  * drm: add prime helpers
+    - LP: #1138440
+  * drm/nouveau: use prime helpers
+    - LP: #1138440
+  * drm/radeon: use prime helpers
+    - LP: #1138440
+  * rebase to v3.8.2
+    - LP: #961286
+  * Release Tracking Bug
+    - LP: #1144449
+
  -- Andy Whitcroft <apw@canonical.com>  Thu, 07 Mar 2013 17:19:41 +0000
 
 linux-lowlatency (3.8.0-9.7) raring; urgency=low
