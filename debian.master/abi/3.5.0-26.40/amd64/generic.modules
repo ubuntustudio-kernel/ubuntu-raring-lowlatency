@@ -195,6 +195,7 @@ af-rxrpc
 ah4
 ah6
 aha152x_cs
+ahci
 ahci_platform
 aic79xx
 aic7xxx
@@ -1528,6 +1529,7 @@ lib80211
 lib80211_crypt_ccmp
 lib80211_crypt_tkip
 lib80211_crypt_wep
+libahci
 libceph
 libcrc32c
 libcxgbi
