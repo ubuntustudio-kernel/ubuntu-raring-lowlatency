@@ -833,8 +833,13 @@ struct file *nameidata_to_filp(struct nameidata *nd)
 		struct file *res;
 		struct inode *inode = nd->path.dentry->d_inode;
 
-		if (inode->i_op->open)
-			return inode->i_op->open(nd->path.dentry, filp, cred);
+		if (inode->i_op->open) {
+			res = inode->i_op->open(nd->path.dentry, filp, cred);
+			if (!IS_ERR(res)) {
+				nd->intent.open.file = NULL;
+			}
+			return res;
+		}
 
 		res = do_dentry_open(&nd->path, filp, NULL, cred);
 		if (!IS_ERR(res)) {
