@@ -4,6 +4,13 @@ linux-lowlatency (3.5.0-26.27) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-26.42 ]
+
+  * Release Tracking Bug
+    - LP: #1152715
+  * ubuntu: overlayfs -- fix missmerge of vfs_open changes
+    - LP: #1122094, #1147678
+
  -- Kaj Ailomaa <zequence@mousike.me>  Tue, 12 Mar 2013 19:23:28 +0100
 
 linux-lowlatency (3.5.0-26.26) quantal-proposed; urgency=low
