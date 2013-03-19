@@ -1,3 +1,11 @@
+linux (3.5.0-27.44) quantal-proposed; urgency=low
+
+  [Steve Conklin]
+
+  * no change
+
+ -- Steve Conklin <sconklin@canonical.com>  Tue, 19 Mar 2013 10:26:04 -0500
+
 linux (3.5.0-27.43) quantal-proposed; urgency=low
 
   [Steve Conklin]
