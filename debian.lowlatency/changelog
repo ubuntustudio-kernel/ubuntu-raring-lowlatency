@@ -4,6 +4,356 @@ linux-lowlatency (3.5.0-26.29) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-27.44 ]
+
+  * no change
+
+  [ Ubuntu: 3.5.0-27.43 ]
+
+  * Release Tracking Bug
+    - LP: #1156821
+  * SAUCE: Bluetooth: Add support for 04ca:2007
+    - LP: #1153448
+  * [Config] re-disable CONFIG_SOUND_OSS_PRECLAIM
+    - LP: #1105230
+  * Start new release
+  * SAUCE: alx: use github.com/qca/alx repo
+    - LP: #1154238
+  * [Config] CONFIG_NFS_V4_1=y
+    - LP: #1111416
+  * SAUCE: alx: Update to heads/master
+    - LP: #1154238
+  * Revert "drm: Add EDID_QUIRK_FORCE_REDUCED_BLANKING for ASUS VW222S"
+    - LP: #1144961
+  * genirq: Avoid deadlock in spurious handling
+    - LP: #1144961
+  * KVM: s390: Handle hosts not supporting s390-virtio.
+    - LP: #1144961
+  * v4l: Reset subdev v4l2_dev field to NULL if registration fails
+    - LP: #1144961
+  * powerpc/eeh: Fix crash when adding a device in a slot with DDW
+    - LP: #1144961
+  * pcmcia/vrc4171: Add missing spinlock init
+    - LP: #1144961
+  * USB: DWC3: Generate interrupt on each TRB as default option
+    - LP: #1144961
+  * usb: dwc3: gadget: fix skip LINK_TRB on ISOC
+    - LP: #1144961
+  * usb: dwc3: gadget: req->queued must be forced to false in cleanup
+    - LP: #1144961
+  * Purge existing TLB entries in set_pte_at and ptep_set_wrprotect
+    - LP: #1144961
+  * ARM: PXA3xx: program the CSMSADRCFG register
+    - LP: #1144961
+  * ab8500-chargalg: Only root should have write permission on sysfs file
+    - LP: #1144961
+  * USB: option: add and update Alcatel modems
+    - LP: #1144961
+  * uprobes/powerpc: Add dependency on single step emulation
+    - LP: #1144961
+  * drivers/video: fsl-diu-fb: fix pixel formats for 24 and 16 bpp
+    - LP: #1144961
+  * s390/kvm: Fix store status for ACRS/FPRS
+    - LP: #1144961
+  * staging: comedi: disallow COMEDI_DEVCONFIG on non-board minors
+    - LP: #1144961
+  * ALSA: usb-audio: fix Roland A-PRO support
+    - LP: #1144961
+  * x86-32, mm: Rip out x86_32 NUMA remapping code
+    - LP: #1144961
+  * x86-32, mm: Remove reference to resume_map_numa_kva()
+    - LP: #1144961
+  * x86-32, mm: Remove reference to alloc_remap()
+    - LP: #1144961
+  * ALSA: hda - Release assigned pin/cvt at error path of hdmi_pcm_open()
+    - LP: #1144961
+  * ab8500_btemp: Demote initcall sequence
+    - LP: #1144961
+  * Driver core: treat unregistered bus_types as having no devices
+    - LP: #1144961
+  * ALSA: aloop: Fix Oops while PM resume
+    - LP: #1144961
+  * ASoC: wm2200: correct IN2L and IN3L digital mute
+    - LP: #1144961
+  * tty: set_termios/set_termiox should not return -EINTR
+    - LP: #1144961
+  * ARM: i.MX25: clk: parent per5_clk to AHB clock
+    - LP: #1144961
+  * hrtimer: Prevent hrtimer_enqueue_reprogram race
+    - LP: #1144961
+  * staging: comedi: check s->async for poll(), read() and write()
+    - LP: #1144961
+  * ACPI: Add DMI entry for Sony VGN-FW41E_H
+    - LP: #1144961
+  * timeconst.pl: Eliminate Perl warning
+    - LP: #1144961
+  * p54usb: corrected USB ID for T-Com Sinus 154 data II
+    - LP: #1144961
+  * rtlwifi: rtl8192cu: Fix NULL dereference BUG when using new_id
+    - LP: #1144961
+  * rtlwifi: rtl8192cu: Add new USB ID
+    - LP: #1144961
+  * USB: storage: properly handle the endian issues of idProduct
+    - LP: #1144961
+  * ALSA: rme32.c irq enabling after spin_lock_irq
+    - LP: #1144961
+  * ALSA: ali5451: remove irq enabling in pointer callback
+    - LP: #1144961
+  * ARM: 7643/1: sched: correct update_sched_clock()
+    - LP: #1144961
+  * ALSA: hda - Workaround for silent output on Sony Vaio VGC-LN51JGB with
+    ALC889
+    - LP: #1144961
+  * x86: Hyper-V: register clocksource only if its advertised
+    - LP: #1144961
+  * USB: option: add Yota / Megafon M100-1 4g modem
+    - LP: #1144961
+  * USB: serial: fix null-pointer dereferences on disconnect
+    - LP: #1144961
+  * idr: idr_for_each_entry() macro
+    - LP: #1144961
+  * pps: Add pps_lookup_dev() function
+    - LP: #1144961
+  * pps: Use pps_lookup_dev to reduce ldisc coupling
+    - LP: #1144961
+  * pps: Fix a use-after free bug when unregistering a source.
+    - LP: #1144961
+  * USB: option: add Huawei "ACM" devices using protocol = vendor
+    - LP: #1144961
+  * ARM: samsung: fix assembly syntax for new gas
+    - LP: #1144961
+  * USB: ehci-omap: Don't free gpios that we didn't request
+    - LP: #1144961
+  * USB: ehci-omap: Fix autoloading of module
+    - LP: #1144961
+  * USB: usb-storage: unusual_devs update for Super TOP SATA bridge
+    - LP: #1144961
+  * perf tools: Fix build with bison 2.3 and older.
+    - LP: #1144961
+  * serial: imx: Fix recursive locking bug
+    - LP: #1144961
+  * posix-cpu-timers: Fix nanosleep task_struct leak
+    - LP: #1144961
+  * drivercore: Fix ordering between deferred_probe and exiting initcalls
+    - LP: #1144961
+  * NFSv4.1: Don't decode skipped layoutgets
+    - LP: #1144961
+  * umount oops when remove blocklayoutdriver first
+    - LP: #1144961
+  * HID: wiimote: fix nunchuck button parser
+    - LP: #1144961
+  * cgroup: fix exit() vs rmdir() race
+    - LP: #1144961
+  * cpuset: fix cpuset_print_task_mems_allowed() vs rename() race
+    - LP: #1144961
+  * rtlwifi: usb: allocate URB control message setup_packet and data buffer
+    separately
+    - LP: #1144961
+  * b43: Increase number of RX DMA slots
+    - LP: #1144961
+  * futex: Revert "futex: Mark get_robust_list as deprecated"
+    - LP: #1144961
+  * NLM: Ensure that we resend all pending blocking locks after a reclaim
+    - LP: #1144961
+  * ALSA: hda - hdmi: ELD shouldn't be valid after unplug
+    - LP: #1144961
+  * xen: close evtchn port if binding to irq fails
+    - LP: #1144961
+  * xen: Send spinlock IPI to all waiters
+    - LP: #1011792, #1144961
+  * ALSA: usb: Fix Processing Unit Descriptor parsers
+    - LP: #1144961
+  * inotify: remove broken mask checks causing unmount to be EINVAL
+    - LP: #1144961
+  * fs/block_dev.c: page cache wrongly left invalidated after
+    revalidate_disk()
+    - LP: #1144961
+  * ocfs2: unlock super lock if lockres refresh failed
+    - LP: #1144961
+  * drivers/video/backlight/adp88?0_bl.c: fix resume
+    - LP: #1144961
+  * powerpc/kexec: Disable hard IRQ before kexec
+    - LP: #1144961
+  * mm: mmu_notifier: have mmu_notifiers use a global SRCU so they may
+    safely schedule
+    - LP: #1144961
+  * mm: mmu_notifier: make the mmu_notifier srcu static
+    - LP: #1144961
+  * mmu_notifier_unregister NULL Pointer deref and multiple ->release()
+    callouts
+    - LP: #1144961
+  * mm/fadvise.c: drain all pagevecs if POSIX_FADV_DONTNEED fails to
+    discard all pages
+    - LP: #1144961
+  * tmpfs: fix use-after-free of mempolicy object
+    - LP: #1144961
+  * dca: check against empty dca_domains list before unregister provider
+    - LP: #1144961
+  * ext4: return ENOMEM if sb_getblk() fails
+    - LP: #1144961
+  * ext4: check bh in ext4_read_block_bitmap()
+    - LP: #1144961
+  * quota: autoload the quota_v2 module for QFMT_VFS_V1 quota format
+    - LP: #1144961
+  * ext4: fix possible use-after-free with AIO
+    - LP: #1144961
+  * drm/i915: Fix CAGF for HSW
+    - LP: #1144961
+  * ext4: fix race in ext4_mb_add_n_trim()
+    - LP: #1144961
+  * UBIFS: fix use of freed ubifs_orphan objects
+    - LP: #1144961
+  * UBIFS: fix double free of ubifs_orphan objects
+    - LP: #1144961
+  * drm/radeon/dce6: fix display powergating
+    - LP: #1144961
+  * vgacon/vt: clear buffer attributes when we load a 512 character font
+    (v2)
+    - LP: #1144961
+  * fbcon: don't lose the console font across generic->chip driver switch
+    - LP: #1144961
+  * drm/usb: bind driver to correct device
+    - LP: #1144961
+  * drm/udl: make usage as a console safer
+    - LP: #1144961
+  * drm/udl: disable fb_defio by default
+    - LP: #1144961
+  * fb: rework locking to fix lock ordering on takeover
+    - LP: #1144961
+  * fb: Yet another band-aid for fixing lockdep mess
+    - LP: #1144961
+  * ext4: fix xattr block allocation/release with bigalloc
+    - LP: #1144961
+  * target: Fix lookup of dynamic NodeACLs during cached demo-mode
+    operation
+    - LP: #1144961
+  * target: Add missing mapped_lun bounds checking during make_mappedlun
+    setup
+    - LP: #1144961
+  * ftrace: Call ftrace cleanup module notifier after all other notifiers
+    - LP: #1144961
+  * drm: don't add inferred modes for monitors that don't support them
+    - LP: #1144961
+  * drm/i915: disable shared panel fitter for pipe
+    - LP: #1144961
+  * drm: Fill depth/bits_per_pixel for C8 format
+    - LP: #1144961
+  * drm: Use C8 instead of RGB332 when determining the format from
+    depth/bpp
+    - LP: #1144961
+  * drm/i915: add missing \n to UTS_RELEASE in the error_state
+    - LP: #1144961
+  * drm/i915: Set i9xx sdvo clock limits according to specifications
+    - LP: #1144961
+  * drm/i915: inverted brightness quirk for Acer Aspire 4736Z
+    - LP: #1144961
+  * intel/iommu: force writebuffer-flush quirk on Gen 4 Chipsets
+    - LP: #1144961
+  * drm/radeon: remove overzealous warning in hdmi handling
+    - LP: #1144961
+  * x86, efi: Make "noefi" really disable EFI runtime serivces
+    - LP: #1144961
+  * posix-timer: Don't call idr_find() with out-of-range ID
+    - LP: #1144961
+  * ext4: fix free clusters calculation in bigalloc filesystem
+    - LP: #1144961
+  * fs: Fix possible use-after-free with AIO
+    - LP: #1144961
+  * mmc: sdhci-esdhc-imx: fix host version read
+    - LP: #1144961
+  * b43: Fix lockdep splat on module unload
+    - LP: #1144961
+  * ocfs2: fix possible use-after-free with AIO
+    - LP: #1144961
+  * x86/xen: don't assume %ds is usable in xen_iret for 32-bit PVOPS.
+    - LP: #1144961
+  * igb: Remove artificial restriction on RQDPC stat reading
+    - LP: #1144961
+  * ptrace/x86: Introduce set_task_blockstep() helper
+    - LP: #1144961
+  * ptrace/x86: Partly fix set_task_blockstep()->update_debugctlmsr() logic
+    - LP: #1144961
+  * sunvdc: Fix off-by-one in generic_request().
+    - LP: #1144961
+  * sparc64: Fix gfp_flags setting in tsb_grow().
+    - LP: #1144961
+  * bridge: set priority of STP packets
+    - LP: #1144961
+  * xen-netback: correctly return errors from netbk_count_requests()
+    - LP: #1144961
+  * xen-netback: cancel the credit timer when taking the vif down
+    - LP: #1144961
+  * net: fix a compile error when SOCK_REFCNT_DEBUG is enabled
+    - LP: #1144961
+  * ipv4: fix a bug in ping_err().
+    - LP: #1144961
+  * ipv6: use a stronger hash for tcp
+    - LP: #1144961
+  * ARM: 7635/1: versatile: fix the PCI IRQ regression
+    - LP: #1144961
+  * staging: vt6656: Fix URB submitted while active warning.
+    - LP: #1144961
+  * vlan: adjust vlan_set_encap_proto() for its callers
+    - LP: #1144961
+  * gpio/ich: Add missing spinlock init
+    - LP: #1144961
+  * staging: comedi: ni_labpc: set up command4 register *after* command3
+    - LP: #1144961
+  * staging: comedi: ni_labpc: correct differential channel sequence for AI
+    commands
+    - LP: #1144961
+  * tty: Prevent deadlock in n_gsm driver
+    - LP: #1144961
+  * Linux 3.5.7.7
+    - LP: #1144961
+  * i915_hsw: don't send DP "idle" pattern before "normal" on HSW PORT_A
+    - LP: #1138700
+  * mfd: rtsx: Optimize card detect flow
+    - LP: #1148892
+  * mfd: rtsx: Fix issue that booting OS with SD card inserted
+    - LP: #1148892
+  * drm/radeon: add new AMD ACPI header and update relevant code (v2)
+    - LP: #1110219
+  * drm/radeon: add a license header to radeon_apci.c
+    - LP: #1110219
+  * drm/radeon: track whether the GPU controls the backlight (v2)
+    - LP: #1110219
+  * drm/radeon: rework legacy backlight control
+    - LP: #1110219
+  * drm/radeon: add backlight control for atom devices (v2)
+    - LP: #1110219
+  * drm/radeon: refactor radeon_atif_call
+    - LP: #1110219
+  * drm/radeon: implement radeon_atif_verify_interface
+    - LP: #1110219
+  * drm/radeon: implement wrapper for GET_SYSTEM_PARAMS
+    - LP: #1110219
+  * drm/radeon: implement handler for ACPI event
+    - LP: #1110219
+  * drm/radeon: re-organize the acpi notifier callback
+    - LP: #1110219
+  * ACPI video: allow events handlers to veto the keypress
+    - LP: #1110219
+  * drm/radeon: block the keypress on ATIF events
+    - LP: #1110219
+  * keys: fix race with concurrent install_user_keyrings()
+    - LP: #1152788
+    - CVE-2013-1792
+  * mfd: rtsx: Add clock divider hook
+    - LP: #1153618
+  * mfd: rtsx: Implement driving adjustment to device-dependent callbacks
+    - LP: #1153618
+  * mfd: rtsx: Support RTS5227
+    - LP: #1153618
+  * mmc: rtsx: remove driving adjustment
+    - LP: #1153618
+  * x86/apic: Remove noisy zero-mask warning from
+    default_send_IPI_mask_logical()
+    - LP: #1100202
+  * signal: always clear sa_restorer on execve
+    - LP: #1153813
+    - CVE-2013-0914
+
  -- Kaj Ailomaa <zequence@mousike.me>  Tue, 19 Mar 2013 19:56:44 +0100
 
 linux-lowlatency (3.5.0-26.28) quantal-proposed; urgency=low
