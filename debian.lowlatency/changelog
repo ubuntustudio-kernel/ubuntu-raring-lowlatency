@@ -4,6 +4,130 @@ linux-lowlatency (3.8.0-12.9) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-14.24 ]
+
+  * [Config] rename omap flavour to generic
+  * [Config] USB_MUSB_HDRC=m
+  * SAUCE: mfd: omap-usb-host: Fix clk warnings at boot
+  * SAUCE: Revert "brcmsmac: support 4313iPA"
+    - LP: #1157190
+  * [Config] CONFIG_SERIAL_8250_DW=m across all arches
+    - LP: #1031162
+  * [debian] Build extras package only for specific arches
+  * [config] Set do_extras_package=true for x86en
+  * Rebase to 3.8.4
+  * Release Tracking Bug
+    - LP: #1158863
+  * Input: ALPS - document the alps.h data structures
+    - LP: #1089413
+  * Input: ALPS - copy "model" info into alps_data struct
+    - LP: #1089413
+  * Input: ALPS - move alps_get_model() down below hw_init code
+    - LP: #1089413
+  * Input: ALPS - introduce helper function for repeated commands
+    - LP: #1089413
+  * Input: ALPS - rework detection sequence
+    - LP: #1089413
+  * Input: ALPS - use function pointers for different protocol handlers
+    - LP: #1089413
+  * Input: ALPS - move {addr,nibble}_command settings into
+    alps_set_defaults()
+    - LP: #1089413
+  * Input: ALPS - rework detection of Pinnacle AGx touchpads
+    - LP: #1089413
+  * Input: ALPS - fix command mode check
+    - LP: #1089413
+  * Input: ALPS - move pixel and bitmap info into alps_data struct
+    - LP: #1089413
+  * Input: ALPS - make the V3 packet field decoder "pluggable"
+    - LP: #1089413
+  * Input: ALPS - add support for "Rushmore" touchpads
+    - LP: #1089413
+  * Input: ALPS - enable trackstick on Rushmore touchpads
+    - LP: #1089413
+  * Input: ALPS - remove unused argument to alps_enter_command_mode()
+    - LP: #1089413
+  * Input: ALPS - add "Dolphin V1" touchpad support
+    - LP: #1089413
+  * serial: 8250_dw: Use ifdef with ACPI
+    - LP: #1031162
+  * rebase to v3.8.4
+
+  [ Ubuntu: 3.8.0-13.23 ]
+
+  * Revert "drm/i915: enable irqs earlier when resuming"
+    - LP: #1156310
+  * Revert "drm/i915: reorder setup sequence to have irqs for output setup"
+    - LP: #1156310
+  * x86/apic: Remove noisy zero-mask warning from
+    default_send_IPI_mask_logical()
+    - LP: #1100202
+  * drm/i915: Fix races in gen4 page flip interrupt handling
+    - LP: #1116587
+  * drm/i915: Revert hdmi HDP pin checks
+    - LP: #1135668
+  * signal: always clear sa_restorer on execve
+    - LP: #1153813
+    - CVE-2013-0914
+
+  [ Ubuntu: 3.8.0-13.22 ]
+
+  * Revert "SAUCE: fireware: add NO_MSI quirks for o2micro controller"
+  * SAUCE: alx: use github.com/qca/alx repo
+    - LP: #1154238
+  * [packaging] do not use ../.$(series)-env file
+  * SAUCE: Convert bnx2x firmware files to ihex format
+  * SAUCE: alx: Update to heads/master
+    - LP: #1154238
+  * SAUCE: efivars: Allow disabling use as a pstore backend
+  * [Config] Re-enable CONFIG_PSTORE for x86
+  * Drop efivarfs reverts in favor of 3.8.3 stable updates
+    Revert "efivarfs: Validate filenames much more aggressively"
+    Revert "efivarfs: guid part of filenames are case-insensitive"
+  * [Config] CONFIG_I2C_ISMT=m
+    - LP: #1011449
+  * [Config] CONFIG_SERIAL_8250_DMA=y,CONFIG_SERIAL_8250_DW=m for x86en
+    - LP: #1031162
+  * Release Tracking Bug
+    - LP: #1155680
+  * net/sctp: Validate parameter size for SCTP_GET_ASSOC_STATS
+    - LP: #1152791
+    - CVE-2013-1828
+  * mfd: rtsx: Implement driving adjustment to device-dependent callbacks
+    - LP: #1153618
+  * mfd: rtsx: Support RTS5227
+    - LP: #1153618
+  * mmc: rtsx: remove driving adjustment
+    - LP: #1153618
+  * i2c: Adding support for Intel iSMT SMBus 2.0 host controller
+    - LP: #1011449
+  * i2c: fix i2c-ismt.c printk format warning
+    - LP: #1011449
+  * serial: quatech: add the other serial identifiers and preliminary
+    control code
+    - LP: #1031162
+  * serial: Remove RM9000 series serial driver.
+    - LP: #1031162
+  * serial: 8250_pci: remove __devexit usage
+    - LP: #1031162
+  * serial: 8250: Allow drivers to deliver capabilities
+    - LP: #1031162
+  * serial: 8250_dw: Don't use UPF_FIXED_TYPE
+    - LP: #1031162
+  * serial: 8250_dw: Map IO memory
+    - LP: #1031162
+  * serial: 8250_dw: Move device tree code to separate function
+    - LP: #1031162
+  * serial: 8250_dw: Set FIFO size dynamically
+    - LP: #1031162
+  * serial: 8250_dw: Add ACPI 5.0 support
+    - LP: #1031162
+  * serial: 8250: Add support for dmaengine
+    - LP: #1031162
+  * serial: 8250_dw: Enable DMA support with ACPI
+    - LP: #1031162
+  * rebase to v3.8.3
+
  -- Andy Whitcroft <apw@canonical.com>  Mon, 25 Mar 2013 09:40:27 +0000
 
 linux-lowlatency (3.8.0-12.8) raring; urgency=low
