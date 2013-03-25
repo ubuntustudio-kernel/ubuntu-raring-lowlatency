@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2012 Junjiro R. Okajima
+ * Copyright (C) 2005-2013 Junjiro R. Okajima
  *
  * This program, aufs is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -56,7 +56,10 @@ static void au_br_do_free(struct au_branch *br)
 		else
 			break;
 
+	/* recursive lock, s_umount of branch's */
+	lockdep_off();
 	mntput(br->br_mnt);
+	lockdep_on();
 	kfree(wbr);
 	kfree(br);
 }
@@ -632,7 +635,7 @@ static int test_inode_busy(struct super_block *sb, aufs_bindex_t bindex,
 			continue;
 
 		/* AuDbgInode(i); */
-		if (au_iigen(i) == sigen)
+		if (au_iigen(i, NULL) == sigen)
 			ii_read_lock_child(i);
 		else {
 			ii_write_lock_child(i);
@@ -969,7 +972,7 @@ static unsigned long long au_farray_cb(void *a,
 	do_file_list_for_each_entry(sb, f) {
 		if (au_fi(f)
 		    && file_count(f)
-		    && !special_file(f->f_dentry->d_inode->i_mode)) {
+		    && !special_file(file_inode(f)->i_mode)) {
 			get_file(f);
 			*p++ = f;
 			n++;
@@ -1034,7 +1037,7 @@ static int au_br_mod_files_ro(struct super_block *sb, aufs_bindex_t bindex)
 			goto out_array;
 		}
 
-		inode = file->f_dentry->d_inode;
+		inode = file_inode(file);
 		hfile = &au_fi(file)->fi_htop;
 		hf = hfile->hf_file;
 		if (!S_ISREG(inode->i_mode)
@@ -1071,8 +1074,8 @@ static int au_br_mod_files_ro(struct super_block *sb, aufs_bindex_t bindex)
 		hf->f_mode &= ~FMODE_WRITE;
 		spin_unlock(&hf->f_lock);
 		if (!file_check_writeable(hf)) {
+			__mnt_drop_write(hf->f_path.mnt);
 			file_release_write(hf);
-			vfsub_mnt_drop_write(hf->f_vfsmnt);
 		}
 	}
 

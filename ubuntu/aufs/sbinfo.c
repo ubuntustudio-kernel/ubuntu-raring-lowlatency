@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2012 Junjiro R. Okajima
+ * Copyright (C) 2005-2013 Junjiro R. Okajima
  *
  * This program, aufs is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -157,7 +157,7 @@ unsigned int au_sigen_inc(struct super_block *sb)
 
 	gen = ++au_sbi(sb)->si_generation;
 	au_update_digen(sb->s_root);
-	au_update_iigen(sb->s_root->d_inode);
+	au_update_iigen(sb->s_root->d_inode, /*half*/0);
 	sb->s_root->d_inode->i_version++;
 	return gen;
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2012 Junjiro R. Okajima
+ * Copyright (C) 2005-2013 Junjiro R. Okajima
  *
  * This program, aufs is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -165,7 +165,7 @@ struct file *au_xino_create2(struct file *base_file, struct file *copy_src)
 		goto out_dput;
 	}
 
-	path.mnt = base_file->f_vfsmnt;
+	path.mnt = base_file->f_path.mnt;
 	file = vfsub_dentry_open(&path,
 				 O_RDWR | O_CREAT | O_EXCL | O_LARGEFILE
 				 /* | __FMODE_NONOTIFY */);
@@ -182,8 +182,7 @@ struct file *au_xino_create2(struct file *base_file, struct file *copy_src)
 
 	if (copy_src) {
 		/* no one can touch copy_src xino */
-		err = au_copy_file(file, copy_src,
-				   i_size_read(copy_src->f_dentry->d_inode));
+		err = au_copy_file(file, copy_src, vfsub_f_size_read(copy_src));
 		if (unlikely(err)) {
 			pr_err("%.*s copy err %d\n", AuLNPair(name), err);
 			goto out_fput;
@@ -310,13 +309,14 @@ static void xino_do_trunc(void *_args)
 	bindex = au_br_index(sb, br->br_id);
 	err = au_xino_trunc(sb, bindex);
 	if (!err
-	    && br->br_xino.xi_file->f_dentry->d_inode->i_blocks
+	    && file_inode(br->br_xino.xi_file)->i_blocks
 	    >= br->br_xino_upper)
 		br->br_xino_upper += AUFS_XINO_TRUNC_STEP;
 
 	ii_read_unlock(dir);
 	if (unlikely(err))
-		pr_warn("err b%d, (%d)\n", bindex, err);
+		pr_warn("err b%d, upper %llu, (%d)\n",
+			bindex, (unsigned long long)br->br_xino_upper, err);
 	atomic_dec(&br->br_xino_running);
 	atomic_dec(&br->br_count);
 	si_write_unlock(sb);
@@ -329,7 +329,7 @@ static void xino_try_trunc(struct super_block *sb, struct au_branch *br)
 	struct xino_do_trunc_args *args;
 	int wkq_err;
 
-	if (br->br_xino.xi_file->f_dentry->d_inode->i_blocks
+	if (file_inode(br->br_xino.xi_file)->i_blocks
 	    < br->br_xino_upper)
 		return;
 
@@ -466,7 +466,7 @@ static int xib_pindex(struct super_block *sb, unsigned long pindex)
 
 	pos = pindex;
 	pos *= PAGE_SIZE;
-	if (i_size_read(xib->f_dentry->d_inode) >= pos + PAGE_SIZE)
+	if (vfsub_f_size_read(xib) >= pos + PAGE_SIZE)
 		sz = xino_fread(sbinfo->si_xread, xib, p, PAGE_SIZE, &pos);
 	else {
 		memset(p, 0, PAGE_SIZE);
@@ -599,7 +599,7 @@ ino_t au_xino_new_ino(struct super_block *sb)
 	}
 
 	file = sbinfo->si_xib;
-	pend = i_size_read(file->f_dentry->d_inode) / PAGE_SIZE;
+	pend = vfsub_f_size_read(file) / PAGE_SIZE;
 	for (ul = pindex + 1; ul <= pend; ul++) {
 		err = xib_pindex(sb, ul);
 		if (unlikely(err))
@@ -652,7 +652,7 @@ int au_xino_read(struct super_block *sb, aufs_bindex_t bindex, ino_t h_ino,
 	pos *= sizeof(*ino);
 
 	file = au_sbr(sb, bindex)->br_xino.xi_file;
-	if (i_size_read(file->f_dentry->d_inode) < pos + sizeof(*ino))
+	if (vfsub_f_size_read(file) < pos + sizeof(*ino))
 		return 0; /* no ino */
 
 	sz = xino_fread(sbinfo->si_xread, file, ino, sizeof(*ino), &pos);
@@ -827,7 +827,7 @@ static int do_xib_restore(struct super_block *sb, struct file *file, void *page)
 	MtxMustLock(&sbinfo->si_xib_mtx);
 	p = sbinfo->si_xib_buf;
 	func = sbinfo->si_xread;
-	pend = i_size_read(file->f_dentry->d_inode);
+	pend = vfsub_f_size_read(file);
 	pos = 0;
 	while (pos < pend) {
 		sz = xino_fread(func, file, page, PAGE_SIZE, &pos);
@@ -897,7 +897,7 @@ int au_xib_trunc(struct super_block *sb)
 		goto out;
 
 	file = sbinfo->si_xib;
-	if (i_size_read(file->f_dentry->d_inode) <= PAGE_SIZE)
+	if (vfsub_f_size_read(file) <= PAGE_SIZE)
 		goto out;
 
 	au_xino_lock_dir(sb, file, &ldir);
@@ -1007,7 +1007,7 @@ static int au_xino_set_xib(struct super_block *sb, struct file *base)
 
 	sbinfo->si_xib_last_pindex = 0;
 	sbinfo->si_xib_next_bit = 0;
-	if (i_size_read(file->f_dentry->d_inode) < PAGE_SIZE) {
+	if (vfsub_f_size_read(file) < PAGE_SIZE) {
 		pos = 0;
 		err = xino_fwrite(sbinfo->si_xwrite, file, sbinfo->si_xib_buf,
 				  PAGE_SIZE, &pos);

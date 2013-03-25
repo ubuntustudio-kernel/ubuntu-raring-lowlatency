@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2012 Junjiro R. Okajima
+ * Copyright (C) 2005-2013 Junjiro R. Okajima
  *
  * This program, aufs is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -417,6 +417,36 @@ static int aufs_statfs(struct dentry *dentry, struct kstatfs *buf)
 
 /* ---------------------------------------------------------------------- */
 
+static int aufs_sync_fs(struct super_block *sb, int wait)
+{
+	int err, e;
+	aufs_bindex_t bend, bindex;
+	struct au_branch *br;
+	struct super_block *h_sb;
+
+	err = 0;
+	si_noflush_read_lock(sb);
+	bend = au_sbend(sb);
+	for (bindex = 0; bindex <= bend; bindex++) {
+		br = au_sbr(sb, bindex);
+		if (!au_br_writable(br->br_perm))
+			continue;
+
+		h_sb = au_sbr_sb(sb, bindex);
+		if (h_sb->s_op->sync_fs) {
+			e = h_sb->s_op->sync_fs(h_sb, wait);
+			if (unlikely(e && !err))
+				err = e;
+			/* go on even if an error happens */
+		}
+	}
+	si_read_unlock(sb);
+
+	return err;
+}
+
+/* ---------------------------------------------------------------------- */
+
 /* final actions when unmounting a file system */
 static void aufs_put_super(struct super_block *sb)
 {
@@ -627,7 +657,7 @@ static int au_refresh_i(struct super_block *sb)
 	sigen = au_sigen(sb);
 	for (ull = 0; ull < max; ull++) {
 		inode = array[ull];
-		if (au_iigen(inode) != sigen) {
+		if (au_iigen(inode, NULL) != sigen) {
 			ii_write_lock_child(inode);
 			e = au_refresh_hinode_self(inode);
 			ii_write_unlock(inode);
@@ -780,6 +810,7 @@ static const struct super_operations aufs_sop = {
 	.show_options	= aufs_show_options,
 	.statfs		= aufs_statfs,
 	.put_super	= aufs_put_super,
+	.sync_fs	= aufs_sync_fs,
 	.remount_fs	= aufs_remount_fs
 };
 
@@ -952,9 +983,8 @@ static void aufs_kill_sb(struct super_block *sb)
 
 struct file_system_type aufs_fs_type = {
 	.name		= AUFS_FSTYPE,
-	.fs_flags	=
-		FS_RENAME_DOES_D_MOVE	/* a race between rename and others */
-		| FS_REVAL_DOT,		/* for NFS branch and udba */
+	/* a race between rename and others */
+	.fs_flags	= FS_RENAME_DOES_D_MOVE,
 	.mount		= aufs_mount,
 	.kill_sb	= aufs_kill_sb,
 	/* no need to __module_get() and module_put(). */

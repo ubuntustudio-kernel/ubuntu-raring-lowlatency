@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2012 Junjiro R. Okajima
+ * Copyright (C) 2005-2013 Junjiro R. Okajima
  *
  * This program, aufs is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -810,8 +810,7 @@ static int del_wh_children(struct dentry *h_dentry, struct au_nhash *whlist,
 	struct qstr wh_name;
 	char *p;
 	struct hlist_head *head;
-	struct au_vdir_wh *tpos;
-	struct hlist_node *pos;
+	struct au_vdir_wh *pos;
 	struct au_vdir_destr *str;
 
 	err = -ENOMEM;
@@ -826,11 +825,11 @@ static int del_wh_children(struct dentry *h_dentry, struct au_nhash *whlist,
 	n = whlist->nh_num;
 	head = whlist->nh_head;
 	for (ul = 0; !err && ul < n; ul++, head++) {
-		hlist_for_each_entry(tpos, pos, head, wh_hash) {
-			if (tpos->wh_bindex != bindex)
+		hlist_for_each_entry(pos, head, wh_hash) {
+			if (pos->wh_bindex != bindex)
 				continue;
 
-			str = &tpos->wh_str;
+			str = &pos->wh_str;
 			if (str->len + AUFS_WH_PFX_LEN <= PATH_MAX) {
 				memcpy(p, str->name, str->len);
 				wh_name.len = AUFS_WH_PFX_LEN + str->len;

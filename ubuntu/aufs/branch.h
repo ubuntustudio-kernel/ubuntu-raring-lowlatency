@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2012 Junjiro R. Okajima
+ * Copyright (C) 2005-2013 Junjiro R. Okajima
  *
  * This program, aufs is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,6 +61,13 @@ struct au_wbr {
 /* ext2 has 3 types of operations at least, ext3 has 4 */
 #define AuBrDynOp (AuDyLast * 4)
 
+#ifdef CONFIG_AUFS_HFSNOTIFY
+/* support for asynchronous destruction */
+struct au_br_hfsnotify {
+	struct fsnotify_group	*hfsn_group;
+};
+#endif
+
 /* protected by superblock rwsem */
 struct au_branch {
 	struct au_xino_file	br_xino;
@@ -80,8 +87,7 @@ struct au_branch {
 	atomic_t		br_xino_running;
 
 #ifdef CONFIG_AUFS_HFSNOTIFY
-	struct fsnotify_group	*br_hfsn_group;
-	struct fsnotify_ops	br_hfsn_ops;
+	struct au_br_hfsnotify	*br_hfsn;
 #endif
 
 #ifdef CONFIG_SYSFS

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2012 Junjiro R. Okajima
+ * Copyright (C) 2005-2013 Junjiro R. Okajima
  *
  * This program, aufs is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,8 +30,9 @@
 #define pr_fmt(fmt)	AUFS_NAME " %s:%d: " fmt, __func__, __LINE__
 #include <linux/sched.h>
 #undef pr_fmt
-#define pr_fmt(fmt)	AUFS_NAME " %s:%d:%s[%d]: " fmt, \
-		__func__, __LINE__, current->comm, current->pid
+#define pr_fmt(fmt) \
+		AUFS_NAME " %s:%d:%.*s[%d]: " fmt, __func__, __LINE__, \
+		(int)sizeof(current->comm), current->comm, current->pid
 #else
 #include <stdint.h>
 #include <sys/types.h>
@@ -39,7 +40,7 @@
 
 #include <linux/limits.h>
 
-#define AUFS_VERSION	"3.x-rcN-20121112"
+#define AUFS_VERSION	"3.x-rcN-20130325"
 
 /* todo? move this to linux-2.6.19/include/magic.h */
 #define AUFS_SUPER_MAGIC	('a' << 24 | 'u' << 16 | 'f' << 8 | 's')

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2012 Junjiro R. Okajima
+ * Copyright (C) 2005-2013 Junjiro R. Okajima
  *
  * This program, aufs is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -159,9 +159,18 @@ static struct dentry *aufs_lookup(struct inode *dir, struct dentry *dentry,
 	struct dentry *ret, *parent;
 	struct inode *inode;
 	struct super_block *sb;
-	int err, npositive, lc_idx;
+	int err, npositive;
 
 	IMustLock(dir);
+
+	/* todo: support rcu-walk? */
+	ret = ERR_PTR(-ECHILD);
+	if (flags & LOOKUP_RCU)
+		goto out;
+
+	ret = ERR_PTR(-ENAMETOOLONG);
+	if (unlikely(dentry->d_name.len > AUFS_MAX_NAMELEN))
+		goto out;
 
 	sb = dir->i_sb;
 	err = si_read_lock(sb, AuLock_FLUSH | AuLock_NOPLM);
@@ -169,9 +178,6 @@ static struct dentry *aufs_lookup(struct inode *dir, struct dentry *dentry,
 	if (unlikely(err))
 		goto out;
 
-	ret = ERR_PTR(-ENAMETOOLONG);
-	if (unlikely(dentry->d_name.len > AUFS_MAX_NAMELEN))
-		goto out_si;
 	err = au_di_init(dentry);
 	ret = ERR_PTR(err);
 	if (unlikely(err))
@@ -186,7 +192,7 @@ static struct dentry *aufs_lookup(struct inode *dir, struct dentry *dentry,
 		err = au_digen_test(parent, au_sigen(sb));
 	if (!err) {
 		npositive = au_lkup_dentry(dentry, au_dbstart(parent),
-					   /*type*/0, flags);
+					   /*type*/0);
 		err = npositive;
 	}
 	di_read_unlock(parent, AuLock_IR);
@@ -204,6 +210,13 @@ static struct dentry *aufs_lookup(struct inode *dir, struct dentry *dentry,
 	}
 
 	ret = d_splice_alias(inode, dentry);
+#if 0
+	if (unlikely(d_need_lookup(dentry))) {
+		spin_lock(&dentry->d_lock);
+		dentry->d_flags &= ~DCACHE_NEED_LOOKUP;
+		spin_unlock(&dentry->d_lock);
+	} else
+#endif
 	if (unlikely(IS_ERR(ret) && inode)) {
 		ii_write_unlock(inode);
 		iput(inode);
@@ -213,12 +226,16 @@ static struct dentry *aufs_lookup(struct inode *dir, struct dentry *dentry,
 out_unlock:
 	di_write_unlock(dentry);
 	if (inode) {
-		lc_idx = AuLcNonDir_DIINFO;
-		if (S_ISLNK(inode->i_mode))
-			lc_idx = AuLcSymlink_DIINFO;
-		else if (S_ISDIR(inode->i_mode))
-			lc_idx = AuLcDir_DIINFO;
-		au_rw_class(&au_di(dentry)->di_rwsem, au_lc_key + lc_idx);
+		/* verbose coding for lock class name */
+		if (unlikely(S_ISLNK(inode->i_mode)))
+			au_rw_class(&au_di(dentry)->di_rwsem,
+				    au_lc_key + AuLcSymlink_DIINFO);
+		else if (unlikely(S_ISDIR(inode->i_mode)))
+			au_rw_class(&au_di(dentry)->di_rwsem,
+				    au_lc_key + AuLcDir_DIINFO);
+		else /* likely */
+			au_rw_class(&au_di(dentry)->di_rwsem,
+				    au_lc_key + AuLcNonDir_DIINFO);
 	}
 out_si:
 	si_read_unlock(sb);
@@ -779,8 +796,7 @@ static int aufs_getattr(struct vfsmount *mnt __maybe_unused,
 	unsigned char udba_none, positive;
 	struct super_block *sb, *h_sb;
 	struct inode *inode;
-	struct vfsmount *h_mnt;
-	struct dentry *h_dentry;
+	struct path h_path;
 
 	sb = dentry->d_sb;
 	inode = dentry->d_inode;
@@ -813,30 +829,31 @@ static int aufs_getattr(struct vfsmount *mnt __maybe_unused,
 		di_read_lock_child(dentry, AuLock_IR);
 
 	bindex = au_ibstart(inode);
-	h_mnt = au_sbr_mnt(sb, bindex);
-	h_sb = h_mnt->mnt_sb;
+	h_path.mnt = au_sbr_mnt(sb, bindex);
+	h_sb = h_path.mnt->mnt_sb;
 	if (!au_test_fs_bad_iattr(h_sb) && udba_none)
 		goto out_fill; /* success */
 
-	h_dentry = NULL;
+	h_path.dentry = NULL;
 	if (au_dbstart(dentry) == bindex)
-		h_dentry = dget(au_h_dptr(dentry, bindex));
+		h_path.dentry = dget(au_h_dptr(dentry, bindex));
 	else if (au_opt_test(mnt_flags, PLINK) && au_plink_test(inode)) {
-		h_dentry = au_plink_lkup(inode, bindex);
-		if (IS_ERR(h_dentry))
+		h_path.dentry = au_plink_lkup(inode, bindex);
+		if (IS_ERR(h_path.dentry))
 			goto out_fill; /* pretending success */
 	}
 	/* illegally overlapped or something */
-	if (unlikely(!h_dentry))
+	if (unlikely(!h_path.dentry))
 		goto out_fill; /* pretending success */
 
-	positive = !!h_dentry->d_inode;
+	positive = !!h_path.dentry->d_inode;
 	if (positive)
-		err = vfs_getattr(h_mnt, h_dentry, st);
-	dput(h_dentry);
+		err = vfs_getattr(&h_path, st);
+	dput(h_path.dentry);
 	if (!err) {
 		if (positive)
-			au_refresh_iattr(inode, st, h_dentry->d_inode->i_nlink);
+			au_refresh_iattr(inode, st,
+					 h_path.dentry->d_inode->i_nlink);
 		goto out_fill; /* success */
 	}
 	AuTraceErr(err);

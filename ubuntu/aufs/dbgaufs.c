@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2005-2012 Junjiro R. Okajima
+ * Copyright (C) 2005-2013 Junjiro R. Okajima
  *
  * This program, aufs is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -63,7 +63,7 @@ static int dbgaufs_xi_open(struct file *xf, struct file *file, int do_fcnt)
 	if (!xf)
 		goto out;
 
-	err = vfs_getattr(xf->f_vfsmnt, xf->f_dentry, &st);
+	err = vfs_getattr(&xf->f_path, &st);
 	if (!err) {
 		if (do_fcnt)
 			p->n = snprintf
@@ -175,10 +175,8 @@ void dbgaufs_brs_del(struct super_block *sb, aufs_bindex_t bindex)
 	for (; bindex <= bend; bindex++) {
 		br = au_sbr(sb, bindex);
 		xi = &br->br_xino;
-		if (xi->xi_dbgaufs) {
-			debugfs_remove(xi->xi_dbgaufs);
-			xi->xi_dbgaufs = NULL;
-		}
+		debugfs_remove(xi->xi_dbgaufs);
+		xi->xi_dbgaufs = NULL;
 	}
 }
 
