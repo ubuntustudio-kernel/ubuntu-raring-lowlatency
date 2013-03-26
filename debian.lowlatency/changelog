@@ -4,6 +4,25 @@ linux-lowlatency (3.5.0-27.30) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-27.46 ]
+
+  * Release Tracking Bug
+    - LP: #1159991
+  * Start New Release
+  * crypto: user - fix info leaks in report API
+    - LP: #1156790, #1156795, #1156799
+    - CVE-2013-2546
+  * brcmsmac: fix mismatch in number of custom regulatory rules
+    - LP: #1156769
+  * SAUCE: PCI: define macro for marvell vendor ID
+    - LP: #1159863
+  * SAUCE: PCI: fix system hang issue of Marvell SATA host controller
+    - LP: #1159863
+
+  [ Ubuntu: 3.5.0-27.45 ]
+
+  * no change
+
  -- Kaj Ailomaa <zequence@mousike.me>  Tue, 26 Mar 2013 18:17:17 +0100
 
 linux-lowlatency (3.5.0-27.29) quantal-proposed; urgency=low
