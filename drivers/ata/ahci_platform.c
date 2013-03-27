@@ -95,7 +95,6 @@ static struct scsi_host_template ahci_platform_sht = {
 };
 
 static const struct of_device_id ahci_of_match[] = {
-	{ .compatible = "calxeda,hb-ahci",  .data = &ahci_devtype[AHCI],},
 	{ .compatible = "fsl,imx6q-ahci",   .data = &ahci_devtype[IMX6Q_AHCI],},
 	{ .compatible = "snps,spear-ahci", },
 	{},
