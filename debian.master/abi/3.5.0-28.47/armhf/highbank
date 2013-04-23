@@ -3730,6 +3730,7 @@ EXPORT_SYMBOL vmlinux 0x00000000	inet_frag_destroy
 EXPORT_SYMBOL vmlinux 0x00000000	inet_frag_evictor
 EXPORT_SYMBOL vmlinux 0x00000000	inet_frag_find
 EXPORT_SYMBOL vmlinux 0x00000000	inet_frag_kill
+EXPORT_SYMBOL vmlinux 0x00000000	inet_frag_maybe_warn_overflow
 EXPORT_SYMBOL vmlinux 0x00000000	inet_frags_exit_net
 EXPORT_SYMBOL vmlinux 0x00000000	inet_frags_fini
 EXPORT_SYMBOL vmlinux 0x00000000	inet_frags_init
