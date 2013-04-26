@@ -4,6 +4,16 @@ linux-lowlatency (3.5.0-28.32) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.5.0-28.48 ]
+
+  * Release Tracking Bug
+    - LP: #1172023
+  * Revert "drm/i915: GFX_MODE Flush TLB Invalidate Mode must be '1' for
+    scanline waits"
+    - LP: #1140716
+  * fbcon: fix locking harder
+    - LP: #1167114
+
  -- Kaj Ailomaa <zequence@mousike.me>  Fri, 26 Apr 2013 07:39:20 +0200
 
 linux-lowlatency (3.5.0-28.31) quantal-proposed; urgency=low
