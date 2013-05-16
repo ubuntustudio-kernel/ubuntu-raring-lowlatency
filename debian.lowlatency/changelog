@@ -4,6 +4,23 @@ linux-lowlatency (3.8.0-21.15) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-22.33 ]
+
+  * Release Tracking Bug
+    - LP: #1180483
+  * merged back all changes which were in 20.31
+
+  [ Ubuntu: 3.8.0-21.32 ]
+
+  * Release Tracking Bug
+    - LP: #1180058
+  * Based on 3.8.0-19.30 release
+    - entire delta from 19.30 to 20.31 removed
+    - CVE release is based on updates+fix
+  * perf: Treat attr.config as u64 in perf_swevent_init()
+    - LP: #1179943
+    - CVE-2013-2094
+
  -- Kaj Ailomaa <zequence@mousike.me>  Fri, 17 May 2013 01:32:04 +0200
 
 linux-lowlatency (3.8.0-20.14) raring; urgency=low
