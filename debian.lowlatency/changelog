@@ -4,6 +4,425 @@ linux-lowlatency (3.8.0-27.19) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-27.40 ]
+
+  * UBUNTU: [Config] CONFIG_ARM_ERRATA_643719=y
+
+  [ Ubuntu: 3.8.0-27.39 ]
+
+  * Release Tracking Bug
+    - LP: #1199128
+  * [Config] CONFIG_ATH9K_LEGACY_RATE_CONTROL=y
+  * SAUCE: Work around broken ACPI backlight on ThinkPad T430
+    - LP: #1183856
+  * (d-i) Add dm-snapshot to md-modules
+    - LP: #1191726
+  * [Config] CONFIG_SUNRPC_DEBUG=y
+    - LP: #1127319
+  * Revert "ath9k_hw: Update rx gain initval to improve rx sensitivity"
+    - LP: #1193126
+  * Revert "serial: 8250_pci: add support for another kind of NetMos
+    Technology PCI 9835 Multi-I/O Controller"
+    - LP: #1190967
+  * mac80211: close AP_VLAN interfaces before unregistering all
+    - LP: #1193126
+  * ath9k: use correct OTP register offsets for AR9550
+    - LP: #1193126
+  * regulator: palmas: Fix "enable_reg" to point to the correct reg for
+    SMPS10
+    - LP: #1193126
+  * net: can: kvaser_usb: fix reception on "USBcan Pro" and "USBcan R" type
+    hardware.
+    - LP: #1193126
+  * tg3: Add read dma workaround for 5720
+    - LP: #1193126
+  * xhci-mem: init list heads at the beginning of init
+    - LP: #1193126
+  * xhci: fix list access before init
+    - LP: #1193126
+  * xhci - correct comp_mode_recovery_timer on return from hibernate
+    - LP: #1193126
+  * xhci: Disable D3cold for buggy TI redrivers.
+    - LP: #1193126
+  * usb: dwc3: pci: PHY should be deleted later than dwc3 core
+    - LP: #1193126
+  * usb: dwc3: gadget: free trb pool only from epnum 2
+    - LP: #1193126
+  * usb: musb: make use_sg flag URB specific
+    - LP: #1193126
+  * USB: revert periodic scheduling bugfix
+    - LP: #1193126
+  * USB: serial: fix Treo/Kyocera interrrupt-in urb context
+    - LP: #1193126
+  * USB: visor: fix initialisation of Treo/Kyocera devices
+    - LP: #1193126
+  * USB: mos7720: fix DMA to stack
+    - LP: #1193126
+  * USB: mos7840: fix DMA to stack
+    - LP: #1193126
+  * USB: ark3116: fix control-message timeout
+    - LP: #1193126
+  * USB: iuu_phoenix: fix bulk-message timeout
+    - LP: #1193126
+  * USB: mos7720: fix message timeouts
+    - LP: #1193126
+  * USB: zte_ev: fix control-message timeouts
+    - LP: #1193126
+  * USB: Serial: cypress_M8: Enable FRWD Dongle hidcom device
+    - LP: #1193126
+  * USB: serial: Add Option GTM681W to qcserial device table.
+    - LP: #1193126
+  * USB: zte_ev: fix broken open
+    - LP: #1193126
+  * USB: keyspan: fix bogus array index
+    - LP: #1193126
+  * USB: mos7720: fix hardware flow control
+    - LP: #1193126
+  * x86/PCI: Map PCI setup data with ioremap() so it can be in highmem
+    - LP: #1193126
+  * USB: whiteheat: fix broken port configuration
+    - LP: #1193126
+  * USB: option: blacklist network interface on Huawei E1820
+    - LP: #1193126
+  * USB: option,zte_ev: move most ZTE CDMA devices to zte_ev
+    - LP: #1193126
+  * ecryptfs: fixed msync to flush data
+    - LP: #1193126
+  * dmaengine: ste_dma40: fix pm runtime ref counting
+    - LP: #1193126
+  * cifs: fix off-by-one bug in build_unc_path_to_root
+    - LP: #1193126
+  * ACPI video: ignore BIOS backlight value for HP dm4
+    - LP: #1193126
+  * ACPI video: ignore BIOS initial backlight value for HP 1000
+    - LP: #1193126
+  * ACPI / video: ignore BIOS initial backlight value for HP m4
+    - LP: #1193126
+  * ACPI / video: ignore BIOS initial backlight value for HP Pavilion g6
+    - LP: #1193126
+  * ALSA: usb-audio: fix Roland/Cakewalk UM-3G support
+    - LP: #1193126
+  * drm: fix a use-after-free when GPU acceleration disabled
+    - LP: #1193126
+  * drm/mgag200: Add missing write to index before accessing data register
+    - LP: #1193126
+  * drm/i915: no lvds quirk for hp t5740
+    - LP: #1193126
+  * radeon: Fix system hang issue when using KMS with older cards
+    - LP: #1193126
+  * drm/radeon: don't allow audio on DCE6
+    - LP: #1193126
+  * ALSA: usb-audio - Apply Logitech QuickCam Pro 9000 quirk only to audio
+    iface
+    - LP: #1193126
+  * drm/i915/sdvo: Use &intel_sdvo->ddc instead of intel_sdvo->i2c for DDC.
+    - LP: #1193126
+  * ALSA: usb-audio - Fix invalid volume resolution on Logitech HD webcam
+    c270
+    - LP: #1193126
+  * eCryptfs: Check return of filemap_write_and_wait during fsync
+    - LP: #1193126
+  * acpi-cpufreq: set current frequency based on target P-State
+    - LP: #1193126
+  * ARM: 7742/1: topology: export cpu_topology
+    - LP: #1193126
+  * ARM: 7743/1: compressed/head.S: work around new binutils warning
+    - LP: #1193126
+  * ARM: 7747/1: pcpu: ensure __my_cpu_offset cannot be re-ordered across
+    barrier()
+    - LP: #1193126
+  * hwmon: (adm1021) Strengthen chip detection for ADM1021, LM84 and
+    MAX1617
+    - LP: #1193126
+  * hpfs: fix warnings when the filesystem fills up
+    - LP: #1193126
+  * powerpc/eeh: Don't check RTAS token to get PE addr
+    - LP: #1193126
+  * xen/smp: Fixup NOHZ per cpu data when onlining an offline CPU.
+    - LP: #1193126
+  * ceph: fix statvfs fr_size
+    - LP: #1193126
+  * libceph: must hold mutex for reset_changed_osds()
+    - LP: #1193126
+  * ceph: add cpu_to_le32() calls when encoding a reconnect capability
+    - LP: #1193126
+  * ceph: ceph_pagelist_append might sleep while atomic
+    - LP: #1193126
+  * rbd: don't destroy ceph_opts in rbd_add()
+    - LP: #1193126
+  * drm/gma500/psb: Unpin framebuffer on crtc disable
+    - LP: #1193126
+  * drm/gma500/cdv: Unpin framebuffer on crtc disable
+    - LP: #1193126
+  * drm/i915: prefer VBT modes for SVDO-LVDS over EDID
+    - LP: #1193126
+  * Bluetooth: Fix missing length checks for L2CAP signalling PDUs
+    - LP: #1193126
+  * Bluetooth: Fix mgmt handling of power on failures
+    - LP: #1193126
+  * ath9k: Disable PowerSave by default
+    - LP: #1193126
+  * ath9k: Use minstrel rate control by default
+    - LP: #1193126
+  * b43: stop format string leaking into error msgs
+    - LP: #1193126
+    - CVE-2013-2852
+  * x86: Fix typo in kexec register clearing
+    - LP: #1193126
+  * CPU hotplug: provide a generic helper to disable/enable CPU hotplug
+    - LP: #1193126
+  * reboot: rigrate shutdown/reboot to boot cpu
+    - LP: #1193126
+  * kmsg: honor dmesg_restrict sysctl on /dev/kmsg
+    - LP: #1193126
+  * audit: wait_for_auditd() should use TASK_UNINTERRUPTIBLE
+    - LP: #1193126
+  * cciss: fix broken mutex usage in ioctl
+    - LP: #1193126
+  * drivers/rtc/rtc-twl.c: fix missing device_init_wakeup() when booted
+    with device tree
+    - LP: #1193126
+  * swap: avoid read_swap_cache_async() race to deadlock while waiting on
+    discard I/O completion
+    - LP: #1193126
+  * mm/page_alloc.c: fix watermark check in __zone_watermark_ok()
+    - LP: #1193126
+  * mm: migration: add migrate_entry_wait_huge()
+    - LP: #1193126
+  * md/raid1: consider WRITE as successful only if at least one non-Faulty
+    and non-rebuilding drive completed it.
+    - LP: #1193126
+  * md/raid1,raid10: use freeze_array in place of raise_barrier in various
+    places.
+    - LP: #1193126
+  * md/raid1,5,10: Disable WRITE SAME until a recovery strategy is in place
+    - LP: #1193126
+  * Linux 3.8.13.3
+    - LP: #1193126
+  * mfd: lpc_ich: Add support for Intel Avoton SoC
+    - LP: #1196658
+  * tg3: Add support for new 5762 ASIC
+    - LP: #1178899
+  * tg3: Add NVRAM support for 5762
+    - LP: #1178899
+  * tg3: missing break statement in tg3_get_5720_nvram_info()
+    - LP: #1178899
+  * tg3: Fix 5762 NVRAM sizing
+    - LP: #1178899
+  * tg3: Fix data corruption on 5725 with TSO
+    - LP: #1178899
+  * Drivers: hv: Execute shutdown in a thread context
+    - LP: #1180419
+  * usb: dwc3: gadget: req->queued must be forced to false in cleanup
+    - LP: #1199100
+  * idr: fix top layer handling
+    - LP: #1199100
+  * Bluetooth: Add support for atheros 04ca:3004 device to ath3k
+    - LP: #1199100
+  * Bluetooth: Device 0cf3:3008 should map AR 3012
+    - LP: #1199100
+  * regulator: fixed regulator_bulk_enable unwinding code
+    - LP: #1199100
+  * perf: Fix error return code
+    - LP: #1199100
+  * netrom: fix invalid use of sizeof in nr_recvmsg()
+    - LP: #1199100
+  * r8169: honor jumbo settings when chipset is requested to start.
+    - LP: #1199100
+  * nfsd4: don't allow owner override on 4.1 CLAIM_FH opens
+    - LP: #1199100
+  * net: qmi_wwan: fixup missing ethernet header (firmware bug workaround)
+    - LP: #1199100
+  * net: qmi_wwan: fixup destination address (firmware bug workaround)
+    - LP: #1199100
+  * net: qmi_wwan: prevent duplicate mac address on link (firmware bug
+    workaround)
+    - LP: #1199100
+  * Kirkwood: Enable PCIe port 1 on QNAP TS-11x/TS-21x
+    - LP: #1199100
+  * ARM: plat-orion: Fix num_resources and id for ge10 and ge11
+    - LP: #1199100
+  * staging:iio:light:tsl2x7x: fix the error handling in tsl2x7x_probe()
+    - LP: #1199100
+  * tg3: Skip powering down function 0 on certain serdes devices
+    - LP: #1199100
+  * jfs: fix a couple races
+    - LP: #1199100
+  * reiserfs: fix deadlock with nfs racing on create/lookup
+    - LP: #1199100
+  * reiserfs: fix problems with chowning setuid file w/ xattrs
+    - LP: #1199100
+  * reiserfs: fix spurious multiple-fill in reiserfs_readdir_dentry
+    - LP: #1199100
+  * xen-netback: remove skb in xen_netbk_alloc_page
+    - LP: #1199100
+  * xen-netback: fix sparse warning
+    - LP: #1199100
+  * xen-netback: coalesce slots in TX path and fix regressions
+    - LP: #1199100
+  * xen-netback: don't disconnect frontend when seeing oversize packet
+    - LP: #1199100
+  * xen-netback: remove redundent parameter in netbk_count_requests
+    - LP: #1199100
+  * xen-netback: avoid allocating variable size array on stack
+    - LP: #1199100
+  * xen-netback: better names for thresholds
+    - LP: #1199100
+  * xen-netfront: reduce gso_max_size to account for max TCP header
+    - LP: #1199100
+  * iommu/amd: Re-enable IOMMU event log interrupt after handling.
+    - LP: #1199100
+  * xen/events: Handle VIRQ_TIMER before any other hardirq in event loop.
+    - LP: #1199100
+  * klist: del waiter from klist_remove_waiters before wakeup waitting
+    process
+    - LP: #1199100
+  * drm/gma500: Increase max resolution for mode setting
+    - LP: #1199100
+  * libceph: clear messenger auth_retry flag when we authenticate
+    - LP: #1199100
+  * libceph: fix authorizer invalidation
+    - LP: #1199100
+  * libceph: add update_authorizer auth method
+    - LP: #1199100
+  * libceph: wrap auth ops in wrapper functions
+    - LP: #1199100
+  * libceph: wrap auth methods in a mutex
+    - LP: #1199100
+  * MODSIGN: do not send garbage to stderr when enabling modules signature
+    - LP: #1199100
+  * Input: cyttsp - fix memcpy size param
+    - LP: #1199100
+  * clk: remove notifier from list before freeing it
+    - LP: #1199100
+  * USB: f81232: fix device initialisation at open
+    - LP: #1199100
+  * USB: spcp8x5: fix device initialisation at open
+    - LP: #1199100
+  * USB: pl2303: fix device initialisation at open
+    - LP: #1199100
+  * drm/radeon: do not try to uselessly update virtual memory pagetable
+    - LP: #1199100
+  * tg3: Wait for boot code to finish after power on
+    - LP: #1199100
+  * target/iscsi: don't corrupt bh_count in iscsit_stop_time2retain_timer()
+    - LP: #1199100
+  * tcm_qla2xxx: Fix residual for underrun commands that fail
+    - LP: #1199100
+  * powerpc: Fix stack overflow crash in resume_kernel when ftracing
+    - LP: #1199100
+  * powerpc: Fix emulation of illegal instructions on PowerNV platform
+    - LP: #1199100
+  * powerpc: Fix missing/delayed calls to irq_work
+    - LP: #1199100
+  * tilepro: work around module link error with gcc 4.7
+    - LP: #1199100
+  * ALSA: usb-audio: work around Android accessory firmware bug
+    - LP: #1199100
+  * ALSA: usb-audio: Fix invalid volume resolution for Logitech HD Webcam
+    c310
+    - LP: #1199100
+  * ARM: 7752/1: errata: LoUIS bit field in CLIDR register is incorrect
+    - LP: #1199100
+  * ARM: 7754/1: Fix the CPU ID and the mask associated to the PJ4B
+    - LP: #1199100
+  * ARM: 7755/1: handle user space mapped pages in flush_kernel_dcache_page
+    - LP: #1199100
+  * KVM: x86: remove vcpu's CPL check in host-invoked XCR set
+    - LP: #1199100
+  * x86: fix build error and kconfig for ia32_emulation and binfmt
+    - LP: #1199100
+  * x86: kvmclock: zero initialize pvclock shared memory area
+    - LP: #1199100
+  * USB: serial: ti_usb_3410_5052: new device id for Abbot strip port cable
+    - LP: #1199100
+  * perf: arm64: Record the user-mode PC in the call chain.
+    - LP: #1199100
+  * drm/radeon: update lockup tracking when scheduling in empty ring
+    - LP: #1199100
+  * tcp: fix tcp_md5_hash_skb_data()
+    - LP: #1199100
+  * gianfar: add missing iounmap() on error in gianfar_ptp_probe()
+    - LP: #1199100
+  * vxlan: Update vxlan fdb 'used' field after each usage
+    - LP: #1199100
+  * ipv6: fix possible crashes in ip6_cork_release()
+    - LP: #1199100
+  * netlabel: improve domain mapping validation
+    - LP: #1199100
+  * r8169: fix offloaded tx checksum for small packets.
+    - LP: #1199100
+  * 8139cp: reset BQL when ring tx ring cleared
+    - LP: #1199100
+  * tcp: bug fix in proportional rate reduction.
+    - LP: #1199100
+  * tcp: xps: fix reordering issues
+    - LP: #1199100
+  * ip_tunnel: fix kernel panic with icmp_dest_unreach
+    - LP: #1199100
+  * net: phy: fix a bug when verify the EEE support
+    - LP: #1199100
+  * ipv4: fix redirect handling for TCP packets
+    - LP: #1199100
+  * net: Block MSG_CMSG_COMPAT in send(m)msg and recv(m)msg
+    - LP: #1199100
+  * net/core/sock.c: add missing VSOCK string in af_family_*_key_strings
+    - LP: #1199100
+  * tuntap: forbid changing mq flag for persistent device
+    - LP: #1199100
+  * net: force a reload of first item in hlist_nulls_for_each_entry_rcu
+    - LP: #1199100
+  * ipv6: assign rt6_info to inet6_ifaddr in init_loopback
+    - LP: #1199100
+  * vhost_net: clear msg.control for non-zerocopy case during tx
+    - LP: #1199100
+  * net: sctp: fix NULL pointer dereference in socket destruction
+    - LP: #1199100
+  * tuntap: set SOCK_ZEROCOPY flag during open
+    - LP: #1199100
+  * team: check return value of team_get_port_by_index_rcu() for NULL
+    - LP: #1199100
+  * team: move add to port list before port enablement
+    - LP: #1199100
+  * packet: packet_getname_spkt: make sure string is always 0-terminated
+    - LP: #1199100
+  * l2tp: Fix PPP header erasure and memory leak
+    - LP: #1199100
+  * l2tp: Fix sendmsg() return value
+    - LP: #1199100
+  * sctp: fully initialize sctp_outq in sctp_outq_init
+    - LP: #1199100
+  * net: sh_eth: fix incorrect RX length error if R8A7740
+    - LP: #1199100
+  * hw_breakpoint: Fix cpu check in task_bp_pinned(cpu)
+    - LP: #1199100
+  * hw_breakpoint: Use cpu_possible_mask in {reserve,release}_bp_slot()
+    - LP: #1199100
+  * s390/ipl: Fix FCP WWPN and LUN format strings for read
+    - LP: #1199100
+  * ARM: 7772/1: Fix missing flush_kernel_dcache_page() for noMMU
+    - LP: #1199100
+  * libata-acpi: add back ACPI based hotplug functionality
+    - LP: #1199100
+  * iwlwifi: dvm: fix chain noise calibration
+    - LP: #1199100
+  * rt2800: fix RT5390 & RT3290 TX power settings regression
+    - LP: #1199100
+  * Bluetooth: Fix crash in l2cap_build_cmd() with small MTU
+    - LP: #1199100
+  * Bluetooth: Fix invalid length check in l2cap_information_rsp()
+    - LP: #1199100
+  * ath9k_htc: Handle IDLE state transition properly
+    - LP: #1199100
+  * dlci: acquire rtnl_lock before calling __dev_get_by_name()
+    - LP: #1199100
+  * dlci: validate the net device in dlci_del()
+    - LP: #1199100
+  * KVM: x86: fix deadlock in clock-in-progress request handling
+    - LP: #1199100
+  * Linux 3.8.13.4
+    - LP: #1199100
+
  -- Kaj Ailomaa <zequence@mousike.me>  Tue, 16 Jul 2013 18:42:44 +0200
 
 linux-lowlatency (3.8.0-26.18) raring; urgency=low
