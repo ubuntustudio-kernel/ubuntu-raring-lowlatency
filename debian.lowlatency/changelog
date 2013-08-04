@@ -4,6 +4,344 @@ linux-lowlatency (3.8.0-28.20) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-28.41 ]
+
+  * Release Tracking Bug
+    - LP: #1205373
+  * [Config] add iwldvm to nic-modules
+    - LP: #1204194
+  * [Config] added qlcnic driver to d-i modules
+    - LP: #1196597
+  * SAUCE: ARM: highbank: Only touch common coherency control register
+    fields
+    - LP: #1196946
+  * hp-wmi: add more definitions for new event_id's
+    - LP: #1152458
+  * MFD: rtsx_pcr: Fix probe fail path
+    - LP: #1201321
+  * mfd: rtsx: Add support for RTL8411B
+    - LP: #1201321
+  * veth: reduce stat overhead
+    - LP: #1201869
+  * veth: extend device features
+    - LP: #1201869
+  * veth: avoid a NULL deref in veth_stats_one
+    - LP: #1201869
+  * Input: elantech - fix for newer hardware versions (v7)
+    - LP: #1166442
+  * UBIFS: correct mount message
+    - LP: #1204666
+  * zfcp: fix adapter (re)open recovery while link to SAN is down
+    - LP: #1204666
+  * zfcp: block queue limits with data router
+    - LP: #1204666
+  * zfcp: status read buffers on first adapter open with link down
+    - LP: #1204666
+  * ahci: Add AMD CZ SATA device ID
+    - LP: #1204666
+  * i2c-piix4: Add AMD CZ SMBus device ID
+    - LP: #1204666
+  * sata_highbank: increase retry count but shorten duration for Calxeda
+    controller
+    - LP: #1204666
+  * clocksource: dw_apb: Fix error check
+    - LP: #1204666
+  * zram: avoid invalid memory access in zram_exit()
+    - LP: #1204666
+  * zram: use zram->lock to protect zram_free_page() in swap free notify
+    path
+    - LP: #1204666
+  * zram: destroy all devices on error recovery path in zram_init()
+    - LP: #1204666
+  * zram: avoid access beyond the zram device
+    - LP: #1204666
+  * zram: protect sysfs handler from invalid memory access
+    - LP: #1204666
+  * pcmcia: at91_cf: fix gpio_get_value in at91_cf_get_status
+    - LP: #1204666
+  * PCI: Fix refcount issue in pci_create_root_bus() error recovery path
+    - LP: #1204666
+  * ahci: remove pmp link online check in FBS EH
+    - LP: #1204666
+  * usb: gadget: f_mass_storage: add missing memory barrier for
+    thread_wakeup_needed
+    - LP: #1204666
+  * x86, efi: retry ExitBootServices() on failure
+    - LP: #1204666
+  * libata: skip SRST for all SIMG [34]7x port-multipliers
+    - LP: #1204666
+  * ASoC: wm8962: Remove remaining direct register cache accesses
+    - LP: #1204666
+  * xen/pcifront: Deal with toolstack missing 'XenbusStateClosing' state.
+    - LP: #1204666
+  * ACPICA: Do not use extended sleep registers unless HW-reduced bit is
+    set
+    - LP: #1204666
+  * ALSA: hda - Cache the MUX selection for generic HDMI
+    - LP: #1204666
+  * cgroup: fix umount vs cgroup_cfts_commit() race
+    - LP: #1204666
+  * cgroup: fix umount vs cgroup_event_remove() race
+    - LP: #1204666
+  * xhci: check for failed dma pool allocation
+    - LP: #1204666
+  * powerpc/eeh: Fix fetching bus for single-dev-PE
+    - LP: #1204666
+  * ata_piix: IDE-mode SATA patch for Intel Coleto Creek DeviceIDs
+    - LP: #1204666
+  * ahci: AHCI-mode SATA patch for Intel Coleto Creek DeviceIDs
+    - LP: #1204666
+  * ARM: 7765/1: perf: Record the user-mode PC in the call chain.
+    - LP: #1204666
+  * mpt2sas: Fix for issue Missing delay not getting set during system
+    bootup
+    - LP: #1204666
+  * mpt2sas: Fix for device scan following host reset could get stuck in a
+    infinite loop
+    - LP: #1204666
+  * mpt2sas: fix firmware failure with wrong task attribute
+    - LP: #1204666
+  * usb: host: xhci-plat: release mem region while removing module
+    - LP: #1204666
+  * USB: option,qcserial: move Novatel Gobi1K IDs to qcserial
+    - LP: #1204666
+  * powerpc/hw_brk: Fix setting of length for exact mode breakpoints
+    - LP: #1204666
+  * crypto: algboss - Hold ref count on larval
+    - LP: #1204666
+  * x86: Fix /proc/mtrr with base/size more than 44bits
+    - LP: #1204666
+  * futex: Take hugepages into account when generating futex_key
+    - LP: #1204666
+  * pch_uart: Add uart_clk selection for the MinnowBoard
+    - LP: #1204666
+  * perf: Disable monitoring on setuid processes for regular users
+    - LP: #1204666
+  * sd: Fix parsing of 'temporary ' cache mode prefix
+    - LP: #1204666
+  * Handle big endianness in NTLM (ntlmv2) authentication
+    - LP: #1204666
+  * sd: Update WRITE SAME heuristics
+    - LP: #1204666
+  * aacraid: Fix for arrays are going offline in the system. System hangs
+    - LP: #1204666
+  * genirq: Fix can_request_irq() for IRQs without an action
+    - LP: #1204666
+  * timer: Fix jiffies wrap behavior of round_jiffies_common()
+    - LP: #1204666
+  * xen/time: remove blocked time accounting from xen "clockchip"
+    - LP: #1204666
+  * UBIFS: prepare to fix a horrid bug
+    - LP: #1204666
+  * UBIFS: fix a horrid bug
+    - LP: #1204666
+  * powerpc/smp: Section mismatch from smp_release_cpus to __initdata
+    spinning_secondaries
+    - LP: #1204666
+  * ext4: fix corruption when online resizing a fs with 1K block size
+    - LP: #1204666
+  * jbd2: move superblock checksum calculation to jbd2_write_superblock()
+    - LP: #1204666
+  * ext3,ext4: don't mess with dir_file->f_pos in htree_dirblock_to_tree()
+    - LP: #1204666
+  * jbd2: fix theoretical race in jbd2__journal_restart
+    - LP: #1204666
+  * tick: Prevent uncontrolled switch to oneshot mode
+    - LP: #1204666
+  * md/raid10: fix two bugs affecting RAID10 reshape.
+    - LP: #1204666
+  * HID: apple: Add support for the 2013 Macbook Air
+    - LP: #1204666
+  * Input: bcm5974 - add support for the 2013 MacBook Air
+    - LP: #1204666
+  * drivers/dma/pl330.c: fix locking in pl330_free_chan_resources()
+    - LP: #1204666
+  * ocfs2: xattr: fix inlined xattr reflink
+    - LP: #1204666
+  * block: do not pass disk names as format strings
+    - LP: #1204666
+    - CVE-2013-2851
+  * crypto: sanitize argument for format string
+    - LP: #1204666
+  * mm/memory-hotplug: fix lowmem count overflow when offline pages
+    - LP: #1204666
+  * drivers/rtc/rtc-rv3029c2.c: fix disabling AIE irq
+    - LP: #1204666
+  * nbd: correct disconnect behavior
+    - LP: #1204666
+  * hpfs: better test for errors
+    - LP: #1204666
+  * ext3: fix data=journal fast mount/umount hang
+    - LP: #1204666
+  * netfilter: xt_TCPOPTSTRIP: fix possible mangling beyond packet boundary
+    - LP: #1204666
+  * netfilter: ipt_ULOG: fix non-null terminated string in the nf_log path
+    - LP: #1204666
+  * netfilter: add nf_ipv6_ops hook to fix xt_addrtype with IPv6
+    - LP: #1204666
+  * ipvs: Fix reuse connection if real server is dead
+    - LP: #1204666
+  * netfilter: xt_LOG: fix mark logging for IPv6 packets
+    - LP: #1204666
+  * ipvs: info leak in __ip_vs_get_dest_entries()
+    - LP: #1204666
+  * netfilter: nfnetlink_cttimeout: fix incomplete dumping of objects
+    - LP: #1204666
+  * netfilter: nfnetlink_acct: fix incomplete dumping of objects
+    - LP: #1204666
+  * netfilter: xt_TCPMSS: Fix violation of RFC879 in absence of MSS option
+    - LP: #1204666
+  * netfilter: xt_TCPOPTSTRIP: don't use tcp_hdr()
+    - LP: #1204666
+  * netfilter: xt_TCPMSS: Fix missing fragmentation handling
+    - LP: #1204666
+  * netfilter: xt_TCPMSS: Fix IPv6 default MSS too
+    - LP: #1204666
+  * ipvs: SCTP ports should be writable in ICMP packets
+    - LP: #1204666
+  * tracing: Use current_uid() for critical time tracing
+    - LP: #1204666
+  * ext4: fix overflow when counting used blocks on 32-bit architectures
+    - LP: #1204666
+  * ext4: fix data offset overflow in ext4_xattr_fiemap() on 32-bit archs
+    - LP: #1204666
+  * ext4: fix overflows in SEEK_HOLE, SEEK_DATA implementations
+    - LP: #1204666
+  * ext4: fix data offset overflow on 32-bit archs in
+    ext4_inline_data_fiemap()
+    - LP: #1204666
+  * iommu/vt-d: add quirk for broken interrupt remapping on 55XX chipsets
+    - LP: #1204666
+  * iommu: Fix compile warnings with forward declarations
+    - LP: #1204666
+  * dma: tegra: avoid channel lock up after free
+    - LP: #1204666
+  * drivers/cdrom/cdrom.c: use kzalloc() for failing hardware
+    - LP: #1204666
+  * printk: Fix rq->lock vs logbuf_lock unlock lock inversion
+    - LP: #1204666
+  * charger-manager: Ensure event is not used as format string
+    - LP: #1204666
+  * drm/radeon: add backlight quirk for hybrid mac
+    - LP: #1204666
+  * b43: ensue that BCMA is "y" when B43 is "y"
+    - LP: #1204666
+  * ath9k_hw: Assign default xlna config for AR9485
+    - LP: #1204666
+  * ath9k: Do not assign noise for NULL caldata
+    - LP: #1204666
+  * iwlwifi: pcie: fix race in queue unmapping
+    - LP: #1204666
+  * iwlwifi: pcie: wake the queue if stopped when being unmapped
+    - LP: #1204666
+  * rtlwifi: rtl8192cu: Add new USB ID for TP-Link TL-WN8200ND
+    - LP: #1204666
+  * media: dmxdev: remove dvb_ringbuffer_flush() on writer side
+    - LP: #1204666
+  * MIPS: Octeon: Don't clobber bootloader data structures.
+    - LP: #1204666
+  * iommu/amd: Only unmap large pages from the first pte
+    - LP: #1204666
+  * rt2x00: read 5GHz TX power values from the correct offset
+    - LP: #1204666
+  * rtlwifi: rtl8723ae: Fix typo in firmware names
+    - LP: #1204666
+  * writeback: Fix periodic writeback after fs mount
+    - LP: #1204666
+  * drm/i915: Fix context sizes on HSW
+    - LP: #1204666
+  * drm/i915: Only clear write-domains after a successful wait-seqno
+    - LP: #1204666
+  * nfsd4: fix decoding of compounds across page boundaries
+    - LP: #1204666
+  * svcrpc: fix handling of too-short rpc's
+    - LP: #1204666
+  * svcrpc: don't error out on small tcp fragment
+    - LP: #1204666
+  * ARM: shmobile: emev2 GIO3 resource fix
+    - LP: #1204666
+  * Btrfs: fix unlock after free on rewinded tree blocks
+    - LP: #1204666
+  * Btrfs: hold the tree mod lock in __tree_mod_log_rewind
+    - LP: #1204666
+  * Btrfs: only do the tree_mod_log_free_eb if this is our last ref
+    - LP: #1204666
+  * uprobes: Fix return value in error handling path
+    - LP: #1204666
+  * module: do percpu allocation after uniqueness check. No, really!
+    - LP: #1204666
+  * libceph: Fix NULL pointer dereference in auth client code
+    - LP: #1204666
+    - CVE-2013-1059
+  * use sensible file nlink values if unprovided
+    - LP: #1204666
+  * drm/nouveau: use vmalloc for pgt allocation
+    - LP: #1204666
+  * drm/nva3/disp: Fix HDMI audio regression
+    - LP: #1204666
+  * ACPI / power: add missing newline to debug messages
+    - LP: #1204666
+  * megaraid_sas: fix memory leak if SGL has zero length entries
+    - LP: #1204666
+  * iscsi-target: Fix tfc_tpg_nacl_auth_cit configfs length overflow
+    - LP: #1204666
+  * mpt3sas: fix for kernel panic when driver loads with HBA conected to
+    non LUN 0 configured expander
+    - LP: #1204666
+  * mpt3sas: Infinite loops can occur if MPI2_IOCSTATUS_CONFIG_INVALID_PAGE
+    is not returned
+    - LP: #1204666
+  * parisc: Fix gcc miscompilation in pa_memcpy()
+    - LP: #1204666
+  * ARM: 7778/1: smp_twd: twd_update_frequency need be run on all online
+    CPUs
+    - LP: #1204666
+  * dm mpath: fix ioctl deadlock when no paths
+    - LP: #1204666
+  * dm ioctl: set noio flag to avoid __vmalloc deadlock
+    - LP: #1204666
+  * dm verity: fix inability to use a few specific devices sizes
+    - LP: #1204666
+  * CIFS: Fix a deadlock when a file is reopened
+    - LP: #1204666
+  * perf: Clone child context from parent context pmu
+    - LP: #1204666
+  * perf: Remove WARN_ON_ONCE() check in __perf_event_enable() for valid
+    scenario
+    - LP: #1204666
+  * perf: Fix perf_lock_task_context() vs RCU
+    - LP: #1204666
+  * x86, efivars: firmware bug workarounds should be in platform code
+    - LP: #1204666
+  * x86, efi: remove duplicate code in setup_arch() by using,
+    efi_is_native()
+    - LP: #1204666
+  * x86,efi: Implement efi_no_storage_paranoia parameter
+    - LP: #1204666
+  * Modify UEFI anti-bricking code
+    - LP: #1204666
+  * x86/efi: Fix dummy variable buffer allocation
+    - LP: #1204666
+  * lockd: protect nlm_blocked access in nlmsvc_retry_blocked
+    - LP: #1204666
+  * ext4: don't show usrquota/grpquota twice in /proc/mounts
+    - LP: #1204666
+  * ext4: don't allow ext4_free_blocks() to fail due to ENOMEM
+    - LP: #1204666
+  * svcrdma: underflow issue in decode_write_list()
+    - LP: #1204666
+  * Linux 3.8.13.5
+    - LP: #1204666
+  * fanotify: info leak in copy_event_to_user()
+    - LP: #1188356
+    - CVE-2013-2148
+  * ipv6: only static routes qualify for equal cost multipathing
+    - LP: #1202990
+    - CVE-2013-4125
+  * vhost-net: fix use-after-free in vhost_net_flush
+    - LP: #1202992
+    - CVE-2013-4127
+
  -- Kaj Ailomaa <zequence@mousike.me>  Sun, 04 Aug 2013 22:52:55 +0200
 
 linux-lowlatency (3.8.0-27.19) raring; urgency=low
