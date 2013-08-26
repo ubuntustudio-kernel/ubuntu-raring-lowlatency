@@ -4,6 +4,199 @@ linux-lowlatency (3.8.0-30.22) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-30.44 ]
+
+  * Release Tracking Bug
+    - LP: #1215596
+  * Don't attempt to send extended INQUIRY command if skip_vpd_pages is set
+    - LP: #1215155
+
+  [ Ubuntu: 3.8.0-30.43 ]
+
+  * Release Tracking Bug
+    - LP: #1215095
+  * [Packaging] supply perf with appropriate prefix to ensure use of local
+    config
+    - LP: #1206200
+    - CVE-2013-1060
+  * Start new release
+  * Revert "SAUCE: (no-up) AppArmor: Disable Add PR_{GET,SET}_NO_NEW_PRIVS
+    to prevent execve from granting privs"
+    - LP: #1202161
+  * SAUCE: (no-up) intel_ips: blacklist ASUSTek G60JX laptops
+    - LP: #1210848
+  * SAUCE: (no-up) Revert "SAUCE: (no-up) drm/i915: quirk no PCH_PWM_ENABLE
+    for Dell XPS13 backlight"
+  * [Config] Include rbd and kvm in the virtual inclusion list
+    - LP: #1206961
+  * Revert "drm/i915: Workaround incoherence between fences and LLC across
+    multiple CPUs"
+    - LP: #1207977
+  * xen/blkback: Check device permissions before allowing OP_DISCARD
+    - LP: #1207977
+  * ASoC: sglt5000: Fix the default value of CHIP_SSS_CTRL
+    - LP: #1207977
+  * ASoC: sglt5000: Fix SGTL5000_PLL_FRAC_DIV_MASK
+    - LP: #1207977
+  * drm/i915: Correct obj->mm_list link to
+    dev_priv->dev_priv->mm.inactive_list
+    - LP: #1207977
+  * drm/i915: fix up ring cleanup for the i830/i845 CS tlb w/a
+    - LP: #1207977
+  * Partially revert "drm/i915: unconditionally use mt forcewake on
+    hsw/ivb"
+    - LP: #1207977
+  * drm/i915: Fix write-read race with multiple rings
+    - LP: #1207977
+  * drm/i915: merge {i965, sandybridge}_write_fence_reg()
+    - LP: #1207977
+  * drm/i915: Fix incoherence with fence updates on Sandybridge+
+    - LP: #1207977
+  * drm/i915: rename sdvox_reg to hdmi_reg on HDMI context
+    - LP: #1207977
+  * drm/i915: don't setup hdmi for port D edp in ddi_init
+    - LP: #1207977
+  * drm/i915: Preserve the DDI_A_4_LANES bit from the bios
+    - LP: #1207977
+  * drm/radeon/hdmi: make sure we have an afmt block assigned
+    - LP: #1207977
+  * drm/radeon: allocate SA bo in the requested domain
+    - LP: #1207977
+  * drm/radeon: allow selection of alignment in the sub-allocator
+    - LP: #1207977
+  * ACPI / memhotplug: Fix a stale pointer in error path
+    - LP: #1207977
+  * PM / Sleep: avoid 'autosleep' in shutdown progress
+    - LP: #1207977
+  * ext4: fix error handling in ext4_ext_truncate()
+    - LP: #1207977
+  * radeon kms: do not flush uninitialized hotplug work
+    - LP: #1207977
+  * ALSA: asihpi: Fix unlocked snd_pcm_stop() call
+    - LP: #1207977
+  * ALSA: atiixp: Fix unlocked snd_pcm_stop() call
+    - LP: #1207977
+  * ALSA: 6fire: Fix unlocked snd_pcm_stop() call
+    - LP: #1207977
+  * ALSA: ua101: Fix unlocked snd_pcm_stop() call
+    - LP: #1207977
+  * ALSA: usx2y: Fix unlocked snd_pcm_stop() call
+    - LP: #1207977
+  * ALSA: pxa2xx: Fix unlocked snd_pcm_stop() call
+    - LP: #1207977
+  * ASoC: atmel: Fix unlocked snd_pcm_stop() call
+    - LP: #1207977
+  * ASoC: s6000: Fix unlocked snd_pcm_stop() call
+    - LP: #1207977
+  * saa7134: Fix unlocked snd_pcm_stop() call
+    - LP: #1207977
+  * staging: line6: Fix unlocked snd_pcm_stop() call
+    - LP: #1207977
+  * x86, suspend: Handle CPUs which fail to #GP on RDMSR
+    - LP: #1207977
+  * ALSA: hda - Add new GPU codec ID to snd-hda
+    - LP: #1207977
+  * drm/i915: fix long-standing SNB regression in power consumption after
+    resume v2
+    - LP: #1207977
+  * ACPI / video: ignore BIOS initial backlight value for Fujitsu E753
+    - LP: #1207977
+  * arm64: mm: don't treat user cache maintenance faults as writes
+    - LP: #1207977
+  * Btrfs: fix lock leak when resuming snapshot deletion
+    - LP: #1207977
+  * Btrfs: re-add root to dead root list if we stop dropping it
+    - LP: #1207977
+  * drm/i915: inverted brightness quirk for Acer Aspire 4736Z
+    - LP: #1207977
+  * drm/i915: quirk no PCH_PWM_ENABLE for Dell XPS13 backlight
+    - LP: #1162026, #1163720, #1207977
+  * drm/i915: Serialize almost all register access
+    - LP: #1207977
+  * drm/i915: fix up gt init sequence fallout
+    - LP: #1207977
+  * powerpc/modules: Module CRC relocation fix causes perf issues
+    - LP: #1207977
+  * sparc32: vm_area_struct access for old Sun SPARCs.
+    - LP: #1207977
+  * sparc64 address-congruence property
+    - LP: #1207977
+  * sparc: tsb must be flushed before tlb
+    - LP: #1207977
+  * bridge: fix switched interval for MLD Query types
+    - LP: #1207977
+  * ipv4: Fixed MD5 key lookups when adding/ removing MD5 to/ from TCP
+    sockets.
+    - LP: #1207977
+  * ipv6: don't call addrconf_dst_alloc again when enable lo
+    - LP: #1207977
+  * macvtap: fix recovery from gup errors
+    - LP: #1207977
+  * ipv6: ip6_sk_dst_check() must not assume ipv6 dst
+    - LP: #1207977
+  * af_key: fix info leaks in notify messages
+    - LP: #1207977
+  * sh_eth: fix unhandled RFE interrupt
+    - LP: #1207977
+  * neighbour: fix a race in neigh_destroy()
+    - LP: #1207977
+  * x25: Fix broken locking in ioctl error paths.
+    - LP: #1207977
+  * net: Swap ver and type in pppoe_hdr
+    - LP: #1207977
+  * vti: remove duplicated code to fix a memory leak
+    - LP: #1207977
+  * ipv6,mcast: always hold idev->lock before mca_lock
+    - LP: #1207977
+  * l2tp: add missing .owner to struct pppox_proto
+    - LP: #1207977
+  * ipv6: call udp_push_pending_frames when uncorking a socket with AF_INET
+    pending data
+    - LP: #1207977
+  * ipv6: ip6_append_data_mtu did not care about pmtudisc and frag_size
+    - LP: #1207977
+  * sunvnet: vnet_port_remove must call unregister_netdev
+    - LP: #1207977
+  * ifb: fix rcu_sched self-detected stalls
+    - LP: #1207977
+  * tuntap: correctly linearize skb when zerocopy is used
+    - LP: #1207977
+  * macvtap: correctly linearize skb when zerocopy is used
+    - LP: #1207977
+  * ipv6: in case of link failure remove route directly instead of letting
+    it expire
+    - LP: #1207977
+  * 9p: fix off by one causing access violations and memory corruption
+    - LP: #1207977
+  * dummy: fix oops when loading the dummy failed
+    - LP: #1207977
+  * ifb: fix oops when loading the ifb failed
+    - LP: #1207977
+  * atl1e: fix dma mapping warnings
+    - LP: #1207977
+  * atl1e: unmap partially mapped skb on dma error and free skb
+    - LP: #1207977
+  * ipv4: set transport header earlier
+    - LP: #1207977
+  * tuntap: do not zerocopy if iov needs more pages than MAX_SKB_FRAGS
+    - LP: #1207977
+  * macvtap: do not zerocopy if iov needs more pages than MAX_SKB_FRAGS
+    - LP: #1207977
+  * vlan: fix a race in egress prio management
+    - LP: #1207977
+  * Linux 3.8.13.6
+    - LP: #1207977
+  * Fix HDIO_DRIVE_* ioctl() Linux 3.9 regression
+    - LP: #1182247
+  * block/partitions: optimize memory allocation in check_partition()
+    - LP: #1206837
+  * ALSA: hda - Add power state filtering
+    - LP: #1183125
+  * ALSA: hda - Yet another fix for broken HSW HDMI pin connections
+    - LP: #1183125
+  * ALSA: hda - Apply pin-enablement workaround to all Haswell HDMI codecs
+    - LP: #1183125
+
  -- Kaj Ailomaa <zequence@mousike.me>  Mon, 26 Aug 2013 14:17:44 +0200
 
 linux-lowlatency (3.8.0-29.21) raring; urgency=low
