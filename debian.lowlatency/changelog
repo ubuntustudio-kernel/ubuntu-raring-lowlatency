@@ -4,6 +4,264 @@ linux-lowlatency (3.8.0-32.24) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-32.47 ]
+
+  * Release Tracking Bug
+    - LP: #1233777
+  * Revert "net/core/sock.c: add missing VSOCK string in
+    af_family_*_key_strings"
+    - LP: #1233227
+  * Input: cypress_ps2 - Return zero finger count if palm is detected.
+    - LP: #1229361
+  * isofs: Refuse RW mount of the filesystem instead of making it RO
+    - LP: #1228751
+  * udf: Standardize return values in mount sequence
+    - LP: #1228751
+  * udf: Refuse RW mount of the filesystem instead of making it RO
+    - LP: #1228751
+  * ARM: update FIQ support for relocation of vectors
+    - LP: #1233227
+  * ARM: Fix FIQ code on VIVT CPUs
+    - LP: #1233227
+  * regmap: Add another missing header for !CONFIG_REGMAP stubs
+    - LP: #1233227
+  * ALSA: hda - Add inverted digital mic fixup for Acer Aspire One
+    - LP: #1233227
+  * mac80211: add missing channel context release
+    - LP: #1233227
+  * iwl4965: fix rfkill set state regression
+    - LP: #1233227
+  * ath9k_htc: Restore skb headroom when returning skb to mac80211
+    - LP: #1233227
+  * ath9k: Enable PLL fix only for AR9340/AR9330
+    - LP: #1233227
+  * ALSA: hda - Fix NULL dereference with CONFIG_SND_DYNAMIC_MINORS=n
+    - LP: #1233227
+  * lparcfg: don't bother saving pointer to proc_dir_entry
+    - LP: #1233227
+  * powerpc/pseries/lparcfg: Fix possible overflow are more than 1026
+    - LP: #1233227
+  * powerpc: Don't Oops when accessing /proc/powerpc/lparcfg without
+    hypervisor
+    - LP: #1233227
+  * powerpc: Work around gcc miscompilation of __pa() on 64-bit
+    - LP: #1233227
+  * powerpc/hvsi: Increase handshake timeout from 200ms to 400ms.
+    - LP: #1233227
+  * net: Check the correct namespace when spoofing pid over SCM_RIGHTS
+    - LP: #1233227
+  * ALSA: opti9xx: Fix conflicting driver object name
+    - LP: #1233227
+  * SUNRPC: Fix memory corruption issue on 32-bit highmem systems
+    - LP: #1233227
+  * drivers/base/memory.c: fix show_mem_removable() to handle missing
+    sections
+    - LP: #1233227
+  * memcg: check that kmem_cache has memcg_params before accessing it
+    - LP: #1233227
+  * workqueue: cond_resched() after processing each work item
+    - LP: #1233227
+  * drm/i915: ivb: fix edp voltage swing reg val
+    - LP: #1233227
+  * drm/vmwgfx: Split GMR2_REMAP commands if they are to large
+    - LP: #1233227
+  * af_key: initialize satype in key_notify_policy_flush()
+    - LP: #1233227
+  * Linux 3.8.13.9
+    - LP: #1233227
+  * zram: allow request end to coincide with disksize
+    - LP: #1233227
+  * mtd: nand: fix NAND_BUSWIDTH_AUTO for x16 devices
+    - LP: #1233227
+  * HID: hidraw: correctly deallocate memory on device disconnect
+    - LP: #1233227
+  * xen-gnt: prevent adding duplicate gnt callbacks
+    - LP: #1233227
+  * ath9k: always clear ps filter bit on new assoc
+    - LP: #1233227
+  * ceph: Don't forget the 'up_read(&osdc->map_sem)' if met error.
+    - LP: #1233227
+  * libceph: unregister request in __map_request failed and nofail == false
+    - LP: #1233227
+  * usb: config->desc.bLength may not exceed amount of data returned by the
+    device
+    - LP: #1233227
+  * USB: cdc-wdm: fix race between interrupt handler and tasklet
+    - LP: #1233227
+  * powerpc: Handle unaligned ldbrx/stdbrx
+    - LP: #1233227
+  * intel-iommu: Fix leaks in pagetable freeing
+    - LP: #1233227
+  * drivers/misc/hpilo: Correct panic when an AUX iLO is detected
+    - LP: #1233227
+  * USB: handle LPM errors during device suspend correctly
+    - LP: #1233227
+  * xhci-plat: Don't enable legacy PCI interrupts.
+    - LP: #1233227
+  * ath9k: fix rx descriptor related race condition
+    - LP: #1233227
+  * ath9k: avoid accessing MRC registers on single-chain devices
+    - LP: #1233227
+  * brcmsmac: Fix WARNING caused by lack of calls to dma_mapping_error()
+    - LP: #1233227
+  * ext4: simplify truncation code in ext4_setattr()
+    - LP: #1233227
+  * ext4: fix lost truncate due to race with writeback
+    - LP: #1233227
+  * ASoC: wm8960: Fix PLL register writes
+    - LP: #1233227
+  * rculist: list_first_or_null_rcu() should use list_entry_rcu()
+    - LP: #1233227
+  * USB: mos7720: use GFP_ATOMIC under spinlock
+    - LP: #1233227
+  * USB: mos7720: fix big-endian control requests
+    - LP: #1233227
+  * arm64: perf: fix group validation when using enable_on_exec
+    - LP: #1233227
+  * arm64: perf: fix ARMv8 EVTYPE_MASK to include NSH bit
+    - LP: #1233227
+  * staging: comedi: dt282x: dt282x_ai_insn_read() always fails
+    - LP: #1233227
+  * usb: ehci-mxc: check for pdata before dereferencing
+    - LP: #1233227
+  * mmc: tmio_mmc_dma: fix PIO fallback on SDHI
+    - LP: #1233227
+  * proc: Restrict mounting the proc filesystem
+    - LP: #1233227
+  * usb: xhci: Disable runtime PM suspend for quirky controllers
+    - LP: #1233227
+  * USB: OHCI: Allow runtime PM without system sleep
+    - LP: #1233227
+  * pinctrl: at91: fix get_pullup/down function return
+    - LP: #1233227
+  * ACPI / EC: Add HP Folio 13 to ec_dmi_table in order to skip DSDT scan
+    - LP: #1233227
+  * ACPI / EC: Add ASUSTEK L4R to quirk list in order to validate ECDT
+    - LP: #1233227
+  * HID: validate HID report id size
+    - LP: #1233227
+    - CVE-2013-2888
+  * cpuidle: coupled: abort idle if pokes are pending
+    - LP: #1233227
+  * cpuidle: coupled: disable interrupts after entering safe state
+    - LP: #1233227
+  * cpuidle: coupled: fix race condition between pokes and safe state
+    - LP: #1233227
+  * of: Fix missing memory initialization on FDT unflattening
+    - LP: #1233227
+  * leds: wm831x-status: Request a REG resource
+    - LP: #1233227
+  * USB: fix build error when CONFIG_PM_SLEEP isn't enabled
+    - LP: #1233227
+  * clk: wm831x: Initialise wm831x pointer on init
+    - LP: #1233227
+  * drm/edid: add quirk for Medion MD30217PG
+    - LP: #1233227
+  * drm/radeon: fix endian bugs in hw i2c atom routines
+    - LP: #1233227
+  * drm/radeon: update line buffer allocation for dce4.1/5
+    - LP: #1233227
+  * drm/radeon: update line buffer allocation for dce6
+    - LP: #1233227
+  * drm/radeon: fix LCD record parsing
+    - LP: #1233227
+  * drm/radeon: fix resume on some rs4xx boards (v2)
+    - LP: #1233227
+  * drm/radeon: fix handling of variable sized arrays for router objects
+    - LP: #1233227
+  * radeon kms: fix uninitialised hotplug work usage in r100_irq_process()
+    - LP: #1233227
+  * pidns: Fix hang in zap_pid_ns_processes by sending a potentially extra
+    wakeup
+    - LP: #1233227
+  * x86, smap: Handle csum_partial_copy_*_user()
+    - LP: #1233227
+  * Introduce [compat_]save_altstack_ex() to unbreak x86 SMAP
+    - LP: #1233227
+  * drm: fix DRM_IOCTL_MODE_GETFB handle-leak
+    - LP: #1233227
+  * HID: picolcd: Prevent NULL pointer dereference on _remove()
+    - LP: #1233227
+  * HID: battery: don't do DMA from stack
+    - LP: #1233227
+  * ALSA: hda - hdmi: Fallback to ALSA allocation when selecting CA
+    - LP: #1233227
+  * fuse: postpone end_page_writeback() in fuse_writepage_locked()
+    - LP: #1233227
+  * fuse: invalidate inode attributes on xattr modification
+    - LP: #1233227
+  * media: coda: Fix DT driver data pointer for i.MX27
+    - LP: #1233227
+  * s5p-g2d: Fix registration failure
+    - LP: #1233227
+  * DocBook: upgrade media_api DocBook version to 4.2
+    - LP: #1233227
+  * v4l2: added missing mutex.h include to v4l2-ctrls.h
+    - LP: #1233227
+  * hdpvr: fix iteration over uninitialized lists in hdpvr_probe()
+    - LP: #1233227
+  * exynos-gsc: Register v4l2 device
+    - LP: #1233227
+  * fuse: readdir: check for slash in names
+    - LP: #1233227
+  * MIPS: ath79: Fix ar933x watchdog clock
+    - LP: #1233227
+  * libceph: use pg_num_mask instead of pgp_num_mask for pg.seed calc
+    - LP: #1233227
+  * HID: pantherlord: validate output report details
+    - LP: #1233227
+    - CVE-2013-2892
+  * HID: ntrig: validate feature report details
+    - LP: #1233227
+    - CVE-2013-2896
+  * HID: sensor-hub: validate feature report details
+    - LP: #1233227
+    - CVE-2013-2898
+  * HID: picolcd_core: validate output report details
+    - LP: #1233227
+    - CVE-2013-2899
+  * HID: check for NULL field when setting values
+    - LP: #1233227
+  * ARM: PCI: versatile: Fix map_irq function to match hardware
+    - LP: #1233227
+  * ARM: PCI: versatile: Fix PCI I/O
+    - LP: #1233227
+  * ARM: PCI: versatile: Fix SMAP register offsets
+    - LP: #1233227
+  * net: mvneta: properly disable HW PHY polling and ensure adjust_link()
+    works
+    - LP: #1233227
+  * drm/i915: try not to lose backlight CBLV precision
+    - LP: #1233227
+  * crypto: api - Fix race condition in larval lookup
+    - LP: #1233227
+  * cifs: ensure that srv_mutex is held when dealing with ssocket pointer
+    - LP: #1233227
+  * CIFS: Fix a memory leak when a lease break comes
+    - LP: #1233227
+  * ALSA: hda - Add Toshiba Satellite C870 to MSI blacklist
+    - LP: #1233227
+  * lguest: Point to the right directory for the lguest launcher
+    - LP: #1233227
+  * powerpc: Default arch idle could cede processor on pseries
+    - LP: #1233227
+  * ASoC: mc13783: add spi errata fix
+    - LP: #1233227
+  * sd: Fix potential out-of-bounds access
+    - LP: #1233227
+  * pidns: fix vfork() after unshare(CLONE_NEWPID)
+    - LP: #1233227
+  * ocfs2: fix the end cluster offset of FIEMAP
+    - LP: #1233227
+  * mm/huge_memory.c: fix potential NULL pointer dereference
+    - LP: #1233227
+  * mm: fix aio performance regression for database caused by THP
+    - LP: #1233227
+  * memcg: fix multiple large threshold notifications
+    - LP: #1233227
+  * Linux 3.8.13.10
+    - LP: #1233227
+
  -- Kaj Ailomaa <zequence@mousike.me>  Sun, 06 Oct 2013 12:30:09 +0200
 
 linux-lowlatency (3.8.0-31.23) raring; urgency=low
