@@ -4,6 +4,252 @@ linux-lowlatency (3.8.0-33.25) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-33.48 ]
+
+  * Release Tracking Bug
+    - LP: #1242849
+  * SAUCE: (no-up) Only let characters through when there are active
+    readers.
+    - LP: #1208740
+  * cciss: fix info leak in cciss_ioctl32_passthru()
+    - LP: #1188355
+    - CVE-2013-2147
+  * cpqarray: fix info leak in ida_locked_ioctl()
+    - LP: #1188355
+    - CVE-2013-2147
+  * mount: consolidate permission checks
+    - LP: #1226726
+  * get rid of full-hash scan on detaching vfsmounts
+    - LP: #1226726
+  * Smack: Fix the bug smackcipso can't set CIPSO correctly
+    - LP: #1236743
+  * ipvs: add backup_only flag to avoid loops
+    - LP: #1238494
+  * tuntap: correctly handle error in tun_set_iff()
+    - LP: #1229975
+    - CVE-2013-4343
+  * htb: fix sign extension bug
+    - LP: #1240580
+  * net: avoid to hang up on sending due to sysctl configuration overflow.
+    - LP: #1240580
+  * net: check net.core.somaxconn sysctl values
+    - LP: #1240580
+  * macvlan: validate flags
+    - LP: #1240580
+  * neighbour: populate neigh_parms on alloc before calling ndo_neigh_setup
+    - LP: #1240580
+  * bonding: modify only neigh_parms owned by us
+    - LP: #1240580
+  * fib_trie: remove potential out of bound access
+    - LP: #1240580
+  * bridge: don't try to update timers in case of broken MLD queries
+    - LP: #1240580
+  * tcp: cubic: fix overflow error in bictcp_update()
+    - LP: #1240580
+  * tcp: cubic: fix bug in bictcp_acked()
+    - LP: #1240580
+  * ipv6: don't stop backtracking in fib6_lookup_1 if subtree does not
+    match
+    - LP: #1240580
+  * 8139cp: Fix skb leak in rx_status_loop failure path.
+    - LP: #1240580
+  * tun: signedness bug in tun_get_user()
+    - LP: #1240580
+  * ipv6: remove max_addresses check from ipv6_create_tempaddr
+    - LP: #1240580
+  * ipv6: Store Router Alert option in IP6CB directly.
+    - LP: #1240580
+  * ipv6: drop packets with multiple fragmentation headers
+    - LP: #1240580
+  * tcp: set timestamps for restored skb-s
+    - LP: #1240580
+  * net: usb: Add HP hs2434 device to ZLP exception table
+    - LP: #1240580
+  * tcp: initialize rcv_tstamp for restored sockets
+    - LP: #1240580
+  * ipv4: sendto/hdrincl: don't use destination address found in header
+    - LP: #1240580
+  * tcp: tcp_make_synack() should use sock_wmalloc
+    - LP: #1240580
+  * tipc: set sk_err correctly when connection fails
+    - LP: #1240580
+  * net: bridge: convert MLDv2 Query MRC into msecs_to_jiffies for
+    max_delay
+    - LP: #1240580
+  * ICMPv6: treat dest unreachable codes 5 and 6 as EACCES, not EPROTO
+    - LP: #1240580
+  * tg3: Don't turn off led on 5719 serdes port 0
+    - LP: #1240580
+  * vhost_net: poll vhost queue after marking DMA is done
+    - LP: #1240580
+  * net: ipv6: tcp: fix potential use after free in tcp_v6_do_rcv
+    - LP: #1240580
+  * drm/radeon/si: Add support for CP DMA to CS checker for compute v2
+    - LP: #1240580
+  * sfc: Fix efx_rx_buf_offset() for recycled pages
+    - LP: #1240580
+  * cfq: explicitly use 64bit divide operation for 64bit arguments
+    - LP: #1240580
+  * drm/radeon/atom: workaround vbios bug in transmitter table on rs880
+    (v2)
+    - LP: #1240580
+  * drm/ast: fix the ast open key function
+    - LP: #1240580
+  * sched/fair: Fix small race where child->se.parent,cfs_rq might point to
+    invalid ones
+    - LP: #1240580
+  * tg3: Expand led off fix to include 5720
+    - LP: #1240580
+  * HID: provide a helper for validating hid reports
+    - LP: #1240580
+  * HID: zeroplus: validate output report details
+    - LP: #1240580
+    - CVE-2013-2889
+  * HID: LG: validate HID output report details
+    - LP: #1240580
+    - CVE-2013-2893
+  * HID: lenovo-tpkbd: validate output report details
+    - LP: #1240580
+    - CVE-2013-2894
+  * HID: validate feature and input report details
+    - LP: #1240580
+    - CVE-2013-2897
+  * HID: logitech-dj: validate output report details
+    - LP: #1240580
+    - CVE-2013-2895
+  * HID: multitouch: validate indexes details
+    - LP: #1240580
+    - CVE-2013-2897
+  * HID: lenovo-tpkbd: fix leak if tpkbd_probe_tp fails
+    - LP: #1240580
+  * drm/radeon: fix panel scaling with eDP and LVDS bridges
+    - LP: #1240580
+  * cifs: fix filp leak in cifs_atomic_open()
+    - LP: #1240580
+  * net: usb: cdc_ether: Use wwan interface for Telit modules
+    - LP: #1240580
+  * usb: gadget: fix a bug and a WARN_ON in dummy-hcd
+    - LP: #1240580
+  * drm/i915: do not update cursor in crtc mode set
+    - LP: #1240580
+  * drm/i915: Don't enable the cursor on a disable pipe
+    - LP: #1240580
+  * drm/ttm: fix the tt_populated check in ttm_tt_destroy()
+    - LP: #1240580
+  * PCI / ACPI / PM: Clear pme_poll for devices in D3cold on wakeup
+    - LP: #1240580
+  * serial: pch_uart: fix tty-kref leak in dma-rx path
+    - LP: #1240580
+  * x86, efi: Don't map Boot Services on i386
+    - LP: #1240580
+  * ALSA: compress: Fix compress device unregister.
+    - LP: #1240580
+  * dm snapshot: workaround for a false positive lockdep warning
+    - LP: #1240580
+  * dm-snapshot: fix performance degradation due to small hash size
+    - LP: #1240580
+  * drm/radeon: Make r100_cp_ring_info() and radeon_ring_gfx() safe (v2)
+    - LP: #1240580
+  * ARM: 7837/3: fix Thumb-2 bug in AES assembler code
+    - LP: #1240580
+  * x86/reboot: Add quirk to make Dell C6100 use reboot=pci automatically
+    - LP: #1240580
+  * drm/radeon: disable tests/benchmarks if accel is disabled
+    - LP: #1240580
+  * xhci: Fix oops happening after address device timeout
+    - LP: #1240580
+  * xhci: Ensure a command structure points to the correct trb on the
+    command ring
+    - LP: #1240580
+  * drm/i915/dp: increase i2c-over-aux retry interval on AUX DEFER
+    - LP: #1240580
+  * staging: vt6656: [BUG] main_usb.c oops on device_close move flag
+    earlier.
+    - LP: #1240580
+  * staging: vt6656: [BUG] iwctl_siwencodeext return if device not open
+    - LP: #1240580
+  * USB: UHCI: accept very late isochronous URBs
+    - LP: #1240580
+  * USB: OHCI: accept very late isochronous URBs
+    - LP: #1240580
+  * USB: fix PM config symbol in uhci-hcd, ehci-hcd, and xhci-hcd
+    - LP: #1240580
+  * usb/core/devio.c: Don't reject control message to endpoint with wrong
+    direction bit
+    - LP: #1240580
+  * hwmon: (applesmc) Check key count before proceeding
+    - LP: #1240580
+  * fsl/usb: Resolve PHY_CLK_VLD instability issue for ULPI phy
+    - LP: #1240580
+  * driver core : Fix use after free of dev->parent in device_shutdown
+    - LP: #1240580
+  * USB: Fix breakage in ffs_fs_mount()
+    - LP: #1240580
+  * usb: dwc3: pci: add support for BayTrail
+    - LP: #1240580
+  * usb: dwc3: add support for Merrifield
+    - LP: #1240580
+  * ASoC: max98095: a couple array underflows
+    - LP: #1240580
+  * ASoC: ab8500-codec: info leak in anc_status_control_put()
+    - LP: #1240580
+  * ASoC: 88pm860x: array overflow in snd_soc_put_volsw_2r_st()
+    - LP: #1240580
+  * Bluetooth: Add a new PID/VID 0cf3/e005 for AR3012.
+    - LP: #1240580
+  * Bluetooth: Fix security level for peripheral role
+    - LP: #1240580
+  * Bluetooth: Fix encryption key size for peripheral role
+    - LP: #1240580
+  * Bluetooth: Add support for BCM20702A0 [0b05, 17cb]
+    - LP: #1240580
+  * Bluetooth: Introduce a new HCI_RFKILLED flag
+    - LP: #1240580
+  * rtlwifi: Align private space in rtl_priv struct
+    - LP: #1240580
+  * p54usb: add USB ID for Corega WLUSB2GTST USB adapter
+    - LP: #1240580
+  * mwifiex: fix hang issue for USB chipsets
+    - LP: #1240580
+  * mwifiex: fix NULL pointer dereference in usb suspend handler
+    - LP: #1240580
+  * fs/binfmt_elf.c: prevent a coredump with a large vm_map_count from
+    Oopsing
+    - LP: #1240580
+  * nilfs2: fix issue with race condition of competition between segments
+    for dirty blocks
+    - LP: #1240580
+  * mm: avoid reinserting isolated balloon pages into LRU lists
+    - LP: #1240580
+  * USB: serial: option: Ignore card reader interface on Huawei E1750
+    - LP: #1240580
+  * gpio/omap: maintain GPIO and IRQ usage separately
+    - LP: #1240580
+  * gpio/omap: auto-setup a GPIO when used as an IRQ
+    - LP: #1240580
+  * ib_srpt: Destroy cm_id before destroying QP.
+    - LP: #1240580
+  * powerpc: Fix parameter clobber in csum_partial_copy_generic()
+    - LP: #1240580
+  * powerpc: Restore registers on error exit from
+    csum_partial_copy_generic()
+    - LP: #1240580
+  * powerpc/sysfs: Disable writing to PURR in guest mode
+    - LP: #1240580
+  * powerpc/iommu: Use GFP_KERNEL instead of GFP_ATOMIC in
+    iommu_init_table()
+    - LP: #1240580
+  * powerpc/vio: Fix modalias_show return values
+    - LP: #1240580
+  * ib_srpt: always set response for task management
+    - LP: #1240580
+  * xen/hvc: allow xenboot console to be used again
+    - LP: #1240580
+  * net: Update the sysctl permissions handler to test effective uid/gid
+    - LP: #1240580
+  * Linux 3.8.13.11
+    - LP: #1240580
+
  -- Kaj Ailomaa <zequence@mousike.me>  Mon, 28 Oct 2013 15:58:06 +0100
 
 linux-lowlatency (3.8.0-32.24) raring; urgency=low
