@@ -125,6 +125,10 @@ MODULE_PARM_DESC(preliminary_hw_support,
 		"Enable Haswell and ValleyView Support. "
 		"(default: false)");
 
+int i915_disable_pch_pwm __read_mostly = -1;
+module_param_named(disable_pch_pwm, i915_disable_pch_pwm, int, 0600);
+MODULE_PARM_DESC(disable_pch_pwm, "disable PCH_PWM (default: -1 (auto))");
+
 static struct drm_driver driver;
 extern int intel_agp_enabled;
 
