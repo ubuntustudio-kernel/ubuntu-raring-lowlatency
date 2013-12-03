@@ -4,6 +4,216 @@ linux-lowlatency (3.8.0-35.27) UNRELEASED; urgency=low
   CHANGELOG: Use the printchanges target to see the curent changes.
   CHANGELOG: Use the insertchanges target to create the final log.
 
+  [ Ubuntu: 3.8.0-35.50 ]
+
+  * Release Tracking Bug
+    - LP: #1257102
+  * [Config] CONFIG_DEBUG_BUGVERBOSE=y
+    - LP: #1252353
+  * SAUCE: (no-up) drm/i915: i915.disable_pch_pwm overrides PCH_PWM_ENABLE
+    quirk
+    - LP: #1163720
+  * PCI: Allow PCIe Capability link-related register access for switches
+    - LP: #1252987
+  * PCI: Remove PCIe Capability version checks
+    - LP: #1252987
+  * PCI: Support PCIe Capability Slot registers only for ports with slots
+    - LP: #1252987
+  * ACPICA: Interpreter: Fix Store() when implicit conversion is not
+    possible.
+    - LP: #1257026
+  * ACPICA: DeRefOf operator: Update to fully resolve FieldUnit and
+    BufferField refs.
+    - LP: #1257026
+  * ACPICA: Return error if DerefOf resolves to a null package element.
+    - LP: #1257026
+  * ACPICA: Fix for a Store->ArgX when ArgX contains a reference to a
+    field.
+    - LP: #1257026
+  * vxlan: fix ip_select_ident skb parameter
+    - LP: #1257026
+  * tcp: TSO packets automatic sizing
+    - LP: #1257026
+  * tcp: TSQ can use a dynamic limit
+    - LP: #1257026
+  * net: Add skb_unclone() helper function.
+    - LP: #1257026
+  * ipv6: fix warning in xfrm6_mode_tunnel_input
+    - LP: #1257026
+  * ip: fix warning in xfrm4_mode_tunnel_input
+    - LP: #1257026
+  * tcp: must unclone packets before mangling them
+    - LP: #1257026
+  * tcp: do not forget FIN in tcp_shifted_skb()
+    - LP: #1257026
+  * net: do not call sock_put() on TIMEWAIT sockets
+    - LP: #1257026
+  * l2tp: fix kernel panic when using IPv4-mapped IPv6 addresses
+    - LP: #1257026
+  * l2tp: Fix build warning with ipv6 disabled.
+    - LP: #1257026
+  * net: mv643xx_eth: update statistics timer from timer context only
+    - LP: #1257026
+  * net: mv643xx_eth: fix orphaned statistics timer crash
+    - LP: #1257026
+  * net: heap overflow in __audit_sockaddr()
+    - LP: #1257026
+  * proc connector: fix info leaks
+    - LP: #1257026
+  * ipv4: fix ineffective source address selection
+    - LP: #1257026
+  * can: dev: fix nlmsg size calculation in can_get_size()
+    - LP: #1257026
+  * net: secure_seq: Fix warning when CONFIG_IPV6 and CONFIG_INET are not
+    selected
+    - LP: #1257026
+  * xen-netback: Don't destroy the netdev until the vif is shut down
+    - LP: #1257026
+  * net: vlan: fix nlmsg size calculation in vlan_get_size()
+    - LP: #1257026
+  * vti: get rid of nf mark rule in prerouting
+    - LP: #1257026
+  * l2tp: must disable bh before calling l2tp_xmit_skb()
+    - LP: #1257026
+  * farsync: fix info leak in ioctl
+    - LP: #1257026
+  * unix_diag: fix info leak
+    - LP: #1257026
+  * connector: use nlmsg_len() to check message length
+    - LP: #1257026
+  * virtio-net: don't respond to cpu hotplug notifier if we're not ready
+    - LP: #1257026
+  * bridge: Correctly clamp MAX forward_delay when enabling STP
+    - LP: #1257026
+  * net: dst: provide accessor function to dst->xfrm
+    - LP: #1257026
+  * sctp: Use software crc32 checksum when xfrm transform will happen.
+    - LP: #1257026
+  * sctp: Perform software checksum if packet has to be fragmented.
+    - LP: #1257026
+  * wanxl: fix info leak in ioctl
+    - LP: #1257026
+  * net: unix: inherit SOCK_PASS{CRED, SEC} flags from socket to fix race
+    - LP: #1257026
+  * net: fix cipso packet validation when !NETLABEL
+    - LP: #1257026
+  * inet: fix possible memory corruption with UDP_CORK and UFO
+    - LP: #1257026
+  * davinci_emac.c: Fix IFF_ALLMULTI setup
+    - LP: #1257026
+  * jfs: fix error path in ialloc
+    - LP: #1257026
+  * cfg80211: fix warning when using WEXT for IBSS
+    - LP: #1257026
+  * mac80211: drop spoofed packets in ad-hoc mode
+    - LP: #1257026
+  * mac80211: use sta_info_get_bss() for nl80211 tx and client probing
+    - LP: #1257026
+  * mac80211: update sta->last_rx on acked tx frames
+    - LP: #1257026
+  * mwifiex: fix SDIO interrupt lost issue
+    - LP: #1257026
+  * ath9k: fix tx queue scheduling after channel changes
+    - LP: #1257026
+  * libata: make ata_eh_qc_retry() bump scmd->allowed on bogus failures
+    - LP: #1257026
+  * mac80211: correctly close cancelled scans
+    - LP: #1257026
+  * can: flexcan: fix mx28 detection by rearanging OF match table
+    - LP: #1257026
+  * rtlwifi: rtl8192cu: Fix error in pointer arithmetic
+    - LP: #1257026
+  * wireless: radiotap: fix parsing buffer overrun
+    - LP: #1257026
+  * mac80211: fix crash if bitrate calculation goes wrong
+    - LP: #1257026
+  * drm/vmwgfx: Don't put resources with invalid id's on lru list
+    - LP: #1257026
+  * drm/vmwgfx: Don't kill clients on VT switch
+    - LP: #1257026
+  * ecryptfs: Fix memory leakage in keystore.c
+    - LP: #1257026
+  * drm: Prevent overwriting from userspace underallocating core ioctl
+    structs
+    - LP: #1257026
+  * drm: Pad drm_mode_get_connector to 64-bit boundary
+    - LP: #1257026
+  * drm/radeon/atom: workaround vbios bug in transmitter table on rs780
+    - LP: #1257026
+  * md: Fix skipping recovery for read-only arrays.
+    - LP: #1257026
+  * md: avoid deadlock when md_set_badblocks.
+    - LP: #1257026
+  * raid5: set bio bi_vcnt 0 for discard request
+    - LP: #1257026
+  * raid5: avoid finding "discard" stripe
+    - LP: #1257026
+  * target/pscsi: fix return value check
+    - LP: #1257026
+  * vhost/scsi: Fix incorrect usage of get_user_pages_fast write parameter
+    - LP: #1257026
+  * parisc: Do not crash 64bit SMP kernels on machines with >= 4GB RAM
+    - LP: #1257026
+  * dmi: add support for exact DMI matches in addition to substring
+    matching
+    - LP: #1257026
+  * clk: fixup argument order when setting VCO parameters
+    - LP: #1257026
+  * xtensa: don't use alternate signal stack on threads
+    - LP: #1257026
+  * ALSA: hda - Fix unbalanced runtime PM refcount after S3/S4
+    - LP: #1257026
+  * ASoC: dapm: Fix source list debugfs outputs
+    - LP: #1257026
+  * drm/i915: quirk away phantom LVDS on Intel's D510MO mainboard
+    - LP: #1257026
+  * drm/i915: quirk away phantom LVDS on Intel's D525MW mainboard
+    - LP: #1257026
+  * drm/i915: No LVDS hardware on Intel D410PT and D425KT
+    - LP: #1257026
+  * mm: Wait for THP migrations to complete during NUMA hinting faults
+    - LP: #1257026
+  * mm: numa: cleanup flow of transhuge page migration
+    - LP: #1257026
+  * mm: Prevent parallel splits during THP migration
+    - LP: #1257026
+  * mm: numa: Sanitize task_numa_fault() callsites
+    - LP: #1257026
+  * mm: Close races between THP migration and PMD numa clearing
+    - LP: #1257026
+  * mm: Account for a THP NUMA hinting update as one PTE update
+    - LP: #1257026
+  * Fix a few incorrectly checked [io_]remap_pfn_range() calls
+    - LP: #1257026
+  * ALSA: hda - Add a fixup for ASUS N76VZ
+    - LP: #1257026
+  * ASoC: wm_hubs: Add missing break in hp_supply_event()
+    - LP: #1257026
+  * uml: check length in exitcode_proc_write()
+    - LP: #1257026
+  * staging: ozwpan: prevent overflow in oz_cdev_write()
+    - LP: #1257026
+  * aacraid: missing capable() check in compat ioctl
+    - LP: #1257026
+  * staging: wlags49_h2: buffer overflow setting station name
+    - LP: #1257026
+  * Staging: bcm: info leak in ioctl
+    - LP: #1257026
+  * Staging: sb105x: info leak in mp_get_count()
+    - LP: #1257026
+  * ALSA: fix oops in snd_pcm_info() caused by ASoC DPCM
+    - LP: #1257026
+  * lib/scatterlist.c: don't flush_kernel_dcache_page on slab page
+    - LP: #1257026
+  * scripts/kallsyms: filter symbols not in kernel address space
+    - LP: #1257026
+  * xen-netback: Handle backend state transitions in a more robust way
+    - LP: #1257026
+  * xen-netback: transition to CLOSED when removing a VIF
+    - LP: #1257026
+  * Linux 3.8.13.13
+    - LP: #1257026
+
  -- Kaj Ailomaa <zequence@mousike.me>  Tue, 03 Dec 2013 12:28:19 +0100
 
 linux-lowlatency (3.8.0-34.26) raring; urgency=low
